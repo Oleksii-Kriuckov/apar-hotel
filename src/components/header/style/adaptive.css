@@ -1,0 +1,46 @@
+/* mobile style */
+@media (max-width: 428px) {
+
+    header {
+        
+      }
+    
+      .logo {
+        display: none;
+      }
+}
+
+/* tablet style */
+@media (min-width: 429px) and (max-width: 768px) {
+    body {
+
+    }
+
+    header {
+        
+    }
+
+    .logo {
+        display: none;
+    }
+}
+
+/* desktop style */
+@media (min-width: 769px) and (max-width: 1440px) {
+    body {
+        
+    }
+
+    header {
+        margin-top: 45px;
+    }
+
+    .logo_mob {
+        display: none;
+    }
+
+    footer>a:hover {
+        text-decoration: none;
+        color: #393939;
+    }
+}

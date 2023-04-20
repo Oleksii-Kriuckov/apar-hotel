@@ -1,0 +1,65 @@
+/* mobile style */
+@media (max-width: 428px) {
+
+    .about_hotel {
+        margin-top: 65px;
+      }
+    
+      h4 {
+        margin-bottom: 20px;
+      }
+    
+      article {
+        margin: 65px 20px;
+      }
+    
+      article > a {
+        margin-top: 20px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+        text-decoration-line: underline;
+        color: #ffc000;
+      }
+
+      .background {
+        width: 100vw;
+        left: -11px;
+        top: 635px;
+        z-index: -10;
+        transform: rotate(-5deg);
+      }
+    
+      .keyhole_color {
+        left: 360px;
+        top: 265px;
+      }
+    
+      .background:nth-child(2) {
+        left: -110px;
+        top: 680px;
+        z-index: -11;
+        transform: rotate(-15deg);
+      }
+    
+      .keyhole {
+        left: 245px;
+        top: 195px;
+        transform: rotate(27deg);
+      }
+}
+
+/* tablet style */
+@media (min-width: 429px) and (max-width: 768px) {
+    body {
+
+    }
+}
+
+/* desktop style */
+@media (min-width: 769px) and (max-width: 1440px) {
+    body {
+        
+    }
+
+}

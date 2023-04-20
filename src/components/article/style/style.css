@@ -1,0 +1,12 @@
+article>span{
+  white-space: pre-line;
+  text-align: left;
+}
+
+article>p{
+  margin-top: 20px;
+}
+
+article>p>a{
+  color: var(--main-color);
+}

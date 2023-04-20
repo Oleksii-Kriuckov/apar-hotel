@@ -1,0 +1,27 @@
+.highlight {
+    color: var(--main-color);
+  }
+  
+  h1 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 62px;
+    line-height: 74px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  
+  .h1 {
+    text-transform: uppercase;
+    margin: 60px 40px 50px;
+  }
+  
+  .booking {
+    background-color: var(--main-color);
+    font-family: var(--f-z);
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 0.12em;
+    color: #000000;
+  }

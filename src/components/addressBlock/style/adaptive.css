@@ -1,0 +1,73 @@
+/* mobile style */
+@media (max-width: 428px) {
+  #our_addresses {
+    text-align: center;
+  }
+
+  .addresses > p {
+    margin-top: 35px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .addresses > .buttons > .booking {
+    width: 174px;
+  }
+
+  .addresses > .buttons > button:last-child {
+    width: 140px;
+    height: 56px;
+    background: #ffffff;
+    border: 1px solid #000000;
+  }
+
+  .addresses > ul {
+    margin-top: 25px;
+    margin-bottom: 50px;
+  }
+
+  .addresses > .buttons {
+    position: absolute;
+    bottom: -27px;
+  }
+
+  .addresses {
+    padding: 30px 30px 40px;
+    position: relative;
+    margin-bottom: 75px;
+  }
+}
+
+/* tablet style */
+@media (min-width: 429px) and (max-width: 768px) {
+  body {
+  }
+
+  header {
+    margin-top: 35px;
+  }
+
+  .logo {
+    display: none;
+  }
+}
+
+/* desktop style */
+@media (min-width: 769px) and (max-width: 1440px) {
+  body {
+  }
+
+  header {
+    margin-top: 45px;
+  }
+
+  .logo_mob {
+    display: none;
+  }
+
+  footer > a:hover {
+    text-decoration: none;
+    color: #393939;
+  }
+}

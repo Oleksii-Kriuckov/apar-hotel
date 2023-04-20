@@ -1,0 +1,22 @@
+/* mobile style */
+@media (max-width: 428px) {
+  .booking {
+    width: 364px;
+    height: 56px;
+    margin: auto;
+    border: none;
+    display: block;
+  }
+}
+
+/* tablet style */
+@media (min-width: 429px) and (max-width: 768px) {
+  body {
+  }
+}
+
+/* desktop style */
+@media (min-width: 769px) and (max-width: 1440px) {
+  body {
+  }
+}
