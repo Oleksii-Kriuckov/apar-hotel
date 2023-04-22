@@ -4,6 +4,7 @@ button {
   line-height: 18px;
   height: 55px;
   padding: 18px;
+  text-transform: uppercase;
 }
 
 .yellow_button {

@@ -1,6 +1,6 @@
 import { FooterBar } from "./FooterBar";
 import "./style/style.css";
-import './style/adaptive.css'
+import "./style/adaptive.css";
 
 type Props = {};
 
@@ -13,8 +13,8 @@ export const Footer = (props: Props) => {
 
       <div className="license_info">
         <p>
-          IP Trukhmeneva S.V. OGRIP 307345905700016 certificate dated February
-          26, 2007, series 34 No. 003020722
+          ИП Трухменева С.В. ОГРИП 307345905700016 свидетельство от 26.02.2007
+          года серия 34 № 003020722
         </p>
       </div>
     </footer>

@@ -6,8 +6,13 @@ import {
 } from "../../routers/paths";
 
 export const footerLinks = [
-  { link: "About the hotel", to: MainPage_ROUTE },
-  { link: "Booking", to: Booking_ROUTE },
-  { link: "Contacts", to: Contacts_ROUTE },
-  { link: "Feedback", to: Message_ROUTE },
+  { link: "Об отеле", to: MainPage_ROUTE },
+  { link: "Бронирование", to: Booking_ROUTE },
+  { link: "Документы", to: '/' },
+  { link: "Контакты", to: Contacts_ROUTE },
+  { link: "Обратная связь", to: Message_ROUTE },
 ];
+
+
+ 
+

@@ -38,14 +38,14 @@ export const hotelInfo: IArticleInfo[] = [
     city: "ВОЛГОГРАД",
     hotels: [
       {
-        address: "st. Sevastopolska, 3a",
+        address: "г. Волгорад, ул. Мира д. 21",
         conveniences: [
-          "Convenient location",
-          "Car parking",
-          "Close to malls, grocery stores",
-          "Quiet place",
-          "Washing machine, iron, luggage storage, coffee snack vending machines",
-          "up to 20 people",
+          "Местоположение - центр города;",
+          "Парковка для авто;",
+          "Удобные кровати и подушки;",
+          "Все очень чисто, включая белоснежное белье;",
+          "В общей зоне есть полноценная кухня, стиралка, утюг, в общем все как дома.",
+          "7 номеров на 2-4 человека",
         ],
       },
     ],

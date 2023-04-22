@@ -31,8 +31,8 @@ const MainPage = (props: Props) => {
         {hotelInfo[0].hotels[0].address}
       </AddressBlock>
 
-      <AddressBlock convs={hotelInfo[1].hotels[0].conveniences}>
-        {hotelInfo[1].hotels[0].address}
+      <AddressBlock convs={hotelInfo[0].hotels[0].conveniences}>
+        {hotelInfo[0].hotels[1].address}
       </AddressBlock>
 
       <Wellcome/>
