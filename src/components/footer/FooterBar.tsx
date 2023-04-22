@@ -8,8 +8,8 @@ type Props = {};
 export const FooterBar = (props: Props) => {
   return (
     <div className="footer_nav">
-      {footerLinks.map((el) => (
-        <NavLink to={el.to}>{el.link}</NavLink>
+      {footerLinks.map((el, ind) => (
+        <NavLink key={ind} to={el.to}>{el.link}</NavLink>
       ))}
       <a href="">Documentation</a>
     </div>

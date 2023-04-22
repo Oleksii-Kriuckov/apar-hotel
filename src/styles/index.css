@@ -23,7 +23,7 @@
 
 body {
   --main-color: #ffc000;
-  --f-z: "Gilroy-Regular", sans-serif;
+  --f-z: "Century Gothic", sans-serif;
   font-family: var(--f-z);
 }
   /* margin: 0;

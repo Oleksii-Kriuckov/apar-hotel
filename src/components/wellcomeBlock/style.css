@@ -1,0 +1,16 @@
+.wellcome {
+  width: 100%;
+  background: #f7f9fc;
+  padding: 30px 60px;
+  height: 274px;
+  background-image: url("../images/keyhole.png");
+  background-repeat: no-repeat;
+  background-position: 49px 137px;
+}
+
+.wellcome > p {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 34px;
+  text-align: center;
+}

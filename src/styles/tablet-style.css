@@ -1,0 +1,13 @@
+@media (min-width: 429px) and (max-width: 768px) {
+    body {
+        /* background-color: blue; */
+    }
+
+    header {
+        margin-top: 35px;
+    }
+
+    .logo {
+        display: none;
+    }
+}

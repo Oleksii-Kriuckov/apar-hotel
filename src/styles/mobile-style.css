@@ -1,0 +1,171 @@
+@media (max-width: 428px) {
+  body {
+    /* background-color: yellowgreen; */
+    /* padding-left: 20px; */
+  }
+
+  header {
+    margin-top: 30px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .slider1 {
+    margin: 100px auto;
+    position: relative;
+  }
+
+  .room1 {
+    margin-left: auto;
+    margin-right: 0;
+    width: 395px;
+    height: 280px;
+    display: block;
+  }
+
+  .background_slider {
+    width: 300px;
+    height: 320px;
+    position: absolute;
+    right: -40px;
+    top: 0px;
+    z-index: -1;
+  }
+
+  .background {
+    left: -11px;
+    top: 635px;
+    z-index: -10;
+    transform: rotate(-5deg);
+  }
+
+  .keyhole_color {
+    left: 360px;
+    top: 265px;
+  }
+
+  .background:nth-child(2) {
+    left: -110px;
+    top: 680px;
+    z-index: -11;
+    transform: rotate(-15deg);
+  }
+
+  .keyhole {
+    left: 245px;
+    top: 195px;
+    transform: rotate(27deg);
+  }
+
+  .slider2 {
+    margin-top: 155px;
+  }
+
+  .room2 {
+    display: block;
+    margin: auto;
+    width: 360px;
+  }
+
+  .booking {
+    width: 364px;
+    height: 56px;
+    margin: auto;
+    border: none;
+    display: block;
+  }
+
+  main {
+    margin: 50px 20px;
+  }
+
+  .about_hotel {
+    margin-top: 65px;
+  }
+
+  h4 {
+    margin-bottom: 20px;
+  }
+
+  article {
+    margin: 65px 20px;
+  }
+
+  article > a {
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    text-decoration-line: underline;
+    color: #ffc000;
+  }
+
+  #our_addresses {
+    text-align: center;
+  }
+
+  .addresses > p {
+    margin-top: 35px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .addresses > .buttons > .booking {
+    width: 174px;
+  }
+
+  .addresses > .buttons > button:last-child {
+    width: 140px;
+    height: 56px;
+    background: #ffffff;
+    border: 1px solid #000000;
+  }
+
+  .addresses > ul {
+    margin-top: 25px;
+    margin-bottom: 50px;
+  }
+
+  .addresses > .buttons {
+    position: absolute;
+    bottom: -27px;
+  }
+
+  .addresses {
+    padding: 30px 30px 40px;
+    position: relative;
+    margin-bottom: 75px;
+  }
+  
+  .wellcome_block {
+    padding: 45px 60px 55px;
+    margin: 0 20px 45px;
+    background-color: #f7f9fc;
+    background-image: url("../images/Vector2.png");
+    background-repeat: no-repeat;
+    background-position: 35px 210px;
+  }
+
+  footer {
+    margin-top: 74px;
+  }
+
+  .footer_nav {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  hr {
+    margin: 40px auto;
+    width: 305px;
+    height: 1px;
+    background: #ebebeb;
+  }
+  .license_info {
+    margin-bottom: 50px;
+    padding: 0 30px;
+  }
+}

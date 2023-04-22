@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
 import Layout from "./components/Layout";
 import MainPage from "./pages/MainPage";
 import { AppRoutes } from "./routers/routers";
+
+import "./styles/App.css";
+import "./styles/desktop-style.css";
+import "./styles/tablet-style.css";
+import "./styles/mobile-style.css";
 
 function App() {
   const [count, setCount] = useState(0);

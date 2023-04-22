@@ -5,6 +5,7 @@ import ToBookBlock from "../components/ToBookBlock/ToBookBlock";
 import keyhole_color from "../components/images/Group 1317.png";
 import keyhole from "../components/images/Group 1318.png";
 import { AddressBlock } from "../components/addressBlock/AddressBlock";
+import Wellcome from "../components/wellcomeBlock/Wellcome";
 
 type Props = {};
 
@@ -24,9 +25,17 @@ const MainPage = (props: Props) => {
       <Slider />
       <ToBookBlock>{hotelInfo[0].city}</ToBookBlock>
       <Article>{hotelInfo[0].description}</Article>
-    <h4 id="our_addresses">Our addresses</h4>
-<AddressBlock convs={hotelInfo[0].conveniences}>{hotelInfo[0].address}</AddressBlock>
-<AddressBlock convs={hotelInfo[1].conveniences}>{hotelInfo[1].address}</AddressBlock>
+      <h4 id="our_addresses">Our addresses</h4>
+
+      <AddressBlock convs={hotelInfo[0].hotels[0].conveniences}>
+        {hotelInfo[0].hotels[0].address}
+      </AddressBlock>
+
+      <AddressBlock convs={hotelInfo[1].hotels[0].conveniences}>
+        {hotelInfo[1].hotels[0].address}
+      </AddressBlock>
+
+      <Wellcome/>
     </main>
   );
 };

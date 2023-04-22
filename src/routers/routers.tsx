@@ -14,5 +14,9 @@ export const AppRoutes = [
   { path: Booking_ROUTE, element: <Booking /> },
   { path: Contacts_ROUTE, element: <Contacts /> },
   { path: Message_ROUTE, element: <Message /> },
-  // { path: , element: </> },
 ];
+
+export const CitiesRouters = [
+  // { path: , element: </> },
+  // { path: , element: </> },
+]

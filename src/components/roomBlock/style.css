@@ -1,0 +1,26 @@
+.room_block > img {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.room_block > ul {
+  list-style: none;
+  padding: 0;
+}
+.room_block > ul > li:first-child {
+  margin-bottom: 30px;
+}
+
+.price_block {
+  font-weight: 400;
+  line-height: 44px;
+  margin-bottom: 15px;
+}
+
+.price_block > span {
+  font-size: 36px;
+}
+
+.room_block > button:last-child {
+  margin-top: 20px;
+}
