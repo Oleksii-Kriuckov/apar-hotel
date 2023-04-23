@@ -10,9 +10,7 @@ export const Article = (props: ArticleProps) => {
       <article>
         <h4>About the hotel</h4>
         <span>{props.children}</span>
-        <p>
-          <a href="">View license</a>
-        </p>
+        
       </article>
     </div>
   )

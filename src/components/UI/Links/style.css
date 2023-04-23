@@ -1,0 +1,32 @@
+.show_license {
+  color: var(--main-color);
+}
+.show_license:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.license {
+  width: 100%;
+}
+
+#modal {
+  max-width: 520px;
+  margin-top: 80px;
+}
+
+#closeButton {
+  width: var(--sizeClose);
+  height: var(--sizeClose);
+  cursor: pointer;
+  position: absolute;
+}
+
+#closeButtonWhite {
+  width: var(--sizeClose);
+  height: var(--sizeClose);
+  cursor: pointer;
+  position: absolute;
+  right: -40px;
+  top: -40px;
+}

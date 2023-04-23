@@ -1,0 +1,29 @@
+/* mobile style */
+@media (max-width: 575px) {
+  #modal {
+    margin: 40px;
+  }
+  #closeButton {
+    right: 0;
+    top: 0;
+  }
+  #closeButtonWhite {
+    display: none;
+  }
+}
+@media (min-width: 576px) {
+  #closeButton {
+    display: none;
+  }
+}
+/* tablet style */
+@media (min-width: 429px) and (max-width: 768px) {
+  body {
+  }
+}
+
+/* desktop style */
+@media (min-width: 769px) and (max-width: 1440px) {
+  body {
+  }
+}

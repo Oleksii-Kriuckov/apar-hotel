@@ -8,7 +8,7 @@ type Props = {};
 const Booking = (props: Props) => {
   return (
     <>
-      <h3 className="booking_h3">Бронирование (г. Волгоград)</h3>
+      <h3 className="header_h3">Бронирование (г. Волгоград)</h3>
       <div className="booking_page">
         <Form />
 

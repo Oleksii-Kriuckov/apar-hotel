@@ -11,7 +11,7 @@ export const FooterBar = (props: Props) => {
       {footerLinks.map((el, ind) => (
         <NavLink key={ind} to={el.to}>{el.link}</NavLink>
       ))}
-      <a href="">Documentation</a>
+      <a href="">Документы</a>
     </div>
   );
 };

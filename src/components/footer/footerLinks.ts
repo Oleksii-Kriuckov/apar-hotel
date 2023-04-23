@@ -8,7 +8,6 @@ import {
 export const footerLinks = [
   { link: "Об отеле", to: MainPage_ROUTE },
   { link: "Бронирование", to: Booking_ROUTE },
-  { link: "Документы", to: '/' },
   { link: "Контакты", to: Contacts_ROUTE },
   { link: "Обратная связь", to: Message_ROUTE },
 ];
