@@ -1,7 +1,8 @@
 import { Dropdown, Form, InputGroup, SplitButton } from "react-bootstrap";
 import "./style.css";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import TransparentButton from "../Buttons/TransparentButton";
 
 type Props = {};
 
@@ -25,7 +26,7 @@ const CheckForm = (props: Props) => {
         <input type="number" name="guests" id="guests" />
       </div>
 
-      <button className="searching">ПОИСК</button>
+      <TransparentButton color="whiteBorder">ПОИСК</TransparentButton>
     </form>
   );
 };

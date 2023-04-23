@@ -11,4 +11,4 @@ export interface IArticleInfo {
 
 export type Color = "white" | "black";
 
-export type BorderColor = "blackBorder" | "yellowBorder";
+export type BorderColor = "blackBorder" | "yellowBorder" | "whiteBorder";

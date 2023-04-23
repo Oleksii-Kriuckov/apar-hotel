@@ -35,3 +35,8 @@ button {
   border-color: black;
   color: black;
 }
+
+.whiteBorder {
+  border-color: white;
+  color: white;
+}
