@@ -1,5 +1,5 @@
 import React from "react";
-import Form from "../components/UI/form/Form";
+import Form from "../components/UI/Forms/FormBooking";
 import RoomBlock from "../components/roomBlock/RoomBlock";
 import Wellcome from "../components/wellcomeBlock/Wellcome";
 

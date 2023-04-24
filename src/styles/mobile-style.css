@@ -168,4 +168,13 @@
     margin-bottom: 50px;
     padding: 0 30px;
   }
+
+  .lows_extract{
+    margin: 25px 0;
+  }
+}
+
+.mobile {
+  display: flex;
+  flex-direction: column;
 }

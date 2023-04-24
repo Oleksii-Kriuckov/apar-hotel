@@ -27,6 +27,8 @@ const CheckForm = (props: Props) => {
       </div>
 
       <TransparentButton color="whiteBorder">ПОИСК</TransparentButton>
+
+      
     </form>
   );
 };

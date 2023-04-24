@@ -1,28 +1,28 @@
 .background {
   position: absolute;
   height: 527px;
-  background-image: url('./components/images/Vector.png');
+  background-image: url("./components/images/Vector.png");
   background-repeat: no-repeat;
 }
 
-.background>img {
+.background > img {
   position: absolute;
 }
 
-.our_addresses{
+.our_addresses {
   font-weight: 400;
   font-size: 36px;
   line-height: 43px;
 }
 
-.booking_page{
+.booking_page {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 70px;
 }
 
-.header_h3{
+.header_h3 {
   font-family: Century Gothic;
   text-transform: uppercase;
   font-size: 36px;
@@ -30,8 +30,15 @@
   line-height: 44px;
   letter-spacing: 0em;
   text-align: left;
-  padding: 30px;
+  padding: 0px;
 }
+
+.lows_extract {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+}
+
 /* .logo {
   height: 6em;
   padding: 1.5em;
@@ -42,10 +49,8 @@
   filter: drop-shadow(0 0 2em #646cffaa);
 } */
 
-
 /* @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
 } */
-
