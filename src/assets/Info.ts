@@ -1,58 +1,54 @@
-import { IArticleInfo } from "./types";
+import { HotelInfo } from "./types";
 
-export const hotelInfo: IArticleInfo[] = [
+export const hotelInfo: HotelInfo[] = [
   {
-    city: "МОСКВА",
-    hotels: [
-      {
-        address: "ул. Первомайская д. 117",
-        conveniences: [
-          "Удобное месторасположение",
-          "Парковка для авто",
-          "Вблизи МКАД, знаковые достопримечательности",
-          "Зеленый район",
-          "Стиральная машина, утюг, камера хранения, аппараты по продаже кофе снеков",
-          "до 40 человек",
-        ],
-      },
-      {
-        address: "Севастопольский д.3 корп 2",
-        conveniences: [
-          "Удобное месторасположение",
-          "Парковка для авто",
-          "Рядом ТРЦ, продуктовые магазины",
-          "Тихое место",
-          "Стиральная машина, утюг, кофемашина, питьевая вода.",
-          "до 20 человек",
-        ],
-      },
+    city: "Kyiv",
+    address: "St. Khreschatyk 24",
+    conveniences: [
+      "Location - city center",
+      "Car parking",
+      "Comfortable beds and pillows",
+      "Everything is very clean, including snow-white linen",
+      "In the common area there is a full kitchen, a washing machine, an iron, in general, everything is like at home",
     ],
-    description: `В наших отелях очень гармонично объединены все необходимые требования к проживанию современного человека.
-    Номера формата апартаменты, но с отельным сервисом и безопасностью. Полностью соответствуют требованиям нового закона об отелях.
+    description: `In our hotels, all the necessary requirements for living a modern person are very harmoniously combined. The rooms are apartment format, but with hotel service and security. Fully comply with the requirements of the new law on hotels.
     
-    Все апартаменты с оборудованы кухней и всем необходимым для самостоятельного приготовления пищи, собственным санузлом с душевой. Они небольшие, но есть все необходимое. Особая изюминка- спальное место на антресольном этаже. Вам будет удобно у нас проживать, как  одни сутки, так и долгий период.
+    All apartments are equipped with a kitchen and everything you need for self-catering, a private bathroom with a shower. They are small but have everything you need. A special highlight is a sleeping place on the mezzanine floor. It will be convenient for you to live with us, both for one day and for a long period. 
     
-    В апартаментах для пользования гостей- постельное белье, полотенца, туалетно-косметические принадлежности, фен, посуда, чай и кофе – бесплатно.`,
+    In the apartments for the use of guests - bed linen, towels, toiletries, hair dryer, dishes, tea and coffee - free of charge.`,
   },
   {
-    city: "ВОЛГОГРАД",
-    hotels: [
-      {
-        address: "г. Волгорад, ул. Мира д. 21",
-        conveniences: [
-          "Местоположение - центр города;",
-          "Парковка для авто;",
-          "Удобные кровати и подушки;",
-          "Все очень чисто, включая белоснежное белье;",
-          "В общей зоне есть полноценная кухня, стиралка, утюг, в общем все как дома.",
-          "7 номеров на 2-4 человека",
-        ],
-      },
+    city: "Kyiv",
+    address: "st. May 1, 117",
+    conveniences: [
+      "Convenient location",
+      "Car parking",
+      "Near iconic sights",
+      "Green area",
+      "Laundry service, luggage storage, coffee snack vending machines",
+      "up to 40 people",
     ],
-    description: `Мини отель URoom располагается в самом центре Волгограда на ул. Мира, в историческом доме. Имеет отдельный вход, со стороны Волгоградского планетария, 7 отдельных номеров на 2-4 человека и большую общую зону.
-
-    Для удобства мы организовали самостоятельный и безопасный доступ в отель. Каждому гостю предоставляется индивидуальный код доступа в отель и в свой номер. Гости могут в удобное время въезжать и выезжать из отеля, не тратя время на звонки и встречи с Администрацией отеля. 
+    description: `In our hotels, all the necessary requirements for living a modern person are very harmoniously combined. The rooms are apartment format, but with hotel service and security. Fully comply with the requirements of the new law on hotels.
     
-    В каждом номере доступны шикарные кровати Бокс Спринг. Возможно размещение на отдельных кроватях или двуспальной, в некоторых номерах есть диван-кровать или кресло-кровать. Особенно мы постарались, чтобы Вам было комфортно спать и было чисто`,
+    All apartments are equipped with a kitchen and everything you need for self-catering, a private bathroom with a shower. They are small but have everything you need. A special highlight is a sleeping place on the mezzanine floor. It will be convenient for you to live with us, both for one day and for a long period. 
+    
+    In the apartments for the use of guests - bed linen, towels, toiletries, hair dryer, dishes, tea and coffee - free of charge.`,
+  },
+  {
+    city: "Lviv",
+    address: "st. Sevastopolska, 3a",
+    conveniences: [
+      "Convenient location",
+      "Car parking",
+      "Close to malls, grocery stores",
+      "Quiet place",
+      "Laundry service, luggage storage, coffee snack vending machines",
+      "up to 20 people",
+    ],
+    description: `Mini hotel URoom is located in the heart of Lviv on the street. Peace, in a historic home. It has a separate entrance from the side of the Lviv city center, 7 separate rooms for 2-4 people and a large common area. 
+      
+      For convenience, we have organized independent and safe access to the hotel. Each guest is given an individual access code to the hotel and to their room. Guests can check in and out of the hotel at a convenient time without wasting time on calls and meetings with the Hotel Administration. 
+      
+      Each room has luxurious Box Spring beds. Available in twin or double beds, some rooms have a sofa bed or armchair bed. We have made every effort to ensure that you sleep comfortably and that it is clean.`,
   },
 ];
