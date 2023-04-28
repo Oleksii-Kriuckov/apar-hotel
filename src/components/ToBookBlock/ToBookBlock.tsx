@@ -10,10 +10,10 @@ const ToBookBlock = (props: ToBookBlockProps) => {
     <div>
       <div className="h1">
         <h1>
-          ВАШ АПАРТ ОТЕЛЬ В <span className="highlight">{props.children}</span>
+          Your Luxury hotel in <span className="highlight">{props.children}</span>
         </h1>
       </div>
-      <YellowButton width={'100%'} color='black'>ЗАБРОНИРОВАТЬ</YellowButton>
+      <YellowButton width={'100%'} color='black'>Book now</YellowButton>
     </div>
   );
 };

@@ -7,56 +7,55 @@ const FormFeedback = (props: Props) => {
   return (
     <div className="mobile" style={{ gap: 20 }}>
       <div className="input_block">
-        <label htmlFor="name">Контактное лицо / Name *</label>
+        <label htmlFor="name">Name</label>
         <input
           type="text"
           name="name"
           id="name"
-          placeholder="Иван Иванович Иванов / John Smith"
+          placeholder="John Smith"
         />
       </div>
       <div className="input_block">
-        <label htmlFor="phone">Телефон / Phone *</label>
+        <label htmlFor="phone">Phone</label>
         <input
           type="text"
           name="phone"
           id="phone"
-          placeholder="89023123456 / +34905123456"
+          placeholder="+380965123456"
         />
       </div>
       <div className="input_block">
-        <label htmlFor="email">Эл. почта / E-mail *</label>
+        <label htmlFor="email">E-mail</label>
         <input
           type="text"
           name="email"
           id="email"
-          placeholder="ivanov@yandex.ru / jsmith@gmail.com"
+          placeholder="jsmith@gmail.com"
         />
       </div>
       <div className="input_block">
-        <label htmlFor="file">Прикрепить файл / Attach file:</label>
-        <input type="file" name="file" id="file" placeholder="Выбрать файлы" />
+        <label htmlFor="file">Attach file:</label>
+        <input type="file" name="file" id="file" placeholder="Select files" />
       </div>
       <div className="input_block">
-        <label htmlFor="message">Сообщение / Message:</label>
+        <label htmlFor="message"> Message:</label>
         <textarea
           name="message"
           id="message"
-          placeholder="Сообщение / Message"
+          placeholder="Message"
         />
       </div>
 
       <div className="d-flex align-items-baseline gap-3">
         <input type="checkbox" name="confirm" id="confirm" />
         <label htmlFor="confirm">
-          Нажимая на кнопку "Отправить", я даю согласие на обработку
-          персональных данных. (By clicking on the "Submit" button, I consent to
-          the processing of personal data)
+          By clicking on the "Submit" button, I consent to
+          the processing of personal data
         </label>
       </div>
 
       <YellowButton width={200} color="black">
-        ОТПРАВИТЬ / SEND
+       SEND
       </YellowButton>
     </div>
   );

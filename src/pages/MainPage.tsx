@@ -25,7 +25,7 @@ const MainPage = (props: Props) => {
       <Slider />
       <ToBookBlock>{hotelInfo[0].city}</ToBookBlock>
       <Article>{hotelInfo[0].description}</Article>
-      <h4 id="our_addresses">Наши адреса</h4>
+      <h4 id="our_addresses">Our address</h4>
 
       <AddressBlock convs={hotelInfo[0].hotels[0].conveniences}>
         {hotelInfo[0].hotels[0].address}

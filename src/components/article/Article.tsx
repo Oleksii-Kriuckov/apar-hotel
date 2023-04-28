@@ -8,9 +8,8 @@ export const Article = (props: ArticleProps) => {
   return (
     <div className="about_hotel">
       <article>
-        <h3 className="header_h3">Об отеле</h3>
+        <h3 className="header_h3">About hotel</h3>
         <span>{props.children}</span>
-        
       </article>
     </div>
   )

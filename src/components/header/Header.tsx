@@ -25,8 +25,8 @@ export const Header = (props: Props) => {
           <Nav className="d-flex justify-content-lg-around w-100">
             <NavLink to={MainPage_ROUTE}>{hotelInfo[0].city}</NavLink>
             <NavLink to={MainPage_ROUTE}>{hotelInfo[1].city}</NavLink>
-            <HeaderLink alt="bell" src={bell}>РЕзеРВАЦИЯ</HeaderLink>
-            <HeaderLink alt="phone" src={phone}>+7 (977) 797 36 23</HeaderLink>
+            <HeaderLink alt="bell" src={bell}>reservation</HeaderLink>
+            <HeaderLink alt="phone" src={phone}>+83 (097) 797 36 23</HeaderLink>
             {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action1</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Action2</NavDropdown.Item>
