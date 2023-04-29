@@ -20,8 +20,8 @@ export const AddressBlock = (props: AddressBlockProps) => {
         ))}
       </ul>
       <div className="buttons">
-        <YellowButton color='black'>ЗАБРОНИРОВАТЬ</YellowButton>
-        <TransparentButton color='blackBorder'>ПодРОБНЕЕ</TransparentButton>
+        <YellowButton width={175} color='black'>BOOK NOW</YellowButton>
+        <TransparentButton color='blackBorder'>LEARN MORE</TransparentButton>
       </div>
     </section>
   )

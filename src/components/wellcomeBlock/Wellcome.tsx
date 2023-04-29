@@ -1,14 +1,11 @@
 import TransparentButton from "../UI/Buttons/TransparentButton";
 import "./style.css";
 
-
-type Props = {}
-
-const Wellcome = (props: Props) => {
+const Wellcome = () => {
   return (
     <div className="wellcome text-center">
-        <p>Ждем Вас в гости, готовы Вас принять в любое время суток.</p>
-        <TransparentButton color='blackBorder'>СВЯЗАТЬСЯ С НАМИ</TransparentButton>
+        <p>We are waiting for you to visit, we are ready to receive you at any time of the day.</p>
+        <TransparentButton color='blackBorder'>CONNECT WITH US</TransparentButton>
     </div>
   )
 }

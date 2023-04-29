@@ -1,5 +1,6 @@
 .addresses {
   border: 1px solid #EBEBEB;
+  margin-bottom: 75px;
 }
 
 .addresses>.buttons {
@@ -9,8 +10,6 @@
 }
 
 .addresses>.buttons>button:last-child {
-  width: 140px;
-  height: 56px;
   background: #FFFFFF;
   border: 1px solid #000000;
 }

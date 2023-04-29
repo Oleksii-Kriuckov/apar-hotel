@@ -11,25 +11,23 @@
     line-height: 22px;
   }
 
-  .addresses > .buttons > .booking {
-    width: 174px;
-  }
-
   .addresses > .buttons > button:last-child {
-    width: 140px;
-    height: 56px;
+    /* width: 140px; */
     background: #ffffff;
     border: 1px solid #000000;
+    min-width: 120px;
   }
 
   .addresses > ul {
     margin-top: 25px;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
   }
 
   .addresses > .buttons {
-    position: absolute;
-    bottom: -27px;
+    position: relative;
+    bottom: -68px;
+    width: 100%;
+    justify-content: space-between;
   }
 
   .addresses {

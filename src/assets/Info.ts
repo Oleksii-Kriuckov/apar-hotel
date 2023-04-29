@@ -12,6 +12,7 @@ export const hotelInfo: IArticleInfo[] = [
           "Comfortable beds and pillows",
           "Everything is very clean, including snow-white linen",
           "In the common area there is a full kitchen, a washing machine, an iron, in general, everything is like at home",
+          "up to 40 people",
         ],
       },
       {
