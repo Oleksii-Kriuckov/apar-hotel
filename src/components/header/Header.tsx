@@ -1,7 +1,7 @@
 import { NavLink, Link } from "react-router-dom";
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import { MainPage_ROUTE } from "../../routers/paths";
-import { hotelInfo } from "../../assets/Info";
+import { hotels } from "../../assets/Info";
 import logo_mob from "../images/logo-mob.png";
 import logo from "../images/logo.png";
 import bell from "../images/bell.png";
@@ -23,8 +23,8 @@ export const Header = (props: Props) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" >
           <Nav className="d-flex justify-content-lg-around w-100">
-            <NavLink to={MainPage_ROUTE}>{hotelInfo[0].city}</NavLink>
-            <NavLink to={MainPage_ROUTE}>{hotelInfo[1].city}</NavLink>
+            <NavLink to={MainPage_ROUTE}>{hotels[0].city}</NavLink>
+            <NavLink to={MainPage_ROUTE}>{hotels[1].city}</NavLink>
             <HeaderLink alt="bell" src={bell}>reservation</HeaderLink>
             <HeaderLink alt="phone" src={phone}>+83 (097) 797 36 23</HeaderLink>
             {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">

@@ -1,11 +1,12 @@
-import { IArticleInfo } from "./types";
+import { IHotels } from "./types";
 
-export const hotelInfo: IArticleInfo[] = [
+export const hotels: IHotels[] = [
   {
     city: "Kyiv",
-    hotels: [
+    hotelsInfos: [
       {
-        address: "St. Khreschatyk 24",
+        address: "St. Khreschatyk 14",
+        coordinates: {lat: 50.45169140483114, lng: 30.52523556606943},
         conveniences: [
           "Location - city center",
           "Car parking",
@@ -17,6 +18,7 @@ export const hotelInfo: IArticleInfo[] = [
       },
       {
         address: "bul. of Lesia Ukrayinka 7",
+        coordinates: {lat: 50.43293422168239, lng: 30.53353608991025},
         conveniences: [
           "Convenient location",
           "Car parking",
@@ -35,9 +37,10 @@ export const hotelInfo: IArticleInfo[] = [
   },
   {
     city: "Lviv",
-    hotels: [
+    hotelsInfos: [
       {
         address: "st. Sevastopolska, 3a",
+        coordinates: {lat: 49.85410453856136, lng: 24.043041132804692},
         conveniences: [
           "Convenient location",
           "Car parking",

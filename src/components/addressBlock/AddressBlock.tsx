@@ -1,28 +1,40 @@
 import { PropsWithChildren } from "react";
 import TransparentButton from "../UI/Buttons/TransparentButton";
 import YellowButton from "../UI/Buttons/YellowButton";
-import map from '../images/map1.png'
+// import map from '../images/map1.png'
 import "./style/style.css";
-import './style/adaptive.css'
+import "./style/adaptive.css";
+import { MyMapContainer } from "../../map/MyMapContainer";
+import { MapChild } from "../../map/MapChild";
+import { IHotelInfo } from "../../assets/types";
 
-type AddressBlockProps = PropsWithChildren<{children: string, convs: string[]}>
+type AddressBlockProps = {
+  hotelInfo: IHotelInfo;
+};
 
-export const AddressBlock = (props: AddressBlockProps) => {
+export const AddressBlock = ({hotelInfo}: AddressBlockProps) => {
   return (
     <section className="addresses">
-      <img src={map} alt="map" style={{width: '100%'}}/>
+      <MyMapContainer
+        hotelLocation={hotelInfo.coordinates}
+        zoom={16}
+        >
+        <MapChild location={hotelInfo.coordinates}/>
+      </MyMapContainer>
       <p>URoom ApartHotel by the address</p>
-      <h3>{props.children}</h3>
+      <h3>{hotelInfo.address}</h3>
 
       <ul>
-        {props.convs.map((element, ind )=> (
+        {hotelInfo.conveniences.map((element, ind) => (
           <li key={ind}>{element}</li>
         ))}
       </ul>
       <div className="buttons">
-        <YellowButton width={175} color='black'>BOOK NOW</YellowButton>
-        <TransparentButton color='blackBorder'>LEARN MORE</TransparentButton>
+        <YellowButton width={175} color="black">
+          BOOK NOW
+        </YellowButton>
+        <TransparentButton color="blackBorder">LEARN MORE</TransparentButton>
       </div>
     </section>
-  )
-}
+  );
+};

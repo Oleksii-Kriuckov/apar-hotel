@@ -1,14 +1,20 @@
-interface IHotelInfo {
+export interface IHotelInfo {
   address: string;
+  coordinates: Coordinates;
   conveniences: string[];
 }
 
-export interface IArticleInfo {
+export interface IHotels {
   city: string;
   description: string;
-  hotels: IHotelInfo[];
+  hotelsInfos: IHotelInfo[];
 }
 
 export type Color = "white" | "black";
 
 export type BorderColor = "blackBorder" | "yellowBorder" | "whiteBorder";
+
+export interface Coordinates {
+  lat: number; 
+  lng: number;
+}

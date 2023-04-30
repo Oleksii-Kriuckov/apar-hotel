@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "../components/UI/Forms/FormBooking";
 import RoomBlock from "../components/roomBlock/RoomBlock";
-import Wellcome from "../components/wellcomeBlock/Wellcome";
+import Wellcome from "../components/welcomeBlock/Welcome";
 
 type Props = {};
 
