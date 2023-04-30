@@ -15,8 +15,8 @@ export const AddressBlock = (props: AddressBlockProps) => {
       <h3>{props.children}</h3>
 
       <ul>
-        {props.convs.map(element => (
-          <li>{element}</li>
+        {props.convs.map((element, ind )=> (
+          <li key={ind}>{element}</li>
         ))}
       </ul>
       <div className="buttons">

@@ -1,6 +1,6 @@
 import { hotelInfo } from "../assets/Info";
 import { Article } from "../components/article/Article";
-import { Slider } from "../components/slider/slider";
+import { MyCarousel } from "../components/Slider/Slider";
 import ToBookBlock from "../components/ToBookBlock/ToBookBlock";
 import keyhole_color from "../components/images/Group 1317.png";
 import keyhole from "../components/images/Group 1318.png";
@@ -22,7 +22,7 @@ const MainPage = (props: Props) => {
       <div className="background">
         <img src={keyhole} alt="keyhole" className="keyhole" />
       </div>
-      <Slider />
+      <MyCarousel />
       <ToBookBlock>{hotelInfo[0].city}</ToBookBlock>
       <Article>{hotelInfo[0].description}</Article>
       <h4 id="our_addresses">Our address</h4>

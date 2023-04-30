@@ -1,4 +1,4 @@
-import roomImg from "../images/image-room-block.png";
+import roomImg from "../images/Shannon-Suite-hotel-room.jpg";
 import conveniences from "../images/conveniences.png"
 import "./style.css";
 import TransparentButton from "../UI/Buttons/TransparentButton";
@@ -9,7 +9,7 @@ type Props = {};
 const RoomBlock = (props: Props) => {
   return (
     <div className="room_block d-flex flex-column">
-      <img src={roomImg} alt="комната" />
+      <img src={roomImg} alt="room" />
       <div className="price_block"><span>1700</span> ₽ в сутки</div>
       <ul>
         <li>г. Волгоград, ул. Мира 21</li>
@@ -19,7 +19,7 @@ const RoomBlock = (props: Props) => {
       </ul>
       <img src={conveniences} alt="удобства" />
       <TransparentButton color='yellowBorder'>ПОДРОБНЕЕ</TransparentButton>
-      <YellowButton color='white'>ЗАБРОНИРОВАТЬ</YellowButton>
+      <YellowButton width={'100%'} color='white'>ЗАБРОНИРОВАТЬ</YellowButton>
     </div>
   );
 };
