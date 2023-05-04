@@ -1,4 +1,6 @@
-export const MainPage_ROUTE = '/';
+import { hotels } from "../assets/Info";
+
+export const MainPage_ROUTE = `/${hotels[0].city.toLocaleLowerCase()}`;
 export const Booking_ROUTE = 'booking';
 export const Contacts_ROUTE = 'contacts';
 export const Message_ROUTE = 'message';

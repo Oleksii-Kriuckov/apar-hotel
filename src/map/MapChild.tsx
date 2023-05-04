@@ -6,7 +6,6 @@ import { Coordinates } from "../assets/types";
 
 type MapChildProps = {
   location: Coordinates;
-//   zoom: number;
 };
 
 export const MapChild: React.FC<MapChildProps> = ({ location }) => {

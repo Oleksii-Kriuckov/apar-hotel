@@ -7,7 +7,7 @@ export interface IHotelInfo {
 export interface IHotels {
   city: string;
   description: string;
-  hotelsInfos: IHotelInfo[];
+  hotelsInfo: IHotelInfo[];
 }
 
 export type Color = "white" | "black";

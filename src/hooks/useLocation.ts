@@ -5,7 +5,7 @@ function useLocation(position?: GeolocationCoordinates) {
   const [userLocation, setUserLocation] = useState<Coordinates>({
     lat: position?.latitude ?? 50.9,
     lng: position?.longitude ?? 32.35,
-    zoom: 9,
+    // zoom: 9,
   });
 
   useEffect(() => {
@@ -13,7 +13,7 @@ function useLocation(position?: GeolocationCoordinates) {
       setUserLocation({
         lat: position.latitude,
         lng: position.longitude,
-        zoom: 10,
+        // zoom: 10,
       });
     }
   }, [position]);

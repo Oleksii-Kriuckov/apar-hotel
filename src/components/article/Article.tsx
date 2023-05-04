@@ -4,12 +4,12 @@ import './style/adaptive.css'
 
 type ArticleProps = PropsWithChildren<{children: string}>;
 
-export const Article = (props: ArticleProps) => {
+export const Article = ({children}: ArticleProps) => {
   return (
     <div className="about_hotel">
       <article>
         <h3 className="header_h3">About hotel</h3>
-        <span>{props.children}</span>
+        <span>{children}</span>
       </article>
     </div>
   )

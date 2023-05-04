@@ -3,7 +3,7 @@ import { IHotels } from "./types";
 export const hotels: IHotels[] = [
   {
     city: "Kyiv",
-    hotelsInfos: [
+    hotelsInfo: [
       {
         address: "St. Khreschatyk 14",
         coordinates: {lat: 50.45169140483114, lng: 30.52523556606943},
@@ -37,9 +37,9 @@ export const hotels: IHotels[] = [
   },
   {
     city: "Lviv",
-    hotelsInfos: [
+    hotelsInfo: [
       {
-        address: "st. Sevastopolska, 3a",
+        address: "street of Bohdan Khmelnytskyi, 157",
         coordinates: {lat: 49.85410453856136, lng: 24.043041132804692},
         conveniences: [
           "Convenient location",
