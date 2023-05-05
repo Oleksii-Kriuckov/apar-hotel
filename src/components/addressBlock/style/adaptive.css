@@ -1,7 +1,9 @@
 /* mobile style */
+
 @media (max-width: 428px) {
-  #our_addresses {
-    text-align: center;
+  .addresses {
+    padding: 30px 20px 40px;
+    margin-bottom: 75px;
   }
 
   .addresses > p {
@@ -9,6 +11,13 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
+  }
+
+  .addresses > .buttons {
+    position: relative;
+    bottom: -68px;
+    width: 100%;
+    justify-content: space-between;
   }
 
   .addresses > .buttons > button:last-child {
@@ -21,19 +30,6 @@
   .addresses > ul {
     margin-top: 25px;
     /* margin-bottom: 50px; */
-  }
-
-  .addresses > .buttons {
-    position: relative;
-    bottom: -68px;
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .addresses {
-    padding: 30px 30px 40px;
-    position: relative;
-    margin-bottom: 75px;
   }
 }
 

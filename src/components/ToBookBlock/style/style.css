@@ -2,18 +2,10 @@
     color: var(--main-color);
   }
   
-  h1 {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 62px;
-    line-height: 74px;
-    text-transform: uppercase;
-    text-align: center;
-  }
-  
   .h1 {
     text-transform: uppercase;
-    margin: 60px 40px 50px;
+    text-transform: uppercase;
+    text-align: center;
   }
   
   .booking_button {

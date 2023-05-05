@@ -2,11 +2,11 @@ import { PropsWithChildren } from "react";
 import TransparentButton from "../UI/Buttons/TransparentButton";
 import YellowButton from "../UI/Buttons/YellowButton";
 // import map from '../images/map1.png'
-import "./style/style.css";
-import "./style/adaptive.css";
 import { MyMapContainer } from "../../map/MyMapContainer";
 import { MapChild } from "../../map/MapChild";
 import { IHotelInfo } from "../../assets/types";
+import "./style/style.css";
+import "./style/adaptive.css";
 
 type AddressBlockProps = {
   hotelInfo: IHotelInfo;
