@@ -1,19 +1,27 @@
+.to_book_block {
+  position: relative;
+}
+
 .highlight {
-    color: var(--main-color);
-  }
-  
-  .h1 {
-    text-transform: uppercase;
-    text-transform: uppercase;
-    text-align: center;
-  }
-  
-  .booking_button {
-    background-color: var(--main-color);
-    font-family: var(--f-z);
-    font-weight: 700;
-    font-size: 13px;
-    line-height: 18px;
-    letter-spacing: 0.12em;
-    color: #000000;
-  }
+  color: var(--main-color);
+}
+
+.h1 {
+  text-transform: uppercase;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.booking_button {
+  background-color: var(--main-color);
+  font-family: var(--f-z);
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.12em;
+  color: #000000;
+}
+
+.keyhole_color, .keyhole {
+  position: absolute;
+}

@@ -14,7 +14,7 @@ type AddressBlockProps = {
 
 export const AddressBlock = ({hotelInfo}: AddressBlockProps) => {
   return (
-    <section className="addresses">
+    <section className="address_block">
       <MyMapContainer
         hotelLocation={hotelInfo.coordinates}
         zoom={16}

@@ -1,15 +1,26 @@
 /* mobile style */
 @media (max-width: 428px) {
-  .booking {
-    width: 364px;
-    height: 56px;
-    margin: auto;
+  .to_book_block {
+    width: 100%;
     border: none;
-    display: block;
+    margin-top: 60px;
+    margin-bottom: 160px;
   }
+
   .h1 {
     font-size: 48px;
     margin: 60px 20px 50px;
+  }
+    
+  .keyhole_color {
+    left: 80%;
+    top: 120%;
+    z-index: -10;
+  }
+
+  .keyhole {
+    left: 10%;
+    top: 110%;
   }
 }
 

@@ -1,26 +1,30 @@
-.addresses {
-  border: 1px solid #EBEBEB;
+.address_block {
+  border: 1px solid #ebebeb;
   margin-bottom: 75px;
 }
 
-.addresses>.buttons {
+.address_block > .buttons {
   display: flex;
   justify-content: center;
   gap: 15px;
 }
 
-.addresses>.buttons>button:last-child {
-  background: #FFFFFF;
+.address_block > .buttons > button:last-child {
+  background: #ffffff;
   border: 1px solid #000000;
 }
 
-.addresses>h3 {
+.address_block > h3 {
   font-weight: 600;
   font-size: 24px;
   line-height: 29px;
   margin-bottom: 25px;
 }
 
-.addresses>ul>li:last-child {
+.address_block > ul > li {
+  list-style-image: url('../../images/list-style.png');
+}
+
+.address_block > ul > li:last-child {
   font-weight: 700;
 }

@@ -1,3 +1,4 @@
+import { info_en } from "../../assets/Info";
 import TransparentButton from "../UI/Buttons/TransparentButton";
 import keyhole from "../images/keyhole.png";
 import "./style.css";
@@ -7,11 +8,10 @@ const Wellcome = () => {
     <div className="wellcome_block text-center">
       <div className="wellcome">
         <p>
-          We are waiting for you to visit, we are ready to receive you at any
-          time of the day.
+          {info_en.wellcome.p}
         </p>
         <TransparentButton color="blackBorder">
-          CONNECT WITH US
+          {info_en.wellcome.btn}
         </TransparentButton>
       </div>
 

@@ -1,3 +1,4 @@
+import Booking from "../pages/Booking";
 import { IHotels } from "./types";
 
 export const hotels: IHotels[] = [
@@ -6,7 +7,7 @@ export const hotels: IHotels[] = [
     hotelsInfo: [
       {
         address: "St. Khreschatyk 14",
-        coordinates: {lat: 50.45169140483114, lng: 30.52523556606943},
+        coordinates: { lat: 50.45169140483114, lng: 30.52523556606943 },
         conveniences: [
           "Location - city center",
           "Car parking",
@@ -18,7 +19,7 @@ export const hotels: IHotels[] = [
       },
       {
         address: "bul. of Lesia Ukrayinka 7",
-        coordinates: {lat: 50.43293422168239, lng: 30.53353608991025},
+        coordinates: { lat: 50.43293422168239, lng: 30.53353608991025 },
         conveniences: [
           "Convenient location",
           "Car parking",
@@ -40,7 +41,7 @@ export const hotels: IHotels[] = [
     hotelsInfo: [
       {
         address: "street of Bohdan Khmelnytskyi, 157",
-        coordinates: {lat: 49.85410453856136, lng: 24.043041132804692},
+        coordinates: { lat: 49.85410453856136, lng: 24.043041132804692 },
         conveniences: [
           "Convenient location",
           "Car parking",
@@ -58,3 +59,12 @@ export const hotels: IHotels[] = [
       Each room has luxurious Box Spring beds. Available in twin or double beds, some rooms have a sofa bed or armchair bed. We have made every effort to ensure that you sleep comfortably and that it is clean.`,
   },
 ];
+
+export const info_en = {
+  booking: 'Booking',
+  wellcome: {
+    p:"We are waiting for you to visit, we are ready to receive you at anytime of the day.",
+    btn: "CONNECT WITH US"
+  },
+
+};

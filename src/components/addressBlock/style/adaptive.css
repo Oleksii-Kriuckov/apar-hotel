@@ -1,35 +1,40 @@
 /* mobile style */
 
 @media (max-width: 428px) {
-  .addresses {
+  .address_block {
     padding: 30px 20px 40px;
     margin-bottom: 75px;
   }
 
-  .addresses > p {
+  .address_block > p {
     margin-top: 35px;
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
   }
 
-  .addresses > .buttons {
+  .address_block > .buttons {
     position: relative;
     bottom: -68px;
     width: 100%;
     justify-content: space-between;
   }
 
-  .addresses > .buttons > button:last-child {
+  .address_block > .buttons > button:last-child {
     /* width: 140px; */
     background: #ffffff;
     border: 1px solid #000000;
     min-width: 120px;
   }
 
-  .addresses > ul {
+  .address_block > ul {
     margin-top: 25px;
     /* margin-bottom: 50px; */
+  }
+
+  .address_block > h3 {
+    margin-top: 10px;
+    margin-bottom: 25px;
   }
 }
 

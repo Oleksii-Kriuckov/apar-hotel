@@ -23,16 +23,19 @@ export const Header = (props: Props) => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="d-flex justify-content-lg-around w-100">
             {hotels.map((el) => (
-              <NavLink className='nav_link' key={el.city} to={`/${el.city.toLocaleLowerCase()}`}>
+              <NavLink
+                className={({isActive})=> isActive ? 'nav_link active_link' : 'nav_link'}
+                key={el.city}
+                to={`/${el.city.toLocaleLowerCase()}`}
+              >
                 {el.city}
               </NavLink>
             ))}
-            {/* <NavLink to={MainPage_ROUTE}>{hotels[1].city}</NavLink> */}
             <HeaderLink alt="bell" src={bell}>
               reservation
             </HeaderLink>
             <HeaderLink alt="phone" src={phone}>
-              +83 (097) 797 36 23
+              +38 (097) 797 36 23
             </HeaderLink>
           </Nav>
         </Navbar.Collapse>
