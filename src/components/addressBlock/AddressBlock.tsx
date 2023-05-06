@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 import TransparentButton from "../UI/Buttons/TransparentButton";
 import YellowButton from "../UI/Buttons/YellowButton";
-// import map from '../images/map1.png'
+import { useNavigate, useParams } from "react-router-dom";
 import { MyMapContainer } from "../../map/MyMapContainer";
 import { MapChild } from "../../map/MapChild";
 import { IHotelInfo } from "../../assets/types";
@@ -12,14 +12,14 @@ type AddressBlockProps = {
   hotelInfo: IHotelInfo;
 };
 
-export const AddressBlock = ({hotelInfo}: AddressBlockProps) => {
+export const AddressBlock = ({ hotelInfo }: AddressBlockProps) => {
+  let navigate = useNavigate();
+  const { city } = useParams();
+
   return (
     <section className="address_block">
-      <MyMapContainer
-        hotelLocation={hotelInfo.coordinates}
-        zoom={16}
-        >
-        <MapChild location={hotelInfo.coordinates}/>
+      <MyMapContainer hotelLocation={hotelInfo.coordinates} zoom={16}>
+        <MapChild location={hotelInfo.coordinates} />
       </MyMapContainer>
       <p>URoom ApartHotel by the address</p>
       <h3>{hotelInfo.address}</h3>
@@ -30,10 +30,14 @@ export const AddressBlock = ({hotelInfo}: AddressBlockProps) => {
         ))}
       </ul>
       <div className="buttons">
-        <YellowButton width={175} color="black">
+        <YellowButton
+          width={175}
+          color="black"
+          onClick={() => navigate(`/${city}/booking`)}
+        >
           BOOK NOW
         </YellowButton>
-        <TransparentButton color="blackBorder">LEARN MORE</TransparentButton>
+        <TransparentButton onClick={()=>{}} color="blackBorder">LEARN MORE</TransparentButton>
       </div>
     </section>
   );

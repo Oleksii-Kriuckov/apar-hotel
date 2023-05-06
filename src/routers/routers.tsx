@@ -1,19 +1,19 @@
 import {
   Booking_ROUTE,
   Contacts_ROUTE,
-  Message_ROUTE,
+  Feedback_ROUTE,
 } from "./paths";
 import MainPage from "../pages/MainPage";
 import Booking from "../pages/Booking";
 import Contacts from "../pages/Contacts";
-import Message from "../pages/Message";
+import Feedback from "../pages/Feedback";
 
 export const AppRoutes = [
   // { path: MainPage_ROUTE, element: <MainPage /> },
   { path: `/:city`, element: <MainPage /> },
-  { path: Booking_ROUTE, element: <Booking /> },
-  { path: Contacts_ROUTE, element: <Contacts /> },
-  { path: Message_ROUTE, element: <Message /> },
+  { path: '/:city/booking', element: <Booking /> },
+  { path: '/:city/booking/contacts', element: <Contacts /> },
+  { path: Feedback_ROUTE, element: <Feedback /> },
 ];
 
 export const CitiesRouters = [

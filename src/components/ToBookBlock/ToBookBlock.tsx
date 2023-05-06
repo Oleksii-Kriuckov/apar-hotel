@@ -1,4 +1,5 @@
-import React, { PropsWithChildren, useEffect } from "react";
+import { PropsWithChildren } from "react";
+import { useNavigate } from "react-router-dom";
 import YellowButton from "../UI/Buttons/YellowButton";
 import keyhole_color from "../images/Group 1317.png";
 import keyhole from "../images/Group 1318.png";
@@ -8,6 +9,8 @@ import "./style/adaptive.css";
 type ToBookBlockProps = PropsWithChildren<{ children: string }>;
 
 const ToBookBlock = ({ children }: ToBookBlockProps) => {
+  let navigate = useNavigate();
+
   return (
     <div className="to_book_block">
       <img src={keyhole_color} alt="keyhole_color" className="keyhole_color" />
@@ -17,7 +20,11 @@ const ToBookBlock = ({ children }: ToBookBlockProps) => {
         Your Luxury hotel in <span className="highlight">{children}</span>
       </h1>
 
-      <YellowButton width={"100%"} color="black">
+      <YellowButton
+        onClick={() => navigate(`/${children}/booking`)}
+        width={"100%"}
+        color="black"
+      >
         Book now
       </YellowButton>
     </div>

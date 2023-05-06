@@ -1,5 +1,6 @@
 export interface IHotelInfo {
   address: string;
+  tel: string | number;
   coordinates: Coordinates;
   conveniences: string[];
 }

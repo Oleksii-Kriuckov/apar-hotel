@@ -7,35 +7,25 @@ import ToBookBlock from "../components/ToBookBlock/ToBookBlock";
 import { AddressBlock } from "../components/addressBlock/AddressBlock";
 import Welcome from "../components/welcomeBlock/Welcome";
 import { IHotels } from "../assets/types";
+import useFind from "../hooks/useFind";
 
 type Props = {};
 
 const MainPage = (props: Props) => {
-  const [findCity, setFindCity] = useState({});
+
   const { city } = useParams();
-
-  function isCityIHotels(city: any): city is IHotels {
-    return (city as IHotels).description !== undefined;
-  }
-
-  useEffect(() => {
-    const findCity = hotels.find((el) => el.city.toLowerCase() === city);
-    if (findCity) {
-      setFindCity(findCity);
-    }
-  }, [city]);
+  const { findCity } = useFind(city!);
 
   return (
     <main>
       <MyCarousel />
       <ToBookBlock>{city!}</ToBookBlock>
-      <Article>{isCityIHotels(findCity) ? findCity.description : ""}</Article>
+      <Article>{findCity.description}</Article>
       <h4 id="our_addresses">Our address</h4>
 
-      {isCityIHotels(findCity) &&
-        findCity.hotelsInfo.map((hotel) => (
-          <AddressBlock key={hotel.address} hotelInfo={hotel} />
-        ))}
+      {findCity.hotelsInfo.map((hotel) => (
+        <AddressBlock key={hotel.address} hotelInfo={hotel} />
+      ))}
 
       <Welcome />
     </main>

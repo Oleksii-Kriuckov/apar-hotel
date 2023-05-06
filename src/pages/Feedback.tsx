@@ -3,7 +3,7 @@ import FormFeedback from "../components/UI/Forms/FormFeedback";
 
 type Props = {};
 
-const Message = (props: Props) => {
+const Feedback = (props: Props) => {
   return (
     <div>
       <h3 className="header_h3">Отправить сообщение</h3>
@@ -29,4 +29,4 @@ const Message = (props: Props) => {
   );
 };
 
-export default Message;
+export default Feedback;

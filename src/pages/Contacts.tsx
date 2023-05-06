@@ -3,15 +3,20 @@ import MediaLinks from "../components/UI/Links/MediaLinks";
 import LicenseLink from "../components/UI/Links/LicenseLink";
 import BookingMessage from "../components/bookingMessage/BookingMessage";
 import map1 from "../components/images/map1.png"
+import { useParams } from "react-router-dom";
+import useFind from "../hooks/useFind";
 
 const Contacts = () => {
+  const { city } = useParams();
+  const { findCity } = useFind(city!);
+  
   return (
     <div>
       <h3 className="header_h3">Контакты:</h3>
       <ul className="contacts">
-        <li>г. Волгоград, ул. Мира, д. 21</li>
-        <li>+7 (961) 658-32-02</li>
-        <li>vlg@urooms.ru</li>
+        <li>address</li>
+        <li>tel</li>
+        <li>email</li>
       </ul>
 
       <MediaLinks />
