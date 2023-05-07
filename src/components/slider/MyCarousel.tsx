@@ -1,7 +1,8 @@
 import { Carousel } from "react-responsive-carousel";
-import room1 from "../images/pexels-engin-akyurt-1579253.jpg";
-import room2 from "../images/pexels-hakim-santoso-3634741.jpg";
-import room3 from "../images/pexels-pixabay-237371.jpg";
+import room1 from "../images/rooms/pexels-engin-akyurt-1579253.jpg";
+import room2 from "../images/rooms/pexels-hakim-santoso-3634741.jpg";
+import room3 from "../images/rooms/pexels-pixabay-237371.jpg";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import "./style/style.css";
 import "./style/adaptive.css";
 
@@ -39,5 +40,3 @@ export const MyCarousel = (props: Props) => {
   );
 };
 
-import { Component } from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader

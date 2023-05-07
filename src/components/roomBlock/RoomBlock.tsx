@@ -1,15 +1,17 @@
-import roomImg from "../images/Shannon-Suite-hotel-room.jpg";
 import conveniences from "../images/conveniences.png";
 import TransparentButton from "../UI/Buttons/TransparentButton";
 import YellowButton from "../UI/Buttons/YellowButton";
 import { useNavigate, useParams } from "react-router-dom";
-import "./style.css";
-import { Contacts_ROUTE } from "../../routers/paths";
+import { Booking_ROUTE } from "../../routers/paths";
+import "./styles/style.css";
 
-type Props = {};
+type RoomBlockProps = {
+  roomImg: string
+};
 
-const RoomBlock = (props: Props) => {
+const RoomBlock = ({roomImg}: RoomBlockProps) => {
   let navigate = useNavigate();
+
   return (
     <div className="room_block d-flex flex-column">
       <img src={roomImg} alt="room" />
@@ -24,13 +26,13 @@ const RoomBlock = (props: Props) => {
       </ul>
       <img src={conveniences} alt="удобства" />
       <TransparentButton
-        onClick={() => navigate(Contacts_ROUTE)}
+        onClick={() => navigate(Booking_ROUTE)}
         color="yellowBorder"
       >
         ПОДРОБНЕЕ
       </TransparentButton>
       <YellowButton
-        onClick={() => navigate(Contacts_ROUTE)}
+        onClick={() => navigate(Booking_ROUTE)}
         width={"100%"}
         color="white"
       >

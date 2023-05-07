@@ -1,8 +1,13 @@
 export interface IHotelInfo {
+  hotel: string;
   address: string;
   tel: string | number;
   coordinates: Coordinates;
   conveniences: string[];
+  images: {
+    rooms: string[],
+    forSlider: string[]
+  }
 }
 
 export interface IHotels {

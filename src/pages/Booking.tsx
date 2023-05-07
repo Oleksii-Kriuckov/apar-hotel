@@ -1,27 +1,31 @@
+import { useState } from "react";
+import MediaLinks from "../components/UI/Links/MediaLinks";
+import LicenseLink from "../components/UI/Links/LicenseLink";
+import BookingMessage from "../components/bookingMessage/BookingMessage";
+import map1 from "../components/images/map1.png"
 import { useParams } from "react-router-dom";
-import React from "react";
-import Form from "../components/UI/Forms/FormBooking";
-import RoomBlock from "../components/roomBlock/RoomBlock";
-import Wellcome from "../components/welcomeBlock/Welcome";
-import { info_en } from "../assets/Info";
+import useFind from "../hooks/useFind";
 
-type Props = {};
-
-const Booking = (props: Props) => {
+const Booking = () => {
   const { city } = useParams();
+  const { findCity } = useFind(city!);
+  
   return (
-    <>
-      <h3 className="header_h3">{`${info_en.booking} (${city})`} </h3>
-      <div className="booking_page">
-        <Form />
+    <div>
+      <h3 className="header_h3">Контакты:</h3>
+      <ul className="contacts">
+        <li>address</li>
+        <li>tel</li>
+        <li>email</li>
+      </ul>
 
-        <RoomBlock />
-        <RoomBlock />
-        <RoomBlock />
+      <MediaLinks />
+      <BookingMessage/>
+      <LicenseLink/>
 
-        <Wellcome />
-      </div>
-    </>
+      <h3 className="header_h3">Как проехать:</h3>
+      <img src={map1} alt="map" className="map"/>
+    </div>
   );
 };
 

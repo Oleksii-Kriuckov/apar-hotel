@@ -1,0 +1,15 @@
+/* mobile style */
+@media (max-width: 428px) {
+  .room_block > img {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+/* tablet style */
+@media (min-width: 429px) and (max-width: 768px) {
+}
+
+/* desktop style */
+@media (min-width: 769px) and (max-width: 1440px) {
+}

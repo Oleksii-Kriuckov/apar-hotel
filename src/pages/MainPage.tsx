@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { hotels } from "../assets/Info";
+// import { useEffect, useState } from "react";
+// import { hotels } from "../assets/Info";
 import { Article } from "../components/article/Article";
 import { MyCarousel } from "../components/Slider/MyCarousel";
 import ToBookBlock from "../components/ToBookBlock/ToBookBlock";
 import { AddressBlock } from "../components/addressBlock/AddressBlock";
 import Welcome from "../components/welcomeBlock/Welcome";
-import { IHotels } from "../assets/types";
+// import { IHotels } from "../assets/types";
 import useFind from "../hooks/useFind";
 
 type Props = {};
