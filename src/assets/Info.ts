@@ -1,5 +1,4 @@
-import Hotel from "../pages/Hotel";
-import { IHotels } from "./types";
+import { IHotelsInCity } from "./types";
 import roomImg from "../components/images/rooms/pexels-pixabay-271619.jpg";
 import roomImg1 from "../components/images/rooms/marquis-3-min.jpg";
 import roomImg2 from "../components/images/rooms/pexels-vecislavas-popa-1743231.jpg";
@@ -20,12 +19,12 @@ import restaurant from "../components/images/rooms/restaurant.jpg";
 import restaurant2 from "../components/images/rooms/restaurant2.jpg";
 import pool from "../components/images/rooms/pool.jpg";
 
-export const hotels: IHotels[] = [
+export const allHotels: IHotelsInCity[] = [
   {
     city: "Kyiv",
     hotelsInfo: [
       {
-        hotel: "Khreschatyk",
+        hotelName: "Khreschatyk",
         address: "St. Khreschatyk 14",
         tel: "+380674636054",
         coordinates: { lat: 50.45169140483114, lng: 30.52523556606943 },
@@ -43,7 +42,7 @@ export const hotels: IHotels[] = [
         },
       },
       {
-        hotel: "Luxury",
+        hotelName: "Luxury",
         address: "bul. of Lesia Ukrayinka 7",
         tel: "+380675386767",
         coordinates: { lat: 50.43293422168239, lng: 30.53353608991025 },
@@ -71,7 +70,7 @@ export const hotels: IHotels[] = [
     city: "Lviv",
     hotelsInfo: [
       {
-        hotel: "Code",
+        hotelName: "Code",
         address: "street of Bohdan Khmelnytskyi, 157",
         tel: "+380682975027",
         coordinates: { lat: 49.85410453856136, lng: 24.043041132804692 },

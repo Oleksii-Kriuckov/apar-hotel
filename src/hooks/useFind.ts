@@ -1,27 +1,44 @@
-import { IHotels } from "../assets/types";
-import { hotels } from "../assets/Info";
+import { IHotelInfo, IHotelsInCity } from "../assets/types";
+import { allHotels } from "../assets/Info";
 import { useState, useEffect } from "react";
 
-function useFind(city: string) {
-  const [result, setResult] = useState({});
+function useFind(city: string, hotel?: string) {
+  const [hotelsInCity, setHotelsInCity] = useState({});
+  const [hotelInfo, setHotelInfo] = useState({});
 
-  function isCityIHotels(city: any): city is IHotels {
-    return (city as IHotels).description !== undefined;
+  function isCityInHotels(city: any): city is IHotelsInCity {
+    return (city as IHotelsInCity).description !== undefined;
+  }
+  
+  function isHotel(hotel: any): hotel is IHotelInfo {
+    return (hotel as IHotelInfo).hotelName !== undefined;
   }
 
   useEffect(() => {
-    const findCity = hotels.find((el) => el.city.toLowerCase() === city);
+    const findCity = allHotels.find((el) => el.city.toLowerCase() === city);
     if (findCity) {
-      setResult(findCity);
+      setHotelsInCity(findCity);
+      const findHotel = findCity.hotelsInfo.find(
+        (el) => el.hotelName.toLowerCase() === hotel
+      );
+      if (findHotel) setHotelInfo(findHotel);
     }
-  }, [city]);
-  let findCity;
-  if (result && isCityIHotels(result)) {
-    findCity = result;
+  }, [city, hotel]);
+
+  let findCity, findHotel;
+
+  if (hotelsInCity && isCityInHotels(hotelsInCity)) {
+    findCity = hotelsInCity;
   } else {
-    findCity = hotels[0];
+    findCity = allHotels[0];
+  }
+  
+  if (hotelInfo && isHotel(hotelInfo)) {
+    findHotel = hotelInfo;
+  } else {
+    findHotel = allHotels[0].hotelsInfo[0];
   }
 
-  return { findCity };
+  return { findCity, findHotel };
 }
 export default useFind;

@@ -1,6 +1,6 @@
 import { NavLink, Link } from "react-router-dom";
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
-import { hotels } from "../../assets/Info";
+import { allHotels } from "../../assets/Info";
 import logo_mob from "../images/logo-mob.png";
 import logo from "../images/logo.png";
 import bell from "../images/bell.png";
@@ -15,14 +15,14 @@ export const Header = (props: Props) => {
   return (
     <Navbar expand="md">
       <Container>
-        <Link to={hotels[0].city.toLocaleLowerCase()} className="navbar-brand">
+        <Link to={allHotels[0].city.toLocaleLowerCase()} className="navbar-brand">
           <img src={logo_mob} alt="logo" className="logo_mob mob" />
           <img src={logo} alt="logo" className="logo desktop" />
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="d-flex justify-content-lg-around w-100">
-            {hotels.map((el) => (
+            {allHotels.map((el) => (
               <NavLink
                 className={({isActive})=> isActive ? 'nav_link active_link' : 'nav_link'}
                 key={el.city}

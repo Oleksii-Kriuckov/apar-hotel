@@ -33,11 +33,13 @@ export const AddressBlock = ({ hotelInfo }: AddressBlockProps) => {
         <YellowButton
           width={175}
           color="black"
-          onClick={() => navigate(`/${city}/booking`)}
+          onClick={() => navigate(`/${city}/${hotelInfo.hotelName.toLowerCase()}`)}
         >
           BOOK NOW
         </YellowButton>
-        <TransparentButton onClick={()=>{}} color="blackBorder">LEARN MORE</TransparentButton>
+        <TransparentButton onClick={() => {}} color="blackBorder">
+          LEARN MORE
+        </TransparentButton>
       </div>
     </section>
   );

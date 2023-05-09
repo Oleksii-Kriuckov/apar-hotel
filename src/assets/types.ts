@@ -1,5 +1,5 @@
 export interface IHotelInfo {
-  hotel: string;
+  hotelName: string;
   address: string;
   tel: string | number;
   coordinates: Coordinates;
@@ -10,7 +10,7 @@ export interface IHotelInfo {
   }
 }
 
-export interface IHotels {
+export interface IHotelsInCity {
   city: string;
   description: string;
   hotelsInfo: IHotelInfo[];
