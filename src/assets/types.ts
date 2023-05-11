@@ -2,12 +2,20 @@ export interface IHotelInfo {
   hotelName: string;
   address: string;
   tel: string | number;
+  email: string;
   coordinates: Coordinates;
   conveniences: string[];
+  rooms: IRoom[],
   images: {
-    rooms: string[],
     forSlider: string[]
   }
+}
+
+export interface IRoom {
+  image: string;
+  price: number;
+  floor: number;
+  persons: number;
 }
 
 export interface IHotelsInCity {

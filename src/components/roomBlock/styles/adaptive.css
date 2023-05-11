@@ -2,7 +2,14 @@
 @media (max-width: 428px) {
   .room_block > img {
     width: 100%;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
+  }
+
+  .price_block {
+    margin-top: 15px;
+  }
+  .conveniences{
+    margin: 15px auto;
   }
 }
 

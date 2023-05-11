@@ -4,16 +4,16 @@ import YellowButton from "../Buttons/YellowButton";
 type Props = {};
 
 const FormFeedback = (props: Props) => {
+  const onSubmit = (event: React.FormEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+  };
+  const onClick = () => onSubmit;
+
   return (
     <div className="mobile" style={{ gap: 20 }}>
       <div className="input_block">
         <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          placeholder="John Smith"
-        />
+        <input type="text" name="name" id="name" placeholder="John Smith" />
       </div>
       <div className="input_block">
         <label htmlFor="phone">Phone</label>
@@ -39,23 +39,18 @@ const FormFeedback = (props: Props) => {
       </div>
       <div className="input_block">
         <label htmlFor="message"> Message:</label>
-        <textarea
-          name="message"
-          id="message"
-          placeholder="Message"
-        />
+        <textarea name="message" id="message" placeholder="Message" />
       </div>
 
       <div className="d-flex align-items-baseline gap-3">
         <input type="checkbox" name="confirm" id="confirm" />
         <label htmlFor="confirm">
-          By clicking on the "Submit" button, I consent to
-          the processing of personal data
+          By clicking on the "Submit" button, I consent to the processing of
+          personal data
         </label>
       </div>
-
-      <YellowButton width={200} color="black">
-       SEND
+      <YellowButton onClick={onClick} width={200} color="black">
+        SEND
       </YellowButton>
     </div>
   );

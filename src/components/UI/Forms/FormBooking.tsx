@@ -1,36 +1,46 @@
-import { Dropdown, Form, InputGroup, SplitButton } from "react-bootstrap";
-import "./style.css";
-import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import TransparentButton from "../Buttons/TransparentButton";
+import React from "react";
+import YellowButton from "../Buttons/YellowButton";
 
 type Props = {};
 
-const CheckForm = (props: Props) => {
+const FormBooking = (props: Props) => {
+  const onSubmit = (event: React.FormEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+  };
+  const onClick = () => onSubmit;
+
   return (
-    <form className="form d-flex">
-      <h4>Время заезда - 14.00, время выезда - 12.00</h4>
-
+    <div className="mobile" style={{ gap: 20 }}>
       <div className="input_block">
-        <label htmlFor="checkIn">Заезд</label>
-        <input type="date" name="checkIn" id="checkIn" />
+        <label htmlFor="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="John Smith" />
       </div>
 
       <div className="input_block">
-        <label htmlFor="checkOut">Выезд</label>
-        <input type="date" name="checkOut" id="checkOut" />
+        <label htmlFor="phone">Phone</label>
+        <input
+          type="text"
+          name="phone"
+          id="phone"
+          placeholder="+380965123456"
+        />
       </div>
 
       <div className="input_block">
-        <label htmlFor="guests">Гостей</label>
-        <input type="number" name="guests" id="guests" />
+        <label htmlFor="email">E-mail</label>
+        <input
+          type="text"
+          name="email"
+          id="email"
+          placeholder="jsmith@gmail.com"
+        />
       </div>
 
-      <TransparentButton color="whiteBorder">ПОИСК</TransparentButton>
-
-      
-    </form>
+      <YellowButton onClick={onClick} width={200} color="black">
+        SEND
+      </YellowButton>
+    </div>
   );
 };
 
-export default CheckForm;
+export default FormBooking;

@@ -1,17 +1,17 @@
 import { IHotelsInCity } from "./types";
-import roomImg from "../components/images/rooms/pexels-pixabay-271619.jpg";
-import roomImg1 from "../components/images/rooms/marquis-3-min.jpg";
-import roomImg2 from "../components/images/rooms/pexels-vecislavas-popa-1743231.jpg";
-import roomImg3 from "../components/images/rooms/pexels-donald-tong-189293.jpg";
-import roomImg4 from "../components/images/rooms/pexels-engin-akyurt-1579253.jpg";
-import roomImg5 from "../components/images/rooms/pexels-hakim-santoso-3634741.jpg";
-import roomImg6 from "../components/images/rooms/pexels-jonathan-borba-3144580.jpg";
-import roomImg7 from "../components/images/rooms/pexels-pixabay-271614.jpg";
-import roomImg8 from "../components/images/rooms/pexels-pixabay-164595.jpg";
-import roomImg9 from "../components/images/rooms/pexels-pixabay-237371.jpg";
-import roomImg10 from "../components/images/rooms/pexels-pixabay-271624.jpg";
-import roomImg11 from "../components/images/rooms/pexels-pixabay-262048.jpg";
-import roomImg12 from "../components/images/rooms/room-2-beds.jpg";
+import roomImg from "../components/images/rooms/Luxury40731092.jpg";
+import roomImg1 from "../components/images/rooms/Luxury333928078.jpg";
+import roomImg2 from "../components/images/rooms/Luxury290593646.jpg";
+import roomImg3 from "../components/images/rooms/marquis-3-min.jpg";
+import roomImg4 from "../components/images/rooms/Luxury333927527.jpg";
+import roomImg5 from "../components/images/rooms/Independence13419547.jpg";
+import roomImg6 from "../components/images/rooms/pexels-donald-tong-189293.jpg";
+import roomImg7 from "../components/images/rooms/Independence13419563.jpg";
+import roomImg8 from "../components/images/rooms/Code10)141918534.jpg";
+import roomImg9 from "../components/images/rooms/Code10)141922823.jpg";
+import roomImg10 from "../components/images/rooms/Code10)141922855.jpg";
+import roomImg11 from "../components/images/rooms/hotel-room-code.jpg";
+import roomImg12 from "../components/images/rooms/Code10)141924112.jpg";
 import bathroom from "../components/images/rooms/bathroom.jpg";
 import bathroom2 from "../components/images/rooms/bathroom2.jpg";
 import bathroom3 from "../components/images/rooms/bathroom3.jpg";
@@ -24,27 +24,10 @@ export const allHotels: IHotelsInCity[] = [
     city: "Kyiv",
     hotelsInfo: [
       {
-        hotelName: "Khreschatyk",
-        address: "St. Khreschatyk 14",
-        tel: "+380674636054",
-        coordinates: { lat: 50.45169140483114, lng: 30.52523556606943 },
-        conveniences: [
-          "Location - city center",
-          "Car parking",
-          "Comfortable beds and pillows",
-          "Everything is very clean, including snow-white linen",
-          "In the common area there is a full kitchen, a washing machine, an iron, in general, everything is like at home",
-          "up to 40 people",
-        ],
-        images: {
-          rooms: [roomImg, roomImg1, roomImg2, roomImg3, roomImg4],
-          forSlider: [roomImg1, restaurant, bathroom2],
-        },
-      },
-      {
         hotelName: "Luxury",
         address: "bul. of Lesia Ukrayinka 7",
         tel: "+380675386767",
+        email: "luxury@apart-hotel.com",
         coordinates: { lat: 50.43293422168239, lng: 30.53353608991025 },
         conveniences: [
           "Convenient location",
@@ -54,9 +37,38 @@ export const allHotels: IHotelsInCity[] = [
           "Laundry service, luggage storage, coffee snack vending machines",
           "up to 40 people",
         ],
+        rooms: [
+          { floor: 1, image: roomImg, persons: 4, price: 2400 },
+          { floor: 1, image: roomImg1, persons: 3, price: 2000 },
+          { floor: 1, image: roomImg2, persons: 2, price: 2200 },
+          { floor: 2, image: roomImg4, persons: 2, price: 2000 },
+          { floor: 2, image: roomImg3, persons: 2, price: 2500 },
+        ],
         images: {
-          rooms: [roomImg5, roomImg6, roomImg7, roomImg8],
           forSlider: [roomImg5, restaurant2, pool, bathroom3],
+        },
+      },
+      {
+        hotelName: "Independence",
+        address: "Mala Zhytomyrska street, 20",
+        tel: "+380672466777",
+        email: "independence@apart-hotel.com",
+        coordinates: { lat: 50.4545998769799, lng: 30.520113578857607 },
+        conveniences: [
+          "Location - city center",
+          "Car parking",
+          "Comfortable beds and pillows",
+          "Everything is very clean, including snow-white linen",
+          "In the common area there is a full kitchen, a washing machine, an iron, in general, everything is like at home",
+          "up to 40 people",
+        ],
+        rooms: [
+          { floor: 1, image: roomImg5, persons: 3, price: 1900 },
+          { floor: 1, image: roomImg6, persons: 2, price: 1600 },
+          { floor: 1, image: roomImg7, persons: 2, price: 1700 },
+        ],
+        images: {
+          forSlider: [roomImg1, restaurant, bathroom2],
         },
       },
     ],
@@ -73,6 +85,7 @@ export const allHotels: IHotelsInCity[] = [
         hotelName: "Code",
         address: "street of Bohdan Khmelnytskyi, 157",
         tel: "+380682975027",
+        email: "code@apart-hotel.com",
         coordinates: { lat: 49.85410453856136, lng: 24.043041132804692 },
         conveniences: [
           "Convenient location",
@@ -82,8 +95,14 @@ export const allHotels: IHotelsInCity[] = [
           "Laundry service, luggage storage, coffee snack vending machines",
           "up to 20 people",
         ],
+        rooms: [
+          { floor: 1, image: roomImg11, persons: 4, price: 2400 },
+          { floor: 1, image: roomImg9, persons: 2, price: 2000 },
+          { floor: 2, image: roomImg10, persons: 3, price: 2100 },
+          { floor: 2, image: roomImg8, persons: 2, price: 2000 },
+          { floor: 3, image: roomImg12, persons: 2, price: 2000 },
+        ],
         images: {
-          rooms: [roomImg9, roomImg10, roomImg11],
           forSlider: [roomImg10, bathroom, roomImg12],
         },
       },

@@ -14,11 +14,10 @@
 .price_block {
   font-weight: 400;
   line-height: 44px;
-  margin-bottom: 15px;
 }
 
 .price_block > span {
-  font-size: 36px;
+  font-size: 30px;
 }
 
 .room_block > button:last-child {

@@ -3,40 +3,44 @@ import TransparentButton from "../UI/Buttons/TransparentButton";
 import YellowButton from "../UI/Buttons/YellowButton";
 import { useNavigate, useParams } from "react-router-dom";
 import { Booking_ROUTE } from "../../routers/paths";
+import { IRoom } from "../../assets/types";
 import "./styles/style.css";
+import "./styles/adaptive.css";
 
 type RoomBlockProps = {
-  roomImg: string
+  roomInfo: IRoom;
+  address: string;
 };
 
-const RoomBlock = ({roomImg}: RoomBlockProps) => {
+const RoomBlock = ({roomInfo, address}: RoomBlockProps) => {
   let navigate = useNavigate();
+  const { city, hotel } = useParams();
 
   return (
     <div className="room_block d-flex flex-column">
-      <img src={roomImg} alt="room" />
+      <img src={roomInfo.image} alt="room" />
       <div className="price_block">
-        <span>1700</span> ₽ в сутки
+        Price: <span>{roomInfo.price}</span> hrn
       </div>
       <ul>
-        <li>г. Волгоград, ул. Мира 21</li>
-        <li>Спальных мест: 1+1</li>
-        <li>Этаж: 1</li>
-        <li>Комнат: 1</li>
+        <li>{address}</li>
+        <li>Persons: {roomInfo.persons}</li>
+        <li>Floor: {roomInfo.floor}</li>
+        {/* <li>Комнат: 1</li> */}
       </ul>
-      <img src={conveniences} alt="удобства" />
+      <img src={conveniences} alt="conveniences" className="conveniences"/>
       <TransparentButton
-        onClick={() => navigate(Booking_ROUTE)}
+        onClick={() => navigate('')}
         color="yellowBorder"
       >
-        ПОДРОБНЕЕ
+        LEARN MORE
       </TransparentButton>
       <YellowButton
-        onClick={() => navigate(Booking_ROUTE)}
+        onClick={() => navigate(`/${city}/${hotel}/booking`)}
         width={"100%"}
         color="white"
       >
-        ЗАБРОНИРОВАТЬ
+        BOOK NOW
       </YellowButton>
     </div>
   );
