@@ -20,10 +20,10 @@ const MainPage = (props: Props) => {
     <main>
       <MyCarousel />
       <ToBookBlock>{city!}</ToBookBlock>
-      <Article>{findCity.description}</Article>
+      <Article>{findCity!.description}</Article>
       <h4 id="our_addresses">Our address</h4>
 
-      {findCity.hotelsInfo.map((hotel) => (
+      {findCity!.hotelsInfo.map((hotel) => (
         <AddressBlock key={hotel.address} hotelInfo={hotel} />
       ))}
 

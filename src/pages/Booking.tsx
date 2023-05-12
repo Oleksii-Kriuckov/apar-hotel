@@ -3,40 +3,33 @@ import LicenseLink from "../components/UI/Links/LicenseLink";
 import BookingMessage from "../components/bookingMessage/BookingMessage";
 import { useParams } from "react-router-dom";
 import useFind from "../hooks/useFind";
-import { MapChild } from "../map/MapChild";
 import { MyMapContainer } from "../map/MyMapContainer";
-import { useEffect } from "react";
+import { MapChild } from "../map/MapChild";
 
 const Booking = () => {
   const { city, hotel } = useParams();
   const { findCity, findHotel } = useFind(city!, hotel!);
-  useEffect(() => {
-    
-  
-    return () => {
-      
-    }
-  }, [])
-  
-  
+
   return (
     <div>
-      <h3 className="header_h3">Booking: {findHotel.hotelName} ({findCity.city})</h3>
+      <h3 className="header_h3">
+        Booking: {findHotel!.hotelName} ({findCity!.city})
+      </h3>
       <ul className="contacts">
-        <li>{findHotel.address}</li>
-        <li>{findHotel.tel}</li>
-        <li>{findHotel.email}</li>
-        <li>{findHotel.coordinates.lat}</li>
-        <li>{findHotel.coordinates.lng}</li>
+        <li>{findHotel!.address}</li>
+        <li>{findHotel!.tel}</li>
+        <li>{findHotel!.email}</li>
+        <li>{findHotel!.coordinates.lat}</li>
+        <li>{findHotel!.coordinates.lng}</li>
       </ul>
 
       <MediaLinks />
-      <BookingMessage/>
-      <LicenseLink/>
+      <BookingMessage />
+      <LicenseLink />
 
       <h3 className="header_h3">How can I get to:</h3>
-      <MyMapContainer hotelLocation={findHotel.coordinates} zoom={16}>
-        <MapChild location={findHotel.coordinates} />
+       <MyMapContainer hotelLocation={findHotel!.coordinates} zoom={16}>
+        <MapChild location={findHotel!.coordinates} />
       </MyMapContainer>
     </div>
   );

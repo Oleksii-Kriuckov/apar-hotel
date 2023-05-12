@@ -13,13 +13,13 @@ const Hotel = (props: Props) => {
   return (
     <>
       <h3 className="header_h3">
-        {`Hotel ${findHotel.hotelName} (${findCity.city})`}{" "}
+        {`Hotel ${findHotel!.hotelName} (${findCity!.city})`}{" "}
       </h3>
       <div className="booking_page">
         <Form />
 
-        {findHotel.rooms.map((el) => (
-          <RoomBlock key={el.image} roomInfo={el} address={findHotel.address}/>
+        {findHotel!.rooms.map((el) => (
+          <RoomBlock key={el.image} roomInfo={el} address={findHotel!.address}/>
         ))}
 
         <Wellcome />

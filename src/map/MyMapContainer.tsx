@@ -13,6 +13,8 @@ export const MyMapContainer: React.FC<LeafletContainerProps> = ({
   hotelLocation,
   zoom,
 }) => {
+  console.log(hotelLocation);
+  
   return (
     <MapContainer style={{ height: 300 }} zoom={zoom} center={hotelLocation}>
       <TileLayer
