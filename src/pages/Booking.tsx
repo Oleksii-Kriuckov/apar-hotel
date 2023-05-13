@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import useFind from "../hooks/useFind";
 import { MyMapContainer } from "../map/MyMapContainer";
 import { MapChild } from "../map/MapChild";
+import FormBooking from "../components/UI/Forms/FormBooking";
 
 const Booking = () => {
   const { city, hotel } = useParams();
@@ -15,14 +16,14 @@ const Booking = () => {
       <h3 className="header_h3">
         Booking: {findHotel!.hotelName} ({findCity!.city})
       </h3>
+
       <ul className="contacts">
         <li>{findHotel!.address}</li>
         <li>{findHotel!.tel}</li>
         <li>{findHotel!.email}</li>
-        <li>{findHotel!.coordinates.lat}</li>
-        <li>{findHotel!.coordinates.lng}</li>
       </ul>
 
+      <FormBooking/>
       <MediaLinks />
       <BookingMessage />
       <LicenseLink />

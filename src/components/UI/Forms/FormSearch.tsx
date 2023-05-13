@@ -1,5 +1,5 @@
 import { Dropdown, Form, InputGroup, SplitButton } from "react-bootstrap";
-import "./style.css";
+import "./styles/style.css";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import TransparentButton from "../Buttons/TransparentButton";
@@ -13,7 +13,7 @@ const CheckForm = (props: Props) => {
   const onClick = () => onSubmit;
 
   return (
-    <form className="form d-flex">
+    <form className="form_search d-flex">
       <h4>Время заезда - 14.00, время выезда - 12.00</h4>
 
       <div className="input_block">

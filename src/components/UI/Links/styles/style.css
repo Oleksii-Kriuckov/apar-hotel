@@ -31,6 +31,9 @@
   top: -40px;
 }
 
+.media_links {
+  display: flex;
+}
 .linkImg{
     
 }

@@ -1,10 +1,12 @@
 import facebook from "../../images/facebook.png";
 import instagram from "../../images/instagram.png";
 import telegram from "../../images/telegram.png";
+import './styles/style.css'
+import './styles/adaptive.css'
 
 const MediaLinks = () => {
   return (
-    <div>
+    <div className="media_links">
       <a
         href="http://www.facebook.com/"
         target="_blank"

@@ -27,3 +27,16 @@
   font-size: 36px;
   line-height: 43px;
 }
+
+.contacts > li {
+  margin-bottom: 20px;
+}
+.contacts > li:first-child {
+  list-style-image: url('../components/images/location.png');
+}
+.contacts > li:nth-child(2) {
+  list-style-image: url('../components/images/phone2.png');
+}
+.contacts > li:last-child {
+  list-style-image: url('../components/images/at_sing.png');
+}

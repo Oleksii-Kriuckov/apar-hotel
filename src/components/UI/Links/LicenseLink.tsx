@@ -2,9 +2,9 @@ import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import license from "../../images/license.png";
 import closeButton from "../../images/closeButton.png";
-import "./style.css";
-import "./adaptive.css";
 import CloseButton from "react-bootstrap/esm/CloseButton";
+import './styles/style.css'
+import './styles/adaptive.css'
 
 function LicenseLink() {
   const [modalShow, setModalShow] = useState(false);
@@ -12,7 +12,7 @@ function LicenseLink() {
     <>
       <p style={{ marginTop: 25 }}>
         <span className="show_license" onClick={() => setModalShow(true)}>
-          Посмотреть лицензию
+        View license
         </span>
       </p>
 

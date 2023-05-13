@@ -1,5 +1,6 @@
 import React from "react";
 import YellowButton from "../Buttons/YellowButton";
+import './styles/style.css'
 
 type Props = {};
 
@@ -10,11 +11,12 @@ const FormFeedback = (props: Props) => {
   const onClick = () => onSubmit;
 
   return (
-    <div className="mobile" style={{ gap: 20 }}>
+    <form action="" className="form d-flex flex-column" style={{ gap: 20 }}>
       <div className="input_block">
         <label htmlFor="name">Name</label>
         <input type="text" name="name" id="name" placeholder="John Smith" />
       </div>
+
       <div className="input_block">
         <label htmlFor="phone">Phone</label>
         <input
@@ -24,6 +26,7 @@ const FormFeedback = (props: Props) => {
           placeholder="+380965123456"
         />
       </div>
+
       <div className="input_block">
         <label htmlFor="email">E-mail</label>
         <input
@@ -33,10 +36,12 @@ const FormFeedback = (props: Props) => {
           placeholder="jsmith@gmail.com"
         />
       </div>
+
       <div className="input_block">
         <label htmlFor="file">Attach file:</label>
         <input type="file" name="file" id="file" placeholder="Select files" />
       </div>
+
       <div className="input_block">
         <label htmlFor="message"> Message:</label>
         <textarea name="message" id="message" placeholder="Message" />
@@ -49,10 +54,11 @@ const FormFeedback = (props: Props) => {
           personal data
         </label>
       </div>
+
       <YellowButton onClick={onClick} width={200} color="black">
         SEND
       </YellowButton>
-    </div>
+    </form>
   );
 };
 

@@ -20,6 +20,10 @@
     display: block;
   }
 
+  .header_h3 {
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
 
   .room2 {
     display: block;
@@ -50,8 +54,12 @@
     padding: 0 30px;
   }
 
-  .lows_extract{
+  .lows_extract {
     margin: 25px 0;
+  }
+
+  .contacts > li {
+    margin-left: 40px;
   }
 }
 

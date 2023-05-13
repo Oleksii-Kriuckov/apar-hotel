@@ -6,7 +6,7 @@ const BookingMessage = (props: Props) => {
   return (
     <div className='bookingMessage'>
         <img src={clock} alt="clock" className='clock'/>
-        <p >Бронирование номера осуществляется <strong>КРУГЛОСУТОЧНО!</strong> </p>
+        <p >Booking a room is carried out <strong> around the clock!</strong> </p>
     </div>
   )
 }
