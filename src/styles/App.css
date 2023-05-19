@@ -40,3 +40,9 @@
 .contacts > li:last-child {
   list-style-image: url('../components/images/at_sing.png');
 }
+
+hr {
+  margin: 40px auto;
+  height: 1px;
+  background: #ebebeb;
+}

@@ -1,7 +1,7 @@
 /* mobile style */
 @media (max-width: 428px) {
   .about_hotel {
-    /* margin-top: 65px; */
+    margin: 65px auto;
   }
 
   .about_hotel > h3 {
@@ -20,7 +20,12 @@
 
 /* tablet style */
 @media (min-width: 429px) and (max-width: 768px) {
-  body {
+  .about_hotel {
+    margin: 65px auto;
+  }
+  
+  .about_hotel > h3 {
+    margin-bottom: 20px;
   }
 }
 

@@ -1,7 +1,6 @@
 @media (max-width: 428px) {
-  body {
-    /* background-color: yellowgreen; */
-    /* padding-left: 20px; */
+  #root {
+    padding: 20px;
   }
 
   header {
@@ -20,6 +19,11 @@
     display: block;
   }
 
+  .our_addresses {
+    padding-bottom: 20px;
+    text-align: center;
+  }
+
   .header_h3 {
     margin-top: 50px;
     margin-bottom: 40px;
@@ -35,20 +39,10 @@
     margin: 50px 0;
   }
 
-  .about_hotel {
-    margin-top: 65px;
-  }
-
   h4 {
     margin-bottom: 20px;
   }
 
-  hr {
-    margin: 40px auto;
-    width: 305px;
-    height: 1px;
-    background: #ebebeb;
-  }
   .license_info {
     margin-bottom: 50px;
     padding: 0 30px;

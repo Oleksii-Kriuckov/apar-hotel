@@ -31,7 +31,7 @@ export const AddressBlock = ({ hotelInfo }: AddressBlockProps) => {
       </ul>
       <div className="buttons">
         <YellowButton
-          width={175}
+          // width={175}
           color="black"
           onClick={() =>
             navigate(`/${city}/${hotelInfo.hotelName.toLowerCase()}`)

@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
-import "./style.css";
 import { BorderColor } from "../../../assets/types";
+import "./style.css";
 
 type Props = PropsWithChildren<{
   children: string;

@@ -8,13 +8,13 @@ import { MapChild } from "../map/MapChild";
 import FormBooking from "../components/UI/Forms/FormBooking";
 
 const Booking = () => {
-  const { city, hotel } = useParams();
+  const { city, hotel, number } = useParams();
   const { findCity, findHotel } = useFind(city!, hotel!);
 
   return (
     <div>
       <h3 className="header_h3">
-        Booking: {findHotel!.hotelName} ({findCity!.city})
+        Booking: hotel {findHotel!.hotelName}, room {number} ({findCity!.city})
       </h3>
 
       <ul className="contacts">

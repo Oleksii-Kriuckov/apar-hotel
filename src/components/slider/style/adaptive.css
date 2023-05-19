@@ -1,14 +1,25 @@
 /* mobile style */
 @media (max-width: 428px) {
-
+  .carousel {
+    width: 100%;
+  }
 }
 
 /* tablet style */
 @media (min-width: 429px) and (max-width: 768px) {
-
+  .carousel {
+    width: 100%;
+  }
 }
 
+@media (min-width: 769px) and (max-width: 991px) {
+  .carousel {
+    width: 500px;
+  }
+}
 /* desktop style */
-@media (min-width: 769px) and (max-width: 1440px) {
-
+@media (min-width: 992px) and (max-width: 1440px) {
+  .carousel {
+    width: 500px;
+  }
 }

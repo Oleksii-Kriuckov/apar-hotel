@@ -1,35 +1,12 @@
 /* mobile style */
-
 @media (max-width: 428px) {
   .address_block {
     padding: 30px 20px 40px;
     margin-bottom: 75px;
   }
-
-  .address_block > p {
-    margin-top: 35px;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-  }
-
-  .address_block > .buttons {
-    position: relative;
-    bottom: -68px;
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .address_block > .buttons > button:last-child {
-    /* width: 140px; */
-    background: #ffffff;
-    border: 1px solid #000000;
-    min-width: 120px;
-  }
-
   .address_block > ul {
     margin-top: 25px;
-    /* margin-bottom: 50px; */
+    margin-left: 20px;
   }
 
   .address_block > h3 {
@@ -40,15 +17,42 @@
 
 /* tablet style */
 @media (min-width: 429px) and (max-width: 768px) {
-  body {
+  .address_block {
+    padding: 30px 30px 40px;
+    margin-bottom: 75px;
+  }
+  .address_block > .buttons {
+    max-width: 330px;
+    margin: auto;
+    gap: 25px;
   }
 
-  header {
+  .address_block > h3 {
+    margin-top: 10px;
+    margin-bottom: 25px;
+  }
+
+  .address_block > ul {
+    margin-top: 25px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .address_block > .buttons {
+    bottom: -68px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .address_block > .buttons > button:first-child {
+    width: inherit;
+  }
+  .address_block > .buttons > button:last-child {
+    width: inherit;
+  }
+
+  .address_block > p {
     margin-top: 35px;
-  }
-
-  .logo {
-    display: none;
   }
 }
 

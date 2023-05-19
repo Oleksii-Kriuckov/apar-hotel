@@ -4,14 +4,23 @@
 }
 
 .address_block > .buttons {
+  position: relative;
   display: flex;
-  justify-content: center;
   gap: 15px;
 }
-
+.address_block > .buttons > button:first-child {
+  min-width: 120px;
+}
 .address_block > .buttons > button:last-child {
+  min-width: 120px;
   background: #ffffff;
   border: 1px solid #000000;
+}
+
+.address_block > p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
 }
 
 .address_block > h3 {
@@ -22,7 +31,7 @@
 }
 
 .address_block > ul > li {
-  list-style-image: url('../../images/list-style.png');
+  list-style-image: url("../../images/list-style.png");
 }
 
 .address_block > ul > li:last-child {

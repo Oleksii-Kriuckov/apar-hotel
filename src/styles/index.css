@@ -1,7 +1,6 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
-  padding: 20px;
   /* text-align: center; */
 }
 
@@ -10,10 +9,4 @@ body {
   --main-color: #ffc000;
   --f-z: "Century Gothic", sans-serif;
   font-family: var(--f-z);
-
-  /* break-points */
-  /* --xs: 428px;
-  --sm: 768px;
-  --md: 992px;
-  --lg: 1200px */
 }

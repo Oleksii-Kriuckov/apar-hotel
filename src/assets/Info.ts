@@ -38,11 +38,11 @@ export const allHotels: IHotelsInCity[] = [
           "up to 40 people",
         ],
         rooms: [
-          { floor: 1, image: roomImg, persons: 4, price: 2400 },
-          { floor: 1, image: roomImg1, persons: 3, price: 2000 },
-          { floor: 1, image: roomImg2, persons: 2, price: 2200 },
-          { floor: 2, image: roomImg4, persons: 2, price: 2000 },
-          { floor: 2, image: roomImg3, persons: 2, price: 2500 },
+          { floor: 1, number: 11, image: roomImg, persons: 4, price: 2400 },
+          { floor: 1, number: 12, image: roomImg1, persons: 3, price: 2000 },
+          { floor: 1, number: 14, image: roomImg2, persons: 2, price: 2200 },
+          { floor: 2, number: 21, image: roomImg4, persons: 2, price: 2000 },
+          { floor: 2, number: 23, image: roomImg3, persons: 2, price: 2500 },
         ],
         images: {
           forSlider: [roomImg5, restaurant2, pool, bathroom3],
@@ -63,9 +63,9 @@ export const allHotels: IHotelsInCity[] = [
           "up to 40 people",
         ],
         rooms: [
-          { floor: 1, image: roomImg5, persons: 3, price: 1900 },
-          { floor: 1, image: roomImg6, persons: 2, price: 1600 },
-          { floor: 1, image: roomImg7, persons: 2, price: 1700 },
+          { floor: 1, number: 12, image: roomImg5, persons: 3, price: 1900 },
+          { floor: 1, number: 13, image: roomImg6, persons: 2, price: 1600 },
+          { floor: 1, number: 14, image: roomImg7, persons: 2, price: 1700 },
         ],
         images: {
           forSlider: [roomImg1, restaurant, bathroom2],
@@ -96,11 +96,11 @@ export const allHotels: IHotelsInCity[] = [
           "up to 20 people",
         ],
         rooms: [
-          { floor: 1, image: roomImg11, persons: 4, price: 2400 },
-          { floor: 1, image: roomImg9, persons: 2, price: 2000 },
-          { floor: 2, image: roomImg10, persons: 3, price: 2100 },
-          { floor: 2, image: roomImg8, persons: 2, price: 2000 },
-          { floor: 3, image: roomImg12, persons: 2, price: 2000 },
+          { floor: 1, number: 11, image: roomImg11, persons: 4, price: 2400 },
+          { floor: 1, number: 12, image: roomImg9, persons: 2, price: 2000 },
+          { floor: 2, number: 20, image: roomImg10, persons: 3, price: 2100 },
+          { floor: 2, number: 22, image: roomImg8, persons: 2, price: 2000 },
+          { floor: 3, number: 31, image: roomImg12, persons: 2, price: 2000 },
         ],
         images: {
           forSlider: [roomImg10, bathroom, roomImg12],

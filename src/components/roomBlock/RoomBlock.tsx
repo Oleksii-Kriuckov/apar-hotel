@@ -2,7 +2,6 @@ import conveniences from "../images/conveniences.png";
 import TransparentButton from "../UI/Buttons/TransparentButton";
 import YellowButton from "../UI/Buttons/YellowButton";
 import { useNavigate, useParams } from "react-router-dom";
-import { Booking_ROUTE } from "../../routers/paths";
 import { IRoom } from "../../assets/types";
 import "./styles/style.css";
 import "./styles/adaptive.css";
@@ -24,9 +23,9 @@ const RoomBlock = ({roomInfo, address}: RoomBlockProps) => {
       </div>
       <ul>
         <li>{address}</li>
-        <li>Persons: {roomInfo.persons}</li>
+        <li>Number: {roomInfo.number}</li>
         <li>Floor: {roomInfo.floor}</li>
-        {/* <li>Комнат: 1</li> */}
+        <li>Persons: {roomInfo.persons}</li>
       </ul>
       <img src={conveniences} alt="conveniences" className="conveniences"/>
       <TransparentButton
@@ -36,7 +35,7 @@ const RoomBlock = ({roomInfo, address}: RoomBlockProps) => {
         LEARN MORE
       </TransparentButton>
       <YellowButton
-        onClick={() => navigate(`/${city}/${hotel}/booking`)}
+        onClick={() => navigate(`/${city}/${hotel}/${roomInfo.number}/booking`)}
         width={"100%"}
         color="white"
       >

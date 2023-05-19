@@ -14,6 +14,7 @@ export interface IHotelInfo {
 export interface IRoom {
   image: string;
   price: number;
+  number: number;
   floor: number;
   persons: number;
 }

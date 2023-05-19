@@ -1,18 +1,18 @@
 @media (min-width: 769px) and (max-width: 1440px) {
-    body {
-        /* background-color: red; */
-    }
+  #root {
+    padding: 20px;
+  }
 
-    header {
-        margin-top: 45px;
-    }
+  header {
+    margin-top: 45px;
+  }
 
-    .logo_mob {
-        display: none;
-    }
+  .logo_mob {
+    display: none;
+  }
 
-    footer>a:hover {
-        text-decoration: none;
-        color: #393939;
-    }
+  footer > a:hover {
+    text-decoration: none;
+    color: #393939;
+  }
 }

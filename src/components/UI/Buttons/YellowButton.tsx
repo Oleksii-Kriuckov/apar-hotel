@@ -1,19 +1,19 @@
 import { PropsWithChildren } from "react";
-import "./style.css";
 import { Color } from "../../../assets/types";
+import "./style.css";
 
 type Props = PropsWithChildren<{
   children: string;
   color: Color;
-  width: string | number;
+  // width: string | number;
   onClick: () => void;
 }>;
 
-const YellowButton = ({ children, color, width, onClick }: Props) => {
+const YellowButton = ({ children, color, onClick }: Props) => {
   return (
     <button
       className={`yellow_button ${color}`}
-      style={{ width: width }}
+      // style={{ width: width }}
       onClick={onClick}
     >
       {children}

@@ -8,14 +8,12 @@
   }
 
   .h1 {
-    font-size: 48px;
     margin: 60px 20px 50px;
   }
-    
+
   .keyhole_color {
     left: 80%;
-    top: 120%;
-    z-index: -10;
+    top: 115%;
   }
 
   .keyhole {
@@ -26,7 +24,38 @@
 
 /* tablet style */
 @media (min-width: 429px) and (max-width: 768px) {
-  body {
+  .to_book_block {
+    width: 100%;
+    border: none;
+    margin-top: 60px;
+    margin-bottom: 120px;
+  }
+
+  .book_block_btn {
+    max-width: 228px;
+  }
+  .book_block_btn > button {
+    width: 100%;
+  }
+
+  .h1 {
+    margin: 60px 20px 50px;
+  }
+
+  .keyhole_color {
+    left: 80%;
+    top: 100%;
+  }
+
+  .keyhole {
+    left: 10%;
+    top: 105%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .book_block {
+    display: flex;
   }
 }
 

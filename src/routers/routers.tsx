@@ -10,7 +10,7 @@ export const AppRoutes = [
   // { path: MainPage_ROUTE, element: <MainPage /> },
   { path: `/:city`, element: <MainPage /> },
   { path: '/:city/:hotel', element: <Hotel /> },
-  { path: '/:city/:hotel/booking', element: <Booking /> },
+  { path: '/:city/:hotel/:number/booking', element: <Booking /> },
   { path: Feedback_ROUTE, element: <Feedback /> },
 ];
 
