@@ -13,7 +13,7 @@ const YellowButton = ({ children, color, onClick }: Props) => {
   return (
     <button
       className={`yellow_button ${color}`}
-      // style={{ width: width }}
+      style={{ width: '100%' }}
       onClick={onClick}
     >
       {children}

@@ -12,10 +12,10 @@ const Hotel = (props: Props) => {
 
   return (
     <>
-      <h3 className="header_h3">
+      <h3 className="header_h3" style={{textAlign: 'center'}}>
         {`Hotel ${findHotel!.hotelName} (${findCity!.city})`}{" "}
       </h3>
-      <div className="booking_page">
+      <div className="hotel_page">
         <Form />
 
         {findHotel!.rooms.map((el) => (

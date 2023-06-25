@@ -17,31 +17,33 @@ export const AddressBlock = ({ hotelInfo }: AddressBlockProps) => {
   const { city } = useParams();
 
   return (
-    <section className="address_block">
+    <section className="address_block d-flex flex-column flex-md-row-reverse gap-md-4">
       <MyMapContainer hotelLocation={hotelInfo.coordinates} zoom={16}>
         <MapChild location={hotelInfo.coordinates} />
       </MyMapContainer>
-      <p>URoom ApartHotel by the address</p>
-      <h3>{hotelInfo.address}</h3>
+      <div>
+        <p>URoom ApartHotel by the address</p>
+        <h3>{hotelInfo.address}</h3>
 
-      <ul>
-        {hotelInfo.conveniences.map((element, ind) => (
-          <li key={ind}>{element}</li>
-        ))}
-      </ul>
-      <div className="buttons">
-        <YellowButton
-          // width={175}
-          color="black"
-          onClick={() =>
-            navigate(`/${city}/${hotelInfo.hotelName.toLowerCase()}`)
-          }
-        >
-          BOOK NOW
-        </YellowButton>
-        <TransparentButton onClick={() => {}} color="blackBorder">
-          LEARN MORE
-        </TransparentButton>
+        <ul>
+          {hotelInfo.conveniences.map((element, ind) => (
+            <li key={ind}>{element}</li>
+          ))}
+        </ul>
+        <div className="buttons">
+          <YellowButton
+            // width={175}
+            color="black"
+            onClick={() =>
+              navigate(`/${city}/${hotelInfo.hotelName.toLowerCase()}`)
+            }
+          >
+            BOOK NOW
+          </YellowButton>
+          <TransparentButton onClick={() => {}} color="blackBorder">
+            <a href="#about_hotel">LEARN MORE</a>
+          </TransparentButton>
+        </div>
       </div>
     </section>
   );

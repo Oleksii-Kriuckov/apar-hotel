@@ -1,20 +1,24 @@
 import { IHotelsInCity } from "./types";
-import roomImg from "../components/images/rooms/Luxury40731092.jpg";
-import roomImg1 from "../components/images/rooms/Luxury333928078.jpg";
-import roomImg2 from "../components/images/rooms/Luxury290593646.jpg";
-import roomImg3 from "../components/images/rooms/marquis-3-min.jpg";
-import roomImg4 from "../components/images/rooms/Luxury333927527.jpg";
-import roomImg5 from "../components/images/rooms/Independence13419547.jpg";
-import roomImg6 from "../components/images/rooms/pexels-donald-tong-189293.jpg";
-import roomImg7 from "../components/images/rooms/Independence13419563.jpg";
-import roomImg8 from "../components/images/rooms/Code10)141918534.jpg";
-import roomImg9 from "../components/images/rooms/Code10)141922823.jpg";
-import roomImg10 from "../components/images/rooms/Code10)141922855.jpg";
-import roomImg11 from "../components/images/rooms/hotel-room-code.jpg";
-import roomImg12 from "../components/images/rooms/Code10)141924112.jpg";
-import bathroom from "../components/images/rooms/bathroom.jpg";
-import bathroom2 from "../components/images/rooms/bathroom2.jpg";
-import bathroom3 from "../components/images/rooms/bathroom3.jpg";
+import LuxuryRoom11 from "../components/images/rooms/LuxuryRoom11.jpg";
+import LuxuryRoom12 from "../components/images/rooms/LuxuryRoom12.jpg";
+import LuxuryRoom13 from "../components/images/rooms/LuxuryRoom13.jpg";
+import LuxuryRoom14 from "../components/images/rooms/LuxuryRoom14.jpg";
+import LuxuryRoom21 from "../components/images/rooms/LuxuryRoom21.jpg";
+import LuxuryRoom22 from "../components/images/rooms/LuxuryRoom22.jpg";
+import LuxuryRoom23 from "../components/images/rooms/LuxuryRoom23.jpg";
+import IndependenceRoom11 from "../components/images/rooms/IndependenceRoom11.jpg";
+import IndependenceRoom12 from "../components/images/rooms/IndependenceRoom12.jpg";
+import IndependenceRoom13 from "../components/images/rooms/IndependenceRoom13.jpg";
+import IndependenceRoom14 from "../components/images/rooms/IndependenceRoom14.jpg";
+import Code10Room11 from "../components/images/rooms/Code10Room11.jpg";
+import Code10Room12 from "../components/images/rooms/Code10Room12.jpg";
+import Code10Room21 from "../components/images/rooms/Code10Room21.jpg";
+import Code10Room22 from "../components/images/rooms/Code10Room22.jpg";
+import Code10Room31 from "../components/images/rooms/Code10Room31.jpg";
+import Code10Room32 from "../components/images/rooms/Code10Room32.jpg";
+import Code10Bath from "../components/images/rooms/Code10Bath.jpg";
+import IndependenceBathroom from "../components/images/rooms/IndependenceBathroom.jpg";
+import LuxuryBath from "../components/images/rooms/LuxuryBath.jpg";
 import restaurant from "../components/images/rooms/restaurant.jpg";
 import restaurant2 from "../components/images/rooms/restaurant2.jpg";
 import pool from "../components/images/rooms/pool.jpg";
@@ -38,14 +42,16 @@ export const allHotels: IHotelsInCity[] = [
           "up to 40 people",
         ],
         rooms: [
-          { floor: 1, number: 11, image: roomImg, persons: 4, price: 2400 },
-          { floor: 1, number: 12, image: roomImg1, persons: 3, price: 2000 },
-          { floor: 1, number: 14, image: roomImg2, persons: 2, price: 2200 },
-          { floor: 2, number: 21, image: roomImg4, persons: 2, price: 2000 },
-          { floor: 2, number: 23, image: roomImg3, persons: 2, price: 2500 },
+          { floor: 1, number: 11, image: LuxuryRoom11, persons: 4, price: 2400, isFree: true },
+          { floor: 1, number: 12, image: LuxuryRoom12, persons: 3, price: 2000, isFree: true },
+          { floor: 1, number: 13, image: LuxuryRoom13, persons: 2, price: 2200, isFree: true },
+          { floor: 1, number: 14, image: LuxuryRoom14, persons: 2, price: 2200, isFree: true },
+          { floor: 2, number: 21, image: LuxuryRoom21, persons: 2, price: 2000, isFree: true },
+          { floor: 2, number: 22, image: LuxuryRoom22, persons: 2, price: 2000, isFree: true },
+          { floor: 2, number: 23, image: LuxuryRoom23, persons: 2, price: 2500, isFree: true },
         ],
         images: {
-          forSlider: [roomImg5, restaurant2, pool, bathroom3],
+          forSlider: [LuxuryRoom12, restaurant2, pool, LuxuryBath],
         },
       },
       {
@@ -63,12 +69,13 @@ export const allHotels: IHotelsInCity[] = [
           "up to 40 people",
         ],
         rooms: [
-          { floor: 1, number: 12, image: roomImg5, persons: 3, price: 1900 },
-          { floor: 1, number: 13, image: roomImg6, persons: 2, price: 1600 },
-          { floor: 1, number: 14, image: roomImg7, persons: 2, price: 1700 },
+          { floor: 1, number: 11, image: IndependenceRoom11, persons: 3, price: 1900, isFree:true },
+          { floor: 1, number: 12, image: IndependenceRoom12, persons: 3, price: 1900, isFree:true },
+          { floor: 1, number: 13, image: IndependenceRoom13, persons: 2, price: 1600, isFree:true },
+          { floor: 1, number: 14, image: IndependenceRoom14, persons: 2, price: 1700, isFree:true },
         ],
         images: {
-          forSlider: [roomImg1, restaurant, bathroom2],
+          forSlider: [IndependenceRoom11, restaurant, IndependenceBathroom],
         },
       },
     ],
@@ -96,14 +103,15 @@ export const allHotels: IHotelsInCity[] = [
           "up to 20 people",
         ],
         rooms: [
-          { floor: 1, number: 11, image: roomImg11, persons: 4, price: 2400 },
-          { floor: 1, number: 12, image: roomImg9, persons: 2, price: 2000 },
-          { floor: 2, number: 20, image: roomImg10, persons: 3, price: 2100 },
-          { floor: 2, number: 22, image: roomImg8, persons: 2, price: 2000 },
-          { floor: 3, number: 31, image: roomImg12, persons: 2, price: 2000 },
+          { floor: 1, number: 11, image: Code10Room11, persons: 4, price: 2400, isFree: true },
+          { floor: 1, number: 12, image: Code10Room12, persons: 2, price: 2000, isFree: true },
+          { floor: 2, number: 21, image: Code10Room21, persons: 3, price: 2100, isFree: true },
+          { floor: 2, number: 22, image: Code10Room22, persons: 2, price: 2000, isFree: true },
+          { floor: 3, number: 31, image: Code10Room31, persons: 2, price: 2000, isFree: true },
+          { floor: 3, number: 32, image: Code10Room32, persons: 2, price: 2000, isFree: true },
         ],
         images: {
-          forSlider: [roomImg10, bathroom, roomImg12],
+          forSlider: [Code10Room21, Code10Bath, Code10Room31],
         },
       },
     ],

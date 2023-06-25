@@ -13,7 +13,6 @@ const FormBooking = (props: Props) => {
 
   return (
     <form action="" className="form d-flex flex-column" style={{ gap: 20 }}>
-      {/* <div className="mobile"></div> */}
         <div className="input_block">
           <label htmlFor="name">Name</label>
           <input type="text" name="name" id="name" placeholder="John Smith" />
@@ -39,7 +38,7 @@ const FormBooking = (props: Props) => {
           />
         </div>
 
-        <YellowButton onClick={onClick} width={200} color="black">
+        <YellowButton onClick={onClick} color="black">
           Booking
         </YellowButton>
     </form>

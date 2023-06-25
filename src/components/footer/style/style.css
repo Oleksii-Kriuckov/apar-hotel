@@ -12,6 +12,11 @@
   width: max-content;
 }
 
+.footer_nav > a:hover {
+  /* text-decoration: ; */
+  color: #393939;
+}
+
 .license_info {
   font-size: 12px;
   line-height: 22px;

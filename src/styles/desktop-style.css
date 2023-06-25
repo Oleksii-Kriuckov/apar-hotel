@@ -1,18 +1,37 @@
-@media (min-width: 769px) and (max-width: 1440px) {
-  #root {
-    padding: 20px;
+@media (min-width: 992px) and (max-width: 1200px) {
+  body{
+    padding: 40px 60px;
+    background-color: var(--main-color);
   }
-
-  header {
-    margin-top: 45px;
+  #root {
+    padding: 30px 60px;
   }
 
   .logo_mob {
     display: none;
   }
+  .header_h3 {
+    /* margin-top: 70px; */
+    margin-bottom: 25px;
+  }
 
-  footer > a:hover {
-    text-decoration: none;
-    color: #393939;
+ 
+}
+
+@media (min-width: 1201px) {
+  body{
+    padding: 50px 80px;
+    background-color: var(--main-color);
+  }
+  #root {
+    padding: 40px 70px;
+  }
+
+  .logo_mob {
+    display: none;
+  }
+  .header_h3 {
+    /* margin-top: 100px; */
+    margin-bottom: 25px;
   }
 }

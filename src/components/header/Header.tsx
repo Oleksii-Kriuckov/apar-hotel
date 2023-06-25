@@ -15,22 +15,30 @@ export const Header = (props: Props) => {
   return (
     <Navbar expand="md">
       <Container>
-        <Link to={allHotels[0].city.toLocaleLowerCase()} className="navbar-brand">
+        <Link
+          to={allHotels[0].city.toLocaleLowerCase()}
+          className="navbar-brand"
+        >
           <img src={logo_mob} alt="logo" className="logo_mob mob" />
           <img src={logo} alt="logo" className="logo desktop" />
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="d-flex justify-content-lg-around w-100">
-            {allHotels.map((el) => (
-              <NavLink
-                className={({isActive})=> isActive ? 'nav_link active_link' : 'nav_link'}
-                key={el.city}
-                to={`/${el.city.toLocaleLowerCase()}`}
-              >
-                {el.city}
-              </NavLink>
-            ))}
+          <Nav className="d-flex gap-3 justify-content-lg-around align-items-md-center w-100">
+            <div className="d-flex flex-column flex-sm-row">
+              {allHotels.map((el) => (
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "nav_link active_link" : "nav_link"
+                  }
+                  key={el.city}
+                  to={`/${el.city.toLocaleLowerCase()}`}
+                >
+                  {el.city}
+                </NavLink>
+              ))}
+            </div>
+
             <HeaderLink alt="bell" src={bell}>
               reservation
             </HeaderLink>

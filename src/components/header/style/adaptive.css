@@ -1,6 +1,7 @@
 /* mobile style */
 @media (max-width: 428px) {
-  header {
+  .navbar {
+    margin-bottom: 60px;
   }
 
   .logo {
@@ -12,10 +13,8 @@
 
 /* tablet style */
 @media (min-width: 429px) and (max-width: 768px) {
-  body {
-  }
-
-  header {
+  .navbar {
+    margin-bottom: 60px;
   }
 
   .logo {
@@ -26,23 +25,27 @@
 }
 
 /* desktop style */
-@media (min-width: 769px) /*and (max-width: 1440px) */ {
-  body {
-  }
-
-  header {
-    margin-top: 45px;
+@media (min-width: 769px) and (max-width: 991px) {
+  .navbar {
+    margin-bottom: 80px;
   }
 
   .logo_mob {
-}
+  }
 
-.mob{
+  .mob {
     display: none;
   }
 
   footer > a:hover {
     text-decoration: none;
     color: #393939;
+  }
+}
+
+/* desktop style */
+@media (min-width: 992px) and (max-width: 1440px) {
+  .navbar {
+    margin-bottom: 100px;
   }
 }

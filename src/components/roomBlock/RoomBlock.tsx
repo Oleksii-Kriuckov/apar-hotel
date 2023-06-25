@@ -36,7 +36,7 @@ const RoomBlock = ({roomInfo, address}: RoomBlockProps) => {
       </TransparentButton>
       <YellowButton
         onClick={() => navigate(`/${city}/${hotel}/${roomInfo.number}/booking`)}
-        width={"100%"}
+        // width={"100%"}
         color="white"
       >
         BOOK NOW

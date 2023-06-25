@@ -4,12 +4,17 @@
     padding: 30px 20px 40px;
     margin-bottom: 75px;
   }
-  .address_block > ul {
+
+  .buttons {
+    gap: 15px;
+  }
+
+  ul {
     margin-top: 25px;
     margin-left: 20px;
   }
 
-  .address_block > h3 {
+  h3 {
     margin-top: 10px;
     margin-bottom: 25px;
   }
@@ -21,56 +26,74 @@
     padding: 30px 30px 40px;
     margin-bottom: 75px;
   }
-  .address_block > .buttons {
+  .buttons {
     max-width: 330px;
     margin: auto;
     gap: 25px;
   }
 
-  .address_block > h3 {
+  h3 {
     margin-top: 10px;
     margin-bottom: 25px;
   }
 
-  .address_block > ul {
+  ul {
     margin-top: 25px;
     margin-left: 20px;
   }
 }
 
 @media (max-width: 768px) {
-  .address_block > .buttons {
-    bottom: -68px;
+  .leaflet-container {
+    margin-bottom: 30px;
+  }
+
+  .buttons {
     width: 100%;
     justify-content: space-between;
   }
-  .address_block > .buttons > button:first-child {
+  .buttons > button:first-child {
     width: inherit;
   }
-  .address_block > .buttons > button:last-child {
+  .buttons > button:last-child {
     width: inherit;
   }
 
-  .address_block > p {
+  p {
     margin-top: 35px;
   }
 }
 
 /* desktop style */
-@media (min-width: 769px) and (max-width: 1440px) {
-  body {
+@media (min-width: 769px) and (max-width: 991px) {
+  .address_block {
+    padding: 40px;
+    margin-bottom: 75px;
   }
 
-  header {
-    margin-top: 45px;
+  .leaflet-container {
+    width: 400px;
+    /* margin-bottom: 40px; */
   }
 
-  .logo_mob {
-    display: none;
+  .buttons {
+    max-width: 330px;
+    gap: 25px;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 992px) {
+  .address_block {
+    padding: 40px;
+    margin-bottom: 75px;
   }
 
-  footer > a:hover {
-    text-decoration: none;
-    color: #393939;
+  .leaflet-container {
+    width: 400px;
+  }
+
+  .buttons {
+    gap: 25px;
   }
 }

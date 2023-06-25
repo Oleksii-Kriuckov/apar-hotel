@@ -6,12 +6,11 @@ type Props = PropsWithChildren<{ children: string; src: any; alt: string }>;
 
 export const HeaderLink = (props: Props) => {
   return (
-    <div className="d-flex">
+    <div>
+      <Link className="d-flex align-items-md-baseline" to={Hotel_ROUTE} style={{ textTransform: "uppercase" }}>
       <img src={props.src} alt={props.alt} className="linkImg me-1" />
-      <Link to={Hotel_ROUTE} style={{ textTransform: "uppercase" }}>
         {props.children}
       </Link>
-      
     </div>
   );
 };

@@ -18,8 +18,8 @@ const MainPage = (props: Props) => {
 
       <ToBookBlock>{city!}</ToBookBlock>
       <Article>{findCity!.description}</Article>
-      <h3 className="our_addresses">Our address</h3>
 
+      <h3 className="our_addresses">Our address</h3>
       {findCity!.hotelsInfo.map((hotel) => (
         <AddressBlock key={hotel.address} hotelInfo={hotel} />
       ))}

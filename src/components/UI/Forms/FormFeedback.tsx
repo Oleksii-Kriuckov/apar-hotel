@@ -55,7 +55,7 @@ const FormFeedback = (props: Props) => {
         </label>
       </div>
 
-      <YellowButton onClick={onClick} width={200} color="black">
+      <YellowButton onClick={onClick} color="black">
         SEND
       </YellowButton>
     </form>
