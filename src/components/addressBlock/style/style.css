@@ -1,12 +1,14 @@
 .address_block {
-  border: 1px solid #2b1b4b;
-  /* border: 1px solid #ebebeb; */
+  border: 1px solid #3312f0;
+  /* border: 1px solid #dbdbdb; */
   margin-bottom: 75px;
+position: relative;
 }
 
 .buttons {
-  position: relative;
-  bottom: -68px;
+  max-width: 330px;
+  position: absolute;
+  bottom: -27px;
   display: flex;
 }
 
@@ -19,27 +21,27 @@
   border: 1px solid #000000;
 }
 
- p {
+p {
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
 }
 
- h3 {
+h3 {
   font-weight: 600;
   font-size: 24px;
   line-height: 29px;
   margin-bottom: 25px;
 }
 
- ul > li {
+ul > li {
   list-style-image: url("../../images/list-style.png");
 }
 
- ul > li:last-child {
+ul > li:last-child {
   font-weight: 700;
 }
 
-a:hover{
+a:hover {
   color: #000000;
 }

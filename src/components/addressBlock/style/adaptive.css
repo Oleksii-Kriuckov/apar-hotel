@@ -27,7 +27,6 @@
     margin-bottom: 75px;
   }
   .buttons {
-    max-width: 330px;
     margin: auto;
     gap: 25px;
   }
@@ -77,7 +76,6 @@
   }
 
   .buttons {
-    max-width: 330px;
     gap: 25px;
     justify-content: space-between;
   }
@@ -85,7 +83,7 @@
 
 @media (min-width: 992px) {
   .address_block {
-    padding: 40px;
+    padding: 40px 60px;
     margin-bottom: 75px;
   }
 
