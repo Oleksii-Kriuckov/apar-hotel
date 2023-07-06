@@ -13,10 +13,13 @@ export const MyMapContainer: React.FC<LeafletContainerProps> = ({
   hotelLocation,
   zoom,
 }) => {
-  console.log(hotelLocation);
-  
   return (
-    <MapContainer style={{ height: 300 }} zoom={zoom} center={hotelLocation}>
+    <MapContainer
+      className="map_container"
+      style={{ height: 300 }}
+      zoom={zoom}
+      center={hotelLocation}
+    >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

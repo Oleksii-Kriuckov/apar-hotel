@@ -5,7 +5,7 @@
     margin-bottom: 75px;
   }
 
-  .buttons {
+  .address_block_buttons {
     gap: 15px;
   }
 
@@ -26,7 +26,7 @@
     padding: 30px 30px 40px;
     margin-bottom: 75px;
   }
-  .buttons {
+  .address_block_buttons {
     margin: auto;
     gap: 25px;
   }
@@ -42,19 +42,19 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .leaflet-container {
     margin-bottom: 30px;
   }
 
-  .buttons {
+  .address_block_buttons {
     width: 100%;
     justify-content: space-between;
   }
-  .buttons > button:first-child {
+  .address_block_buttons > button:first-child {
     width: inherit;
   }
-  .buttons > button:last-child {
+  .address_block_buttons > button:last-child {
     width: inherit;
   }
 
@@ -64,7 +64,7 @@
 }
 
 /* desktop style */
-@media (min-width: 769px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .address_block {
     padding: 40px;
     margin-bottom: 75px;
@@ -75,7 +75,11 @@
     /* margin-bottom: 40px; */
   }
 
-  .buttons {
+  .hotel_info {
+    width: 70%;
+  }
+
+  .address_block_buttons {
     gap: 25px;
     justify-content: space-between;
   }
@@ -91,7 +95,11 @@
     width: 400px;
   }
 
-  .buttons {
+  .hotel_info {
+    width: 70%;
+  }
+
+  .address_block_buttons {
     gap: 25px;
   }
 }

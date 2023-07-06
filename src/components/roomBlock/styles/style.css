@@ -1,3 +1,7 @@
+.room_block{
+
+}
+
 .room_block > img {
   /* width: 100%;
   margin-bottom: 30px; */
@@ -20,6 +24,7 @@
   font-size: 30px;
 }
 
-.room_block > button:last-child {
-  margin-top: 20px;
+.room_block_buttons{
+  min-width: 330px;
+  gap: 20px;
 }

@@ -11,7 +11,11 @@ type Props = PropsWithChildren<{
 
 const TransparentButton = ({ children, color, onClick }: Props) => {
   return (
-    <button onClick={onClick} className={`transparent_button ${color}`}>
+    <button
+      onClick={onClick}
+      className={`transparent_button ${color}`}
+      style={{ width: "100%" }}
+    >
       {children}
     </button>
   );

@@ -11,7 +11,7 @@ type RoomBlockProps = {
   address: string;
 };
 
-const RoomBlock = ({roomInfo, address}: RoomBlockProps) => {
+const RoomBlock = ({ roomInfo, address }: RoomBlockProps) => {
   let navigate = useNavigate();
   const { city, hotel } = useParams();
 
@@ -21,26 +21,36 @@ const RoomBlock = ({roomInfo, address}: RoomBlockProps) => {
       <div className="price_block">
         Price: <span>{roomInfo.price}</span> hrn
       </div>
-      <ul>
-        <li>{address}</li>
-        <li>Number: {roomInfo.number}</li>
-        <li>Floor: {roomInfo.floor}</li>
-        <li>Persons: {roomInfo.persons}</li>
-      </ul>
-      <img src={conveniences} alt="conveniences" className="conveniences"/>
-      <TransparentButton
-        onClick={() => navigate('')}
-        color="yellowBorder"
-      >
-        LEARN MORE
-      </TransparentButton>
-      <YellowButton
-        onClick={() => navigate(`/${city}/${hotel}/${roomInfo.number}/booking`)}
-        // width={"100%"}
-        color="white"
-      >
-        BOOK NOW
-      </YellowButton>
+
+      <div className="room_info">
+        <ul>
+          <li>{address}</li>
+          <li>Number: {roomInfo.number}</li>
+          <li>Floor: {roomInfo.floor}</li>
+          <li>Persons: {roomInfo.persons}</li>
+        </ul>
+        <img src={conveniences} alt="conveniences" className="conveniences" />
+      </div>
+
+      <div className="room_block_buttons d-flex">
+        <div className="room_block_btn">
+          <TransparentButton onClick={() => navigate("")} color="yellowBorder">
+          LEARN MORE
+        </TransparentButton>
+        </div>
+        <div className="room_block_btn">
+          <YellowButton
+          onClick={() =>
+            navigate(`/${city}/${hotel}/${roomInfo.number}/booking`)
+          }
+          // width={"100%"}
+          color="white"
+        >
+          BOOK NOW
+        </YellowButton>
+        </div>
+        
+      </div>
     </div>
   );
 };

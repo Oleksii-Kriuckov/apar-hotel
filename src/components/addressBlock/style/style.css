@@ -2,20 +2,20 @@
   border: 1px solid #3312f0;
   /* border: 1px solid #dbdbdb; */
   margin-bottom: 75px;
-position: relative;
+  position: relative;
 }
 
-.buttons {
+.address_block_buttons {
   max-width: 330px;
   position: absolute;
   bottom: -27px;
   display: flex;
 }
 
-.buttons > button:first-child {
+.address_block_buttons > button:first-child {
   min-width: 120px;
 }
-.buttons > button:last-child {
+.address_block_buttons > button:last-child {
   min-width: 120px;
   background: #ffffff;
   border: 1px solid #000000;
