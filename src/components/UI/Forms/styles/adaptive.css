@@ -59,7 +59,7 @@
   .search {
     justify-content: center;
     align-items: end;
-    gap: 50px;
+    gap: 40px;
   }
   .input_block {
     width: 170px;
@@ -69,5 +69,14 @@
 @media (min-width: 1200px) {
   .form_search {
     padding: 50px;
+  }
+  .search{
+    gap: 40px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .search{
+    gap: 50px;
   }
 }

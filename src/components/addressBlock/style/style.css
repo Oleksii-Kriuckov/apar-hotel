@@ -7,7 +7,6 @@
 
 .address_block_buttons {
   max-width: 330px;
-  position: absolute;
   bottom: -27px;
   display: flex;
 }

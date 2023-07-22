@@ -32,7 +32,7 @@ button {
 }
 
 .blackBorder {
-  border-color: black;
+  border: black solid 1px;
   color: black;
 }
 

@@ -1,6 +1,5 @@
-import { PropsWithChildren } from "react";
-import TransparentButton from "../UI/Buttons/TransparentButton";
 import YellowButton from "../UI/Buttons/YellowButton";
+import ColorButton from "../UI/Buttons/ColorButton";
 import { useNavigate, useParams } from "react-router-dom";
 import { MyMapContainer } from "../../map/MyMapContainer";
 import { MapChild } from "../../map/MapChild";
@@ -31,17 +30,22 @@ export const AddressBlock = ({ hotelInfo }: AddressBlockProps) => {
           ))}
         </ul>
         <div className="address_block_buttons">
-          <YellowButton
-            color="black"
-            onClick={() =>
-              navigate(`/${city}/${hotelInfo.hotelName.toLowerCase()}`)
-            }
-          >
-            BOOK NOW
-          </YellowButton>
-          <TransparentButton onClick={() => {}} color="blackBorder">
-            <a href="#about_hotel">LEARN MORE</a>
-          </TransparentButton>
+          <div className="address_block_btn">
+            <YellowButton
+              color="black"
+              onClick={() =>
+                navigate(`/${city}/${hotelInfo.hotelName.toLowerCase()}`)
+              }
+            >
+              BOOK NOW
+            </YellowButton>
+          </div>
+
+          <div className="address_block_btn">
+            <ColorButton onClick={() => {}} bgColor="#fff">
+              <a href="#about_hotel">LEARN MORE</a>
+            </ColorButton>
+          </div>
         </div>
       </div>
     </section>

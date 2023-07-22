@@ -1,4 +1,4 @@
-@media (min-width: 992px) and (max-width: 1200px) {
+@media (min-width: 992px) and (max-width: 1199px) {
   body{
     padding: 40px 60px;
     background-color: var(--main-color);
@@ -18,7 +18,7 @@
  
 }
 
-@media (min-width: 1201px) {
+@media (min-width: 1200px) {
   body{
     padding: 50px 80px;
     background-color: var(--main-color);
@@ -33,5 +33,9 @@
   .header_h3 {
     /* margin-top: 100px; */
     margin-bottom: 25px;
+  }
+  .hotel_page {
+    max-width: 930px;
+    margin: auto;
   }
 }

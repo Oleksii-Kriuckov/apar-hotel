@@ -6,7 +6,12 @@
   }
 
   .address_block_buttons {
+    margin: auto;
+    position: relative;
     gap: 15px;
+  }
+  .address_block_btn {
+    width: 50%;
   }
 
   ul {
@@ -27,6 +32,7 @@
     margin-bottom: 75px;
   }
   .address_block_buttons {
+    position: absolute;
     margin: auto;
     gap: 25px;
   }
@@ -48,6 +54,7 @@
   }
 
   .address_block_buttons {
+    position: absolute;
     width: 100%;
     justify-content: space-between;
   }
@@ -81,6 +88,7 @@
 
   .address_block_buttons {
     gap: 25px;
+    position: absolute;
     justify-content: space-between;
   }
 }
@@ -100,6 +108,7 @@
   }
 
   .address_block_buttons {
+    position: absolute;
     gap: 25px;
   }
 }
