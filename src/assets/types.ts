@@ -17,7 +17,7 @@ export interface IRoom {
   number: number;
   floor: number;
   persons: number;
-  isFree: boolean
+  occupied: {checkIn: number, checkOut: number}[]
 }
 
 export interface IHotelsInCity {

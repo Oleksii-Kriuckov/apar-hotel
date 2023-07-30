@@ -8,6 +8,7 @@ const MySelect = (props: Props) => {
       className="form-select form-select-lg" 
       aria-label=".form-select-lg example"
       id="select"
+      name="people"
     >
       <option className="option" value="1">1</option>
       <option className="option" value="2">2</option>

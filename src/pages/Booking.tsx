@@ -2,14 +2,14 @@ import MediaLinks from "../components/UI/Links/MediaLinks";
 import LicenseLink from "../components/UI/Links/LicenseLink";
 import BookingMessage from "../components/bookingMessage/BookingMessage";
 import { useParams } from "react-router-dom";
-import useFind from "../hooks/useFind";
+import findData from "../functions/findData";
 import { MyMapContainer } from "../map/MyMapContainer";
 import { MapChild } from "../map/MapChild";
 import FormBooking from "../components/UI/Forms/FormBooking";
 
 const Booking = () => {
   const { city, hotel, number } = useParams();
-  const { findCity, findHotel } = useFind(city!, hotel!);
+  const { findCity, findHotel } = findData(city!, hotel!);
 
   return (
     <div>

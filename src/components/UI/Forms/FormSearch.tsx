@@ -1,25 +1,26 @@
-import { Dropdown, Form, InputGroup, SplitButton } from "react-bootstrap";
-import "./styles/style.css";
+import { Dropdown, InputGroup, SplitButton } from "react-bootstrap";
+import { Form, useParams } from "react-router-dom";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import TransparentButton from "../Buttons/TransparentButton";
 import Select from "../Select/Select";
 import React, { ReactElement } from "react";
+import "./styles/style.css";
+import findData from "../../../functions/findData";
 
 type Props = {};
 
 const CheckForm = (props: Props) => {
-  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    console.log("onSubmit");
-    event.preventDefault();
-  };
+  const { city, hotel } = useParams();
 
-  const changeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.value);
-  };
+  const { findCity, findHotel } = findData(city!, hotel!);
 
   return (
-    <form className="form_search" onSubmit={onSubmit}>
+    <Form
+      className="form_search"
+      action={`/${findCity!.city.toLowerCase()}/${findHotel!.hotelName.toLowerCase()}`}
+      method="post"
+    >
       <h4>Check-in - 14.00, check-out - 12.00</h4>
 
       <div className="search d-flex flex-wrap">
@@ -30,7 +31,6 @@ const CheckForm = (props: Props) => {
             className="form-control"
             name="checkIn"
             id="checkIn"
-            onChange={changeInput}
           />
         </div>
 
@@ -41,7 +41,6 @@ const CheckForm = (props: Props) => {
             type="date"
             name="checkOut"
             id="checkOut"
-            onChange={changeInput}
           />
         </div>
 
@@ -51,12 +50,12 @@ const CheckForm = (props: Props) => {
         </div>
 
         <div className="input_block">
-          <TransparentButton onClick={() => {  }} color="whiteBorder">
+          <TransparentButton onClick={() => {}} color="whiteBorder">
             Search
           </TransparentButton>
         </div>
       </div>
-    </form>
+    </Form>
   );
 };
 

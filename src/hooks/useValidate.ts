@@ -1,5 +1,5 @@
 
-export const useValidate = (data) => {
+export const useValidate = () => {
    function handlerDate(date:string) {
     
    } 
