@@ -1,27 +1,46 @@
-.addresses {
-  border: 1px solid #EBEBEB;
+.address_block {
+  border: 1px solid #3312f0;
+  /* border: 1px solid #dbdbdb; */
+  margin-bottom: 75px;
+  position: relative;
 }
 
-.addresses>.buttons {
+.address_block_buttons {
+  max-width: 330px;
+  bottom: -27px;
   display: flex;
-  justify-content: center;
-  gap: 15px;
 }
 
-.addresses>.buttons>button:last-child {
-  width: 140px;
-  height: 56px;
-  background: #FFFFFF;
+.address_block_buttons > button:first-child {
+  min-width: 120px;
+}
+.address_block_buttons > button:last-child {
+  min-width: 120px;
+  background: #ffffff;
   border: 1px solid #000000;
 }
 
-.addresses>h3 {
+.hotel_info > p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+h3 {
   font-weight: 600;
   font-size: 24px;
   line-height: 29px;
   margin-bottom: 25px;
 }
 
-.addresses>ul>li:last-child {
+ul > li {
+  list-style-image: url("../../images/list-style.png");
+}
+
+ul > li:last-child {
   font-weight: 700;
+}
+
+a:hover {
+  color: #000000;
 }

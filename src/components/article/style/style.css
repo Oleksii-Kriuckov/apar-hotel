@@ -6,7 +6,3 @@ article>span{
 article>p{
   margin-top: 20px;
 }
-
-article>p>a{
-  color: var(--main-color);
-}

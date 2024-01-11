@@ -1,0 +1,12 @@
+#root {
+  margin: 0 auto;
+  background-color: #fefefe;
+  /* text-align: center; */
+}
+
+body {
+  --sizeClose: 30px;
+  --main-color: #ffc000;
+  --f-z: "Century Gothic", sans-serif;
+  font-family: var(--f-z);
+}

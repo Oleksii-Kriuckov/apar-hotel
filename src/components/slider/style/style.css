@@ -1,19 +1,4 @@
-
-.footer_nav {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-  }
-  
-  .footer_nav>a {
-    text-decoration: none;
-    color: #000000;
-  }
-  
-  .license_info {
-    font-size: 12px;
-    line-height: 22px;
-    text-align: center;
-    color: #000000;
-    opacity: 0.5;
-  }
+.control-arrow {
+  height: 100%;
+  width: 40px;
+}

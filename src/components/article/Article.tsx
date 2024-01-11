@@ -1,19 +1,14 @@
 import { PropsWithChildren } from "react";
 import "./style/style.css";
-import './style/adaptive.css'
+import "./style/adaptive.css";
 
-type ArticleProps = PropsWithChildren<{children: string}>;
+type ArticleProps = PropsWithChildren<{ children: string }>;
 
-export const Article = (props: ArticleProps) => {
+export const Article = ({ children }: ArticleProps) => {
   return (
-    <div className="about_hotel">
-      <article>
-        <h4>About the hotel</h4>
-        <span>{props.children}</span>
-        <p>
-          <a href="">View license</a>
-        </p>
-      </article>
-    </div>
-  )
-}
+    <article className="about_hotel">
+      <h3 className="header_h3" id="about_hotel">About hotel</h3>
+      <span>{children}</span>
+    </article>
+  );
+};

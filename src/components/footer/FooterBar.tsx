@@ -1,17 +1,19 @@
 import { NavLink } from "react-router-dom";
-import { footerLinks } from "./footerLinks";
+import { links } from "../../assets/links";
 import "./style/style.css";
 import './style/adaptive.css'
+import TransitionsModal from "../modal";
 
 type Props = {};
 
 export const FooterBar = (props: Props) => {
   return (
     <div className="footer_nav">
-      {footerLinks.map((el) => (
-        <NavLink to={el.to}>{el.link}</NavLink>
+      {links.map((el, ind) => (
+        <NavLink key={ind} to={el.to}>{el.link}</NavLink>
       ))}
-      <a href="">Documentation</a>
+      {/* <a href="">Documents</a> */}
+        <TransitionsModal/>
     </div>
   );
 };

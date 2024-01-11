@@ -1,0 +1,26 @@
+.wellcome_block {
+  width: 100%;
+  background: #f7f9fc;
+  padding: 30px 60px;
+  position: relative;
+}
+
+.wellcome{
+  position: relative;
+  z-index: 10;
+}
+
+.wellcome > p {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 34px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.big_keyhole {
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+  z-index: 0;
+}

@@ -1,73 +1,114 @@
 /* mobile style */
 @media (max-width: 428px) {
-  #our_addresses {
-    text-align: center;
-  }
-
-  .addresses > p {
-    margin-top: 35px;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-  }
-
-  .addresses > .buttons > .booking {
-    width: 174px;
-  }
-
-  .addresses > .buttons > button:last-child {
-    width: 140px;
-    height: 56px;
-    background: #ffffff;
-    border: 1px solid #000000;
-  }
-
-  .addresses > ul {
-    margin-top: 25px;
-    margin-bottom: 50px;
-  }
-
-  .addresses > .buttons {
-    position: absolute;
-    bottom: -27px;
-  }
-
-  .addresses {
-    padding: 30px 30px 40px;
-    position: relative;
+  .address_block {
+    padding: 30px 20px 40px;
     margin-bottom: 75px;
+  }
+
+  .address_block_buttons {
+    margin: auto;
+    position: relative;
+    gap: 15px;
+  }
+  .address_block_btn {
+    width: 50%;
+  }
+
+  ul {
+    margin-top: 25px;
+    margin-left: 20px;
+  }
+
+  h3 {
+    margin-top: 10px;
+    margin-bottom: 25px;
   }
 }
 
 /* tablet style */
 @media (min-width: 429px) and (max-width: 768px) {
-  body {
+  .address_block {
+    padding: 30px 30px 40px;
+    margin-bottom: 75px;
+  }
+  .address_block_buttons {
+    position: absolute;
+    margin: auto;
+    gap: 25px;
   }
 
-  header {
+  h3 {
+    margin-top: 10px;
+    margin-bottom: 25px;
+  }
+
+  ul {
+    margin-top: 25px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .leaflet-container {
+    margin-bottom: 30px;
+  }
+
+  .address_block_buttons {
+    position: absolute;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .address_block_buttons > button:first-child {
+    width: inherit;
+  }
+  .address_block_buttons > button:last-child {
+    width: inherit;
+  }
+
+  .hotel_info > p {
     margin-top: 35px;
-  }
-
-  .logo {
-    display: none;
   }
 }
 
 /* desktop style */
-@media (min-width: 769px) and (max-width: 1440px) {
-  body {
+@media (min-width: 768px) and (max-width: 991px) {
+  .address_block {
+    padding: 40px;
+    margin-bottom: 75px;
   }
 
-  header {
-    margin-top: 45px;
+  .leaflet-container {
+    width: 400px;
+    /* margin-bottom: 40px; */
   }
 
-  .logo_mob {
-    display: none;
+  .hotel_info {
+    width: 70%;
   }
 
-  footer > a:hover {
-    text-decoration: none;
-    color: #393939;
+  .address_block_buttons {
+    gap: 25px;
+    position: absolute;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 992px) {
+  .address_block {
+    padding: 40px 60px;
+    margin-bottom: 75px;
+  }
+
+  .leaflet-container {
+    width: 400px;
+  }
+
+  .hotel_info {
+    width: 70%;
+  }
+
+  .address_block_buttons {
+    position: absolute;
+    gap: 25px;
   }
 }

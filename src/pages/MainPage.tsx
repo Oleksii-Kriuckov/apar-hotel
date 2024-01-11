@@ -1,32 +1,29 @@
-import { hotelInfo } from "../assets/Info";
+import { useParams } from "react-router-dom";
 import { Article } from "../components/article/Article";
-import { Slider } from "../components/slider/slider";
+import { MyCarousel } from "../components/Slider/MyCarousel";
 import ToBookBlock from "../components/ToBookBlock/ToBookBlock";
-import keyhole_color from "../components/images/Group 1317.png";
-import keyhole from "../components/images/Group 1318.png";
 import { AddressBlock } from "../components/addressBlock/AddressBlock";
+import Welcome from "../components/welcomeBlock/Welcome";
+import findData from "../functions/findData";
 
 type Props = {};
 
 const MainPage = (props: Props) => {
+
+  const { city } = useParams();
+  const { findCity } = findData(city!);
+
   return (
     <main>
-      <div className="background">
-        <img
-          src={keyhole_color}
-          alt="keyhole_color"
-          className="keyhole_color"
-        />
-      </div>
-      <div className="background">
-        <img src={keyhole} alt="keyhole" className="keyhole" />
-      </div>
-      <Slider />
-      <ToBookBlock>{hotelInfo[0].city}</ToBookBlock>
-      <Article>{hotelInfo[0].description}</Article>
-    <h4 id="our_addresses">Our addresses</h4>
-<AddressBlock convs={hotelInfo[0].conveniences}>{hotelInfo[0].address}</AddressBlock>
-<AddressBlock convs={hotelInfo[1].conveniences}>{hotelInfo[1].address}</AddressBlock>
+      <ToBookBlock>{city!}</ToBookBlock>
+      <Article>{findCity!.description}</Article>
+      
+      <h3 className="our_addresses">Our address</h3>
+      {findCity!.hotelsInfo.map((hotel) => (
+        <AddressBlock key={hotel.address} hotelInfo={hotel} />
+      ))}
+
+      <Welcome />
     </main>
   );
 };

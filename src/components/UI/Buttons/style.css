@@ -1,0 +1,42 @@
+button {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+  height: 54px;
+  padding: 18px;
+  text-transform: uppercase;
+}
+
+.yellow_button {
+  background-color: #ffc000;
+  border: none;
+}
+
+.black {
+  color: black;
+}
+
+.white {
+  color: white;
+}
+
+.transparent_button {
+  border-width: 1px;
+  border-style: solid;
+  background: transparent;
+}
+
+.yellowBorder {
+  border-color: var(--main-color);
+  color: var(--main-color);
+}
+
+.blackBorder {
+  border: black solid 1px;
+  color: black;
+}
+
+.whiteBorder {
+  border-color: white;
+  color: white;
+}

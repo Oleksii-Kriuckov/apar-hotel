@@ -1,39 +1,25 @@
 /* mobile style */
 @media (max-width: 428px) {
-
+  .carousel {
+    width: 100%;
+  }
 }
 
 /* tablet style */
-@media (min-width: 429px) and (max-width: 768px) {
-    body {
-
-    }
-
-    header {
-        margin-top: 35px;
-    }
-
-    .logo {
-        display: none;
-    }
+@media (min-width: 429px) and (max-width: 767px) {
+  .carousel {
+    width: 100%;
+  }
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .carousel {
+    width: 500px;
+  }
+}
 /* desktop style */
-@media (min-width: 769px) and (max-width: 1440px) {
-    body {
-        
-    }
-
-    header {
-        margin-top: 45px;
-    }
-
-    .logo_mob {
-        display: none;
-    }
-
-    footer>a:hover {
-        text-decoration: none;
-        color: #393939;
-    }
+@media (min-width: 992px) and (max-width: 1440px) {
+  .carousel {
+    width: 700px;
+  }
 }

@@ -1,0 +1,42 @@
+#form_search {
+  background-color: var(--main-color);
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 70px;
+}
+
+#form_search > h4 {
+  font-family: "Century Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.input_block {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 10px;
+}
+.input_block > input {
+  border: #000000 1px solid;
+  padding: 14px 20px;
+  border-radius: 0%;
+}
+
+#select {
+  border: #000000 1px solid;
+  padding: 11px 20px;
+  border-radius: 0%;
+}
+
+.option {
+  padding: 0 20px;
+}
+.option:hover {
+  cursor: pointer;
+}
