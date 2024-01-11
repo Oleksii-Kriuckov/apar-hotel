@@ -11,7 +11,7 @@ const FormFeedback = (props: Props) => {
   const onClick = () => onSubmit;
 
   return (
-    <form action="" className="form d-flex flex-column" style={{ gap: 20 }}>
+    <form id='form_feedback' className="form d-flex flex-column" style={{ gap: 20 }}>
       <div className="input_block">
         <label htmlFor="name">Name</label>
         <input type="text" name="name" id="name" placeholder="John Smith" />
@@ -55,7 +55,7 @@ const FormFeedback = (props: Props) => {
         </label>
       </div>
 
-      <YellowButton onClick={onClick} color="black">
+      <YellowButton id="send_btn" onClick={onClick} color="black">
         SEND
       </YellowButton>
     </form>

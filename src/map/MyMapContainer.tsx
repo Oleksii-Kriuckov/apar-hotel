@@ -16,7 +16,7 @@ export const MyMapContainer: React.FC<LeafletContainerProps> = ({
   return (
     <MapContainer
       className="map_container"
-      style={{ height: 300 }}
+      // style={{ height: 300 }}
       zoom={zoom}
       center={hotelLocation}
     >

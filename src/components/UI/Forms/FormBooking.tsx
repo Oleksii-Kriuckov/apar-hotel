@@ -12,35 +12,39 @@ const FormBooking = (props: Props) => {
   const onClick = () => onSubmit;
 
   return (
-    <form action="" className="form d-flex flex-column" style={{ gap: 20 }}>
-        <div className="input_block">
-          <label htmlFor="name">Name</label>
-          <input type="text" name="name" id="name" placeholder="John Smith" />
-        </div>
+    <form
+      id="form_booking"
+      className="form d-flex flex-column"
+      style={{ gap: 20 }}
+    >
+      <div className="input_block">
+        <label htmlFor="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="John Smith" />
+      </div>
 
-        <div className="input_block">
-          <label htmlFor="phone">Phone</label>
-          <input
-            type="text"
-            name="phone"
-            id="phone"
-            placeholder="+380965123456"
-          />
-        </div>
+      <div className="input_block">
+        <label htmlFor="phone">Phone</label>
+        <input
+          type="text"
+          name="phone"
+          id="phone"
+          placeholder="+380965123456"
+        />
+      </div>
 
-        <div className="input_block">
-          <label htmlFor="email">E-mail</label>
-          <input
-            type="text"
-            name="email"
-            id="email"
-            placeholder="jsmith@gmail.com"
-          />
-        </div>
+      <div className="input_block">
+        <label htmlFor="email">E-mail</label>
+        <input
+          type="text"
+          name="email"
+          id="email"
+          placeholder="jsmith@gmail.com"
+        />
+      </div>
 
-        <YellowButton onClick={onClick} color="black">
-          Booking
-        </YellowButton>
+      <YellowButton id="booking_btn" onClick={onClick} color="black">
+        Booking
+      </YellowButton>
     </form>
   );
 };

@@ -1,14 +1,12 @@
-
-
 .header_h3 {
   font-family: Century Gothic;
   text-transform: uppercase;
-  font-size: 36px;
   font-weight: 400;
   line-height: 44px;
   letter-spacing: 0em;
   text-align: left;
   padding: 0px;
+  margin: 0;
 }
 
 .lows_extract {
@@ -25,15 +23,16 @@
 
 .contacts > li {
   margin-bottom: 20px;
+  margin-left: 5px;
 }
 .contacts > li:first-child {
-  list-style-image: url('../components/images/location.png');
+  list-style-image: url("../components/images/location.png");
 }
 .contacts > li:nth-child(2) {
-  list-style-image: url('../components/images/phone2.png');
+  list-style-image: url("../components/images/phone2.png");
 }
 .contacts > li:last-child {
-  list-style-image: url('../components/images/at_sing.png');
+  list-style-image: url("../components/images/at_sing.png");
 }
 
 hr {

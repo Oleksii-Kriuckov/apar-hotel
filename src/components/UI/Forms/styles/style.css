@@ -1,11 +1,11 @@
-.form_search {
+#form_search {
   background-color: var(--main-color);
   margin: auto;
   margin-top: 40px;
   margin-bottom: 70px;
 }
 
-.form_search > h4 {
+#form_search > h4 {
   font-family: "Century Gothic";
   font-style: normal;
   font-weight: 400;
@@ -21,7 +21,6 @@
   flex-direction: column;
   justify-content: start;
   gap: 10px;
-  max-width: 330px;
 }
 .input_block > input {
   border: #000000 1px solid;

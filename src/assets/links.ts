@@ -7,8 +7,8 @@ import {
 
 export const links = [
   { link: "About the hotel", to: MainPage_ROUTE },
-  { link: "Hotels", to: Hotel_ROUTE },
-  { link: "Booking", to: Booking_ROUTE },
+  { link: "Hotels", to: '/kyiv/luxury' },
+  { link: "Booking", to: '/kyiv/luxury'},
   { link: "Feedback", to: Feedback_ROUTE },
 ];
 

@@ -1,15 +1,7 @@
-@media (max-width: 575px) {
-  .bookingMessage {
-    width: 100%;
-    border: 1px solid var(--main-color);
-    padding: 85px 20px 20px 40px;
-  }
-
-  .clock {
-    position: absolute;
-    top: 25px;
-    left: 45px;
-  }
+.bookingMessage {
+  max-width: 385px;
+  border: 1px solid var(--main-color);
+  padding: 25px 45px;
 }
 
 .bookingMessage {
@@ -20,4 +12,5 @@
   font-weight: 400;
   font-size: 17px;
   line-height: 26px;
+  margin-top: 20px;
 }

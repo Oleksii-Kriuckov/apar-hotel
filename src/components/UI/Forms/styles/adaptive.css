@@ -1,8 +1,25 @@
 /* mobile style */
-@media (max-width: 767px) {
-  .form_search {
+@media (max-width: 428px) {
+  .form {
+    margin: 40px auto;
   }
 
+  #form_search {
+    padding: 50px 25px;
+  }
+
+  #form_booking {
+    align-items: center;
+    width: 100%;
+  }
+  #booking_btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  #form_search {
+  }
   .search {
     flex-direction: column;
     justify-content: center;
@@ -14,29 +31,28 @@
     width: 100%;
     max-width: 330px;
   }
-}
 
-@media (max-width: 428px) {
-  .form {
-    margin: 40px auto;
+  #form_booking {
+    margin: 0px auto;
   }
-
-  .form_search {
-    padding: 50px 25px;
+  #booking_btn {
+    margin-top: 20px;
   }
 }
 
 /* tablet style */
 @media (min-width: 429px) and (max-width: 767px) {
-  .form_search {
+  #form_search {
     padding: 50px 35px;
     max-width: 470px;
   }
+  #form_booking {
+    align-items: start;
+  }
 }
 
-/* desktop style */
 @media (min-width: 768px) and (max-width: 991px) {
-  .form_search {
+  #form_search {
     padding: 50px 50px;
   }
 
@@ -49,11 +65,11 @@
   .input_block {
     width: 170px;
   }
-
 }
 
+/* desktop style */
 @media (min-width: 992px) {
-  .form_search {
+  #form_search {
     padding: 30px 50px;
   }
   .search {
@@ -67,16 +83,16 @@
 }
 
 @media (min-width: 1200px) {
-  .form_search {
+  #form_search {
     padding: 50px;
   }
-  .search{
+  .search {
     gap: 40px;
   }
 }
 
 @media (min-width: 1300px) {
-  .search{
+  .search {
     gap: 50px;
   }
 }

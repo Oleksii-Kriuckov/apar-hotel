@@ -12,26 +12,30 @@ const Booking = () => {
   const { findCity, findHotel } = findData(city!, hotel!);
 
   return (
-    <div>
+    <div className="booking_page">
       <h3 className="header_h3">
         Booking: hotel {findHotel!.hotelName}, room {number} ({findCity!.city})
       </h3>
 
-      <ul className="contacts">
-        <li>{findHotel!.address}</li>
-        <li>{findHotel!.tel}</li>
-        <li>{findHotel!.email}</li>
-      </ul>
+      <div>
+        <ul className="contacts">
+          <li>{findHotel!.address}</li>
+          <li>{findHotel!.tel}</li>
+          <li>{findHotel!.email}</li>
+        </ul>
+        <MediaLinks />
+      </div>
 
-      <FormBooking/>
-      <MediaLinks />
       <BookingMessage />
+      <FormBooking />
       <LicenseLink />
 
-      <h3 className="header_h3">How can I get to:</h3>
-       <MyMapContainer hotelLocation={findHotel!.coordinates} zoom={16}>
-        <MapChild location={findHotel!.coordinates} />
-      </MyMapContainer>
+      <div>
+        <h3 className="header_h3">How can I get to:</h3>
+        <MyMapContainer hotelLocation={findHotel!.coordinates} zoom={16}>
+          <MapChild location={findHotel!.coordinates} />
+        </MyMapContainer>
+      </div>
     </div>
   );
 };

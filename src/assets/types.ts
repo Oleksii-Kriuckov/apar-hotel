@@ -12,12 +12,13 @@ export interface IHotelInfo {
 }
 
 export interface IRoom {
+  id: number;
   image: string;
   price: number;
   number: number;
   floor: number;
   persons: number;
-  occupied: {checkIn: number, checkOut: number}[]
+  // occupied: {checkIn: number, checkOut: number}[]
 }
 
 export interface IHotelsInCity {

@@ -4,16 +4,17 @@ import "./style.css";
 
 type Props = PropsWithChildren<{
   children: string;
+  id: string;
   color: Color;
   // width: string | number;
   onClick: () => void;
 }>;
 
-const YellowButton = ({ children, color, onClick }: Props) => {
+const YellowButton = ({ children, id, color, onClick }: Props) => {
   return (
     <button
+      id={id}
       className={`yellow_button ${color}`}
-      style={{ width: '100%' }}
       onClick={onClick}
     >
       {children}

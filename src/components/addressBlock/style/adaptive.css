@@ -65,7 +65,7 @@
     width: inherit;
   }
 
-  p {
+  .hotel_info > p {
     margin-top: 35px;
   }
 }

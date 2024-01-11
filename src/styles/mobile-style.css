@@ -1,13 +1,43 @@
 @media (max-width: 428px) {
   #root {
-    padding: 20px;
+    padding: 25px;
+  }
+
+  #modal {
+    margin: 40px;
+  }
+  #closeButton {
+    right: 0;
+    top: 0;
+  }
+  #closeButtonWhite {
+    display: none;
   }
 
   .logo {
     display: none;
   }
 
- 
+  .header_h3 {
+    font-size: 26px;
+  }
+
+  .booking_page {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .bookingMessage {
+    width: 100%;
+    padding: 25px 35px;
+  }
+  .contacts{
+    margin-top: 0;
+  }
+
+  .map_container {
+    height: 300px;
+  }
 
   .room1 {
     margin-left: auto;
@@ -20,11 +50,6 @@
   .our_addresses {
     padding-bottom: 20px;
     text-align: center;
-  }
-
-  .header_h3 {
-    /* margin-top: 50px; */
-    /* margin-bottom: 40px; */
   }
 
   .room2 {
@@ -48,10 +73,6 @@
 
   .lows_extract {
     margin: 25px 0;
-  }
-
-  .contacts > li {
-    margin-left: 40px;
   }
 }
 
