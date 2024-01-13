@@ -21,7 +21,7 @@ export const AddressBlock = ({ hotelInfo }: AddressBlockProps) => {
         <MapChild location={hotelInfo.coordinates} />
       </MyMapContainer>
       <div className="hotel_info">
-        <p>URoom ApartHotel by the address</p>
+        <p>Hotel <strong>{hotelInfo.hotelName}</strong> by the address</p>
         <h3>{hotelInfo.address}</h3>
 
         <ul>
@@ -32,6 +32,7 @@ export const AddressBlock = ({ hotelInfo }: AddressBlockProps) => {
         <div className="address_block_buttons">
           <div className="address_block_btn">
             <YellowButton
+              id="book"
               color="black"
               onClick={() =>
                 navigate(`/${city}/${hotelInfo.hotelName.toLowerCase()}`)

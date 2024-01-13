@@ -12,13 +12,14 @@ export interface IHotelInfo {
 }
 
 export interface IRoom {
-  id: number;
+  hotel: HotelNames
   image: string;
   price: number;
   number: number;
   floor: number;
   persons: number;
-  // occupied: {checkIn: number, checkOut: number}[]
+  occupied: {checkIn: number, checkOut: number}[]
+  id?: number;
 }
 
 export interface IHotelsInCity {
@@ -26,6 +27,8 @@ export interface IHotelsInCity {
   description: string;
   hotelsInfo: IHotelInfo[];
 }
+
+export type HotelNames = "Luxury" | "Independence" | "Code"
 
 export type Color = "white" | "black";
 

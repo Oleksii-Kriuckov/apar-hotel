@@ -10,6 +10,11 @@ const FormBooking = (props: Props) => {
     event.preventDefault();
   };
   const onClick = () => onSubmit;
+  
+  const rewriteData = () => {
+    // const b = doc(db, 'items', 'JYYYnVljcqwNOLWM0jgB')
+    // setDoc(b, {price: 32, name: 'Bar'})
+  };
 
   return (
     <form
