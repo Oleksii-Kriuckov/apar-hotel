@@ -20,6 +20,10 @@
 @media (max-width: 767px) {
   #form_search {
   }
+  .ant-picker-panels {
+    display: flex;
+    flex-direction: column;
+  }
   .search {
     flex-direction: column;
     justify-content: center;

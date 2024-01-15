@@ -66,7 +66,7 @@ const RoomBlock = ({ roomInfo, address }: RoomBlockProps) => {
 
       <div className="room_block_buttons d-flex mt-lg-4">
         <div className="room_block_btn">
-          <TransparentButton onClick={addRoom} color="yellowBorder">
+          <TransparentButton onClick={()=>{}} color="yellowBorder">
             LEARN MORE
           </TransparentButton>
         </div>

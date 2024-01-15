@@ -5,7 +5,7 @@ export interface IHotelInfo {
   email: string;
   coordinates: Coordinates;
   conveniences: string[];
-  rooms: IRoom[],
+  // rooms: IRoom[],
   images: {
     forSlider: string[]
   }

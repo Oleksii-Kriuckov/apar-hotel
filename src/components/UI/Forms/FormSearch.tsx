@@ -1,6 +1,6 @@
 import { Form, useParams } from "react-router-dom";
 import TransparentButton from "../Buttons/TransparentButton";
-import Select from "../Select/Select";
+// import Select from "../Select/Select";
 import {
   collection,
   query,
@@ -11,12 +11,13 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 import findData from "../../../functions/findData";
-import { DatePicker, Space } from "antd";
+import { DatePicker, DatePickerProps, Button, Select } from "antd";
 import dayjs from "dayjs";
 import type { RangePickerProps } from "antd/es/date-picker";
 import { db } from "../../../firebase/firebase";
 import { useState } from "react";
 import "./styles/style.css";
+import { optionsForGuests } from "../../../assets/Info";
 
 type Props = {};
 
@@ -50,51 +51,79 @@ const CheckingForm = (props: Props) => {
     //   return () => unsubscribe();
     // });
   };
-
-  const addRoom = async () => {
-    // e.preventDefault();
-    const newRoom: RoomType = {
-      // id: 1,
-      hotelName: "Luxury",
-      number: 12,
-      occupied: [],
-    };
+  const onChange = (
+    value: DatePickerProps['value'] | RangePickerProps['value'],
+    dateString: [string, string] | string,
+  ) => {
+    console.log('Selected Time: ', value);
+    console.log('Formatted Selected Time: ', dateString);
   };
-
-  const deleteItem = async (id: string) => {
-    await deleteDoc(doc(db, "items", id));
+  
+  const onOk = (value: DatePickerProps['value'] | RangePickerProps['value']) => {
+    console.log('onOk: ', value);
+  };
+  // const deleteItem = async (id: string) => {
+  //   await deleteDoc(doc(db, "items", id));
+  // };
+  const handleChange = (value: string) => {
+    console.log(`selected ${value}`);
   };
 
   return (
     <Form
       id="form_search"
-      // className="form_search"
       action={`/${findCity!.city.toLowerCase()}/${findHotel!.hotelName.toLowerCase()}`}
       method="post"
     >
       <h4>Check-in - 14.00, check-out - 12.00</h4>
 
       <div className="search d-flex flex-wrap">
-        <DatePicker
+        {/* <DatePicker
+          className="norm_height"
+          placeholder="Sign in date"
           format="YYYY-MM-DD"
           disabledDate={disabledPastDate}
-          onChange={(date) => console.log(date?.format())}
+          onChange={(date) => console.log(date?.set("hours", 14).unix())}
         />
-        <DatePicker format="YYYY-MM-DD" disabledDate={disabledPastAndNowDate} />
-        {/* <RangePicker disabledDate={disabledDate} /> */}
+        <DatePicker
+          className="norm_height"
+          placeholder="Sign out date"
+          format="YYYY-MM-DD"
+          disabledDate={disabledPastAndNowDate}
+          onChange={(date) => console.log(date?.set("hour", 12).unix())}
+        /> */}
+        <RangePicker
+          // showTime
+          disabledDate={disabledPastDate}
+          className="norm_height"
+          popupClassName="popup_calendar"
+        />
+        <RangePicker
+          showTime={{ format: "HH" }}
+          format="YYYY-MM-DD"
+          onChange={onChange}
+          onOk={onOk}
+        />
         {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DateRangePicker disablePast calendars={2} localeText={{ start: "Check-in", end: "Check-out" }}/>
         </LocalizationProvider> */}
 
         <div className="input_block">
           <label htmlFor="guests">Guests</label>
-          <Select />
+          <Select
+            className="norm_height"
+            defaultValue={1}
+            options={optionsForGuests}
+          />
         </div>
 
         <div className="input_block">
-          <TransparentButton onClick={()=>{}} color="whiteBorder">
+          <Button className="norm_height" ghost>
             Search
-          </TransparentButton>
+          </Button>
+          {/* <TransparentButton onClick={() => {}} color="whiteBorder">
+            Search
+          </TransparentButton> */}
         </div>
       </div>
     </Form>

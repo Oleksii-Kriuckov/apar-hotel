@@ -41,15 +41,15 @@ export const allHotels: IHotelsInCity[] = [
           "Laundry service, luggage storage, coffee snack vending machines",
           "up to 40 people",
         ],
-        rooms: [ 
-          {hotel: 'Luxury', id: 1, floor: 1, number: 11, image: LuxuryRoom11, persons: 4, price: 2400, occupied: [{checkIn: 0, checkOut: 0}] },
-          {hotel: 'Luxury', id: 2, floor: 1, number: 12, image: LuxuryRoom12, persons: 3, price: 2000, occupied: [{checkIn: 0, checkOut: 0}] },
-          {hotel: 'Luxury', id: 3, floor: 1, number: 13, image: LuxuryRoom13, persons: 2, price: 2200, occupied: [{checkIn: 0, checkOut: 0}] },
-          {hotel: 'Luxury', id: 4, floor: 1, number: 14, image: LuxuryRoom14, persons: 2, price: 2200, occupied: [{checkIn: 0, checkOut: 0}] },
-          {hotel: 'Luxury', id: 5, floor: 2, number: 21, image: LuxuryRoom21, persons: 2, price: 2000, occupied: [{checkIn: 0, checkOut: 0}] },
-          {hotel: 'Luxury', id: 6, floor: 2, number: 22, image: LuxuryRoom22, persons: 2, price: 2000, occupied: [{checkIn: 0, checkOut: 0}] },
-          {hotel: 'Luxury', id: 7, floor: 2, number: 23, image: LuxuryRoom23, persons: 2, price: 2500, occupied: [{checkIn: 0, checkOut: 0}] },
-        ],
+        // rooms: [
+        //   {hotel: 'Luxury', id: 1, floor: 1, number: 11, image: LuxuryRoom11, persons: 4, price: 2400, occupied: [{checkIn: 0, checkOut: 0}] },
+        //   {hotel: 'Luxury', id: 2, floor: 1, number: 12, image: LuxuryRoom12, persons: 3, price: 2000, occupied: [{checkIn: 0, checkOut: 0}] },
+        //   {hotel: 'Luxury', id: 3, floor: 1, number: 13, image: LuxuryRoom13, persons: 2, price: 2200, occupied: [{checkIn: 0, checkOut: 0}] },
+        //   {hotel: 'Luxury', id: 4, floor: 1, number: 14, image: LuxuryRoom14, persons: 2, price: 2200, occupied: [{checkIn: 0, checkOut: 0}] },
+        //   {hotel: 'Luxury', id: 5, floor: 2, number: 21, image: LuxuryRoom21, persons: 2, price: 2000, occupied: [{checkIn: 0, checkOut: 0}] },
+        //   {hotel: 'Luxury', id: 6, floor: 2, number: 22, image: LuxuryRoom22, persons: 2, price: 2000, occupied: [{checkIn: 0, checkOut: 0}] },
+        //   {hotel: 'Luxury', id: 7, floor: 2, number: 23, image: LuxuryRoom23, persons: 2, price: 2500, occupied: [{checkIn: 0, checkOut: 0}] },
+        // ],
         images: {
           forSlider: [LuxuryRoom12, restaurant2, pool, LuxuryBath],
         },
@@ -68,12 +68,12 @@ export const allHotels: IHotelsInCity[] = [
           "In the common area there is a full kitchen, a washing machine, an iron, in general, everything is like at home",
           "up to 40 people",
         ],
-        rooms: [
-          {hotel: 'Independence', id: 8, floor: 1, number: 11, image: IndependenceRoom11, persons: 3, price: 1900, occupied: [{checkIn: 0, checkOut: 0}] },
-          {hotel: 'Independence', id: 9, floor: 1, number: 12, image: IndependenceRoom12, persons: 3, price: 1900, occupied: [{checkIn: 0, checkOut: 0}] },
-          {hotel: 'Independence', id: 10, floor: 1, number: 13, image: IndependenceRoom13, persons: 2, price: 1600, occupied: [{checkIn: 0, checkOut: 0}] },
-          {hotel: 'Independence', id: 11, floor: 1, number: 14, image: IndependenceRoom14, persons: 2, price: 1700, occupied: [{checkIn: 0, checkOut: 0}] },
-        ],
+        // rooms: [
+        //   {hotel: 'Independence', id: 8, floor: 1, number: 11, image: IndependenceRoom11, persons: 3, price: 1900, occupied: [{checkIn: 0, checkOut: 0}] },
+        //   {hotel: 'Independence', id: 9, floor: 1, number: 12, image: IndependenceRoom12, persons: 3, price: 1900, occupied: [{checkIn: 0, checkOut: 0}] },
+        //   {hotel: 'Independence', id: 10, floor: 1, number: 13, image: IndependenceRoom13, persons: 2, price: 1600, occupied: [{checkIn: 0, checkOut: 0}] },
+        //   {hotel: 'Independence', id: 11, floor: 1, number: 14, image: IndependenceRoom14, persons: 2, price: 1700, occupied: [{checkIn: 0, checkOut: 0}] },
+        // ],
         images: {
           forSlider: [IndependenceRoom11, restaurant, IndependenceBathroom],
         },
@@ -102,14 +102,14 @@ export const allHotels: IHotelsInCity[] = [
           "Laundry service, luggage storage, coffee snack vending machines",
           "up to 20 people",
         ],
-        rooms: [
-          {hotel: 'Code', id: 12, floor: 1, number: 11, image: Code10Room11, persons: 4, price: 2400, occupied: [{checkIn: 0, checkOut: 0}] },
-          {hotel: 'Code', id: 13, floor: 1, number: 12, image: Code10Room12, persons: 2, price: 2000, occupied: [{checkIn: 0, checkOut: 0}] },
-          {hotel: 'Code', id: 14, floor: 2, number: 21, image: Code10Room21, persons: 3, price: 2100, occupied: [{checkIn: 0, checkOut: 0}] },
-          {hotel: 'Code', id: 15, floor: 2, number: 22, image: Code10Room22, persons: 2, price: 2000, occupied: [{checkIn: 0, checkOut: 0}] },
-          {hotel: 'Code', id: 16, floor: 3, number: 31, image: Code10Room31, persons: 2, price: 2000, occupied: [{checkIn: 0, checkOut: 0}] },
-          {hotel: 'Code', id: 17, floor: 3, number: 32, image: Code10Room32, persons: 2, price: 2000, occupied: [{checkIn: 0, checkOut: 0}] },
-        ],
+        // rooms: [
+        //   {hotel: 'Code', id: 12, floor: 1, number: 11, image: Code10Room11, persons: 4, price: 2400, occupied: [{checkIn: 0, checkOut: 0}] },
+        //   {hotel: 'Code', id: 13, floor: 1, number: 12, image: Code10Room12, persons: 2, price: 2000, occupied: [{checkIn: 0, checkOut: 0}] },
+        //   {hotel: 'Code', id: 14, floor: 2, number: 21, image: Code10Room21, persons: 3, price: 2100, occupied: [{checkIn: 0, checkOut: 0}] },
+        //   {hotel: 'Code', id: 15, floor: 2, number: 22, image: Code10Room22, persons: 2, price: 2000, occupied: [{checkIn: 0, checkOut: 0}] },
+        //   {hotel: 'Code', id: 16, floor: 3, number: 31, image: Code10Room31, persons: 2, price: 2000, occupied: [{checkIn: 0, checkOut: 0}] },
+        //   {hotel: 'Code', id: 17, floor: 3, number: 32, image: Code10Room32, persons: 2, price: 2000, occupied: [{checkIn: 0, checkOut: 0}] },
+        // ],
         images: {
           forSlider: [Code10Room21, Code10Bath, Code10Room31],
         },
@@ -130,3 +130,10 @@ export const info_en = {
     btn: "CONNECT WITH US",
   },
 };
+
+export const optionsForGuests = [
+  { value: 1, label: "1" },
+  { value: 2, label: "2" },
+  { value: 3, label: "3" },
+  { value: 4, label: "4" },
+];
