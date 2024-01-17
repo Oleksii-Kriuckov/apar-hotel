@@ -8,7 +8,7 @@
 #form_search > h4 {
   font-family: "Century Gothic";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 20px;
   line-height: 32px;
   text-align: center;
@@ -22,10 +22,8 @@
   justify-content: start;
   gap: 10px;
 }
-.input_block > input {
-  border: #000000 1px solid;
-  padding: 14px 20px;
-  border-radius: 0%;
+.input_block > label {
+  padding-left: 3px;
 }
 
 #select {
@@ -41,10 +39,11 @@
   cursor: pointer;
 }
 
-.norm_height{
-  height: 54px;
+.norm_height {
+  height: 50px;
 }
 
-.popup_calendar {
-  width: 288px;
+.booking_btn {
+  background-color: #ffc000;
+  color: #000000;
 }

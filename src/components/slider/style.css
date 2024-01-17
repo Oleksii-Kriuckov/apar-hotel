@@ -1,3 +1,8 @@
+.control-arrow {
+  height: 100%;
+  width: 40px;
+}
+
 /* mobile style */
 @media (max-width: 428px) {
   .carousel {

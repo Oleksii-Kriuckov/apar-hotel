@@ -1,5 +1,5 @@
 import React from "react";
-import YellowButton from "../Buttons/YellowButton";
+import {Button} from 'antd'
 import "./styles/style.css";
 import "./styles/adaptive.css";
 
@@ -47,9 +47,9 @@ const FormBooking = (props: Props) => {
         />
       </div>
 
-      <YellowButton id="booking_btn" onClick={onClick} color="black">
+      <Button className="booking_btn" onClick={onClick} >
         Booking
-      </YellowButton>
+      </Button>
     </form>
   );
 };

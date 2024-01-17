@@ -1,9 +1,9 @@
 /* mobile style */
-@media (max-width: 428px) {
+@media (max-width: 484px) {
   .to_book_block {
     width: 100%;
     border: none;
-    margin-bottom: 160px;
+    margin-bottom: 40px;
   }
 
   .h1 {
@@ -13,17 +13,19 @@
 
   .keyhole_color {
     left: 80%;
-    top: 115%;
+    top: 90%;
   }
 
   .keyhole {
     left: 10%;
-    top: 110%;
+    top: 95%;
   }
 }
+/* Я закінчив тут */
+/* Налаштувати адаптив під планшет та деск комп і перенести код в загальний адаптив */
 
 /* tablet style */
-@media (min-width: 429px) and (max-width: 767px) {
+@media (min-width: 485px) and (max-width: 767px) {
   .to_book_block {
     width: 100%;
     border: none;

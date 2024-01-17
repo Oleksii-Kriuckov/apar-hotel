@@ -52,15 +52,17 @@ const CheckingForm = (props: Props) => {
     // });
   };
   const onChange = (
-    value: DatePickerProps['value'] | RangePickerProps['value'],
-    dateString: [string, string] | string,
+    value: DatePickerProps["value"] | RangePickerProps["value"],
+    dateString: [string, string] | string
   ) => {
-    console.log('Selected Time: ', value);
-    console.log('Formatted Selected Time: ', dateString);
+    console.log("Selected Time: ", value);
+    console.log("Formatted Selected Time: ", dateString);
   };
-  
-  const onOk = (value: DatePickerProps['value'] | RangePickerProps['value']) => {
-    console.log('onOk: ', value);
+
+  const onOk = (
+    value: DatePickerProps["value"] | RangePickerProps["value"]
+  ) => {
+    console.log("onOk: ", value);
   };
   // const deleteItem = async (id: string) => {
   //   await deleteDoc(doc(db, "items", id));
@@ -75,62 +77,66 @@ const CheckingForm = (props: Props) => {
       action={`/${findCity!.city.toLowerCase()}/${findHotel!.hotelName.toLowerCase()}`}
       method="post"
     >
-      <h4>Check-in - 14.00, check-out - 12.00</h4>
+      <h4>Check-in - 14.00, <br/> check-out - 12.00</h4>
 
-      <div className="search d-flex flex-wrap">
-        {/* <DatePicker
-          className="norm_height"
-          placeholder="Sign in date"
-          format="YYYY-MM-DD"
-          disabledDate={disabledPastDate}
-          onChange={(date) => console.log(date?.set("hours", 14).unix())}
-        />
-        <DatePicker
-          className="norm_height"
-          placeholder="Sign out date"
-          format="YYYY-MM-DD"
-          disabledDate={disabledPastAndNowDate}
-          onChange={(date) => console.log(date?.set("hour", 12).unix())}
-        /> */}
-        <RangePicker
-          // showTime
-          disabledDate={disabledPastDate}
-          className="norm_height"
-          popupClassName="popup_calendar"
-        />
-        <RangePicker
-          showTime={{ format: "HH" }}
-          format="YYYY-MM-DD"
-          onChange={onChange}
-          onOk={onOk}
-        />
-        {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DateRangePicker disablePast calendars={2} localeText={{ start: "Check-in", end: "Check-out" }}/>
-        </LocalizationProvider> */}
-
-        <div className="input_block">
-          <label htmlFor="guests">Guests</label>
-          <Select
-            className="norm_height"
-            defaultValue={1}
-            options={optionsForGuests}
+      <div className="search d-flex">
+        <div id="rangePicker" className="input_block">
+          <label htmlFor="rangePicker">Check-in and check-out date</label>
+          <RangePicker
+            size="large"
+            disabledDate={disabledPastDate}
+            // className="norm_height"
+            placeholder={["check-in", "check-out"]}
+            popupClassName="popup_calendar"
           />
         </div>
 
-        <div className="input_block">
-          <Button className="norm_height" ghost>
+        <div id="guests" className="input_block">
+          <label htmlFor="guests">Guests</label>
+          <Select
+            defaultValue={1}
+            options={optionsForGuests}
+            size="large"
+          />
+        </div>
+
+        <div id="search_btn" className="input_block">
+          <Button className="norm_height" ghost size="large">
             Search
           </Button>
-          {/* <TransparentButton onClick={() => {}} color="whiteBorder">
-            Search
-          </TransparentButton> */}
         </div>
       </div>
     </Form>
   );
 };
-
 export default CheckingForm;
+{
+  /* <TransparentButton onClick={() => {}} color="whiteBorder">
+  Search
+</TransparentButton> */
+}
+{
+  /* <DatePicker
+  className="norm_height"
+  placeholder="Sign in date"
+  format="YYYY-MM-DD"
+  disabledDate={disabledPastDate}
+  onChange={(date) => console.log(date?.set("hours", 14).unix())}
+/>
+<DatePicker
+className="norm_height"
+placeholder="Sign out date"
+format="YYYY-MM-DD"
+disabledDate={disabledPastAndNowDate}
+onChange={(date) => console.log(date?.set("hour", 12).unix())}
+/> */
+}
+
+{
+  /* <LocalizationProvider dateAdapter={AdapterDayjs}>
+<DateRangePicker disablePast calendars={2} localeText={{ start: "Check-in", end: "Check-out" }}/>
+</LocalizationProvider> */
+}
 
 {
   /* <div className="input_block">

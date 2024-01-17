@@ -1,8 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { links } from "../../assets/links";
-import "./style/style.css";
-import './style/adaptive.css'
-import TransitionsModal from "../modal";
+import TransitionsModal from "../Modal";
+import "./style.css";
 
 type Props = {};
 

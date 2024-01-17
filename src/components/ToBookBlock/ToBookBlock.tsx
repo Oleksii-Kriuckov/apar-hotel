@@ -24,18 +24,8 @@ const ToBookBlock = ({ children }: ToBookBlockProps) => {
 
       <div className="book_block">
         <h1 className="h1">
-          Your Luxury hotel in <span className="highlight">{children}</span>
+          Your hotels in <span className="highlight">{children}</span>
         </h1>
-
-        <div className="book_block_btn">
-          <YellowButton
-            onClick={() => navigate(`/${children}/booking`)}
-            // width={"100%"}
-            color="black"
-          >
-            Book now
-          </YellowButton>
-        </div>
       </div>
     </div>
   );

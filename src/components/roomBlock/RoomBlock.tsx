@@ -1,39 +1,37 @@
 import conveniences from "../images/conveniences.png";
-import TransparentButton from "../UI/Buttons/TransparentButton";
-import YellowButton from "../UI/Buttons/YellowButton";
+// import TransparentButton from "../UI/Buttons/TransparentButton";
+import { Button } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
 import { IRoom } from "../../assets/types";
-import {addDoc, collection} from "firebase/firestore";
-import "./styles/style.css";
-import "./styles/adaptive.css";
+import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
-import {HotelNames} from '../../assets/types'
+import { HotelNames } from "../../assets/types";
+import "./style.css";
 
 type RoomBlockProps = {
   roomInfo: IRoom;
-  address: string;
 };
 
-const RoomBlock = ({ roomInfo, address }: RoomBlockProps) => {
+const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
   let navigate = useNavigate();
   const { city, hotel } = useParams();
 
-  const addRoom = async () => { 
+  const addRoom = async () => {
     if (hotel) {
       const newRoom: IRoom = {
-      hotel: hotel as HotelNames,
-      floor: roomInfo.floor,
-      image: roomInfo.image,
-      number: roomInfo.number,
-      persons: roomInfo.persons,
-      price: roomInfo.price,
-      occupied: []
+        hotel: hotel as HotelNames,
+        floor: roomInfo.floor,
+        image: roomInfo.image,
+        number: roomInfo.number,
+        persons: roomInfo.persons,
+        price: roomInfo.price,
+        occupied: [],
+      };
+      await addDoc(collection(db, "rooms"), newRoom);
     }
-    await addDoc(collection(db, "rooms"), newRoom);
-    }
-    
+
     // Поки що додавати кімнати в базу за допомогою кнопки LEARN MORE
-   }
+  };
 
   return (
     <div className="room_block">
@@ -50,7 +48,6 @@ const RoomBlock = ({ roomInfo, address }: RoomBlockProps) => {
 
           <div className="room_info">
             <ul>
-              <li>{address}</li>
               <li>Number: {roomInfo.number}</li>
               <li>Floor: {roomInfo.floor}</li>
               <li>Persons: {roomInfo.persons}</li>
@@ -65,22 +62,27 @@ const RoomBlock = ({ roomInfo, address }: RoomBlockProps) => {
       </div>
 
       <div className="room_block_buttons d-flex mt-lg-4">
-        <div className="room_block_btn">
-          <TransparentButton onClick={()=>{}} color="yellowBorder">
-            LEARN MORE
-          </TransparentButton>
-        </div>
-        <div className="room_block_btn">
-          <YellowButton
-            id={`book_now_${roomInfo.id}`}
-            onClick={() =>
-              navigate(`/${city}/${hotel}/${roomInfo.number}/booking`)
-            }
-            color="white"
-          >
-            BOOK NOW
-          </YellowButton>
-        </div>
+        <Button
+        id="learn_more"
+          className=" room_block_btn"
+          onClick={() => {}}
+          size='large'
+          ghost
+        >
+          {/*Transparent*/}
+          LEARN MORE
+        </Button>
+
+        <Button
+          id={`book_now_${roomInfo.id}`}
+          className="booking_btn room_block_btn"
+          onClick={() =>
+            navigate(`/${city}/${hotel}/${roomInfo.number}/booking`)
+          }
+          size="large"
+        >
+          BOOK NOW
+        </Button>
       </div>
     </div>
   );
