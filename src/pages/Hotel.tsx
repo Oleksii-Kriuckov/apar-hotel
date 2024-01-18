@@ -1,7 +1,7 @@
 import { useParams, useActionData } from "react-router-dom";
 import CheckingForm from "../components/UI/Forms/FormSearch";
 import RoomBlock from "../components/roomBlock/RoomBlock";
-import Wellcome from "../components/welcomeBlock/Welcome";
+import Welcome from "../components/welcomeBlock/Welcome";
 import findData from "../functions/findData";
 import { dateToNumber } from "../functions/functions";
 import { useEffect, useState } from "react";
@@ -50,7 +50,7 @@ const Hotel = (props: Props) => {
           <RoomBlock key={el.image} roomInfo={el} />
         ))}
 
-        <Wellcome />
+        <Welcome />
       </div>
     </>
   );

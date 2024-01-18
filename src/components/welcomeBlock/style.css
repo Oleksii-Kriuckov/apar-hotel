@@ -3,9 +3,10 @@
   background: #f7f9fc;
   padding: 30px 60px;
   position: relative;
+  overflow: hidden;
 }
 
-.wellcome{
+.wellcome {
   position: relative;
   z-index: 10;
 }
@@ -18,9 +19,21 @@
   margin-bottom: 20px;
 }
 
-.big_keyhole {
+#welcome_block_btn {
+  border: 1px solid black;
+  color: black;
+  height: 50px;
+}
+
+.big_keyhole:first-of-type {
   position: absolute;
-  bottom: 0;
-  left: 50px;
+  bottom: -30px;
+  left: 40px;
+  z-index: 0;
+}
+.big_keyhole:last-of-type {
+  position: absolute;
+  top: -120px;
+  right: 30px;
   z-index: 0;
 }
