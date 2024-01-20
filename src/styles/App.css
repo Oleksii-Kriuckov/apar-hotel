@@ -47,3 +47,8 @@ hr {
   align-items: center;
   gap: 70px;
 }
+
+.booking_btn {
+  background-color: var(--main-color);
+  color: black;
+}

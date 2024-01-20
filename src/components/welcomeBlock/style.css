@@ -1,17 +1,19 @@
-.wellcome_block {
+.welcome_block {
   width: 100%;
+  max-width: 930px;
+  margin: auto;
   background: #f7f9fc;
   padding: 30px 60px;
   position: relative;
   overflow: hidden;
 }
 
-.wellcome {
+.welcome {
   position: relative;
   z-index: 10;
 }
 
-.wellcome > p {
+.welcome > p {
   font-weight: 400;
   font-size: 24px;
   line-height: 34px;
@@ -23,6 +25,10 @@
   border: 1px solid black;
   color: black;
   height: 50px;
+}
+#welcome_block_btn:hover {
+  color: #4096ff;
+  border-color: #4096ff;
 }
 
 .big_keyhole:first-of-type {

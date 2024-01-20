@@ -1,5 +1,6 @@
 import YellowButton from "../UI/Buttons/YellowButton";
 import ColorButton from "../UI/Buttons/ColorButton";
+import { Button } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
 import { MyMapContainer } from "../../map/MyMapContainer";
 import { MapChild } from "../../map/MapChild";
@@ -21,7 +22,9 @@ export const AddressBlock = ({ hotelInfo }: AddressBlockProps) => {
         <MapChild location={hotelInfo.coordinates} />
       </MyMapContainer>
       <div className="hotel_info">
-        <p>Hotel <strong>{hotelInfo.hotelName}</strong> by the address</p>
+        <p>
+          Hotel <strong>{hotelInfo.hotelName}</strong> by the address
+        </p>
         <h3>{hotelInfo.address}</h3>
 
         <ul>
@@ -30,23 +33,20 @@ export const AddressBlock = ({ hotelInfo }: AddressBlockProps) => {
           ))}
         </ul>
         <div className="address_block_buttons">
-          <div className="address_block_btn">
-            <YellowButton
-              id="book"
-              color="black"
+          <div ></div>
+            <Button
+              className="address_block_btn booking_btn"
               onClick={() =>
                 navigate(`/${city}/${hotelInfo.hotelName.toLowerCase()}`)
               }
             >
               BOOK NOW
-            </YellowButton>
-          </div>
+            </Button>
 
-          <div className="address_block_btn">
-            <ColorButton onClick={() => {}} bgColor="#fff">
+            <Button className="address_block_btn learn" onClick={() => {}}>
               <a href="#about_hotel">LEARN MORE</a>
-            </ColorButton>
-          </div>
+            </Button>
+         
         </div>
       </div>
     </section>

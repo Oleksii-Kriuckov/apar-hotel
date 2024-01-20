@@ -68,7 +68,9 @@
     margin-top: 15px;
   }
   .conveniences {
-    margin: 15px auto;
+    margin: 15px 0;
+    width: 100%;
+    max-width: 295px;
   }
   .room_block_buttons {
     flex-direction: column;
@@ -95,6 +97,14 @@
     top: 95%;
   }
 
+  /* welcome block */
+  .welcome_block {
+    padding: 30px 50px;
+  }
+  #welcome_block_btn {
+    width: 100%;
+  }
+
   .header_h3 {
     font-size: 26px;
   }
@@ -108,7 +118,7 @@
     width: 100%;
     padding: 25px 35px;
   }
-  .contacts{
+  .contacts {
     margin-top: 0;
   }
 

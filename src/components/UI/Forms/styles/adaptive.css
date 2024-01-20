@@ -12,14 +12,15 @@
     align-items: center;
     width: 100%;
   }
-  #booking_btn {
+  #booking {
     width: 100%;
+    max-width: 330px;
   }
 
   .input_block {
-      width: 100%;
-      max-width: 330px;
-    }
+    width: 100%;
+    max-width: 330px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -35,11 +36,12 @@
   }
 
   #form_booking {
-    margin: 0px auto;
+    margin: 20px auto;
   }
   #booking_btn {
     margin-top: 20px;
   }
+
 }
 
 @media (min-width: 485px) {
@@ -56,11 +58,12 @@
   #form_search {
     padding: 50px 35px;
     max-width: 470px;
+    margin-bottom: 40px;
   }
   #form_booking {
     align-items: start;
   }
-  
+
   .input_block {
     width: 100%;
     max-width: 300px;
@@ -70,6 +73,7 @@
 @media (min-width: 768px) and (max-width: 991px) {
   #form_search {
     padding: 50px 50px;
+    margin-bottom: 70px;
   }
 
   .search {
@@ -92,6 +96,7 @@
 @media (min-width: 992px) {
   #form_search {
     padding: 30px 50px;
+    margin-bottom: 70px;
   }
   .search {
     justify-content: center;

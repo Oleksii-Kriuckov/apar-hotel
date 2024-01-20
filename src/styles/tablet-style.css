@@ -69,11 +69,21 @@
     left: 5%;
     top: 98%;
   }
+
+  /* welcome block */
+  #welcome_block_btn {
+    width: 200px;
+  }
 }
 
 @media (min-width: 576px) {
   #closeButton {
     display: none;
+  }
+
+  /* welcome block */
+  #welcome_block_btn {
+    width: 200px;
   }
 }
 

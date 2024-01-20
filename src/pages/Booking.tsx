@@ -28,10 +28,9 @@ const Booking = () => {
 
       <BookingMessage />
       <FormBooking />
-      <LicenseLink />
 
       <div>
-        <h3 className="header_h3">How can I get to:</h3>
+        <h3 style={{marginBottom: 15}} className="header_h3">How can I get to:</h3>
         <MyMapContainer hotelLocation={findHotel!.coordinates} zoom={16}>
           <MapChild location={findHotel!.coordinates} />
         </MyMapContainer>

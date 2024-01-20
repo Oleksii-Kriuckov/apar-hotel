@@ -1,8 +1,4 @@
-.show_license {
-  color: var(--main-color);
-}
 .show_license:hover {
-  text-decoration: underline;
   cursor: pointer;
 }
 

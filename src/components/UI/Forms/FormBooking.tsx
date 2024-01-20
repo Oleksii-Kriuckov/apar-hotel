@@ -1,5 +1,5 @@
 import React from "react";
-import {Button} from 'antd'
+import { Button, Input } from "antd";
 import "./styles/style.css";
 import "./styles/adaptive.css";
 
@@ -10,7 +10,7 @@ const FormBooking = (props: Props) => {
     event.preventDefault();
   };
   const onClick = () => onSubmit;
-  
+
   const rewriteData = () => {
     // const b = doc(db, 'items', 'JYYYnVljcqwNOLWM0jgB')
     // setDoc(b, {price: 32, name: 'Bar'})
@@ -24,13 +24,15 @@ const FormBooking = (props: Props) => {
     >
       <div className="input_block">
         <label htmlFor="name">Name</label>
-        <input type="text" name="name" id="name" placeholder="John Smith" />
+        <Input size="large" name="name" id="name" placeholder="John Smith" />
       </div>
 
       <div className="input_block">
         <label htmlFor="phone">Phone</label>
-        <input
-          type="text"
+        <Input
+          size="large"
+          type="tel"
+          // status="error"
           name="phone"
           id="phone"
           placeholder="+380965123456"
@@ -39,15 +41,21 @@ const FormBooking = (props: Props) => {
 
       <div className="input_block">
         <label htmlFor="email">E-mail</label>
-        <input
-          type="text"
+        <Input
+          size="large"
+          type="email"
           name="email"
           id="email"
           placeholder="jsmith@gmail.com"
         />
       </div>
 
-      <Button className="booking_btn" onClick={onClick} >
+      <Button
+        size="large"
+        id="booking"
+        className="booking_btn"
+        onClick={onClick}
+      >
         Booking
       </Button>
     </form>

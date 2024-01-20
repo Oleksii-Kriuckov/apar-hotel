@@ -1,7 +1,6 @@
 import { info_en } from "../../assets/Info";
-// import TransparentButton from "../UI/Buttons/TransparentButton";
 import { Button } from 'antd'
-import keyhole from "../images/keyhole1.png";
+import keyhole from "../images/keyhole2.png";
 import { useNavigate, useParams } from "react-router-dom";
 import "./style.css";
 import { Feedback_ROUTE } from "../../routers/paths";
@@ -11,8 +10,8 @@ const Welcome = () => {
   const { city } = useParams();
 
   return (
-    <div className="wellcome_block text-center">
-      <div className="wellcome">
+    <div className="welcome_block text-center">
+      <div className="welcome">
         <p>
           {info_en.wellcome.p}
         </p>

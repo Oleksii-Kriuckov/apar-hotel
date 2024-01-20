@@ -1,6 +1,6 @@
 .address_block {
   border: 1px solid #3312f0;
-  /* border: 1px solid #dbdbdb; */
+  border: 1px solid #dbdbdb;
   margin-bottom: 75px;
   position: relative;
 }
@@ -11,19 +11,21 @@
   display: flex;
 }
 
-.address_block_buttons > button:first-child {
+.address_block_btn {
   min-width: 120px;
-}
-.address_block_buttons > button:last-child {
-  min-width: 120px;
-  background: #ffffff;
-  border: 1px solid #000000;
+  height: 50px;
+  color: #000000;
 }
 
 .hotel_info > p {
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
+}
+
+.learn {
+  background-color: white;
+  border-color: #000000;
 }
 
 h3 {

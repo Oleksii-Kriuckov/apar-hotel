@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { links } from "../../assets/links";
-import TransitionsModal from "../Modal";
 import "./style.css";
+import LicenseLink from "../UI/Links/LicenseLink";
 
 type Props = {};
 
@@ -11,8 +11,7 @@ export const FooterBar = (props: Props) => {
       {links.map((el, ind) => (
         <NavLink key={ind} to={el.to}>{el.link}</NavLink>
       ))}
-      {/* <a href="">Documents</a> */}
-        <TransitionsModal/>
+      <LicenseLink/>
     </div>
   );
 };
