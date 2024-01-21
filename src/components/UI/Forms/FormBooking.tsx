@@ -19,7 +19,7 @@ const FormBooking = (props: Props) => {
   return (
     <form
       id="form_booking"
-      className="form d-flex flex-column"
+      className="form d-flex flex-column flex-md-row flex-wrap"
       style={{ gap: 20 }}
     >
       <div className="input_block">

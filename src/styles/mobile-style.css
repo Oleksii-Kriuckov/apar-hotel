@@ -109,6 +109,7 @@
     font-size: 26px;
   }
 
+  /*Booking page*/
   .booking_page {
     display: flex;
     flex-direction: column;
@@ -118,13 +119,13 @@
     width: 100%;
     padding: 25px 35px;
   }
-  .contacts {
-    margin-top: 0;
+  #contacts_wrap {
+    gap: 30px;
   }
-
   .map_container {
     height: 300px;
   }
+  
 
   .room1 {
     margin-left: auto;

@@ -1,5 +1,4 @@
 import MediaLinks from "../components/UI/Links/MediaLinks";
-import LicenseLink from "../components/UI/Links/LicenseLink";
 import BookingMessage from "../components/bookingMessage/BookingMessage";
 import { useParams } from "react-router-dom";
 import findData from "../functions/findData";
@@ -17,20 +16,24 @@ const Booking = () => {
         Booking: hotel {findHotel!.hotelName}, room {number} ({findCity!.city})
       </h3>
 
-      <div>
-        <ul className="contacts">
-          <li>{findHotel!.address}</li>
-          <li>{findHotel!.tel}</li>
-          <li>{findHotel!.email}</li>
-        </ul>
-        <MediaLinks />
+      <div id="contacts_wrap" className="d-flex flex-column flex-md-row">
+        <div>
+          <ul className="contacts">
+            <li>{findHotel!.address}</li>
+            <li>{findHotel!.tel}</li>
+            <li>{findHotel!.email}</li>
+          </ul>
+          <MediaLinks />
+        </div>
+        <BookingMessage />
       </div>
 
-      <BookingMessage />
       <FormBooking />
 
       <div>
-        <h3 style={{marginBottom: 15}} className="header_h3">How can I get to:</h3>
+        <h3 style={{ marginBottom: 15 }} className="header_h3">
+          How can I get to:
+        </h3>
         <MyMapContainer hotelLocation={findHotel!.coordinates} zoom={16}>
           <MapChild location={findHotel!.coordinates} />
         </MyMapContainer>

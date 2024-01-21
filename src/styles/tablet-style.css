@@ -1,4 +1,4 @@
-@media (min-width: 485px) and (max-width: 768px) {
+@media (min-width: 485px) and (max-width: 767px) {
   #root {
     padding: 20px 40px;
   }
@@ -70,6 +70,19 @@
     top: 98%;
   }
 
+  /*Booking page*/
+  .booking_page {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .map_container {
+    height: 300px;
+  }
+  #contacts_wrap {
+    gap: 30px;
+  }
+
   /* welcome block */
   #welcome_block_btn {
     width: 200px;
@@ -88,6 +101,16 @@
 }
 
 @media (min-width: 768px) {
+  /*Booking page*/
+  .booking_page {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .map_container {
+    height: 400px;
+  }
+
   /* Room block  */
   .room_block_btn {
     width: 150px;
@@ -102,7 +125,7 @@
   }
 }
 
-@media (min-width: 769px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 991px) {
   #root {
     padding: 25px 40px;
   }
@@ -150,5 +173,9 @@
   .keyhole {
     left: 5%;
     top: 98%;
+  }
+
+  #contacts_wrap {
+    justify-content: space-between;
   }
 }

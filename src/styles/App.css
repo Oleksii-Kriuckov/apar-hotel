@@ -21,6 +21,10 @@
   line-height: 43px;
 }
 
+.contacts {
+  margin-top: 25px;
+  margin-left: 20px;
+}
 .contacts > li {
   margin-bottom: 20px;
   margin-left: 5px;

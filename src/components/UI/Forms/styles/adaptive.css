@@ -36,7 +36,7 @@
   }
 
   #form_booking {
-    margin: 20px auto;
+    margin: 20px 0;
   }
   #booking_btn {
     margin-top: 20px;
@@ -63,10 +63,11 @@
   #form_booking {
     align-items: start;
   }
-
+  #booking {
+    width: 330px;
+  }
   .input_block {
-    width: 100%;
-    max-width: 300px;
+    width: 330px;
   }
 }
 
