@@ -25,6 +25,7 @@ const Booking = () => {
           </ul>
           <MediaLinks />
         </div>
+
         <BookingMessage />
       </div>
 

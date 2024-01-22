@@ -1,14 +1,18 @@
-import './style.css'
-import clock from '../images/Clock.png'
-type Props = {}
+import "./style.css";
+import clock from "../images/Clock.png";
+type Props = {};
 
 const BookingMessage = (props: Props) => {
   return (
-    <div className='bookingMessage'>
-        <img src={clock} alt="clock"/>
-        <p >Booking a room is carried out <strong> around the clock!</strong> </p>
+    <div className="book_mes_wrap">
+      <div className="bookingMessage">
+        <img src={clock} alt="clock" />
+        <p>
+          Booking a room is carried out <strong> around the clock!</strong>{" "}
+        </p>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default BookingMessage
+export default BookingMessage;

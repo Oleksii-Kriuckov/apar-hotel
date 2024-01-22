@@ -45,3 +45,8 @@
 #booking {
   margin-top: 10px;
 }
+
+.inputs_wrap {
+  justify-content: space-between;
+  gap: 20px;
+}

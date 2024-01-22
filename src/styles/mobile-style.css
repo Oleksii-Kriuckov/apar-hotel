@@ -115,6 +115,9 @@
     flex-direction: column;
     gap: 30px;
   }
+  .book_mes_wrap{
+    justify-content: center;
+  }
   .bookingMessage {
     width: 100%;
     padding: 25px 35px;

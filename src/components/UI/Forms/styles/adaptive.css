@@ -19,6 +19,9 @@
 
   .input_block {
     width: 100%;
+  }
+  .inputs_wrap{
+    width: 100%;
     max-width: 330px;
   }
 }
@@ -88,8 +91,16 @@
     width: 170px;
     flex-shrink: 1;
   }
+  
   .input_block {
     flex-shrink: 1;
+  }
+  .input_block_booking{
+    width: 30%;
+  }
+  #booking {
+    width: 30%;
+    margin: auto;
   }
 }
 

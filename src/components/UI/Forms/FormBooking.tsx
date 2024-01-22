@@ -19,35 +19,37 @@ const FormBooking = (props: Props) => {
   return (
     <form
       id="form_booking"
-      className="form d-flex flex-column flex-md-row flex-wrap"
+      className="form d-flex flex-column flex-lg-row "
       style={{ gap: 20 }}
     >
-      <div className="input_block">
-        <label htmlFor="name">Name</label>
-        <Input size="large" name="name" id="name" placeholder="John Smith" />
-      </div>
+      <div className="inputs_wrap d-flex flex-column flex-md-row">
+        <div className="input_block input_block_booking">
+          <label htmlFor="name">Name</label>
+          <Input size="large" name="name" id="name" placeholder="John Smith" />
+        </div>
 
-      <div className="input_block">
-        <label htmlFor="phone">Phone</label>
-        <Input
-          size="large"
-          type="tel"
-          // status="error"
-          name="phone"
-          id="phone"
-          placeholder="+380965123456"
-        />
-      </div>
+        <div className="input_block input_block_booking">
+          <label htmlFor="phone">Phone</label>
+          <Input
+            size="large"
+            type="tel"
+            // status="warning"
+            name="phone"
+            id="phone"
+            placeholder="+380965123456"
+          />
+        </div>
 
-      <div className="input_block">
-        <label htmlFor="email">E-mail</label>
-        <Input
-          size="large"
-          type="email"
-          name="email"
-          id="email"
-          placeholder="jsmith@gmail.com"
-        />
+        <div className="input_block input_block_booking">
+          <label htmlFor="email">E-mail</label>
+          <Input
+            size="large"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="jsmith@gmail.com"
+          />
+        </div>
       </div>
 
       <Button

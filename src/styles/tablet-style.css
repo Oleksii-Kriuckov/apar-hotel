@@ -110,6 +110,9 @@
   .map_container {
     height: 400px;
   }
+  .book_mes_wrap{
+    justify-content: center;
+  }
 
   /* Room block  */
   .room_block_btn {

@@ -1,13 +1,15 @@
 .bookingMessage {
   max-width: 385px;
+  height: 100%;
   border: 1px solid var(--main-color);
   padding: 25px 45px;
-}
-
-.bookingMessage {
   position: relative;
 }
 
+.book_mes_wrap{
+  display: flex;
+  flex-grow: 1;
+}
 .bookingMessage > p {
   font-weight: 400;
   font-size: 17px;
