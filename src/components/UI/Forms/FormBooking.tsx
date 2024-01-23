@@ -1,15 +1,21 @@
 import React from "react";
-import { Button, Input } from "antd";
+import { Button, Input, Form } from "antd"; // https://ant.design/components/form
 import "./styles/style.css";
 import "./styles/adaptive.css";
 
 type Props = {};
 
 const FormBooking = (props: Props) => {
-  const onSubmit = (event: React.FormEvent<HTMLButtonElement>) => {
-    event.preventDefault();
+  const [form] = Form.useForm();
+
+  const onFinish = (values: any) => {
+    console.log("Received values of form: ", values);
   };
-  const onClick = () => onSubmit;
+
+  // const onSubmit = (event: React.FormEvent<HTMLButtonElement>) => {
+  //   event.preventDefault();
+  // };
+  // const onClick = () => onSubmit;
 
   const rewriteData = () => {
     // const b = doc(db, 'items', 'JYYYnVljcqwNOLWM0jgB')
@@ -17,18 +23,31 @@ const FormBooking = (props: Props) => {
   };
 
   return (
-    <form
+    <Form
       id="form_booking"
       className="form d-flex flex-column flex-lg-row "
+      layout="vertical"
+      form={form}
+      onFinish={onFinish}
+      // variant="outlined"
+      autoComplete="off"
     >
       <div className="inputs_wrap d-flex flex-column flex-md-row">
-        <div className="input_block input_block_booking">
-          <label htmlFor="name">Name</label>
+        <Form.Item
+          label="Name"
+          className="input_block input_block_booking"
+          rules={[{ required: true, message: "Please input your name!" }]}
+        >
+          {/* <label htmlFor="name">Name</label> */}
           <Input size="large" name="name" id="name" placeholder="John Smith" />
-        </div>
+        </Form.Item>
 
-        <div className="input_block input_block_booking">
-          <label htmlFor="phone">Phone</label>
+        <Form.Item
+          label="Phone"
+          className="input_block input_block_booking"
+          // rules={[{ type: "" }]}
+        >
+          {/* <label htmlFor="phone">Phone</label> */}
           <Input
             size="large"
             type="tel"
@@ -37,10 +56,17 @@ const FormBooking = (props: Props) => {
             id="phone"
             placeholder="+380965123456"
           />
-        </div>
+        </Form.Item>
 
-        <div className="input_block input_block_booking">
-          <label htmlFor="email">E-mail</label>
+        <Form.Item
+          className="input_block input_block_booking"
+          label="Email"
+          rules={[
+            { type: "email", message: "The input is not valid E-mail!" },
+            { required: true, message: "Please input your E-mail!" },
+          ]}
+        >
+          {/* <label htmlFor="email">E-mail</label> */}
           <Input
             size="large"
             type="email"
@@ -48,18 +74,18 @@ const FormBooking = (props: Props) => {
             id="email"
             placeholder="jsmith@gmail.com"
           />
-        </div>
+        </Form.Item>
       </div>
 
       <Button
         size="large"
         id="booking"
         className="booking_btn"
-        onClick={onClick}
+        htmlType="submit"
       >
         Booking
       </Button>
-    </form>
+    </Form>
   );
 };
 

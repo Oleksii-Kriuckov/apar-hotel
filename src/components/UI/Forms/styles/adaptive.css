@@ -117,7 +117,7 @@
 /* desktop style */
 @media (min-width: 992px) {
   #form_booking {
-    align-items: end;
+    align-items: center;
   }
 
   #form_search {

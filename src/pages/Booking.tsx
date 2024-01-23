@@ -5,6 +5,7 @@ import findData from "../functions/findData";
 import { MyMapContainer } from "../map/MyMapContainer";
 import { MapChild } from "../map/MapChild";
 import FormBooking from "../components/UI/Forms/FormBooking";
+import FormAntd from "../components/UI/Forms/FormANtd";
 
 const Booking = () => {
   const { city, hotel, number } = useParams();
@@ -30,7 +31,7 @@ const Booking = () => {
       </div>
 
       <FormBooking />
-
+<FormAntd/>
       <div>
         <h3 style={{ marginBottom: 15 }} className="header_h3">
           How can I get to:
