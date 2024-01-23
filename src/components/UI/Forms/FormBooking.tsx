@@ -20,7 +20,6 @@ const FormBooking = (props: Props) => {
     <form
       id="form_booking"
       className="form d-flex flex-column flex-lg-row "
-      style={{ gap: 20 }}
     >
       <div className="inputs_wrap d-flex flex-column flex-md-row">
         <div className="input_block input_block_booking">
