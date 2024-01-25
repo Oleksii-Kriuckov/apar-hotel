@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import findData from "../functions/findData";
 import { MyMapContainer } from "../map/MyMapContainer";
 import { MapChild } from "../map/MapChild";
-import FormBooking from "../components/UI/Forms/FormBooking";
+import {FormBooking} from "../components/UI/Forms/FormBooking";
 
 const Booking = () => {
   const { city, hotel, number } = useParams();
@@ -30,7 +30,6 @@ const Booking = () => {
       </div>
 
       <FormBooking />
-
       <div>
         <h3 style={{ marginBottom: 15 }} className="header_h3">
           How can I get to:

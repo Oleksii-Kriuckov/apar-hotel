@@ -1,67 +1,122 @@
 import React from "react";
-import { Button, Input } from "antd";
-import "./styles/style.css";
+import { Button, Form, Input, Select, InputNumber } from "antd";
+import codes from "../../../assets/codes.json";
 import "./styles/adaptive.css";
+import "./styles/style.css";
 
-type Props = {};
+const { Option } = Select;
 
-const FormBooking = (props: Props) => {
-  const onSubmit = (event: React.FormEvent<HTMLButtonElement>) => {
-    event.preventDefault();
+// const formItemLayout = {
+//   labelCol: {
+//     xs: { span: 24 },
+//     sm: { span: 8 },
+//   },
+//   wrapperCol: {
+//     xs: { span: 24 },
+//     sm: { span: 16 },
+//   },
+// };
+
+// const tailFormItemLayout = {
+//   wrapperCol: {
+//     xs: {
+//       span: 24,
+//       offset: 0,
+//     },
+//     sm: {
+//       span: 16,
+//       offset: 8,
+//     },
+//   },
+// };
+
+export const FormBooking : React.FC = () => {
+  const [form] = Form.useForm();
+
+  const onFinish = (values: any) => {
+    console.log("Received values of form: ", values);
   };
-  const onClick = () => onSubmit;
 
-  const rewriteData = () => {
-    // const b = doc(db, 'items', 'JYYYnVljcqwNOLWM0jgB')
-    // setDoc(b, {price: 32, name: 'Bar'})
-  };
+  const prefixSelector = (
+    <Form.Item name="prefix" noStyle>
+      <Select showSearch size="large" className="prefix">
+        {codes.countries.map((el) => (
+          <Option value={el.code}>{el.code}</Option>
+        ))}
+      </Select>
+    </Form.Item>
+  );
 
   return (
-    <form
-      id="form_booking"
-      className="form d-flex flex-column flex-lg-row "
-      style={{ gap: 20 }}
+    <Form
+      // {...formItemLayout}
+      name="form_booking"
+      className="form d-flex flex-column flex-lg-row align-items-lg-center"
+      form={form}
+      layout="vertical"
+      onFinish={onFinish}
+      initialValues={{
+        prefix: "+380",
+      }}
+      scrollToFirstError
     >
       <div className="inputs_wrap d-flex flex-column flex-md-row">
-        <div className="input_block input_block_booking">
-          <label htmlFor="name">Name</label>
-          <Input size="large" name="name" id="name" placeholder="John Smith" />
-        </div>
+        <Form.Item
+          name="name"
+          label="Name"
+          className="input_block input_block_booking"
+          rules={[{ required: true, message: "Please input your name!" }]}
+        >
+          <Input size="large" placeholder="John Smith" />
+        </Form.Item>
 
-        <div className="input_block input_block_booking">
-          <label htmlFor="phone">Phone</label>
-          <Input
+        <Form.Item
+          name="phone"
+          label="Phone Number"
+          className="input_block input_block_booking"
+          rules={[
+            { required: true, message: "Please input your phone number!" },
+            { type: "integer", message: "The number should be integer" },
+          ]}
+        >
+          <InputNumber
+            minLength={7}
             size="large"
-            type="tel"
-            // status="warning"
-            name="phone"
-            id="phone"
-            placeholder="+380965123456"
+            addonBefore={prefixSelector}
+            style={{ width: "100%" }}
+            placeholder="965123456"
           />
-        </div>
+        </Form.Item>
 
-        <div className="input_block input_block_booking">
-          <label htmlFor="email">E-mail</label>
-          <Input
-            size="large"
-            type="email"
-            name="email"
-            id="email"
-            placeholder="jsmith@gmail.com"
-          />
-        </div>
+        <Form.Item
+          name="email"
+          label="E-mail"
+          className="input_block input_block_booking"
+          rules={[
+            {
+              type: "email",
+              message: "The input is not valid E-mail!",
+            },
+            {
+              required: true,
+              message: "Please input your E-mail!",
+            },
+          ]}
+        >
+          <Input size="large" placeholder="jsmith@gmail.com" />
+        </Form.Item>
       </div>
 
       <Button
         size="large"
         id="booking"
         className="booking_btn"
-        onClick={onClick}
+        htmlType="submit"
       >
         Booking
       </Button>
-    </form>
+    </Form>
   );
 };
 
-export default FormBooking;
+
