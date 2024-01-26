@@ -6,30 +6,6 @@ import "./styles/style.css";
 
 const { Option } = Select;
 
-// const formItemLayout = {
-//   labelCol: {
-//     xs: { span: 24 },
-//     sm: { span: 8 },
-//   },
-//   wrapperCol: {
-//     xs: { span: 24 },
-//     sm: { span: 16 },
-//   },
-// };
-
-// const tailFormItemLayout = {
-//   wrapperCol: {
-//     xs: {
-//       span: 24,
-//       offset: 0,
-//     },
-//     sm: {
-//       span: 16,
-//       offset: 8,
-//     },
-//   },
-// };
-
 export const FormBooking : React.FC = () => {
   const [form] = Form.useForm();
 
@@ -49,7 +25,6 @@ export const FormBooking : React.FC = () => {
 
   return (
     <Form
-      // {...formItemLayout}
       name="form_booking"
       className="form d-flex flex-column flex-lg-row align-items-lg-center"
       form={form}
