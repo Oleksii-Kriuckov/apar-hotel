@@ -1,75 +1,74 @@
 import { Form, useParams } from "react-router-dom";
-import TransparentButton from "../Buttons/TransparentButton";
 // import Select from "../Select/Select";
 import {
   collection,
   query,
   onSnapshot,
-  addDoc,
-  doc,
-  setDoc,
   deleteDoc,
 } from "firebase/firestore";
-import findData from "../../../functions/findData";
+import { findData, queryRooms } from "../../../functions/findData";
 import { DatePicker, DatePickerProps, Button, Select } from "antd";
 import dayjs from "dayjs";
+import { Dayjs } from "dayjs";
 import type { RangePickerProps } from "antd/es/date-picker";
 import { db } from "../../../firebase/firebase";
 import { useState } from "react";
 import "./styles/style.css";
 import { optionsForGuests } from "../../../assets/Info";
+import { useSetRecoilState } from "recoil";
+import { dateRange$, freeRooms$ } from "../../../recoil/atoms";
+import { HotelNames, IRoom } from "../../../assets/types";
 
 type Props = {};
 
 const { RangePicker } = DatePicker;
+
+// Can not select days before today
 const disabledPastDate: RangePickerProps["disabledDate"] = (current) => {
-  // Can not select days before today and today
   return current && current < dayjs().startOf("day");
 };
-const disabledPastAndNowDate: RangePickerProps["disabledDate"] = (current) => {
-  // Can not select days before today and today
-  return current && current < dayjs().endOf("day");
-};
 
-const CheckingForm = (props: Props) => {
+const FormSearch = (props: Props) => {
   const { city, hotel } = useParams();
+  const setDateRange = useSetRecoilState(dateRange$);
+  const setRooms = useSetRecoilState(freeRooms$);
   // const [items, setItems] = useState<ItemType[]>([]);
-
+  const [datePickerValue, setDatePickerValue] = useState<[Dayjs, Dayjs]>([
+    dayjs(),
+    dayjs().add(1, "day"),
+  ]);
   const { findCity, findHotel } = findData(city!, hotel!);
 
-  const findRoom = () => {
-    // const q = query(collection(db, "items"));
-    // const unsubscribe = onSnapshot(q, (querySnapshot) => {
-    //   let itemsArr: ItemType[] = [];
-    //   console.log(querySnapshot.docs[0].id)
-    //   console.log(querySnapshot.docs[0].data())
-    //   querySnapshot.forEach((doc) => {
-    //     // doc.data() = {name: string, price: number}
-    //     itemsArr.push({ ...doc.data(), id: doc.id });
-    //   });
-    //   setItems(itemsArr);
-    //   return () => unsubscribe();
-    // });
-  };
   const onChange = (
-    value: DatePickerProps["value"] | RangePickerProps["value"],
+    value: RangePickerProps["value"],
     dateString: [string, string] | string
   ) => {
-    console.log("Selected Time: ", value);
+    if (value) {
+      setDatePickerValue(value);
+    }
     console.log("Formatted Selected Time: ", dateString);
   };
 
-  const onOk = (
-    value: DatePickerProps["value"] | RangePickerProps["value"]
-  ) => {
-    console.log("onOk: ", value);
+  const searchRooms = (value: [Dayjs, Dayjs]) => {
+    setDateRange([value[0].valueOf(), value[1].valueOf()]);
+
+    const q = query(collection(db, "rooms"));
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      let roomsArr: IRoom[] = [];
+      querySnapshot.forEach((doc: any) => {
+        roomsArr.push({ ...doc.data(), id: doc.id });
+      });
+
+      // improve searching by dates
+      const freeRooms = roomsArr.filter((room) => room.hotel === hotel);
+
+      setRooms(freeRooms);
+      return () => unsubscribe();
+    });
   };
   // const deleteItem = async (id: string) => {
   //   await deleteDoc(doc(db, "items", id));
   // };
-  const handleChange = (value: string) => {
-    console.log(`selected ${value}`);
-  };
 
   return (
     <Form
@@ -77,7 +76,9 @@ const CheckingForm = (props: Props) => {
       action={`/${findCity!.city.toLowerCase()}/${findHotel!.hotelName.toLowerCase()}`}
       method="post"
     >
-      <h4>Check-in - 14.00, <br/> check-out - 12.00</h4>
+      <h4>
+        Check-in - 14.00, <br /> check-out - 12.00
+      </h4>
 
       <div className="search d-flex">
         <div id="rangePicker" className="input_block">
@@ -88,20 +89,24 @@ const CheckingForm = (props: Props) => {
             // className="norm_height"
             placeholder={["check-in", "check-out"]}
             popupClassName="popup_calendar"
+            // defaultValue={datePickerValue}
+            onChange={onChange}
+            value={datePickerValue}
           />
         </div>
 
         <div id="guests" className="input_block">
           <label htmlFor="guests">Guests</label>
-          <Select
-            defaultValue={1}
-            options={optionsForGuests}
-            size="large"
-          />
+          <Select defaultValue={1} options={optionsForGuests} size="large" />
         </div>
 
         <div id="search_btn" className="input_block">
-          <Button className="norm_height" ghost size="large">
+          <Button
+            className="norm_height"
+            ghost
+            size="large"
+            onClick={() => searchRooms(datePickerValue)}
+          >
             Search
           </Button>
         </div>
@@ -109,12 +114,8 @@ const CheckingForm = (props: Props) => {
     </Form>
   );
 };
-export default CheckingForm;
-{
-  /* <TransparentButton onClick={() => {}} color="whiteBorder">
-  Search
-</TransparentButton> */
-}
+export default FormSearch;
+
 {
   /* <DatePicker
   className="norm_height"

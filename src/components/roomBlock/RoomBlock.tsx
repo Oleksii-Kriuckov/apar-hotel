@@ -1,5 +1,4 @@
 import conveniences from "../images/conveniences.png";
-// import TransparentButton from "../UI/Buttons/TransparentButton";
 import { Button } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
 import { IRoom } from "../../assets/types";
@@ -7,6 +6,8 @@ import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
 import { HotelNames } from "../../assets/types";
 import "./style.css";
+import { useSetRecoilState } from "recoil";
+import { bookingRoom$ } from "../../recoil/atoms";
 
 type RoomBlockProps = {
   roomInfo: IRoom;
@@ -15,23 +16,22 @@ type RoomBlockProps = {
 const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
   let navigate = useNavigate();
   const { city, hotel } = useParams();
+  const setBookingRoom = useSetRecoilState(bookingRoom$)
 
-  const addRoom = async () => {
-    if (hotel) {
-      const newRoom: IRoom = {
-        hotel: hotel as HotelNames,
-        floor: roomInfo.floor,
-        image: roomInfo.image,
-        number: roomInfo.number,
-        persons: roomInfo.persons,
-        price: roomInfo.price,
-        occupied: [],
-      };
-      await addDoc(collection(db, "rooms"), newRoom);
-    }
-
-    // Поки що додавати кімнати в базу за допомогою кнопки LEARN MORE
-  };
+  // const addRoom = async () => {
+  //   if (hotel) {
+  //     const newRoom: IRoom = {
+  //       hotel: hotel as HotelNames,
+  //       floor: roomInfo.floor,
+  //       image: roomInfo.image,
+  //       number: roomInfo.number,
+  //       persons: roomInfo.persons,
+  //       price: roomInfo.price,
+  //       occupied: [],
+  //     };
+  //     await addDoc(collection(db, "rooms"), newRoom);
+  //   }
+  // };
 
   return (
     <div className="room_block">
@@ -63,21 +63,22 @@ const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
 
       <div className="room_block_buttons d-flex mt-lg-4">
         <Button
-        id="learn_more"
+          id="learn_more"
           className=" room_block_btn"
-          onClick={() => {}}
+          onClick={() => { }}
           size='large'
           ghost
         >
-          {/*Transparent*/}
           LEARN MORE
         </Button>
 
         <Button
           id={`book_now_${roomInfo.id}`}
           className="booking_btn room_block_btn"
-          onClick={() =>
+          onClick={() => {
+            setBookingRoom(roomInfo)
             navigate(`/${city}/${hotel}/${roomInfo.number}/booking`)
+          }
           }
           size="large"
         >

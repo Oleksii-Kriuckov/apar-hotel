@@ -1,13 +1,15 @@
 import { useParams, useActionData } from "react-router-dom";
-import CheckingForm from "../components/UI/Forms/FormSearch";
+import FormSearch from "../components/UI/Forms/FormSearch";
 import RoomBlock from "../components/roomBlock/RoomBlock";
 import Welcome from "../components/welcomeBlock/Welcome";
-import findData from "../functions/findData";
+import { findData } from "../functions/findData";
 import { dateToNumber } from "../functions/functions";
 import { useEffect, useState } from "react";
 import { collection, doc, query, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import { IRoom } from "../assets/types";
+import { useRecoilState } from "recoil";
+import { freeRooms$ } from "../recoil/atoms";
 
 type Props = {};
 
@@ -15,22 +17,23 @@ const Hotel = (props: Props) => {
   const { city, hotel } = useParams();
   const { findCity, findHotel } = findData(city!, hotel!);
   const data = useActionData();
-  const [rooms, setRooms] = useState<IRoom[]>([]);
+  const [freeRooms, setFreeRooms] = useRecoilState(freeRooms$);
+  // const [rooms, setRooms] = useState<IRoom[]>([]);
 
-  useEffect(() => {
-    const q = query(collection(db, "rooms"));
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      let roomsArr: IRoom[] = [];
-      // console.log(querySnapshot.docs[0].id)
-      // console.log(querySnapshot.docs[0].data())
-      querySnapshot.forEach((doc: any) => {
-        // doc.data() = {name: string, price: number}
-        roomsArr.push({ ...doc.data(), id: doc.id });
-      });
-      setRooms(roomsArr.filter((room) => room.hotel === hotel));
-      return () => unsubscribe();
-    });
-  }, []);
+  // useEffect(() => {
+  //   const q = query(collection(db, "rooms"));
+  //   const unsubscribe = onSnapshot(q, (querySnapshot) => {
+  //     let roomsArr: IRoom[] = [];
+  //     // console.log(querySnapshot.docs[0].id)
+  //     // console.log(querySnapshot.docs[0].data())
+  //     querySnapshot.forEach((doc: any) => {
+  //       // doc.data() = {name: string, price: number}
+  //       roomsArr.push({ ...doc.data(), id: doc.id });
+  //     });
+  //     setRooms(roomsArr.filter((room) => room.hotel === hotel));
+  //     return () => unsubscribe();
+  //   });
+  // }, []);
 
   return (
     <>
@@ -44,10 +47,10 @@ const Hotel = (props: Props) => {
         {findHotel!.address}
       </h4>
       <div className="hotel_page">
-        <CheckingForm />
+        <FormSearch />
 
-        {rooms.map((el) => (
-          <RoomBlock key={el.image} roomInfo={el} />
+        {freeRooms.map((room) => (
+          <RoomBlock key={room.image} roomInfo={room} />
         ))}
 
         <Welcome />

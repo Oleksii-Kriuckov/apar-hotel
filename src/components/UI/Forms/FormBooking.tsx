@@ -3,22 +3,36 @@ import { Button, Form, Input, Select, InputNumber } from "antd";
 import codes from "../../../assets/codes.json";
 import "./styles/style.css";
 import "./styles/adaptive.css";
-// https://ant.design/components/form
+import { useRecoilValue } from "recoil";
+import { bookingRoom$, dateRange$ } from "../../../recoil/atoms";
+import {doc, setDoc} from "firebase/firestore";
+import { db } from "../../../firebase/firebase";
 
 const { Option } = Select;
 
 export const FormBooking : React.FC = () => {
   const [form] = Form.useForm();
+  const dateRange = useRecoilValue(dateRange$)
+  const bookingRoom = useRecoilValue(bookingRoom$)
 
-  const onFinish = (values: any) => {
-    console.log("Received values of form: ", values);
+  // send dataRange in data base to corresponding RoomObject
+  const bookRoom = (values: any) => {
+    console.log(bookingRoom);
+    // const b = doc(db, "items", bookingRoom.);
+    // setDoc(b, { price: 32, name: "Bar" });
+    
+    // console.log("Received values of form: ", values);
+  };
+
+  const setDB = () => {
+    console.log("set");
   };
 
   const prefixSelector = (
     <Form.Item name="prefix" noStyle>
       <Select showSearch size="large" className="prefix">
         {codes.countries.map((el) => (
-          <Option value={el.code}>{el.code}</Option>
+          <Option key={el.code} value={el.code}>{el.code}</Option>
         ))}
       </Select>
     </Form.Item>
@@ -30,7 +44,7 @@ export const FormBooking : React.FC = () => {
       className="form d-flex flex-column flex-lg-row align-items-lg-center"
       form={form}
       layout="vertical"
-      onFinish={onFinish}
+      onFinish={bookRoom}
       initialValues={{
         prefix: "+380",
       }}
