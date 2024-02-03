@@ -11,7 +11,12 @@ export const freeRooms$ = atom<IRoom[]>({
   default: []
 })
 
-export const bookingRoom$ = atom({
-  key: 'idRoom',
-  default: {}
+export const showBookingForm$ = atom<boolean>({
+  key: 'showBookingForm',
+  default: false
 })
+
+// export const bookingRoom$ = atom({
+//   key: 'idRoom',
+//   default: {}
+// })

@@ -29,8 +29,6 @@ const Booking = () => {
         <BookingMessage />
       </div>
 
-      <FormBooking />
-
       <div>
         <h3 style={{ marginBottom: 15 }} className="header_h3">
           How can I get to:

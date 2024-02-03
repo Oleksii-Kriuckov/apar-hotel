@@ -7,7 +7,7 @@ import { db } from "../../firebase/firebase";
 import { HotelNames } from "../../assets/types";
 import "./style.css";
 import { useSetRecoilState } from "recoil";
-import { bookingRoom$ } from "../../recoil/atoms";
+import { showBookingForm$ } from "../../recoil/atoms";
 
 type RoomBlockProps = {
   roomInfo: IRoom;
@@ -16,7 +16,7 @@ type RoomBlockProps = {
 const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
   let navigate = useNavigate();
   const { city, hotel } = useParams();
-  const setBookingRoom = useSetRecoilState(bookingRoom$)
+  const setShowBookingForm = useSetRecoilState(showBookingForm$);
 
   // const addRoom = async () => {
   //   if (hotel) {
@@ -65,21 +65,22 @@ const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
         <Button
           id="learn_more"
           className=" room_block_btn"
-          onClick={() => { }}
-          size='large'
+          onClick={() =>
+            navigate(`/${city}/${hotel}/${roomInfo.number}/booking`)
+          }
+          size="large"
           ghost
         >
           LEARN MORE
         </Button>
 
         <Button
+          href="#form_booking"
           id={`book_now_${roomInfo.id}`}
           className="booking_btn room_block_btn"
           onClick={() => {
-            setBookingRoom(roomInfo)
-            navigate(`/${city}/${hotel}/${roomInfo.number}/booking`)
-          }
-          }
+            setShowBookingForm(true);
+          }}
           size="large"
         >
           BOOK NOW

@@ -4,7 +4,7 @@ import codes from "../../../assets/codes.json";
 import "./styles/style.css";
 import "./styles/adaptive.css";
 import { useRecoilValue } from "recoil";
-import { bookingRoom$, dateRange$ } from "../../../recoil/atoms";
+import { dateRange$ } from "../../../recoil/atoms";
 import {doc, setDoc} from "firebase/firestore";
 import { db } from "../../../firebase/firebase";
 
@@ -13,11 +13,11 @@ const { Option } = Select;
 export const FormBooking : React.FC = () => {
   const [form] = Form.useForm();
   const dateRange = useRecoilValue(dateRange$)
-  const bookingRoom = useRecoilValue(bookingRoom$)
+  // const bookingRoom = useRecoilValue(bookingRoom$)
 
   // send dataRange in data base to corresponding RoomObject
   const bookRoom = (values: any) => {
-    console.log(bookingRoom);
+    console.log('bookingRoom');
     // const b = doc(db, "items", bookingRoom.);
     // setDoc(b, { price: 32, name: "Bar" });
     

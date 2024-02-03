@@ -1,7 +1,6 @@
 import facebook from "../../images/facebook.png";
 import instagram from "../../images/instagram.png";
 import twitter from "../../images/new-logo-x.png";
-// import telegram from "../../images/telegram.png";
 import "./style.css";
 
 const MediaLinks = () => {

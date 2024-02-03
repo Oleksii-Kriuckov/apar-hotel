@@ -27,7 +27,7 @@ const router = createBrowserRouter(
       <Route
         path="/:city/:hotel"
         element={<Hotel />}
-        action={findRoomsAction}
+        // action={findRoomsAction}
       />
       <Route path="/:city/:hotel/:number/booking" element={<Booking />} />
       <Route path={Feedback_ROUTE} element={<Feedback />} />
