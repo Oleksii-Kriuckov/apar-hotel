@@ -13,11 +13,12 @@ import { Dayjs } from "dayjs";
 import type { RangePickerProps } from "antd/es/date-picker";
 import { db } from "../../../firebase/firebase";
 import { useState } from "react";
-import "./styles/style.css";
 import { optionsForGuests } from "../../../assets/Info";
 import { useSetRecoilState } from "recoil";
 import { dateRange$, freeRooms$ } from "../../../recoil/atoms";
 import { HotelNames, IRoom } from "../../../assets/types";
+import "./styles/style.css";
+import { useQuery } from "../../../hooks/useQuery";
 
 type Props = {};
 
@@ -32,6 +33,7 @@ const FormSearch = (props: Props) => {
   const { city, hotel } = useParams();
   const setDateRange = useSetRecoilState(dateRange$);
   const setRooms = useSetRecoilState(freeRooms$);
+  const {queryRooms} = useQuery()
   // const [items, setItems] = useState<ItemType[]>([]);
   const [datePickerValue, setDatePickerValue] = useState<[Dayjs, Dayjs]>([
     dayjs(),
@@ -52,19 +54,7 @@ const FormSearch = (props: Props) => {
   const searchRooms = (value: [Dayjs, Dayjs]) => {
     setDateRange([value[0].valueOf(), value[1].valueOf()]);
 
-    const q = query(collection(db, "rooms"));
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      let roomsArr: IRoom[] = [];
-      querySnapshot.forEach((doc: any) => {
-        roomsArr.push({ ...doc.data(), id: doc.id });
-      });
-
-      // improve searching by dates
-      const freeRooms = roomsArr.filter((room) => room.hotel === hotel);
-
-      setRooms(freeRooms);
-      return () => unsubscribe();
-    });
+    queryRooms(hotel as HotelNames)
   };
   // const deleteItem = async (id: string) => {
   //   await deleteDoc(doc(db, "items", id));

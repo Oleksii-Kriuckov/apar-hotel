@@ -7,7 +7,7 @@ import { dateToNumber } from "../functions/functions";
 import { useEffect, useState } from "react";
 import { collection, doc, query, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase/firebase";
-import { IRoom } from "../assets/types";
+import { HotelNames, IRoom } from "../assets/types";
 import { useRecoilState } from "recoil";
 import { freeRooms$ } from "../recoil/atoms";
 
@@ -21,18 +21,7 @@ const Hotel = (props: Props) => {
   // const [rooms, setRooms] = useState<IRoom[]>([]);
 
   // useEffect(() => {
-  //   const q = query(collection(db, "rooms"));
-  //   const unsubscribe = onSnapshot(q, (querySnapshot) => {
-  //     let roomsArr: IRoom[] = [];
-  //     // console.log(querySnapshot.docs[0].id)
-  //     // console.log(querySnapshot.docs[0].data())
-  //     querySnapshot.forEach((doc: any) => {
-  //       // doc.data() = {name: string, price: number}
-  //       roomsArr.push({ ...doc.data(), id: doc.id });
-  //     });
-  //     setRooms(roomsArr.filter((room) => room.hotel === hotel));
-  //     return () => unsubscribe();
-  //   });
+  //  
   // }, []);
 
   return (
