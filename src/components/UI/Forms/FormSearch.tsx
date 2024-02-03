@@ -1,13 +1,7 @@
 import { Form, useParams } from "react-router-dom";
-// import Select from "../Select/Select";
-import {
-  collection,
-  query,
-  onSnapshot,
-  deleteDoc,
-} from "firebase/firestore";
-import { findData, queryRooms } from "../../../functions/findData";
-import { DatePicker, DatePickerProps, Button, Select } from "antd";
+import { deleteDoc } from "firebase/firestore";
+import { findData } from "../../../functions/findData";
+import { DatePicker, Button, Select } from "antd";
 import dayjs from "dayjs";
 import { Dayjs } from "dayjs";
 import type { RangePickerProps } from "antd/es/date-picker";
@@ -32,9 +26,7 @@ const disabledPastDate: RangePickerProps["disabledDate"] = (current) => {
 const FormSearch = (props: Props) => {
   const { city, hotel } = useParams();
   const setDateRange = useSetRecoilState(dateRange$);
-  const setRooms = useSetRecoilState(freeRooms$);
-  const {queryRooms} = useQuery()
-  // const [items, setItems] = useState<ItemType[]>([]);
+  const { queryRooms } = useQuery();
   const [datePickerValue, setDatePickerValue] = useState<[Dayjs, Dayjs]>([
     dayjs(),
     dayjs().add(1, "day"),
@@ -54,7 +46,7 @@ const FormSearch = (props: Props) => {
   const searchRooms = (value: [Dayjs, Dayjs]) => {
     setDateRange([value[0].valueOf(), value[1].valueOf()]);
 
-    queryRooms(hotel as HotelNames)
+    queryRooms(hotel as HotelNames);
   };
   // const deleteItem = async (id: string) => {
   //   await deleteDoc(doc(db, "items", id));
