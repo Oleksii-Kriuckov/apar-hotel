@@ -9,7 +9,7 @@ import { db } from "../../../firebase/firebase";
 import { useState } from "react";
 import { optionsForGuests } from "../../../assets/Info";
 import { useSetRecoilState } from "recoil";
-import { dateRange$, freeRooms$ } from "../../../recoil/atoms";
+import { dateRange$, freeRooms$, showBookingForm$ } from "../../../recoil/atoms";
 import { HotelNames, IRoom } from "../../../assets/types";
 import "./styles/style.css";
 import { useQuery } from "../../../hooks/useQuery";

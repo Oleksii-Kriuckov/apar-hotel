@@ -1,14 +1,30 @@
 import MediaLinks from "../components/UI/Links/MediaLinks";
 import BookingMessage from "../components/bookingMessage/BookingMessage";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { findData } from "../functions/findData";
 import { MyMapContainer } from "../map/MyMapContainer";
 import { MapChild } from "../map/MapChild";
 import { FormBooking } from "../components/UI/Forms/FormBooking";
+import { useEffect } from "react";
+import { bookingRoom$, showBookingForm$, showSuccessMessage$ } from "../recoil/atoms";
+import { useRecoilValue } from "recoil";
+import SuccessBooking from "../components/bookingMessage/SuccessBooking";
 
 const Booking = () => {
   const { city, hotel, number } = useParams();
   const { findCity, findHotel } = findData(city!, hotel!);
+  const bookingRoom = useRecoilValue(bookingRoom$)
+  const showBooking = useRecoilValue(showBookingForm$)
+  const showSuccessMessage = useRecoilValue(showSuccessMessage$)
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    if (!bookingRoom.id) {
+      navigate(`/${city}/${hotel}`)
+    } else {
+      console.log(new Date(1707429052802) )
+    }
+  }, []);
 
   return (
     <div className="booking_page">
@@ -26,7 +42,13 @@ const Booking = () => {
           <MediaLinks />
         </div>
 
+
         <BookingMessage />
+      </div>
+
+      <div className="show_place">
+        {showBooking && <FormBooking />}
+        {showSuccessMessage && <SuccessBooking />}
       </div>
 
       <div>

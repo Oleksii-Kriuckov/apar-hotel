@@ -1,5 +1,5 @@
 import React from "react";
-import YellowButton from "../Buttons/YellowButton";
+import { Button } from "antd";
 import './styles/style.css'
 
 type Props = {};
@@ -55,9 +55,9 @@ const FormFeedback = (props: Props) => {
         </label>
       </div>
 
-      <YellowButton id="send_btn" onClick={onClick} color="black">
+      <Button id="send_btn" onClick={onClick} color="black">
         SEND
-      </YellowButton>
+      </Button>
     </form>
   );
 };

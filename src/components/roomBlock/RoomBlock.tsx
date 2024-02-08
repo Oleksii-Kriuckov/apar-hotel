@@ -7,7 +7,7 @@ import { db } from "../../firebase/firebase";
 import { HotelNames } from "../../assets/types";
 import "./style.css";
 import { useSetRecoilState } from "recoil";
-import { showBookingForm$ } from "../../recoil/atoms";
+import { showBookingForm$, bookingRoom$ } from "../../recoil/atoms";
 
 type RoomBlockProps = {
   roomInfo: IRoom;
@@ -16,7 +16,9 @@ type RoomBlockProps = {
 const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
   let navigate = useNavigate();
   const { city, hotel } = useParams();
+  // const setIdBookingRoom = useSetRecoilState(idBookingRoom$);
   const setShowBookingForm = useSetRecoilState(showBookingForm$);
+  const setBookingRoom = useSetRecoilState(bookingRoom$);
 
   // const addRoom = async () => {
   //   if (hotel) {
@@ -32,6 +34,26 @@ const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
   //     await addDoc(collection(db, "rooms"), newRoom);
   //   }
   // };
+
+  const navigateBooking = () => {
+    // setIdBookingRoom(roomInfo.id)
+    // console.log(roomInfo.occupied[0].checkOut < Date.now());
+    const newRoomInfo: {
+      occupied: { checkIn: number; checkOut: number }[],
+      [key: string]: string | number | { checkIn: number; checkOut: number }[]
+    } = {occupied: []};
+    for (const key in roomInfo) {
+      if (Object.prototype.hasOwnProperty.call(roomInfo, key)) {
+        newRoomInfo[key] = roomInfo[key];
+      }
+    }
+    newRoomInfo.occupied = newRoomInfo.occupied.filter((v, i, a) => v.checkOut > Date.now())
+    // newRoomInfo.occupied = roomInfo.occupied.filter((v, i, a) => v.checkOut > Date.now())
+
+    setBookingRoom(newRoomInfo);
+    setShowBookingForm(true);
+    navigate(`/${city}/${hotel}/${roomInfo.number}/booking`);
+  };
 
   return (
     <div className="room_block">
@@ -65,9 +87,7 @@ const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
         <Button
           id="learn_more"
           className=" room_block_btn"
-          onClick={() =>
-            navigate(`/${city}/${hotel}/${roomInfo.number}/booking`)
-          }
+          // onClick={() => navigate(`/`)}
           size="large"
           ghost
         >
@@ -78,9 +98,7 @@ const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
           href="#form_booking"
           id={`book_now_${roomInfo.id}`}
           className="booking_btn room_block_btn"
-          onClick={() => {
-            setShowBookingForm(true);
-          }}
+          onClick={navigateBooking}
           size="large"
         >
           BOOK NOW

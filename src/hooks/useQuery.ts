@@ -17,7 +17,12 @@ export const useQuery = () => {
       });
 
       const freeRooms = roomsArr.filter((room) => room.hotel === hotel);
+      freeRooms.forEach((room, ind, arr) => {
+        
+      })
+      // console.log(freeRooms);
       setRooms(freeRooms);
+      
       return () => unsubscribe();
     });
   }

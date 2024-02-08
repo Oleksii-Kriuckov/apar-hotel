@@ -56,3 +56,8 @@ hr {
   background-color: var(--main-color);
   color: black;
 }
+
+.show_place {
+  height: fit-content;
+  min-height: 70px;
+}

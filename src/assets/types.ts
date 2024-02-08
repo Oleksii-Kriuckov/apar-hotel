@@ -12,6 +12,7 @@ export interface IHotelInfo {
 }
 
 export interface IRoom {
+  id: string;
   hotel: HotelNames
   image: string;
   price: number;
@@ -19,7 +20,6 @@ export interface IRoom {
   floor: number;
   persons: number;
   occupied: {checkIn: number, checkOut: number}[]
-  id?: number;
 }
 
 export interface IHotelsInCity {

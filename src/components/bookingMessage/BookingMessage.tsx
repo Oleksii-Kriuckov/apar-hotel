@@ -1,5 +1,6 @@
-import "./style.css";
 import clock from "../images/Clock.png";
+import "./style.css";
+
 type Props = {};
 
 const BookingMessage = (props: Props) => {

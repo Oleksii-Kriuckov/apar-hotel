@@ -9,7 +9,7 @@ import { collection, doc, query, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import { HotelNames, IRoom } from "../assets/types";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { freeRooms$, showBookingForm$ } from "../recoil/atoms";
+import { freeRooms$ } from "../recoil/atoms";
 import { FormBooking } from "../components/UI/Forms/FormBooking";
 
 type Props = {};
@@ -18,13 +18,13 @@ const Hotel = (props: Props) => {
   const { city, hotel } = useParams();
   const { findCity, findHotel } = findData(city!, hotel!);
   const data = useActionData();
-  const showBooking = useRecoilValue(showBookingForm$)
+  // const showBooking = useRecoilValue(showBookingForm$)
   const [freeRooms, setFreeRooms] = useRecoilState(freeRooms$);
   // const [rooms, setRooms] = useState<IRoom[]>([]);
+  useEffect(() => {
+    return setFreeRooms([])
+  }, [])
 
-  // useEffect(() => {
-  //  
-  // }, []);
 
   return (
     <>
@@ -39,8 +39,6 @@ const Hotel = (props: Props) => {
       </h4>
       <div className="hotel_page">
         <FormSearch />
-        
-        {showBooking && <FormBooking />}
 
         {freeRooms.map((room) => (
           <RoomBlock key={room.image} roomInfo={room} />

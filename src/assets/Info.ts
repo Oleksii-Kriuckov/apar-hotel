@@ -56,7 +56,7 @@ export const allHotels: IHotelsInCity[] = [
       },
       {
         hotelName: "Independence",
-        address: "Mala Zhytomyrska street, 20",
+        address: "Mala Zhytomyrska street, 20D",
         tel: "+380672466777",
         email: "independence@apart-hotel.com",
         coordinates: { lat: 50.4545998769799, lng: 30.520113578857607 },
