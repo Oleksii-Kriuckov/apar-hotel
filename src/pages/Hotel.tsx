@@ -3,14 +3,10 @@ import FormSearch from "../components/UI/Forms/FormSearch";
 import RoomBlock from "../components/roomBlock/RoomBlock";
 import Welcome from "../components/welcomeBlock/Welcome";
 import { findData } from "../functions/findData";
-import { dateToNumber } from "../functions/functions";
 import { useEffect, useState } from "react";
-import { collection, doc, query, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase/firebase";
-import { HotelNames, IRoom } from "../assets/types";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { freeRooms$ } from "../recoil/atoms";
-import { FormBooking } from "../components/UI/Forms/FormBooking";
 
 type Props = {};
 
@@ -24,7 +20,6 @@ const Hotel = (props: Props) => {
   useEffect(() => {
     return setFreeRooms([])
   }, [])
-
 
   return (
     <>

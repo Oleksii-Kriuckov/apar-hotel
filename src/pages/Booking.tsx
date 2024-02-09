@@ -6,7 +6,7 @@ import { MyMapContainer } from "../map/MyMapContainer";
 import { MapChild } from "../map/MapChild";
 import { FormBooking } from "../components/UI/Forms/FormBooking";
 import { useEffect } from "react";
-import { bookingRoom$, showBookingForm$, showSuccessMessage$ } from "../recoil/atoms";
+import { bookingRoom$, showBookingForm$, showSuccessMessage$, dateRange$ } from "../recoil/atoms";
 import { useRecoilValue } from "recoil";
 import SuccessBooking from "../components/bookingMessage/SuccessBooking";
 
@@ -14,6 +14,7 @@ const Booking = () => {
   const { city, hotel, number } = useParams();
   const { findCity, findHotel } = findData(city!, hotel!);
   const bookingRoom = useRecoilValue(bookingRoom$)
+  const dateRange = useRecoilValue(dateRange$)
   const showBooking = useRecoilValue(showBookingForm$)
   const showSuccessMessage = useRecoilValue(showSuccessMessage$)
   let navigate = useNavigate();
@@ -22,7 +23,8 @@ const Booking = () => {
     if (!bookingRoom.id) {
       navigate(`/${city}/${hotel}`)
     } else {
-      console.log(new Date(1707429052802) )
+      console.log('si ', new Date(dateRange[0]) )
+      console.log('so ', new Date(dateRange[1]) )
     }
   }, []);
 
@@ -41,7 +43,6 @@ const Booking = () => {
           </ul>
           <MediaLinks />
         </div>
-
 
         <BookingMessage />
       </div>

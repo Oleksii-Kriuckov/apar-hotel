@@ -1,15 +1,13 @@
 import { Form, useParams } from "react-router-dom";
-import { deleteDoc } from "firebase/firestore";
-import { findData } from "../../../functions/findData";
+import { findData, formatDays } from "../../../functions/findData";
 import { DatePicker, Button, Select } from "antd";
 import dayjs from "dayjs";
 import { Dayjs } from "dayjs";
 import type { RangePickerProps } from "antd/es/date-picker";
-import { db } from "../../../firebase/firebase";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { optionsForGuests } from "../../../assets/Info";
 import { useSetRecoilState } from "recoil";
-import { dateRange$, freeRooms$, showBookingForm$ } from "../../../recoil/atoms";
+import { dateRange$ } from "../../../recoil/atoms";
 import { HotelNames, IRoom } from "../../../assets/types";
 import "./styles/style.css";
 import { useQuery } from "../../../hooks/useQuery";
@@ -33,24 +31,19 @@ const FormSearch = (props: Props) => {
   ]);
   const { findCity, findHotel } = findData(city!, hotel!);
 
-  const onChange = (
-    value: RangePickerProps["value"],
-    dateString: [string, string] | string
-  ) => {
-    if (value) {
-      setDatePickerValue(value);
-    }
-    console.log("Formatted Selected Time: ", dateString);
+  const onChange = (value: [Dayjs, Dayjs]) => {
+    if (value) setDateRange(formatDays(value));
   };
 
+  useEffect(() => {
+    setDateRange(formatDays([dayjs(), dayjs().add(1, "day")]))
+    return () => {};
+  }, []);
+
   const searchRooms = (value: [Dayjs, Dayjs]) => {
-    setDateRange([value[0].valueOf(), value[1].valueOf()]);
 
     queryRooms(hotel as HotelNames);
   };
-  // const deleteItem = async (id: string) => {
-  //   await deleteDoc(doc(db, "items", id));
-  // };
 
   return (
     <Form
@@ -98,6 +91,19 @@ const FormSearch = (props: Props) => {
 };
 export default FormSearch;
 
+// const deleteItem = async (id: string) => {
+//   await deleteDoc(doc(db, "items", id));
+// };
+
+// setDoc(base, {
+//   hotel: "luxury",
+//   floor: 1,
+//   image: '/src/components/images/rooms/LuxuryRoom11.jpg',
+//   number: 11,
+//   persons: 2,
+//   price: 2100,
+//   occupied: []
+// })
 {
   /* <DatePicker
   className="norm_height"

@@ -1,11 +1,12 @@
 import { collection, onSnapshot, query } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import { HotelNames, IRoom } from "../assets/types";
-import { useSetRecoilState } from "recoil";
-import { freeRooms$ } from "../recoil/atoms";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { freeRooms$, dateRange$ } from "../recoil/atoms";
 
 export const useQuery = () => {
   const setRooms = useSetRecoilState(freeRooms$)
+  const dateRange = useRecoilValue(dateRange$)
   
   function queryRooms(hotel: HotelNames) {
     const q = query(collection(db, "rooms"));
@@ -16,12 +17,12 @@ export const useQuery = () => {
         roomsArr.push({ ...doc.data(), id: doc.id });
       });
 
-      const freeRooms = roomsArr.filter((room) => room.hotel === hotel);
-      freeRooms.forEach((room, ind, arr) => {
+      const allHotelRooms = roomsArr.filter((room) => room.hotel === hotel);
+      allHotelRooms.forEach((room, ind, arr) => {
         
       })
-      // console.log(freeRooms);
-      setRooms(freeRooms);
+      console.log(dateRange);
+      setRooms(allHotelRooms);
       
       return () => unsubscribe();
     });

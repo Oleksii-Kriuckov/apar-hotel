@@ -20,7 +20,7 @@ export const FormBooking: React.FC = () => {
   const [form] = Form.useForm();
   const dateRange = useRecoilValue(dateRange$);
   const bookingRoom = useRecoilValue(bookingRoom$);
-  const setshowBookingForm = useSetRecoilState(showBookingForm$);
+  const setShowBookingForm = useSetRecoilState(showBookingForm$);
   const showSuccessMessage = useSetRecoilState(showSuccessMessage$);
 
   // const bookingRoom = useRecoilValue(bookingRoom$)
@@ -41,28 +41,14 @@ export const FormBooking: React.FC = () => {
     }
     console.log('id: ', bookingRoom.id);
 
-    // setDoc(base, {
-    //   hotel: "luxury",
-    //   floor: 1,
-    //   image: '/src/components/images/rooms/LuxuryRoom11.jpg',
-    //   number: 11,
-    //   persons: 2,
-    //   price: 2100,
-    //   occupied: []
-    // })
-
-    // setshowBookingForm(false)
-    // showSuccessMessage(true)
+    setShowBookingForm(false)
+    showSuccessMessage(true)
 
     form.resetFields();
 
     setTimeout(() => {
       showSuccessMessage(false);
     }, 3000);
-  };
-
-  const setDB = () => {
-    console.log("set");
   };
 
   const prefixSelector = (
