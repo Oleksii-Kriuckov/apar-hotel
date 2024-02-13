@@ -2,7 +2,7 @@ import { useParams, useActionData } from "react-router-dom";
 import FormSearch from "../components/UI/Forms/FormSearch";
 import RoomBlock from "../components/roomBlock/RoomBlock";
 import Welcome from "../components/welcomeBlock/Welcome";
-import { findData } from "../functions/findData";
+import { findData } from "../functions/functions";
 import { useEffect, useState } from "react";
 import { db } from "../firebase/firebase";
 import { useRecoilState, useRecoilValue } from "recoil";

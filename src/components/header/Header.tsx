@@ -23,7 +23,7 @@ export const Header = (props: Props) => {
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="d-flex gap-3 justify-content-lg-around align-items-md-center w-100">
+          <Nav className="d-flex gap-3 justify-content-lg-around align-items-md-baseline w-100">
             <div className="d-flex flex-column flex-sm-row">
               {allHotels.map((el) => (
                 <NavLink

@@ -39,7 +39,7 @@ export const FormBooking: React.FC = () => {
         occupied: [{ checkIn: dateRange[0], checkOut: dateRange[1] }],
       });
     }
-    console.log('id: ', bookingRoom.id);
+    // console.log('id: ', bookingRoom.id);
 
     setShowBookingForm(false)
     showSuccessMessage(true)

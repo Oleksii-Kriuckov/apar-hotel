@@ -23,12 +23,12 @@ const MediaLinks = () => {
         <img src={instagram} alt="instagram" />
       </a>
       <a
-       
+
         href="https://twitter.com"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img className="linkImg" src={twitter} alt="telegram" />
+        <img className="linkImg" src={twitter} alt="twitter" style={{ width: 32, height: 32 }} />
       </a>
     </div>
   );

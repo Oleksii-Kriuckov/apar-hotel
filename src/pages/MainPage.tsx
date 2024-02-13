@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { Article } from "../components/article/Article";
 import { AddressBlock } from "../components/addressBlock/AddressBlock";
 import Welcome from "../components/welcomeBlock/Welcome";
-import { findData } from "../functions/findData";
+import { findData } from "../functions/functions";
 import TitleBlock from "../components/TitleBlock/TitleBlock";
 
 type Props = {};

@@ -1,12 +1,11 @@
 import { Form, useParams } from "react-router-dom";
-import { findData, formatDays } from "../../../functions/findData";
+import { findData, formatDays } from "../../../functions/functions";
 import { DatePicker, Button, Select } from "antd";
-import dayjs from "dayjs";
-import { Dayjs } from "dayjs";
+import dayjs, { Dayjs } from "dayjs";
 import type { RangePickerProps } from "antd/es/date-picker";
 import { useEffect, useState } from "react";
 import { optionsForGuests } from "../../../assets/Info";
-import { useSetRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import { dateRange$ } from "../../../recoil/atoms";
 import { HotelNames, IRoom } from "../../../assets/types";
 import "./styles/style.css";
@@ -23,8 +22,9 @@ const disabledPastDate: RangePickerProps["disabledDate"] = (current) => {
 
 const FormSearch = (props: Props) => {
   const { city, hotel } = useParams();
-  const setDateRange = useSetRecoilState(dateRange$);
+  const [dateRange, setDateRange ] = useRecoilState(dateRange$);
   const { queryRooms } = useQuery();
+  const [persons, setPersons] = useState(1)
   const [datePickerValue, setDatePickerValue] = useState<[Dayjs, Dayjs]>([
     dayjs(),
     dayjs().add(1, "day"),
@@ -32,17 +32,15 @@ const FormSearch = (props: Props) => {
   const { findCity, findHotel } = findData(city!, hotel!);
 
   const onChange = (value: [Dayjs, Dayjs]) => {
-    if (value) setDateRange(formatDays(value));
-  };
-
-  useEffect(() => {
-    setDateRange(formatDays([dayjs(), dayjs().add(1, "day")]))
-    return () => {};
-  }, []);
+    if (value) {
+      setDatePickerValue(value)
+      setDateRange(formatDays(value));
+  }};
 
   const searchRooms = (value: [Dayjs, Dayjs]) => {
-
-    queryRooms(hotel as HotelNames);
+    console.log(persons);
+    
+    queryRooms(hotel as HotelNames, persons);
   };
 
   return (
@@ -64,15 +62,16 @@ const FormSearch = (props: Props) => {
             // className="norm_height"
             placeholder={["check-in", "check-out"]}
             popupClassName="popup_calendar"
-            // defaultValue={datePickerValue}
+            defaultValue={datePickerValue}
             onChange={onChange}
+            // onChange={() => onChange()}
             value={datePickerValue}
           />
         </div>
 
         <div id="guests" className="input_block">
           <label htmlFor="guests">Guests</label>
-          <Select defaultValue={1} options={optionsForGuests} size="large" />
+          <Select options={optionsForGuests} size="large" value={persons} onChange={(e)=> setPersons(e)}/>
         </div>
 
         <div id="search_btn" className="input_block">

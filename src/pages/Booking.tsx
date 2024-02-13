@@ -1,7 +1,7 @@
 import MediaLinks from "../components/UI/Links/MediaLinks";
 import BookingMessage from "../components/bookingMessage/BookingMessage";
 import { useParams, useNavigate } from "react-router-dom";
-import { findData } from "../functions/findData";
+import { findData } from "../functions/functions";
 import { MyMapContainer } from "../map/MyMapContainer";
 import { MapChild } from "../map/MapChild";
 import { FormBooking } from "../components/UI/Forms/FormBooking";
@@ -23,14 +23,15 @@ const Booking = () => {
     if (!bookingRoom.id) {
       navigate(`/${city}/${hotel}`)
     } else {
-      console.log('si ', new Date(dateRange[0]) )
-      console.log('so ', new Date(dateRange[1]) )
+      // console.log('si ', new Date(dateRange[0]) )
+      // console.log('so ', new Date(dateRange[1]) )
     }
   }, []);
 
   return (
     <div className="booking_page">
-      <h3 className="header_h3">
+      {/* display start and end dates, total amount */}
+      <h3 className="header_h3"> 
         Booking: hotel {findHotel!.hotelName}, room {number} ({findCity!.city})
       </h3>
 
