@@ -7,6 +7,7 @@ import { MapChild } from "../map/MapChild";
 import { FormBooking } from "../components/UI/Forms/FormBooking";
 import { useEffect } from "react";
 import { bookingRoom$, showBookingForm$, showSuccessMessage$, dateRange$ } from "../recoil/atoms";
+import { numberOfDays$, totalAmount$, daysRange$ } from "../recoil/selectors";
 import { useRecoilValue } from "recoil";
 import SuccessBooking from "../components/bookingMessage/SuccessBooking";
 
@@ -14,7 +15,9 @@ const Booking = () => {
   const { city, hotel, number } = useParams();
   const { findCity, findHotel } = findData(city!, hotel!);
   const bookingRoom = useRecoilValue(bookingRoom$)
-  const dateRange = useRecoilValue(dateRange$)
+  const numberOfDays = useRecoilValue(numberOfDays$)
+  const totalAmount = useRecoilValue(totalAmount$)
+  const daysRange = useRecoilValue(daysRange$)
   const showBooking = useRecoilValue(showBookingForm$)
   const showSuccessMessage = useRecoilValue(showSuccessMessage$)
   let navigate = useNavigate();
@@ -23,16 +26,20 @@ const Booking = () => {
     if (!bookingRoom.id) {
       navigate(`/${city}/${hotel}`)
     } else {
-      // console.log('si ', new Date(dateRange[0]) )
-      // console.log('so ', new Date(dateRange[1]) )
+      console.log(daysRange[0])
+      console.log(daysRange[1])
     }
   }, []);
 
   return (
     <div className="booking_page">
       {/* display start and end dates, total amount */}
-      <h3 className="header_h3"> 
-        Booking: hotel {findHotel!.hotelName}, room {number} ({findCity!.city})
+      <h3 className="header_h3">
+        Booking: hotel {findHotel!.hotelName} ({findCity!.city}), room {number}
+        <span className="booking_room_info">
+          {' '} from <span className="days_range">{daysRange[0]} </span> to <span className="days_range"> {daysRange[1]}</span> ({numberOfDays} night{numberOfDays > 1 ? 's' : ''}).
+          <span style={{textTransform: 'capitalize'}}> Total </span> amount {totalAmount}
+        </span>
       </h3>
 
       <div id="contacts_wrap" className="d-flex flex-column flex-md-row">

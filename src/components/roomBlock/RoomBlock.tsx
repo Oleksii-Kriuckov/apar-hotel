@@ -80,7 +80,7 @@ const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
         </Button>
 
         <Button
-          href="#form_booking"
+          href="#"
           id={`book_now_${roomInfo.id}`}
           className="booking_btn room_block_btn"
           onClick={navigateBooking}

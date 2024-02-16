@@ -38,8 +38,6 @@ const FormSearch = (props: Props) => {
   }};
 
   const searchRooms = (value: [Dayjs, Dayjs]) => {
-    console.log(persons);
-    
     queryRooms(hotel as HotelNames, persons);
   };
 

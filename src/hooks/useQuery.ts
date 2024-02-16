@@ -18,6 +18,7 @@ export const useQuery = () => {
       });
 
       const allHotelRooms = roomsArr.filter((room) => room.hotel === hotel);
+      
       // allHotelRooms.forEach(room => {
       //   if (room.occupied.length > 0) {
       //     console.log(`hotel: ${room.hotel}, room: ${room.number}`);
@@ -37,7 +38,6 @@ export const useQuery = () => {
       });
       const res = freeRooms.filter(r => r.persons >= persons)
       // console.log(res);
-      
       // console.log('choose date in :', new Date(dateRange[0]).toLocaleString() );
       // console.log('choose date out :', new Date(dateRange[1]).toLocaleString() );
       setRooms(res);
