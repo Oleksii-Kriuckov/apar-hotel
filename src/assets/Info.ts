@@ -125,9 +125,18 @@ export const allHotels: IHotelsInCity[] = [
 
 export const info_en = {
   booking: "Booking",
+  learnMore: 'Learn more',
   wellcome: {
     p: "We are waiting for you to visit, we are ready to receive you at anytime of the day.",
     btn: "CONNECT WITH US",
+  },
+};
+
+export const info_ua = {
+  booking: "Забронювати",
+  wellcome: {
+    p: "Чекаємо на Вас в гості, готові Вас прийняти у будь-який час доби..",
+    btn: "Зв'язатись з нами",
   },
 };
 

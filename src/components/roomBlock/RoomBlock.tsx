@@ -70,23 +70,22 @@ const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
 
       <div className="room_block_buttons d-flex mt-lg-4">
         <Button
-          id="learn_more"
-          className=" room_block_btn"
+          className="room_block_btn ghost_button"
           // onClick={() => navigate(`/`)}
           size="large"
-          ghost
         >
-          LEARN MORE
+          Learn more
         </Button>
 
         <Button
           href="#"
+          type="primary"
           id={`book_now_${roomInfo.id}`}
           className="booking_btn room_block_btn"
           onClick={navigateBooking}
           size="large"
         >
-          BOOK NOW
+          Book now
         </Button>
       </div>
     </div>

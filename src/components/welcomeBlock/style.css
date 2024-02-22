@@ -22,8 +22,6 @@
 }
 
 #welcome_block_btn {
-  border: 1px solid black;
-  color: black;
   height: 50px;
 }
 #welcome_block_btn:hover {

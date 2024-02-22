@@ -37,12 +37,3 @@
 /* .room_info > ul > li:first-child {
   margin-bottom: 30px;
 } */
-
-#learn_more {
-  border: var(--main-color) solid 1px;
-  color: var(--main-color);
-}
-#learn_more:hover {
-  color: #4096ff;
-  border-color: #4096ff;
-}

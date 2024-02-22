@@ -1,51 +1,93 @@
 import React from "react";
-import { Button } from "antd";
-import './styles/style.css'
+import codes from "../../../assets/codes.json";
+import { Button, Input, Upload, Form, Select } from "antd";
+import "./styles/style.css";
 
-type Props = {};
+const { Option } = Select;
+const { TextArea } = Input;
+const normFile = (e: any) => {
+  if (Array.isArray(e)) {
+    return e;
+  }
+  return e?.fileList;
+};
 
-const FormFeedback = (props: Props) => {
+export const FormFeedback: React.FC = () => {
+  const [form] = Form.useForm();
+
+  const prefixSelector = (
+    <Form.Item name="prefix" noStyle>
+      <Select showSearch size="large" style={{ width: 92 }}>
+        {codes.countries.map((country) => (
+          <Option value={country.code}>{country.code}</Option>
+        ))}
+      </Select>
+    </Form.Item>
+  );
   const onSubmit = (event: React.FormEvent<HTMLButtonElement>) => {
     event.preventDefault();
+    console.log("Submit");
   };
-  const onClick = () => onSubmit;
 
   return (
-    <form id='form_feedback' className="form d-flex flex-column" style={{ gap: 20 }}>
-      <div className="input_block">
-        <label htmlFor="name">Name</label>
-        <input type="text" name="name" id="name" placeholder="John Smith" />
-      </div>
+    <Form
+      id="form_feedback"
+      name="form_feedback"
+      form={form}
+      onFinish={onSubmit}
+      initialValues={{ prefix: "+380" }}
+      className="form d-flex flex-column"
+      style={{ gap: 20 }}
+      scrollToFirstError
+    >
+      <Form.Item
+        name="name"
+        label="Name"
+        // className="input_block input_block_booking"
+        rules={[{ required: true, message: "Please input your name!" }]}
+      >
+        <Input size="large" placeholder="John Smith" />
+      </Form.Item>
 
-      <div className="input_block">
-        <label htmlFor="phone">Phone</label>
-        <input
-          type="text"
-          name="phone"
-          id="phone"
-          placeholder="+380965123456"
+      <Form.Item
+        name="phone"
+        label="Phone Number"
+        rules={[{ required: true, message: "Please input your phone number!" }]}
+      >
+        <Input
+          size="large"
+          minLength={7}
+          addonBefore={prefixSelector}
+          style={{ width: "100%" }}
         />
-      </div>
+      </Form.Item>
 
-      <div className="input_block">
-        <label htmlFor="email">E-mail</label>
-        <input
-          type="text"
-          name="email"
-          id="email"
-          placeholder="jsmith@gmail.com"
-        />
-      </div>
+      <Form.Item
+        name="email"
+        label="E-mail"
+        rules={[
+          { type: "email", message: "The input is not valid E-mail!" },
+          { required: true, message: "Please input your E-mail!" },
+        ]}
+      >
+        <Input size="large"/>
+      </Form.Item>
 
-      <div className="input_block">
-        <label htmlFor="file">Attach file:</label>
-        <input type="file" name="file" id="file" placeholder="Select files" />
-      </div>
+      <Form.Item label='Attach file:' className="input_block">
+        <Input type="file" name="file" id="file" placeholder="Select files" />
+      </Form.Item>
 
-      <div className="input_block">
-        <label htmlFor="message"> Message:</label>
-        <textarea name="message" id="message" placeholder="Message" />
-      </div>
+      <Form.Item label="Upload" valuePropName="fileList" getValueFromEvent={normFile}>
+          <Upload action="/upload.do" listType="picture-card">
+            <button style={{ border: 0, background: 'none' }} type="button">
+              <div style={{ marginTop: 8 }}>Upload</div>
+            </button>
+          </Upload>
+        </Form.Item>
+
+      <Form.Item label='Message:' className="input_block">
+        <TextArea size="large" name="message" rows={2} id="message" placeholder="Message" />
+      </Form.Item>
 
       <div className="d-flex align-items-baseline gap-3">
         <input type="checkbox" name="confirm" id="confirm" />
@@ -55,11 +97,16 @@ const FormFeedback = (props: Props) => {
         </label>
       </div>
 
-      <Button id="send_btn" onClick={onClick} color="black">
+      <Button
+        size="large"
+        id="send_btn"
+        type="primary"
+        className="booking_btn"
+        color="black"
+        htmlType="submit"
+      >
         SEND
       </Button>
-    </form>
+    </Form>
   );
 };
-
-export default FormFeedback;

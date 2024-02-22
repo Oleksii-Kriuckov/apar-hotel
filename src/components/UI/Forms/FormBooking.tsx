@@ -41,8 +41,8 @@ export const FormBooking: React.FC = () => {
     }
     // console.log('id: ', bookingRoom.id);
 
-    setShowBookingForm(false)
-    showSuccessMessage(true)
+    setShowBookingForm(false);
+    showSuccessMessage(true);
 
     form.resetFields();
 
@@ -53,7 +53,7 @@ export const FormBooking: React.FC = () => {
 
   const prefixSelector = (
     <Form.Item name="prefix" noStyle>
-      <Select showSearch size="large" className="prefix">
+      <Select showSearch size="large" style={{ width: 92 }}>
         {codes.countries.map((el) => (
           <Option key={el.code} value={el.code}>
             {el.code}
@@ -74,9 +74,7 @@ export const FormBooking: React.FC = () => {
         form={form}
         layout="vertical"
         onFinish={bookRoom}
-        initialValues={{
-          prefix: "+380",
-        }}
+        initialValues={{ prefix: "+380" }}
         scrollToFirstError
       >
         <div className="inputs_wrap d-flex flex-column flex-md-row">
@@ -112,14 +110,8 @@ export const FormBooking: React.FC = () => {
             label="E-mail"
             className="input_block input_block_booking"
             rules={[
-              {
-                type: "email",
-                message: "The input is not valid E-mail!",
-              },
-              {
-                required: true,
-                message: "Please input your E-mail!",
-              },
+              { type: "email", message: "The input is not valid E-mail!" },
+              { required: true, message: "Please input your E-mail!" },
             ]}
           >
             <Input size="large" placeholder="jsmith@gmail.com" />
@@ -129,6 +121,7 @@ export const FormBooking: React.FC = () => {
         <Button
           size="large"
           id="booking"
+          type="primary"
           className="booking_btn"
           htmlType="submit"
         >

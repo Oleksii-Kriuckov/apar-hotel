@@ -1,5 +1,5 @@
 import { info_en } from "../../assets/Info";
-import { Button } from 'antd'
+import { Button } from "antd";
 import keyhole from "../images/keyhole2.png";
 import { useNavigate, useParams } from "react-router-dom";
 import "./style.css";
@@ -12,10 +12,12 @@ const Welcome = () => {
   return (
     <div className="welcome_block text-center">
       <div className="welcome">
-        <p>
-          {info_en.wellcome.p}
-        </p>
-        <Button ghost onClick={() => navigate(Feedback_ROUTE)} id="welcome_block_btn">
+        <p>{info_en.wellcome.p}</p>
+        <Button
+          onClick={() => navigate(Feedback_ROUTE)}
+          className="ghost_button"
+          id="welcome_block_btn"
+        >
           {info_en.wellcome.btn}
         </Button>
       </div>

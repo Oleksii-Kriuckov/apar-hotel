@@ -9,12 +9,6 @@
   margin: 0;
 }
 
-.lows_extract {
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 18px;
-}
-
 .our_addresses {
   font-weight: 400;
   font-size: 36px;
@@ -69,4 +63,10 @@ hr {
 
 .booking_room_info {
   text-transform: lowercase;
+}
+
+.ghost_button {
+  background-color: transparent;
+  border: 1px solid black;
+  color: black;
 }

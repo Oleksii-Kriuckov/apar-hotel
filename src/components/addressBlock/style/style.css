@@ -14,18 +14,12 @@
 .address_block_btn {
   min-width: 120px;
   height: 50px;
-  color: #000000;
 }
 
 .hotel_info > p {
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
-}
-
-.learn {
-  background-color: white;
-  border-color: #000000;
 }
 
 h3 {
@@ -41,8 +35,4 @@ ul > li {
 
 ul > li:last-child {
   font-weight: 700;
-}
-
-a:hover {
-  color: #000000;
 }

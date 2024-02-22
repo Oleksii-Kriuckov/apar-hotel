@@ -15,13 +15,6 @@
   margin-bottom: 20px;
 }
 
-.prefix {
-  background-color: aliceblue;
-  border-radius: 8px;
-  border: none;
-  width: 92px;
-}
-
 .input_block {
   display: flex;
   flex-direction: column;

@@ -33,20 +33,26 @@ export const AddressBlock = ({ hotelInfo }: AddressBlockProps) => {
           ))}
         </ul>
         <div className="address_block_buttons">
-          <div ></div>
-            <Button
-              className="address_block_btn booking_btn"
-              onClick={() =>
-                navigate(`/${city}/${hotelInfo.hotelName.toLowerCase()}`)
-              }
-            >
-              BOOK NOW
-            </Button>
+          <div></div>
+          <Button
+            size="large"
+            type="primary"
+            className="address_block_btn booking_btn"
+            onClick={() =>
+              navigate(`/${city}/${hotelInfo.hotelName.toLowerCase()}`)
+            }
+          >
+            Book now
+          </Button>
 
-            <Button className="address_block_btn learn" onClick={() => {}}>
-              <a href="#about_hotel">LEARN MORE</a>
-            </Button>
-         
+          <Button
+            size="large"
+            // href="#about_hotel"
+            className="address_block_btn ghost_button"
+            onClick={() => {}}
+          >
+            Learn more
+          </Button>
         </div>
       </div>
     </section>
