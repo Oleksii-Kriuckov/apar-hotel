@@ -32,7 +32,7 @@ export type HotelNames = "luxury" | "independence" | "code"
 
 export type Color = "white" | "black";
 
-export type BorderColor = "blackBorder" | "yellowBorder" | "whiteBorder";
+// export type BorderColor = "blackBorder" | "yellowBorder" | "whiteBorder";
 
 export interface Coordinates {
   lat: number; 

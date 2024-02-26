@@ -73,12 +73,8 @@ export const FormFeedback: React.FC = () => {
         <Input size="large"/>
       </Form.Item>
 
-      <Form.Item label='Attach file:' className="input_block">
-        <Input type="file" name="file" id="file" placeholder="Select files" />
-      </Form.Item>
-
-      <Form.Item label="Upload" valuePropName="fileList" getValueFromEvent={normFile}>
-          <Upload action="/upload.do" listType="picture-card">
+      <Form.Item label="Attach file:" valuePropName="fileList" getValueFromEvent={normFile}>
+          <Upload action="/upload.do" style={{display: 'block', width: 300}} id="upload_field" listType="picture-card">
             <button style={{ border: 0, background: 'none' }} type="button">
               <div style={{ marginTop: 8 }}>Upload</div>
             </button>

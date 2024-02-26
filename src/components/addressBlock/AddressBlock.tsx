@@ -1,5 +1,4 @@
-import YellowButton from "../UI/Buttons/YellowButton";
-import ColorButton from "../UI/Buttons/ColorButton";
+// import ColorButton from "../UI/Buttons/ColorButton";
 import { Button } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
 import { MyMapContainer } from "../../map/MyMapContainer";
@@ -32,8 +31,8 @@ export const AddressBlock = ({ hotelInfo }: AddressBlockProps) => {
             <li key={ind}>{element}</li>
           ))}
         </ul>
+        
         <div className="address_block_buttons">
-          <div></div>
           <Button
             size="large"
             type="primary"

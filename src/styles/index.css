@@ -1,7 +1,7 @@
 #root {
   margin: 0 auto;
-  /* background-color: #4e4e9e; */
-  background-color: #efefef;
+  background-color: #5e5eae;
+  /* background-color: #efefef; */
   /* text-align: center; */
 }
 
@@ -9,5 +9,6 @@ body {
   --sizeClose: 30px;
   --main-color: #ffc000;
   --f-z: "Century Gothic", sans-serif;
-  font-family: var(--f-z);
+  --ff-g: "Gilroy", sans-serif;
+  font-family: var(--ff-g);
 }

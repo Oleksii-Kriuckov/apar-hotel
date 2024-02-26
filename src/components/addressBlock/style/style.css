@@ -2,12 +2,10 @@
   border: 1px solid #3312f0;
   border: 1px solid #dbdbdb;
   margin-bottom: 75px;
-  position: relative;
 }
 
 .address_block_buttons {
   max-width: 330px;
-  bottom: -27px;
   display: flex;
 }
 

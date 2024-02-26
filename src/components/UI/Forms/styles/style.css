@@ -4,7 +4,7 @@
   margin-top: 40px;
 }
 
-#form_search > h4 {
+#form_search>h4 {
   font-family: "Century Gothic";
   font-style: normal;
   font-weight: 500;
@@ -21,7 +21,8 @@
   justify-content: start;
   gap: 10px;
 }
-.input_block > label {
+
+.input_block>label {
   padding-left: 3px;
 }
 
@@ -34,6 +35,7 @@
 .option {
   padding: 0 20px;
 }
+
 .option:hover {
   cursor: pointer;
 }
@@ -48,4 +50,8 @@
 
 .inputs_wrap {
   justify-content: space-between;
+}
+
+#upload_field {
+  background-color: aqua;
 }
