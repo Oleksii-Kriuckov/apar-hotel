@@ -55,3 +55,65 @@
 #upload_field {
   background-color: aqua;
 }
+
+.thumbsContainer {
+  display: flex;
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.thumb {
+  display: inline-flex;
+  border-radius: 2px;
+  border: '1px solid #eaeaea';
+  margin-bottom: 8px;
+  margin-right: 8px;
+  width: 100px;
+  height: 100px;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.thumbInner {
+  display: 'flex';
+  min-width: 0;
+  overflow: 'hidden';
+}
+
+.dropImg {
+  display: block;
+  width: auto;
+  height: 100%;
+}
+
+.dropzone {
+  color: #bdbdbd;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 7px 11px;
+  border: blue dashed 1px;
+  width: 100%;
+  height: 60px;
+}
+
+.dropzone>p {
+  text-align: center;
+}
+
+.container {
+  border: var(--main-color) solid 1px;
+}
+
+.file_list {
+  font-weight: 400;
+}
+.file_item {
+  list-style-image: url('/src/components/images/Ellipse-32.png');
+  /* list-style: disc; */
+}
+.files {
+  text-align: center;
+  margin-top: 8px;
+  color: #1f1f1f;
+}
