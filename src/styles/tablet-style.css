@@ -87,6 +87,11 @@
   #welcome_block_btn {
     width: 200px;
   }
+    
+  /* Form feedback */
+  #feedback_header {
+    text-align: center;
+  }
 }
 
 @media (min-width: 576px) {

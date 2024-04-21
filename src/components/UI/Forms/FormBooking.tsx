@@ -72,7 +72,7 @@ export const FormBooking: React.FC = () => {
         name="form_booking"
         className="form d-flex flex-column flex-lg-row align-items-lg-center"
         form={form}
-        layout="vertical"
+        layout="horizontal"
         onFinish={bookRoom}
         initialValues={{ prefix: "+380" }}
         scrollToFirstError

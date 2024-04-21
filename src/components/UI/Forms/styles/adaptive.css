@@ -18,24 +18,14 @@
     max-width: 330px;
   }
 
-  #send_btn {
-    width: 100%;
-    margin-top: 24px;
-  }
-
   .input_block {
     width: 100%;
-  }
-
-  .inputs_wrap {
-    width: 100%;
-    max-width: 330px;
   }
 
   .ant-upload-select {
     width: 100%;
   }
-  
+
   .container {
     padding: 0.75rem;
   }
@@ -54,12 +44,26 @@
     gap: 25px;
   }
 
+  #send_btn {
+    margin: auto;
+    margin-top: 24px;
+    width: 100%;
+    max-width: 300px;
+  }
+
   #form_booking {
     margin: 20px 0;
   }
 
   #booking_btn {
     margin-top: 20px;
+  }
+
+  #form_feedback {
+    margin: auto;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 530px;
   }
 }
 
@@ -89,10 +93,14 @@
     width: 330px;
   }
 
+  #form_feedback {
+    flex-wrap: wrap;
+  }
+  
   .input_block {
     width: 330px;
   }
-  
+
   .container {
     padding: 1rem;
   }
@@ -106,6 +114,11 @@
 
   .container {
     padding: 1.25rem;
+  }
+
+  #form_feedback {
+    margin-top: 40px;
+    gap: 20px;
   }
 
   .search {
@@ -167,7 +180,7 @@
 }
 
 @media (max-width: 1199px) {
-  .inputs_wrap {
+  #form_feedback {
     gap: 20px;
   }
 
@@ -189,7 +202,7 @@
     padding: 50px;
   }
 
-  .inputs_wrap {
+  #form_feedback {
     gap: 30px;
   }
 
@@ -207,7 +220,7 @@
     gap: 40px;
   }
 
-  .inputs_wrap {
+  #form_feedback {
     gap: 40px;
   }
 }

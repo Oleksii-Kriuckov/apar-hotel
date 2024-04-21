@@ -1,6 +1,6 @@
 import React from "react";
 import codes from "../../../assets/codes.json";
-import { Button, Input, Upload, Form, Select } from "antd";
+import { Button, Input, Upload, Form, Select, Grid} from "antd";
 import "./styles/style.css";
 import { DropeZonePreviews } from "./DropeZonePreviews";
 import { DropeZone } from "./DropeZone";
@@ -13,8 +13,12 @@ const normFile = (e: any) => {
   }
   return e?.fileList;
 };
+const { useBreakpoint } = Grid;
 
 export const FormFeedback: React.FC = () => {
+  const screens = useBreakpoint();
+  // console.log(screens)
+
   const [form] = Form.useForm();
 
   const prefixSelector = (
@@ -26,6 +30,7 @@ export const FormFeedback: React.FC = () => {
       </Select>
     </Form.Item>
   );
+
   const onSubmit = (event: React.FormEvent<HTMLButtonElement>) => {
     event.preventDefault();
     console.log("Submit");
@@ -37,12 +42,13 @@ export const FormFeedback: React.FC = () => {
       name="form_feedback"
       form={form}
       onFinish={onSubmit}
+      layout="horizontal"
       initialValues={{ prefix: "+380" }}
-      className="form d-flex flex-column"
+      className="form d-flex flex-column flex-md-row flex-md-wrap align-items-lg-center"
       style={{ gap: 20 }}
       scrollToFirstError
     >
-      <div className="inputs_wrap">
+      {/* <div className="inputs_wrap"></div> */}
         <Form.Item
           name="name"
           label="Name"
@@ -76,20 +82,17 @@ export const FormFeedback: React.FC = () => {
           <Input size="large" />
         </Form.Item>
 
-        <Form.Item label="Attach file:" valuePropName="fileList" getValueFromEvent={normFile}>
+        <Form.Item id="drop" label="Attach file:" valuePropName="fileList" getValueFromEvent={normFile}>
           {/* <Upload action="/upload.do" style={{ display: 'block', width: 300 }} id="upload_field" listType="picture-card">
             <button style={{ border: 0, background: 'none' }} type="button">
               <div style={{ marginTop: 8 }}>Upload</div>
             </button>
           </Upload> */}
-          <div id="files">
             <DropeZone />
-          </div>
-
         </Form.Item>
 
-        <Form.Item label='Message:' className="input_block">
-          <TextArea size="large" name="message" rows={2} id="message" placeholder="Message" />
+        <Form.Item id="texArea_1" label='Message:'>
+          <TextArea itemID="" size="large" name="message" rows={2} id="message" placeholder="Message" />
         </Form.Item>
 
         <div className="d-flex align-items-baseline gap-3">
@@ -110,8 +113,6 @@ export const FormFeedback: React.FC = () => {
         >
           SEND
         </Button>
-      </div>
-
     </Form>
   );
 };
