@@ -1,22 +1,19 @@
 import { useParams } from "react-router-dom";
 import { Article } from "../components/article/Article";
-import { MyCarousel } from "../components/Slider/MyCarousel";
-import ToBookBlock from "../components/ToBookBlock/ToBookBlock";
 import { AddressBlock } from "../components/addressBlock/AddressBlock";
 import Welcome from "../components/welcomeBlock/Welcome";
-import useFind from "../hooks/useFind";
+import { findData } from "../functions/functions";
+import TitleBlock from "../components/TitleBlock/TitleBlock";
 
 type Props = {};
 
 const MainPage = (props: Props) => {
-
   const { city } = useParams();
-  const { findCity } = useFind(city!);
+  const { findCity } = findData(city!);
 
   return (
     <main>
-
-      <ToBookBlock>{city!}</ToBookBlock>
+      <TitleBlock>{city!}</TitleBlock>
       <Article>{findCity!.description}</Article>
 
       <h3 className="our_addresses">Our address</h3>

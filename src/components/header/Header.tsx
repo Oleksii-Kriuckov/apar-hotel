@@ -6,8 +6,7 @@ import logo from "../images/logo.png";
 import bell from "../images/bell.png";
 import phone from "../images/Phone.png";
 import { HeaderLink } from "../UI/Links/HeaderLink";
-import "./style/style.css";
-import "./style/adaptive.css";
+import "./style.css";
 
 type Props = {};
 
@@ -19,12 +18,12 @@ export const Header = (props: Props) => {
           to={allHotels[0].city.toLocaleLowerCase()}
           className="navbar-brand"
         >
-          <img src={logo_mob} alt="logo" className="logo_mob mob" />
-          <img src={logo} alt="logo" className="logo desktop" />
+          <img src={logo_mob} alt="logo" className="logo_mob" />
+          <img src={logo} alt="logo" className="logo" />
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="d-flex gap-3 justify-content-lg-around align-items-md-center w-100">
+          <Nav className="d-flex gap-3 justify-content-lg-around align-items-md-baseline w-100">
             <div className="d-flex flex-column flex-sm-row">
               {allHotels.map((el) => (
                 <NavLink

@@ -1,14 +1,13 @@
-.form_search {
+#form_search {
   background-color: var(--main-color);
   margin: auto;
   margin-top: 40px;
-  margin-bottom: 70px;
 }
 
-.form_search > h4 {
+#form_search>h4 {
   font-family: "Century Gothic";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 20px;
   line-height: 32px;
   text-align: center;
@@ -16,17 +15,19 @@
   margin-bottom: 20px;
 }
 
+#form_feedback {
+  justify-content: space-between;
+}
+
 .input_block {
   display: flex;
   flex-direction: column;
   justify-content: start;
   gap: 10px;
-  max-width: 330px;
 }
-.input_block > input {
-  border: #000000 1px solid;
-  padding: 14px 20px;
-  border-radius: 0%;
+
+.input_block>label {
+  padding-left: 3px;
 }
 
 #select {
@@ -38,6 +39,84 @@
 .option {
   padding: 0 20px;
 }
+
 .option:hover {
   cursor: pointer;
+}
+
+.norm_height {
+  height: 50px;
+}
+
+#booking {
+  margin-top: 10px;
+}
+
+#upload_field {
+  background-color: aqua;
+}
+
+.thumbsContainer {
+  display: flex;
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.thumb {
+  display: inline-flex;
+  border-radius: 2px;
+  border: '1px solid #eaeaea';
+  margin-bottom: 8px;
+  margin-right: 8px;
+  width: 100px;
+  height: 100px;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.thumbInner {
+  display: 'flex';
+  min-width: 0;
+  overflow: 'hidden';
+}
+
+.dropImg {
+  display: block;
+  width: auto;
+  height: 100%;
+}
+
+.dropzone {
+  color: #bdbdbd;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 7px 11px;
+  border: blue dashed 1px;
+  width: 100%;
+  min-height: 60px;
+  height: fit-content;
+}
+
+.dropzone>p {
+  text-align: center;
+}
+
+.container {
+  border: var(--main-color) solid 1px;
+}
+
+.file_list>li:last-child {
+  font-weight: 400;
+}
+
+.file_item {
+  list-style-image: url('/src/components/images/Ellipse-32.png');
+  /* list-style: disc; */
+}
+
+.files {
+  text-align: center;
+  margin-top: 8px;
+  color: #1f1f1f;
 }

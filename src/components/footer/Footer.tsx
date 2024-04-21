@@ -1,6 +1,5 @@
 import { FooterBar } from "./FooterBar";
-import "./style/style.css";
-import "./style/adaptive.css";
+import "./style.css";
 
 type Props = {};
 

@@ -1,8 +1,7 @@
 import facebook from "../../images/facebook.png";
 import instagram from "../../images/instagram.png";
-import telegram from "../../images/telegram.png";
-import './styles/style.css'
-import './styles/adaptive.css'
+import twitter from "../../images/new-logo-x.png";
+import "./style.css";
 
 const MediaLinks = () => {
   return (
@@ -11,24 +10,25 @@ const MediaLinks = () => {
         href="http://www.facebook.com/"
         target="_blank"
         rel="noopener noreferrer"
-        style={{marginRight: 45}}
-        >
+        style={{ marginRight: 45 }}
+      >
         <img src={facebook} alt="facebook" />
       </a>
       <a
         href="https://www.instagram.com"
         target="_blank"
         rel="noopener noreferrer"
-        style={{marginRight: 45}}
+        style={{ marginRight: 45 }}
       >
         <img src={instagram} alt="instagram" />
       </a>
       <a
-        href="https://web.telegram.org/"
+
+        href="https://twitter.com"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src={telegram} alt="telegram" />
+        <img className="linkImg" src={twitter} alt="twitter" style={{ width: 32, height: 32 }} />
       </a>
     </div>
   );

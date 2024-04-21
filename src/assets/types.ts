@@ -5,19 +5,21 @@ export interface IHotelInfo {
   email: string;
   coordinates: Coordinates;
   conveniences: string[];
-  rooms: IRoom[],
+  // rooms: IRoom[],
   images: {
     forSlider: string[]
   }
 }
 
 export interface IRoom {
+  id: string;
+  hotel: HotelNames
   image: string;
   price: number;
   number: number;
   floor: number;
   persons: number;
-  isFree: boolean
+  occupied: {checkIn: number, checkOut: number}[]
 }
 
 export interface IHotelsInCity {
@@ -26,9 +28,11 @@ export interface IHotelsInCity {
   hotelsInfo: IHotelInfo[];
 }
 
+export type HotelNames = "luxury" | "independence" | "code"
+
 export type Color = "white" | "black";
 
-export type BorderColor = "blackBorder" | "yellowBorder" | "whiteBorder";
+// export type BorderColor = "blackBorder" | "yellowBorder" | "whiteBorder";
 
 export interface Coordinates {
   lat: number; 

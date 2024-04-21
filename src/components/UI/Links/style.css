@@ -1,8 +1,4 @@
-.show_license {
-  color: var(--main-color);
-}
 .show_license:hover {
-  text-decoration: underline;
   cursor: pointer;
 }
 
@@ -34,6 +30,8 @@
 .media_links {
   display: flex;
 }
-.linkImg{
-    
-}
+/* 
+.linkImg {
+  width: 32px;
+  height: 32px;
+} */

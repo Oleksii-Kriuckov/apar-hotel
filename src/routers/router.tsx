@@ -1,6 +1,6 @@
 import { Feedback_ROUTE } from "./paths";
 import MainPage from "../pages/MainPage";
-import Hotel from "../pages/Hotel";
+import { Hotel, findRoomsAction } from "../pages/Hotel";
 import Booking from "../pages/Booking";
 import Feedback from "../pages/Feedback";
 import {
@@ -24,19 +24,14 @@ const router = createBrowserRouter(
     <Route path="/" element={<Layout />}>
       <Route index element={<Navigate to="/kyiv" />} />
       <Route path="/:city" element={<MainPage />} />
-      <Route path="/:city/:hotel" element={<Hotel />} />
+      <Route
+        path="/:city/:hotel"
+        element={<Hotel />}
+        // action={findRoomsAction}
+      />
       <Route path="/:city/:hotel/:number/booking" element={<Booking />} />
       <Route path={Feedback_ROUTE} element={<Feedback />} />
     </Route>
   )
 );
 export default router;
-{
-  /* {AppRoutes.map(({ path, element }) => (
-    <Route key={path} path={path} element={element} />
-  ))} */
-}
-// export const CitiesRouters = [
-//   { path: , element: </> },
-//   { path: , element: </> },
-// ]

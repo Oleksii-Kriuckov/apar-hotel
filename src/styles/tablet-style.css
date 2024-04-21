@@ -1,4 +1,4 @@
-@media (min-width: 429px) and (max-width: 768px) {
+@media (min-width: 485px) and (max-width: 767px) {
   #root {
     padding: 20px 40px;
   }
@@ -13,17 +13,177 @@
   }
 
   .header_h3 {
-    /* margin-bottom: 40px; */
+    font-size: 30px;
+  }
+
+  /* article */
+  .about_hotel {
+    margin: 40px auto;
+  }
+  .about_hotel > h3 {
+    margin-bottom: 20px;
+  }
+
+  /* footer */
+  footer {
+    margin-top: 70px;
+  }
+
+  /* header */
+  .navbar {
+    margin-bottom: 60px;
+  }
+  .logo {
+    display: none;
+  }
+
+  /* Room block  */
+  .room_block_buttons {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  .room_block_btn {
+    width: 50%;
+  }
+  .room_block_main > img {
+    width: 100%;
+  }
+  .conveniences {
+    margin: 15px auto 0 0;
+  }
+
+  /* Title block */
+  .title_block {
+    width: 100%;
+    border: none;
+  }
+  .h1 {
+    text-align: center;
+  }
+  .keyhole_color {
+    left: 80%;
+    top: 103%;
+  }
+  .keyhole {
+    left: 5%;
+    top: 98%;
+  }
+
+  /*Booking page*/
+  .booking_page {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .map_container {
+    height: 300px;
+  }
+  #contacts_wrap {
+    gap: 30px;
+  }
+
+  /* welcome block */
+  #welcome_block_btn {
+    width: 200px;
+  }
+    
+  /* Form feedback */
+  #feedback_header {
+    text-align: center;
   }
 }
 
-@media (min-width: 769px) and (max-width: 991px) {
+@media (min-width: 576px) {
+  #closeButton {
+    display: none;
+  }
+
+  /* welcome block */
+  #welcome_block_btn {
+    width: 200px;
+  }
+}
+
+@media (min-width: 768px) {
+  /*Booking page*/
+  .booking_page {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .map_container {
+    height: 400px;
+  }
+  .book_mes_wrap{
+    justify-content: center;
+  }
+
+  /* Room block  */
+  .room_block_btn {
+    width: 150px;
+  }
+  .conveniences {
+    margin: 15px auto 0 0;
+  }
+
+  /* article */
+  .about_hotel > h3 {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
   #root {
     padding: 25px 40px;
   }
 
   .header_h3 {
-    /* margin-top: 70px; */
-    /* margin-bottom: 25px; */
+    font-size: 30px;
+  }
+
+  /* footer */
+  footer {
+    margin-top: 70px;
+  }
+
+  /* header */
+  .navbar {
+    margin-bottom: 80px;
+  }
+  .logo {
+    display: none;
+  }
+
+  /* article */
+  .about_hotel {
+    margin: 40px auto;
+  }
+
+  /* Room block  */
+  .room_block_buttons {
+    flex-direction: row;
+    margin-top: 20px;
+    justify-content: center;
+  }
+  .room_block_main > img {
+    width: 600px;
+  }
+
+  /* Title block */
+  .h1 {
+    text-align: center;
+  }
+  .keyhole_color {
+    left: 80%;
+    top: 103%;
+  }
+  .keyhole {
+    left: 5%;
+    top: 98%;
+  }
+
+  #contacts_wrap {
+    justify-content: space-between;
   }
 }
