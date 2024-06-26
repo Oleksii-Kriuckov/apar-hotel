@@ -6,10 +6,12 @@
   #modal {
     margin: 40px;
   }
+
   #closeButton {
     right: 0;
     top: 0;
   }
+
   #closeButtonWhite {
     display: none;
   }
@@ -18,10 +20,12 @@
   .about_hotel {
     margin: 40px auto;
   }
-  .about_hotel > h3 {
+
+  .about_hotel>h3 {
     margin-bottom: 20px;
   }
-  article > a {
+
+  article>a {
     margin-top: 20px;
     font-weight: 400;
     font-size: 16px;
@@ -34,16 +38,19 @@
   footer {
     margin-top: 50px;
   }
+
   .footer_nav {
     flex-direction: column;
     justify-content: space-around;
   }
+
   hr {
     margin: 40px auto;
     width: 305px;
     height: 1px;
     background: #ebebeb;
   }
+
   .license_info {
     margin-bottom: 50px;
     padding: 0 30px;
@@ -53,29 +60,35 @@
   .navbar {
     margin-bottom: 60px;
   }
+
   .desktop {
     display: none;
   }
+
   .logo {
     display: none;
   }
 
   /* Room block  */
-  .room_block_main > img {
+  .room_block_main>img {
     width: 100%;
   }
+
   .price_block {
     margin-top: 15px;
   }
+
   .conveniences {
     margin: 15px 0;
     width: 100%;
     max-width: 295px;
   }
+
   .room_block_buttons {
     flex-direction: column;
     margin-top: 20px;
   }
+
   .room_block_btn {
     width: 100%;
   }
@@ -85,13 +98,16 @@
     width: 100%;
     border: none;
   }
+
   .h1 {
     text-align: center;
   }
+
   .keyhole_color {
     left: 80%;
     top: 100%;
   }
+
   .keyhole {
     left: 6%;
     top: 95%;
@@ -101,6 +117,7 @@
   .welcome_block {
     padding: 30px 50px;
   }
+
   #welcome_block_btn {
     width: 100%;
   }
@@ -110,25 +127,41 @@
   }
 
   /*Booking page*/
+  #booking_header {
+    text-align: center;
+  }
   .booking_page {
     display: flex;
     flex-direction: column;
     gap: 30px;
   }
-  .book_mes_wrap{
+
+  .book_mes_wrap {
     justify-content: center;
   }
+
   .bookingMessage {
     width: 100%;
     padding: 25px 35px;
   }
+
   #contacts_wrap {
     gap: 30px;
   }
+
+  .contacts {
+    margin-top: 0;
+    margin-left: 0px;
+  }
+
+  .media_links {
+    margin-left: 5px;
+  }
+
   .map_container {
     height: 300px;
   }
-  
+
 
   .room1 {
     margin-left: auto;
@@ -165,11 +198,9 @@
   .lows_extract {
     margin: 25px 0;
   }
-  
+
   /* Form feedback */
-  #feedback_header {
-    text-align: center;
-  }
+
 }
 
 .mobile {

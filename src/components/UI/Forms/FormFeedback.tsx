@@ -1,9 +1,8 @@
 import React from "react";
 import codes from "../../../assets/codes.json";
-import { Button, Input, Upload, Form, Select, Grid} from "antd";
-import "./styles/style.css";
-import { DropeZonePreviews } from "./DropeZonePreviews";
+import { Button, Input, Form, Select, Grid, Checkbox } from "antd";
 import { DropeZone } from "./DropeZone";
+import "./styles/style.css";
 
 const { Option } = Select;
 const { TextArea } = Input;
@@ -17,7 +16,6 @@ const { useBreakpoint } = Grid;
 
 export const FormFeedback: React.FC = () => {
   const screens = useBreakpoint();
-  // console.log(screens)
 
   const [form] = Form.useForm();
 
@@ -40,19 +38,18 @@ export const FormFeedback: React.FC = () => {
     <Form
       id="form_feedback"
       name="form_feedback"
+      className="form row row-cols-sm-1"
       form={form}
+      labelCol={{ span: 6, offset: 0 }}
       onFinish={onSubmit}
-      layout="horizontal"
+      layout={screens.md ? "vertical" : "horizontal"}
       initialValues={{ prefix: "+380" }}
-      className="form d-flex flex-column flex-md-row flex-md-wrap align-items-lg-center"
-      style={{ gap: 20 }}
       scrollToFirstError
     >
-      {/* <div className="inputs_wrap"></div> */}
+      <div className="row row-cols-sm-1 row-cols-md-3">
         <Form.Item
           name="name"
           label="Name"
-          // className="input_block input_block_booking"
           rules={[{ required: true, message: "Please input your name!" }]}
         >
           <Input size="large" placeholder="John Smith" />
@@ -67,7 +64,6 @@ export const FormFeedback: React.FC = () => {
             size="large"
             minLength={7}
             addonBefore={prefixSelector}
-            style={{ width: "100%" }}
           />
         </Form.Item>
 
@@ -81,28 +77,25 @@ export const FormFeedback: React.FC = () => {
         >
           <Input size="large" />
         </Form.Item>
+      </div>
 
-        <Form.Item id="drop" label="Attach file:" valuePropName="fileList" getValueFromEvent={normFile}>
-          {/* <Upload action="/upload.do" style={{ display: 'block', width: 300 }} id="upload_field" listType="picture-card">
-            <button style={{ border: 0, background: 'none' }} type="button">
-              <div style={{ marginTop: 8 }}>Upload</div>
-            </button>
-          </Upload> */}
-            <DropeZone />
+      <div className="row row-cols-md-2"       >
+        <Form.Item className="col-md-6 padend" id="drop" label="Attach file:" valuePropName="fileList" getValueFromEvent={normFile}>
+          <DropeZone />
         </Form.Item>
 
-        <Form.Item id="texArea_1" label='Message:'>
+        <Form.Item className="col-md-6 padstart" id="texArea_1" label='Message:'>
           <TextArea itemID="" size="large" name="message" rows={2} id="message" placeholder="Message" />
         </Form.Item>
+      </div>
 
-        <div className="d-flex align-items-baseline gap-3">
-          <input type="checkbox" name="confirm" id="confirm" />
-          <label htmlFor="confirm">
-            By clicking on the "Submit" button, I consent to the processing of
-            personal data
-          </label>
-        </div>
+      <Form.Item wrapperCol={{ offset: (screens.xs || screens.md) ? 0 : 6 }}>
+        <Checkbox id="confirm">
+          By clicking on the "Submit" button, I consent to the processing of personal data
+        </Checkbox>
+      </Form.Item>
 
+      <Form.Item wrapperCol={{ offset: (screens.xs || screens.md) ? 0 : 6 }}>
         <Button
           size="large"
           id="send_btn"
@@ -113,6 +106,7 @@ export const FormFeedback: React.FC = () => {
         >
           SEND
         </Button>
+      </Form.Item>
     </Form>
   );
 };

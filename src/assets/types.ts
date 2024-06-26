@@ -6,6 +6,7 @@ export interface IHotelInfo {
   coordinates: Coordinates;
   conveniences: string[];
   // rooms: IRoom[],
+  description: string;
   images: {
     forSlider: string[]
   }
@@ -24,7 +25,6 @@ export interface IRoom {
 
 export interface IHotelsInCity {
   city: string;
-  description: string;
   hotelsInfo: IHotelInfo[];
 }
 

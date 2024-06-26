@@ -71,6 +71,9 @@
   }
 
   /*Booking page*/
+  #booking_header {
+    text-align: center;
+  }
   .booking_page {
     display: flex;
     flex-direction: column;
@@ -81,6 +84,13 @@
   }
   #contacts_wrap {
     gap: 30px;
+    align-items: center;
+  }
+  .contacts {
+    margin-top: 0px;
+  }
+  .media_links {
+    justify-content: center;
   }
 
   /* welcome block */
@@ -89,9 +99,7 @@
   }
     
   /* Form feedback */
-  #feedback_header {
-    text-align: center;
-  }
+
 }
 
 @media (min-width: 576px) {
@@ -117,6 +125,9 @@
   }
   .book_mes_wrap{
     justify-content: center;
+  }
+  .contacts {
+    margin-top: 25px;
   }
 
   /* Room block  */

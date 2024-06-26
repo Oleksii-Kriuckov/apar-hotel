@@ -48,7 +48,7 @@ const FormSearch = (props: Props) => {
       method="post"
     >
       <h4>
-        Check-in - 14.00, <br /> check-out - 12.00
+        Check-in - 14.00, <br /> check-out - 11.00
       </h4>
 
       <div className="search d-flex">

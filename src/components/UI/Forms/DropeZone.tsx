@@ -10,7 +10,7 @@ export function DropeZone(props) {
   ));
 
   return (
-    <section className="container">
+    // <section className="drop_container"></section>
       <div {...getRootProps({ className: 'dropzone' })}>
         <input {...getInputProps()} />
         {files.length === 0
@@ -23,6 +23,6 @@ export function DropeZone(props) {
           )}
       </div>
 
-    </section>
+    
   );
 }

@@ -1,8 +1,6 @@
 import React from "react";
-import { Button, Form, Input, Select, InputNumber } from "antd";
+import { Button, Form, Input, Select, InputNumber, Grid } from "antd";
 import codes from "../../../assets/codes.json";
-import "./styles/style.css";
-import "./styles/adaptive.css";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import {
   dateRange$,
@@ -13,11 +11,16 @@ import {
 import { doc, setDoc, updateDoc } from "firebase/firestore";
 import { db } from "../../../firebase/firebase";
 import { HotelNames } from "../../../assets/types";
+import "./styles/style.css";
+import "./styles/adaptive.css";
 
 const { Option } = Select;
+const { useBreakpoint } = Grid;
 
 export const FormBooking: React.FC = () => {
+  const screens = useBreakpoint();
   const [form] = Form.useForm();
+
   const dateRange = useRecoilValue(dateRange$);
   const bookingRoom = useRecoilValue(bookingRoom$);
   const setShowBookingForm = useSetRecoilState(showBookingForm$);
@@ -68,20 +71,24 @@ export const FormBooking: React.FC = () => {
       <h4 style={{ textAlign: "center", paddingBottom: 10 }}>
         Please fill in this form
       </h4>
+
       <Form
+        id="form_booking"
         name="form_booking"
-        className="form d-flex flex-column flex-lg-row align-items-lg-center"
+        className="form row row-cols-sm-1"
+        // className="form d-flex flex-column flex-lg-row align-items-lg-center"
         form={form}
-        layout="horizontal"
+        labelCol={{ span: 6, offset: 0 }}
+        layout={screens.md ? "vertical" : "horizontal"}
         onFinish={bookRoom}
         initialValues={{ prefix: "+380" }}
         scrollToFirstError
       >
-        <div className="inputs_wrap d-flex flex-column flex-md-row">
+        <div className="row row-cols-sm-1 row-cols-md-3">
           <Form.Item
             name="name"
             label="Name"
-            className="input_block input_block_booking"
+            // className="input_block input_block_booking"
             rules={[{ required: true, message: "Please input your name!" }]}
           >
             <Input size="large" placeholder="John Smith" />
@@ -90,7 +97,7 @@ export const FormBooking: React.FC = () => {
           <Form.Item
             name="phone"
             label="Phone Number"
-            className="input_block input_block_booking"
+            // className="input_block input_block_booking"
             rules={[
               { required: true, message: "Please input your phone number!" },
               { type: "integer", message: "The number should be integer" },
@@ -108,7 +115,7 @@ export const FormBooking: React.FC = () => {
           <Form.Item
             name="email"
             label="E-mail"
-            className="input_block input_block_booking"
+            // className="input_block input_block_booking"
             rules={[
               { type: "email", message: "The input is not valid E-mail!" },
               { required: true, message: "Please input your E-mail!" },
@@ -118,15 +125,18 @@ export const FormBooking: React.FC = () => {
           </Form.Item>
         </div>
 
-        <Button
-          size="large"
-          id="booking"
-          type="primary"
-          className="booking_btn"
-          htmlType="submit"
-        >
-          Booking
-        </Button>
+        <Form.Item wrapperCol={{ offset: (screens.xs || screens.md) ? 0 : 6 }}>
+          <Button
+            size="large"
+            id="booking_btn"
+            type="primary"
+            className="booking_btn"
+            htmlType="submit"
+          >
+            Booking
+          </Button>
+        </Form.Item>
+
       </Form>
     </div>
   );

@@ -14,13 +14,9 @@
   line-height: 43px;
 }
 
-.contacts {
-  margin-top: 25px;
-  margin-left: 20px;
-}
 .contacts > li {
   margin-bottom: 20px;
-  margin-left: 5px;
+  /* margin-left: 5px; */
 }
 .contacts > li:first-child {
   list-style-image: url("../components/images/location.png");
@@ -53,6 +49,7 @@ hr {
 .show_place {
   height: fit-content;
   min-height: 70px;
+  margin-top: 25px;
 }
 
 .days_range {
@@ -68,4 +65,8 @@ hr {
   background-color: transparent;
   border: 1px solid black;
   color: black;
+}
+
+#feedback_header {
+  text-align: center;
 }
