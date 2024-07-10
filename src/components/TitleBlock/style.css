@@ -3,10 +3,6 @@
   gap: 40px;
 }
 
-.highlight {
-  color: var(--main-color);
-}
-
 .h1 {
   font-size: 48px;
   text-transform: uppercase;

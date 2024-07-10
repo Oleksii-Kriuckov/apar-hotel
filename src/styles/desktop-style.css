@@ -2,69 +2,83 @@
   footer {
     margin-top: 90px;
   }
-   
+
   /* header */
   .navbar {
     margin-bottom: 100px;
   }
+
   .logo_mob {
     display: none;
   }
 
-     /* article */
-     .about_hotel {
-      margin: 60px auto;
-    }
-    .about_hotel > h3 {
-      margin-bottom: 40px;
-    }
+  /* Title block */
+  .title_block {
+    margin-bottom: 40px;
+  }
+
+  /* article */
+  .about_hotel {
+    margin: 60px auto;
+  }
+
+  .about_hotel>h3 {
+    margin-bottom: 40px;
+  }
 
   /* Room block  */
   .room_block {
     width: 100%;
   }
-  .room_block_main > img {
+
+  .room_block_main>img {
     width: 360px;
     gap: 25px;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-  body{
+  body {
     padding: 40px 60px;
     background-color: var(--main-color);
   }
+
   #root {
     padding: 30px 60px;
   }
+
   .header_h3 {
     margin-bottom: 25px;
     font-size: 36px;
   }
- 
+
   /* Title block */
-  .title_block{
+  .title_block {
     justify-content: center;
     align-items: center;
   }
-  .title{
+
+  .title {
     display: flex;
   }
+
   .keyhole_color {
-    left: 80%;
+    left: 90%;
     top: 108%;
   }
+
   .keyhole {
-    left: 5%;
+    left: 3%;
     top: 92%;
   }
 }
 
 @media (min-width: 1200px) {
-  body{
+  body {
     padding: 50px 80px;
     background-color: var(--main-color);
   }
+
   #root {
     padding: 40px 70px;
   }
@@ -84,8 +98,13 @@
     left: 5%;
     top: 92%;
   }
+
   .keyhole_color {
-    left: 80%;
-    top: 105%;
+    left: 91%;
+    top: 107%;
   }
 }
+/* 
+@media (min-width: 1200px) and (max-width: 1600px) {
+
+} */

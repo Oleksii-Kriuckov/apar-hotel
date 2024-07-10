@@ -28,7 +28,7 @@ export interface IHotelsInCity {
   hotelsInfo: IHotelInfo[];
 }
 
-export type HotelNames = "luxury" | "independence" | "code"
+export type HotelNames = "Arena-Summit" | "Tiso" | "Code-10"
 
 export type Color = "white" | "black";
 

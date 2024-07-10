@@ -62,12 +62,12 @@
     text-align: center;
   }
   .keyhole_color {
-    left: 80%;
+    left: 88%;
     top: 103%;
   }
   .keyhole {
-    left: 5%;
-    top: 98%;
+    left: 1%;
+    top: 100%;
   }
 
   /*Booking page*/
@@ -186,12 +186,12 @@
     text-align: center;
   }
   .keyhole_color {
-    left: 80%;
-    top: 103%;
+    left: 90%;
+    top: 78%;
   }
   .keyhole {
-    left: 5%;
-    top: 98%;
+    left: 1%;
+    top: 75%;
   }
 
   #contacts_wrap {

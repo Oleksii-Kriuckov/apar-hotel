@@ -22,12 +22,17 @@ import LuxuryBath from "../../public/rooms/TiSO/room32/TiSO-room32-bathroom-view
 import ArenaSummit from "../../public/rooms/Arena-Summit/room26/room26-view1.png";
 import restaurant2 from "../../public/rooms/restaurant2.jpg";
 
+export const hotels = [
+  { city: "Kyiv", hotelName: '' },
+  { city: "Kyiv", hotelName: '' },
+  { city: "Lviv", hotelName: '' },
+]
 export const allHotels: IHotelsInCity[] = [
   {
     city: "Kyiv",
     hotelsInfo: [
       {
-        hotelName: "Arena Summit",
+        hotelName: "Arena-Summit",
         address: "bul. of Lesia Ukrayinka 3",
         tel: "+380996619218",
         email: "luxury@apart-hotel.com",
@@ -49,14 +54,16 @@ export const allHotels: IHotelsInCity[] = [
         //   {hotel: 'Luxury', id: 6, floor: 2, number: 22, image: LuxuryRoom22, persons: 2, price: 1100, occupied: [{checkIn: 0, checkOut: 0}] },
         //   {hotel: 'Luxury', id: 7, floor: 2, number: 23, image: LuxuryRoom23, persons: 2, price: 1300, occupied: [{checkIn: 0, checkOut: 0}] },
         // ],
-        description: `Благоустроенные номера гарантируют качественный отдых в этом апарт-отеле. В номерах есть центральное отопление. Оснащение номеров включает WiFi (бесплатно). Возможно размещение в номерах для некурящих.
-        На верхние этажи можно без труда подняться на лифте или по лестнице. Камера хранения багажа, сейф, услуги трансфера, доставка еды в номер, факс и система пожарной сигнализации к услугам гостей. Благодаря WiFi в общественных зонах гости смогут свободно пользоваться интернетом. Предоставляются услуги за отдельную плату автобуса-шаттла.`,
+        description: `The rooms have central heating. Among other amenities, all rooms have WiFi (free of charge).
+          Upon request, accommodation in family rooms and non-smoking rooms.
+          The elevator will take you to the upper floors. A safe, 24-hour security, room service and laundry are not a complete list of amenities at this hotel. WiFi in public areas.
+          Those arriving with their own car can use the garage or parking lot. Shuttle bus services are available for a fee.`,
         images: {
           forSlider: [LuxuryRoom12, restaurant2, LuxuryBath],
         },
       },
       {
-        hotelName: "TiSO",
+        hotelName: "Tiso",
         address: "Zhylianska, street 59",
         tel: "+380952805220",
         email: "independence@apart-hotel.com",
@@ -69,8 +76,11 @@ export const allHotels: IHotelsInCity[] = [
           "In the common area there is a full kitchen, a washing machine, an iron, in general, everything is like at home",
           "up to 40 people",
         ],
-        description: `В номерах есть центральное отопление. Помимо других удобств, во всех номерах есть WiFi (бесплатно). По желанию размещение в семейных номерах и в номерах для некурящих.
-        Лифт доставит вас на верхние этажи. Сейф, круглосуточная охрана, доставка еды в номер и прачечная – это далеко не полный список удобств в этом отеле. WiFi в общественных зонах. Прибывшие на собственной машине могут пользоваться гаражом или парковкой. Предоставляются услуги за отдельную плату автобуса-шаттла.`,
+        description: `Благоустроенные номера гарантируют качественный отдых в этом апарт-отеле. В номерах есть центральное отопление. 
+        Оснащение номеров включает WiFi (бесплатно). Возможно размещение в номерах для некурящих.
+        На верхние этажи можно без труда подняться на лифте или по лестнице. 
+        Камера хранения багажа, сейф, услуги трансфера, доставка еды в номер, факс и система пожарной сигнализации к услугам гостей. 
+        Благодаря WiFi в общественных зонах гости смогут свободно пользоваться интернетом. Предоставляются услуги за отдельную плату автобуса-шаттла.`,
         images: {
           forSlider: [IndependenceRoom11, ArenaSummit, IndependenceBathroom],
         },
@@ -83,16 +93,16 @@ export const allHotels: IHotelsInCity[] = [
       },
     ],
     // description: `In our hotels, all the necessary requirements for living a modern person are very harmoniously combined. The rooms are apartment format, but with hotel service and security. Fully comply with the requirements of the new law on hotels.
-    
+
     // All apartments are equipped with a kitchen and everything you need for self-catering, a private bathroom with a shower. They are small but have everything you need. A special highlight is a sleeping place on the mezzanine floor. It will be convenient for you to live with us, both for one day and for a long period. 
-    
+
     // In the apartments for the use of guests - bed linen, towels, toiletries, hair dryer, dishes, tea and coffee - free of charge.`,
   },
   {
     city: "Lviv",
     hotelsInfo: [
       {
-        hotelName: "Code",
+        hotelName: "Code-10",
         address: "street of Bohdan Khmelnytskyi, 157",
         tel: "+380682975027",
         email: "code@apart-hotel.com",
@@ -113,17 +123,20 @@ export const allHotels: IHotelsInCity[] = [
         //   {hotel: 'Code', id: 16, floor: 3, number: 31, image: Code10Room31, persons: 2, price: 1450, occupied: [{checkIn: 0, checkOut: 0}] },
         //   {hotel: 'Code', id: 17, floor: 3, number: 32, image: Code10Room32, persons: 2, price: 1450, occupied: [{checkIn: 0, checkOut: 0}] },
         // ],
-        description: `Оснащение номеров включает доступ в интернет и WiFi (бесплатно). По желанию размещение в семейных номерах и в номерах для некурящих.
-        Различные удобства в этом апарт-отеле – например камера хранения багажа, услуги трансфера и зал для совещаний – сделают ваше пребывание особенно комфортным. WiFi в общественных зонах позволит гостям быть в курсе событий. Сотрудники туристического бюро с удовольствием помогут вам при организации туров и экскурсий. Прогулки по гостиничному парку поднимут настроение. Машину можно припарковать на собственной автостоянке отеля.`,
+        description: `Room facilities include WiFi access (free of charge). WiFi in public areas allows guests to keep abreast of events. Family rooms and non-smoking rooms are available upon request.
+        
+        The various facilities at this apartment hotel - such as luggage storage, transfer and meeting facilities - will make your stay especially comfortable. You can park your car in the hotel's own car park. 
+        
+        Walking through the hotel park will improve the mood. The staff of the tourist office will be happy to help you with the organization of tours and excursions.`,
         images: {
           forSlider: [Code10Room21, Code10Bath, Code10Room31],
         },
       },
     ],
     // description: `Mini hotel URoom is located in the heart of Lviv on the street. Peace, in a historic home. It has a separate entrance from the side of the Lviv city center, 7 separate rooms for 2-4 people and a large common area. 
-      
+
     //   For convenience, we have organized independent and safe access to the hotel. Each guest is given an individual access code to the hotel and to their room. Guests can check in and out of the hotel at a convenient time without wasting time on calls and meetings with the Hotel Administration. 
-      
+
     //   Each room has luxurious Box Spring beds. Available in twin or double beds, some rooms have a sofa bed or armchair bed. We have made every effort to ensure that you sleep comfortably and that it is clean.`,
   },
 ];

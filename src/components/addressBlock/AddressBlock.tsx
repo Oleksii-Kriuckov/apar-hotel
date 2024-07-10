@@ -22,7 +22,7 @@ export const AddressBlock = ({ hotelInfo }: AddressBlockProps) => {
       </MyMapContainer>
       <div className="hotel_info">
         <p>
-          Hotel <strong>{hotelInfo.hotelName}</strong> by the address
+          Hotel <strong>{hotelInfo.hotelName.replace('-', ' ')}</strong> by the address
         </p>
         <h3>{hotelInfo.address}</h3>
 
@@ -48,7 +48,7 @@ export const AddressBlock = ({ hotelInfo }: AddressBlockProps) => {
             size="large"
             // href="#about_hotel"
             className="address_block_btn ghost_button"
-            onClick={() => {}}
+            onClick={() => {navigate(`/${city}/${hotelInfo.hotelName.toLowerCase()}/about-hotel`)}}
           >
             Learn more
           </Button>

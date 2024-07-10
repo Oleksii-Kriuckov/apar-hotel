@@ -13,8 +13,8 @@ const MainPage = (props: Props) => {
 
   return (
     <main>
-      <TitleBlock>{city!}</TitleBlock>
-      <Article>{findCity!.description}</Article>
+      <TitleBlock>Your hotels in <span className="highlight">{city!}</span></TitleBlock>
+      {/*  */}
 
       <h3 className="our_addresses">Our address</h3>
       {findCity!.hotelsInfo.map((hotel) => (

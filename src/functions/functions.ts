@@ -3,9 +3,12 @@ import { HotelNames, IRoom } from "../assets/types";
 import { Dayjs } from "dayjs";
 
 export function findData(city: string, hotel?: string) {
-  let findHotel;
+  let findHotel, findCity;
 
-  const findCity = allHotels.find((el) => el.city.toLowerCase() === city);
+  if (city) {
+    findCity = allHotels.find((el) => el.city.toLowerCase() === city);
+  }
+   
   if (findCity) {
     findHotel = findCity.hotelsInfo.find(
       (el) => el.hotelName.toLowerCase() === hotel

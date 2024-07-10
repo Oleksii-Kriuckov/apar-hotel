@@ -70,3 +70,7 @@ hr {
 #feedback_header {
   text-align: center;
 }
+
+.highlight {
+  color: var(--main-color);
+}
