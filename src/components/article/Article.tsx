@@ -1,9 +1,9 @@
 import { PropsWithChildren } from "react";
 import "./style.css";
 
-type ArticleProps = PropsWithChildren<{ children: string, images: string[] }>;
+type ArticleProps = PropsWithChildren<{ children: string, images: string[], hotelName: string }>;
 
-export const Article = ({ children, images }: ArticleProps) => {
+export const Article = ({ children, images, hotelName }: ArticleProps) => {
 
   return (
     <article className="about_hotel d-flex ">
@@ -14,7 +14,7 @@ export const Article = ({ children, images }: ArticleProps) => {
       </div>
       
       <div>
-        <h3 className="header_h3" id="about_hotel">About hotel</h3>
+        <h3 className="header_h3" id="about_hotel">About <span className="highlight">{hotelName}</span> hotel</h3>
         <span style={{whiteSpace: "pre-line"}}>{children}</span>
       </div>
     </article>

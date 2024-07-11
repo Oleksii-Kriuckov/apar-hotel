@@ -1,5 +1,5 @@
 import { IHotelsInCity } from "./types";
-import LuxuryRoom12 from "../../public/rooms/TiSO/room23/TiSO-room23-view2.png";
+import TiSORoom43 from "../../public/rooms/TiSO/room43/room43-view1.png";
 import IndependenceRoom11 from "../../public/rooms/Arena-Summit/room22/room22-view2.png";
 // import LuxuryRoom11 from "../components/images/rooms/LuxuryRoom11.jpg";
 // import LuxuryRoom13 from "../components/images/rooms/LuxuryRoom13.jpg";
@@ -54,12 +54,13 @@ export const allHotels: IHotelsInCity[] = [
         //   {hotel: 'Luxury', id: 6, floor: 2, number: 22, image: LuxuryRoom22, persons: 2, price: 1100, occupied: [{checkIn: 0, checkOut: 0}] },
         //   {hotel: 'Luxury', id: 7, floor: 2, number: 23, image: LuxuryRoom23, persons: 2, price: 1300, occupied: [{checkIn: 0, checkOut: 0}] },
         // ],
-        description: `The rooms have central heating. Among other amenities, all rooms have WiFi (free of charge).
-          Upon request, accommodation in family rooms and non-smoking rooms.
-          The elevator will take you to the upper floors. A safe, 24-hour security, room service and laundry are not a complete list of amenities at this hotel. WiFi in public areas.
+        description: `Well-appointed rooms guarantee a quality stay in this apart-hotel. Room facilities include WiFi (free of charge). Upon request, accommodation in family rooms and non-smoking rooms. 
+          The upper floors can be easily reached by elevator or stairs. Thanks to WiFi in public areas, guests can freely surf the Internet. 
+          
+          Luggage storage, safe, laundry room, room service and fire alarm system are available to guests.
           Those arriving with their own car can use the garage or parking lot. Shuttle bus services are available for a fee.`,
         images: {
-          forSlider: [LuxuryRoom12, restaurant2, LuxuryBath],
+          forSlider: [IndependenceRoom11, ArenaSummit, IndependenceBathroom],
         },
       },
       {
@@ -76,13 +77,14 @@ export const allHotels: IHotelsInCity[] = [
           "In the common area there is a full kitchen, a washing machine, an iron, in general, everything is like at home",
           "up to 40 people",
         ],
-        description: `Благоустроенные номера гарантируют качественный отдых в этом апарт-отеле. В номерах есть центральное отопление. 
-        Оснащение номеров включает WiFi (бесплатно). Возможно размещение в номерах для некурящих.
-        На верхние этажи можно без труда подняться на лифте или по лестнице. 
-        Камера хранения багажа, сейф, услуги трансфера, доставка еды в номер, факс и система пожарной сигнализации к услугам гостей. 
-        Благодаря WiFi в общественных зонах гости смогут свободно пользоваться интернетом. Предоставляются услуги за отдельную плату автобуса-шаттла.`,
+        description: `Our hotel very harmoniously combines all the necessary requirements for living of a modern person. The rooms are apartment format, but with hotel service and security. All apartments are equipped with a kitchen and everything necessary for self-cooking, and a private bathroom with shower.
+          
+          Among other amenities, all rooms have WiFi (free of charge). Non-smoking rooms are available. The elevator will take you to the upper floors.
+          
+          A safe, 24-hour security, room service and laundry are not a complete list of amenities at this hotel. WiFi in public areas.
+          Our hotel has its own parking lot. Shuttle bus services are available for a fee.`,
         images: {
-          forSlider: [IndependenceRoom11, ArenaSummit, IndependenceBathroom],
+          forSlider: [TiSORoom43, restaurant2, LuxuryBath],
         },
         // rooms: [
         //   {hotel: 'Independence', id: 8, floor: 1, number: 11, image: IndependenceRoom11, persons: 3, price: 1450, occupied: [{checkIn: 0, checkOut: 0}] },

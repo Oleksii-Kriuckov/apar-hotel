@@ -14,7 +14,7 @@ const AboutHotel = (props: Props) => {
   return (
     <div>
       {/* <TitleBlock>Hotel <span className="highlight">{findHotel && findHotel.hotelName.replace('-', ' ')}</span></TitleBlock>  */}
-      <Article images={findHotel?.images.forSlider!}>{findHotel?.description!}</Article>
+      <Article images={findHotel?.images.forSlider!} hotelName={findHotel?.hotelName!.replace('-', ' ')!}>{findHotel?.description!}</Article>
       <AddressBlock hotelInfo={findHotel!}/>
     </div>
   );

@@ -9,6 +9,7 @@ article>p{
 
 .about_hotel {
   justify-content: space-between;
+  gap: 50px;
 }
 
 .describe_images {

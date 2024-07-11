@@ -25,10 +25,7 @@ const Booking = () => {
   useEffect(() => {
     if (!bookingRoom.id) {
       navigate(`/${city}/${hotel}`)
-    } else {
-      console.log(daysRange[0])
-      console.log(daysRange[1])
-    }
+    } 
   }, []);
 
   return (
