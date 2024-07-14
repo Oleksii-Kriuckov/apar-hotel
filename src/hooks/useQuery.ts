@@ -11,13 +11,14 @@ export const useQuery = () => {
   function queryRooms(hotel: HotelNames, persons: number) {
     const q = query(collection(db, "rooms"));
     let roomsArr: IRoom[] = [];
-
+    
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       querySnapshot.forEach((doc: any) => {
         roomsArr.push({ ...doc.data(), id: doc.id });
       });
-
+      
       const allHotelRooms = roomsArr.filter((room) => room.hotel === hotel);
+      console.log(allHotelRooms);
       
       // allHotelRooms.forEach(room => {
       //   if (room.occupied.length > 0) {
@@ -37,7 +38,6 @@ export const useQuery = () => {
         })
       });
       const res = freeRooms.filter(r => r.persons >= persons)
-      // console.log(res);
       // console.log('choose date in :', new Date(dateRange[0]).toLocaleString() );
       // console.log('choose date out :', new Date(dateRange[1]).toLocaleString() );
       setRooms(res);

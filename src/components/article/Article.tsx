@@ -9,7 +9,7 @@ export const Article = ({ children, images, hotelName }: ArticleProps) => {
     <article className="about_hotel d-flex ">
       <div className="describe_images">
         {images.map((v, i) => {
-          return <img src={v} alt={`Room ${i}`} className="describe_img"/>
+          return <img key={v} src={v} alt={`Room ${i}`} className="describe_img"/>
         })}
       </div>
       

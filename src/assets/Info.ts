@@ -1,26 +1,27 @@
 import { IHotelsInCity } from "./types";
 import TiSORoom43 from "../../public/rooms/TiSO/room43/room43-view1.png";
-import IndependenceRoom11 from "../../public/rooms/Arena-Summit/room22/room22-view2.png";
-// import LuxuryRoom11 from "../components/images/rooms/LuxuryRoom11.jpg";
-// import LuxuryRoom13 from "../components/images/rooms/LuxuryRoom13.jpg";
-// import LuxuryRoom14 from "../components/images/rooms/LuxuryRoom14.jpg";
-// import LuxuryRoom21 from "../components/images/rooms/LuxuryRoom21.jpg";
-// import LuxuryRoom22 from "../components/images/rooms/LuxuryRoom22.jpg";
-// import LuxuryRoom23 from "../components/images/rooms/LuxuryRoom23.jpg";
-// import IndependenceRoom12 from "../components/images/rooms/IndependenceRoom12.jpg";
-// import IndependenceRoom13 from "../components/images/rooms/IndependenceRoom13.jpg";
-// import IndependenceRoom14 from "../components/images/rooms/IndependenceRoom14.jpg";
-// import Code10Room11 from "../components/images/rooms/Code10Room11.jpg";
-// import Code10Room12 from "../components/images/rooms/Code10Room12.jpg";
-// import Code10Room22 from "../components/images/rooms/Code10Room22.jpg";
-// import Code10Room32 from "../components/images/rooms/Code10Room32.jpg";
+import ArenaSummitRoom22V2 from "../../public/rooms/Arena-Summit/room22/room22-view2.png";
+import ArenaSummitBathroom24 from "../../public/rooms/Arena-Summit/room24/bathroom24-view1.png";
+import ArenaSummitRoom31 from "../../public/rooms/Arena-Summit/room32/room32-view1.png";
+import ArenaSummitRoom11 from "../../public/rooms/Arena-Summit/room32/room32-view2.png";
+import ArenaSummitRoom13 from "../../public/rooms/Arena-Summit/room32/room32-view3.png";
+import ArenaSummitRoom14 from "../../public/rooms/Arena-Summit/room32/bathroom11-view1.png";
+import ArenaSummitRoom21 from "../../public/rooms/Arena-Summit/room32/bathroom11-view1.png";
+import ArenaSummitRoom32V3 from "../../public/rooms/Arena-Summit/room33/room33-view1.png";
+import ArenaSummitRoom23V2 from "../../public/rooms/Arena-Summit/room33/room33-view2.png";
+import ArenaSummitRoom23V3 from "../../public/rooms/Arena-Summit/room33/bathroom33-view1.png";
+import IndependenceRoom12 from "../components/images/rooms/IndependenceRoom12.jpg";
+import IndependenceRoom13 from "../components/images/rooms/IndependenceRoom13.jpg";
+import IndependenceRoom14 from "../components/images/rooms/IndependenceRoom14.jpg";
+import Code10Room21V1 from "../../public/rooms/Code10/room21/room21-view1.jpg";
+import Code10Room21V2 from "../../public/rooms/Code10/room21/room21-view2.png";
+import Code10Room21V3 from "../../public/rooms/Code10/room21/room21-bathroom.jpg";
+import Code10Room32 from "../../public/rooms/Code10/room32/room32-view1.png";
 import Code10Room21 from "../../public/rooms/Code10/room21/room21-view1.jpg";
 import Code10Room31 from "../../public/rooms/Code10/room23/room23-view1.png";
 import Code10Bath from "../../public/rooms/Code10/room21/room21-bathroom.jpg";
-import IndependenceBathroom from "../../public/rooms/Arena-Summit/room24/bathroom8-view2.png";
-import LuxuryBath from "../../public/rooms/TiSO/room32/TiSO-room32-bathroom-view1.png";
-import ArenaSummit from "../../public/rooms/Arena-Summit/room26/room26-view1.png";
-import restaurant2 from "../../public/rooms/restaurant2.jpg";
+import TisoBath from "../../public/rooms/TiSO/room32/TiSO-room32-bathroom-view1.png";
+import TisoRestaurant from "../../public/rooms/restaurant1.jpg";
 
 export const hotels = [
   { city: "Kyiv", hotelName: '' },
@@ -45,22 +46,22 @@ export const allHotels: IHotelsInCity[] = [
           "Laundry service, luggage storage, coffee snack vending machines",
           "up to 40 people",
         ],
-        // rooms: [
-        //   {hotel: 'Luxury', id: 1, floor: 1, number: 11, image: LuxuryRoom11, persons: 4, price: 1400, occupied: [{checkIn: 0, checkOut: 0}] },
-        //   {hotel: 'Luxury', id: 2, floor: 1, number: 12, image: LuxuryRoom12, persons: 3, price: 1100, occupied: [{checkIn: 0, checkOut: 0}] },
-        //   {hotel: 'Luxury', id: 3, floor: 1, number: 13, image: LuxuryRoom13, persons: 2, price: 1200, occupied: [{checkIn: 0, checkOut: 0}] },
-        //   {hotel: 'Luxury', id: 4, floor: 1, number: 14, image: LuxuryRoom14, persons: 2, price: 1200, occupied: [{checkIn: 0, checkOut: 0}] },
-        //   {hotel: 'Luxury', id: 5, floor: 2, number: 21, image: LuxuryRoom21, persons: 2, price: 1200, occupied: [{checkIn: 0, checkOut: 0}] },
-        //   {hotel: 'Luxury', id: 6, floor: 2, number: 22, image: LuxuryRoom22, persons: 2, price: 1100, occupied: [{checkIn: 0, checkOut: 0}] },
-        //   {hotel: 'Luxury', id: 7, floor: 2, number: 23, image: LuxuryRoom23, persons: 2, price: 1300, occupied: [{checkIn: 0, checkOut: 0}] },
-        // ],
+        rooms: [
+          {hotel: 'Arena-Summit', id: 1, floor: 1, number: 11, image: [], persons: 4, price: 1400, occupied: [{checkIn: 0, checkOut: 0}] },
+          {hotel: 'Arena-Summit', id: 2, floor: 1, number: 12, image: [], persons: 3, price: 1100, occupied: [{checkIn: 0, checkOut: 0}] },
+          {hotel: 'Arena-Summit', id: 3, floor: 1, number: 13, image: [], persons: 2, price: 1200, occupied: [{checkIn: 0, checkOut: 0}] },
+          {hotel: 'Arena-Summit', id: 4, floor: 1, number: 14, image: [], persons: 2, price: 1200, occupied: [{checkIn: 0, checkOut: 0}] },
+          {hotel: 'Arena-Summit', id: 5, floor: 2, number: 21, image: [], persons: 2, price: 1200, occupied: [{checkIn: 0, checkOut: 0}] },
+          {hotel: 'Arena-Summit', id: 6, floor: 2, number: 22, image: [], persons: 2, price: 1100, occupied: [{checkIn: 0, checkOut: 0}] },
+          {hotel: 'Arena-Summit', id: 7, floor: 2, number: 23, image: [], persons: 2, price: 1300, occupied: [{checkIn: 0, checkOut: 0}] },
+        ],
         description: `Well-appointed rooms guarantee a quality stay in this apart-hotel. Room facilities include WiFi (free of charge). Upon request, accommodation in family rooms and non-smoking rooms. 
           The upper floors can be easily reached by elevator or stairs. Thanks to WiFi in public areas, guests can freely surf the Internet. 
           
           Luggage storage, safe, laundry room, room service and fire alarm system are available to guests.
           Those arriving with their own car can use the garage or parking lot. Shuttle bus services are available for a fee.`,
         images: {
-          forSlider: [IndependenceRoom11, ArenaSummit, IndependenceBathroom],
+          forSlider: [ArenaSummitRoom22V2, ArenaSummitRoom32V3, ArenaSummitBathroom24],
         },
       },
       {
@@ -84,7 +85,7 @@ export const allHotels: IHotelsInCity[] = [
           A safe, 24-hour security, room service and laundry are not a complete list of amenities at this hotel. WiFi in public areas.
           Our hotel has its own parking lot. Shuttle bus services are available for a fee.`,
         images: {
-          forSlider: [TiSORoom43, restaurant2, LuxuryBath],
+          forSlider: [TiSORoom43, TisoRestaurant, TisoBath],
         },
         // rooms: [
         //   {hotel: 'Independence', id: 8, floor: 1, number: 11, image: IndependenceRoom11, persons: 3, price: 1450, occupied: [{checkIn: 0, checkOut: 0}] },
@@ -131,7 +132,7 @@ export const allHotels: IHotelsInCity[] = [
         
         Walking through the hotel park will improve the mood. The staff of the tourist office will be happy to help you with the organization of tours and excursions.`,
         images: {
-          forSlider: [Code10Room21, Code10Bath, Code10Room31],
+          forSlider: [Code10Room21, Code10Room31, Code10Bath],
         },
       },
     ],

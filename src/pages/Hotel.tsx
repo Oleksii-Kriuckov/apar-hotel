@@ -27,7 +27,7 @@ const Hotel = (props: Props) => {
         className="header_h3"
         style={{ textAlign: "center", marginBottom: 0 }}
       >
-        {`Hotel ${findHotel!.hotelName.replace('-', ' ')} (${findCity!.city})`}{" "}
+        Hotel  <span className="highlight">{findHotel!.hotelName.replace('-', ' ')}</span>  ({findCity!.city})
       </h3>
       <h4 style={{ textAlign: "center", fontSize: 24, fontWeight: 500 }}>
         {findHotel!.address}

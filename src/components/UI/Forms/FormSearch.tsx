@@ -95,7 +95,7 @@ export default FormSearch;
 // setDoc(base, {
 //   hotel: "luxury",
 //   floor: 1,
-//   image: '/src/components/images/rooms/LuxuryRoom11.jpg',
+//   image: '/public/rooms/Arena-Summit/room23/room23-view1.png',
 //   number: 11,
 //   persons: 2,
 //   price: 2100,
