@@ -18,7 +18,7 @@ export const useQuery = () => {
       });
       
       const allHotelRooms = roomsArr.filter((room) => room.hotel === hotel);
-      console.log(allHotelRooms);
+      console.log(hotel);
       
       // allHotelRooms.forEach(room => {
       //   if (room.occupied.length > 0) {

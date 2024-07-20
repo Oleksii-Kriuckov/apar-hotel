@@ -7,9 +7,10 @@ article>p{
   margin-top: 20px;
 }
 
-.about_hotel {
+article {
   justify-content: space-between;
   gap: 50px;
+  margin-bottom: 40px;
 }
 
 .describe_images {

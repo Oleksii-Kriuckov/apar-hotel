@@ -2,25 +2,13 @@ import { IHotelsInCity } from "./types";
 import TiSORoom43 from "../../public/rooms/TiSO/room43/room43-view1.png";
 import ArenaSummitRoom22V2 from "../../public/rooms/Arena-Summit/room22/room22-view2.png";
 import ArenaSummitBathroom24 from "../../public/rooms/Arena-Summit/room24/bathroom24-view1.png";
-import ArenaSummitRoom31 from "../../public/rooms/Arena-Summit/room32/room32-view1.png";
-import ArenaSummitRoom11 from "../../public/rooms/Arena-Summit/room32/room32-view2.png";
-import ArenaSummitRoom13 from "../../public/rooms/Arena-Summit/room32/room32-view3.png";
-import ArenaSummitRoom14 from "../../public/rooms/Arena-Summit/room32/bathroom11-view1.png";
-import ArenaSummitRoom21 from "../../public/rooms/Arena-Summit/room32/bathroom11-view1.png";
+
 import ArenaSummitRoom32V3 from "../../public/rooms/Arena-Summit/room33/room33-view1.png";
-import ArenaSummitRoom23V2 from "../../public/rooms/Arena-Summit/room33/room33-view2.png";
-import ArenaSummitRoom23V3 from "../../public/rooms/Arena-Summit/room33/bathroom33-view1.png";
-import IndependenceRoom12 from "../components/images/rooms/IndependenceRoom12.jpg";
-import IndependenceRoom13 from "../components/images/rooms/IndependenceRoom13.jpg";
-import IndependenceRoom14 from "../components/images/rooms/IndependenceRoom14.jpg";
-import Code10Room21V1 from "../../public/rooms/Code10/room21/room21-view1.jpg";
-import Code10Room21V2 from "../../public/rooms/Code10/room21/room21-view2.png";
-import Code10Room21V3 from "../../public/rooms/Code10/room21/room21-bathroom.jpg";
-import Code10Room32 from "../../public/rooms/Code10/room32/room32-view1.png";
+
 import Code10Room21 from "../../public/rooms/Code10/room21/room21-view1.jpg";
 import Code10Room31 from "../../public/rooms/Code10/room23/room23-view1.png";
 import Code10Bath from "../../public/rooms/Code10/room21/room21-bathroom.jpg";
-import TisoBath from "../../public/rooms/TiSO/room32/TiSO-room32-bathroom-view1.png";
+import TisoBath from "../../public/rooms/TiSO/room32/room32-v5.png";
 import TisoRestaurant from "../../public/rooms/restaurant1.jpg";
 
 export const hotels = [

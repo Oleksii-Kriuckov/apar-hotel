@@ -36,7 +36,7 @@ const Hotel = (props: Props) => {
         <FormSearch />
 
         {freeRooms.map((room) => (
-          <RoomBlock key={room.image} roomInfo={room} />
+          <RoomBlock key={room.id} roomInfo={room} />
         ))}
 
         <Welcome />

@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import Layout from "../components/Layout";
 import AboutHotel from "../pages/AboutHotel";
+import AboutRoom from "../pages/AboutRoom";
 
 const AppRoutes = [
   // { path: MainPage_ROUTE, element: <MainPage /> },
@@ -32,6 +33,7 @@ const router = createBrowserRouter(
       />
       <Route path="/:city/:hotel/about-hotel" element={<AboutHotel/>}/>
       <Route path="/:city/:hotel/:number/booking" element={<Booking />} />
+      <Route path="/:city/:hotel/room-:number/about-room" element={<AboutRoom/>} />
       <Route path={Feedback_ROUTE} element={<Feedback />} />
     </Route>
   )
