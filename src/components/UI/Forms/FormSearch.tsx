@@ -37,7 +37,7 @@ const FormSearch = (props: Props) => {
       setDateRange(formatDays(value));
   }};
 
-  const searchRooms = (value: [Dayjs, Dayjs]) => {
+  const searchRooms = () => {
     queryRooms(hotel as HotelNames, persons);
   };
 

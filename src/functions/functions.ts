@@ -14,7 +14,6 @@ export function findData(city: string, hotel?: string) {
       (el) => el.hotelName.toLowerCase() === hotel
     );
   }
-
   return { findCity, findHotel };
 }
 

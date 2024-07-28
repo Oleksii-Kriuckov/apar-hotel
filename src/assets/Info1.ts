@@ -174,15 +174,15 @@ Mini refrigerator built into the kitchen furniture.
 There is also a wardrobe, a double bed with bedside tables, air conditioning and smatr TV.
 Bathroom has a bathtub with jacuzzi and shower`
 
-`This room is on the 2nd floor, designed for 2 people. 
+`This room is on the second floor and designed for 3 or 4 people. 
 It has own kitchen with microwave and electric kettle, a double bed with bedside tables, a wardrobe, a table and chairs. 
 There is also air conditioning and smart TV. The bathroom has a bathtub with shower, a towel dryer, toilet and sink. 
 Food and drinks from the restaurant can be ordered to the room.`
 
 `The room is designed for 2 people and located on the second floor. This two-room suite consists of a bedroom and a dining room with kitchen.
-The bedroom has a double bed, a wardrobe, armchair and air conditioning. 
+There is a separate room with a wardrobe and armchairs. 
 The kitchen has all necessary items for for comfortable cooking and eating, including refrigerator. There are also a sofa and a flat TV.
-Bathroom is standard one (bath, sink, toilet).
+Bathroom has a sink, a hair dryer, a toilet, a bathtub with shower.
  
 Food and drinks from the restaurant can be ordered to the room.`
 
@@ -195,20 +195,25 @@ Directly is the entrance to the bathroom, to the right is the bedroom, to the le
 The a bedroom has a double bed, a mirror and a desk. In the dining room there are an air conditioner, a flat TV and armchair.
 Bathroom has a bathtub with shower and jacuzzi, toilet and sink.`
 
-`This two-room family room, designed for three or four people. 
-Parents can stay in the bedroom, and children can sleep in the living room on a folding sofa. 
-The living room is a dining room with a kitchen and a flat-screen TV.
-Bathroom has a sink, a hair dryer, a toilet, a bathtub with shower`
+`This is three-room suit, designed for three people. 
+There are bedroom with double bed, living room with sofa, smart TV, table and chairs, hallway with wardrobe and armchairs. 
+This room does not have a kitchen, so food and drinks can be ordered in the room.
+Bathroom has a sink, a towel dryer, a hair dryer, a toilet, a bathtub with shower`
+
 
 `Room for 2 people, located on the fourth floor. 
 It has own kitchen, a microwave, a kettle, an air conditioner, a flat TV, a double bed with bedside tables, a table and chairs.
-Bathroom has a bathtub with shower and jacuzzi`
+Bathroom is standard one (bath, sink, toilet)`
 
 `This room is on the fourth floor. 
 It has own kitchen, a microwave, a kettle, an air conditioner, a flat TV, a wardrobe, a double bed with bedside tables.
 Bathroom has a sink, a towel dryer, a toilet, a bathtub with shower and jacuzzi`
 
-// code 24
-`In this two-room can stay a company of three people. 
-There may be a dowager in the bedroom, and one person may sleep in the living room on the couch. 
-The living room also has a kitchen, table, chairs and a smart TV.`
+`A company of three people can stay in this two-room suite. 
+Two people can sleep in the bedroom, and the third in the living room on the sofa. 
+The living room also has a kitchen, table, chairs and a smart TV. All rooms have air conditioning.
+Bathroom has a sink, a towel dryer, a toilet, a shower`
+
+`By default, this room is designed for 2 people, but for an additional fee you can put a sofa that can accommodate another person. 
+There is a kitchen with everything you need, and there is a large closet in the hallway. 
+Also room has air conditioning and smart TV. Standard bathroom in the room.`

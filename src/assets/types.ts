@@ -13,14 +13,14 @@ export interface IHotelInfo {
 }
 
 export interface IRoom {
-  id: string;
-  hotel: HotelNames
-  images: string[];
-  price: number;
-  number: number;
   floor: number;
-  persons: number;
+  hotel: HotelNames
+  id: string;
+  images: string[];
+  number: number;
   occupied: {checkIn: number, checkOut: number}[]
+  persons: number;
+  price: number;
 }
 
 export interface IHotelsInCity {
@@ -28,7 +28,7 @@ export interface IHotelsInCity {
   hotelsInfo: IHotelInfo[];
 }
 
-export type HotelNames = "Arena-Summit" | "Tiso" | "Code-10"
+export type HotelNames = "arena-summit" | "tiso" | "code-10"
 
 export type Color = "white" | "black";
 

@@ -6,7 +6,7 @@ import { findData } from "../functions/functions";
 import { useEffect, useState } from "react";
 import { db } from "../firebase/firebase";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { freeRooms$ } from "../recoil/atoms";
+import { unoccupiedRooms$ } from "../recoil/atoms";
 
 type Props = {};
 
@@ -15,8 +15,8 @@ const Hotel = (props: Props) => {
   const { findCity, findHotel } = findData(city!, hotel!);
   const data = useActionData();
   // const showBooking = useRecoilValue(showBookingForm$)
-  const [freeRooms, setFreeRooms] = useRecoilState(freeRooms$);
-  // const [rooms, setRooms] = useState<IRoom[]>([]);
+  const [freeRooms, setFreeRooms] = useRecoilState(unoccupiedRooms$);
+  
   useEffect(() => {
     return setFreeRooms([])
   }, [])

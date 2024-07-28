@@ -33,7 +33,7 @@ const router = createBrowserRouter(
       />
       <Route path="/:city/:hotel/about-hotel" element={<AboutHotel/>}/>
       <Route path="/:city/:hotel/:number/booking" element={<Booking />} />
-      <Route path="/:city/:hotel/room-:number/about-room" element={<AboutRoom/>} />
+      <Route path="/:city/:hotel/:number/about-room" element={<AboutRoom/>} />
       <Route path={Feedback_ROUTE} element={<Feedback />} />
     </Route>
   )

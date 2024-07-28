@@ -8,7 +8,7 @@ export const dateRange$ = atom<[number, number]>({
   default: formatDays([dayjs(), dayjs().add(1, "day")])
 })
 
-export const freeRooms$ = atom<IRoom[]>({
+export const unoccupiedRooms$ = atom<IRoom[]>({
   key: 'freeRooms',
   default: []
 })
