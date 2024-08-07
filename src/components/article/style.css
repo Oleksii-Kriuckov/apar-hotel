@@ -10,13 +10,15 @@ article>p{
 article {
   justify-content: space-between;
   gap: 50px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  grid-template-columns: 1fr 1fr
 }
 
 .describe_images {
   /* display: grid;
   grid-template-columns: repeat(2, 250px);
   grid-template-rows: repeat(3, 150px); */
+  width: 80vw;
 }
 
 .describe_images :nth-child(1) {
@@ -24,20 +26,20 @@ article {
 }
 .describe_images :nth-child(2) {
   left: 47%;
-  top: -7%;
+  top: -10px;
   z-index: 5;
   /* grid-column: 2;
   grid-row: 2/3; */
 }
 .describe_images :nth-child(3) {
   left: 10%;
-  top: -10%;
+  top: -27px;
   /* grid-column: 1/2;
   grid-row: 3; */
 }
   
 .describe_img {
-  width: 55%;
+  width: 53%;
   position: relative;
   /* height: 100%; */
 }

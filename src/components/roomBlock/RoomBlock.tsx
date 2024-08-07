@@ -17,34 +17,34 @@ type RoomBlockProps = {
 const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
   let navigate = useNavigate();
   const { city, hotel } = useParams();
-  // const {navigateAboutRoom} = useAppNav(roomInfo, city!)
+  const {navigateBooking, navigateAboutRoom} = useAppNav(roomInfo, city!)
   // const setIdBookingRoom = useSetRecoilState(idBookingRoom$);
   const setShowBookingForm = useSetRecoilState(showBookingForm$);
   const setBookingRoom = useSetRecoilState(bookingRoom$);
 
-  const navigateBooking = () => {
-    const newRoomInfo: {
-      occupied: { checkIn: number; checkOut: number }[],
-      [key: string]: string | number | { checkIn: number; checkOut: number }[]
-    } = { occupied: [] };
-    for (const key in roomInfo) {
-      if (Object.prototype.hasOwnProperty.call(roomInfo, key)) {
-        newRoomInfo[key] = roomInfo[key];
-      }
-    }
+  // const navigateBooking = () => {
+  //   const newRoomInfo: {
+  //     occupied: { checkIn: number; checkOut: number }[],
+  //     [key: string]: string | number | { checkIn: number; checkOut: number }[]
+  //   } = { occupied: [] };
+  //   for (const key in roomInfo) {
+  //     if (Object.prototype.hasOwnProperty.call(roomInfo, key)) {
+  //       newRoomInfo[key] = roomInfo[key];
+  //     }
+  //   }
     
-    newRoomInfo.occupied = newRoomInfo.occupied.filter((v, i, a) => v.checkOut > Date.now())
-    // newRoomInfo.occupied = roomInfo.occupied.filter((v, i, a) => v.checkOut > Date.now())
+  //   newRoomInfo.occupied = newRoomInfo.occupied.filter((v, i, a) => v.checkOut > Date.now())
+  //   // newRoomInfo.occupied = roomInfo.occupied.filter((v, i, a) => v.checkOut > Date.now())
 
-    setBookingRoom(newRoomInfo);
-    setShowBookingForm(true);
-    navigate(`/${city}/${hotel}/${roomInfo.number}/booking`);
-  };
+  //   setBookingRoom(newRoomInfo);
+  //   setShowBookingForm(true);
+  //   navigate(`/${city}/${hotel}/${roomInfo.number}/booking`);
+  // };
 
-  const navigateAboutRoom = () => {
-    setBookingRoom(roomInfo)
-    navigate(`/${city}/${hotel}/${roomInfo.number}/about-room`)
-  }
+  // const navigateAboutRoom = () => {
+  //   setBookingRoom(roomInfo)
+  //   navigate(`/${city}/${hotel}/${roomInfo.number}/about-room`)
+  // }
 
   return (
     <div className="room_block">

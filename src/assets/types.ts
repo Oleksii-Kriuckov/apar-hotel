@@ -13,12 +13,13 @@ export interface IHotelInfo {
 }
 
 export interface IRoom {
+  description: string;
   floor: number;
-  hotel: HotelNames
+  hotel: HotelNames;
   id: string;
   images: string[];
   number: number;
-  occupied: {checkIn: number, checkOut: number}[]
+  occupied: {checkIn: number, checkOut: number}[];
   persons: number;
   price: number;
 }
