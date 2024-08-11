@@ -26,7 +26,7 @@ const TitleBlock = ({ children }: ToBookBlockProps) => {
         <BootCar images={images}/>
         {/* <MyCarousel images={images} /> */}
 
-      <h1 className="h1"> {children} </h1>
+      <div><h1 className="h1"> {children} </h1></div>
     </div>
   );
 };

@@ -34,9 +34,12 @@ export const allHotels: IHotelsInCity[] = [
           "Laundry service, luggage storage, coffee snack vending machines",
           "up to 40 people",
         ],
-        description: `Arena Summit Apart Hotel is suitable for both families and business trips. Upon request, accommodation in family rooms and non-smoking rooms. The location in the city center. 
+        description: `Arena Summit Apart Hotel is suitable for both families and business trips. 
+        Upon request, accommodation in family rooms and non-smoking rooms. The location in the city center. 
 
-          The hotel is very comfortable and cozy, the interior is made in a modern style. Absolutely all furniture was designed with maximum convenience for guests. All rooms equipped with mini-kitchenettes for a comfortable long stay. 24/7 reception and excellent service, including free Wi-Fi (in rooms and public areas), luggage storage, safe, laundry room, room service and fire alarm system are created for a comfortable stay of our guests.
+          The hotel is very comfortable and cozy, the interior is made in a modern style. 
+          Absolutely all furniture was designed with maximum convenience for guests. All rooms equipped with mini-kitchenettes for a comfortable long stay. 
+          24/7 reception and excellent service, including free Wi-Fi (in rooms and public areas), luggage storage, safe, laundry room, room service and fire alarm system are created for a comfortable stay of our guests.
           
           The upper floors can be easily reached by elevator or stairs. Those arriving with their own car can use the garage or parking lot. Shuttle bus services are available for a fee.`,
         images: {
@@ -59,8 +62,7 @@ export const allHotels: IHotelsInCity[] = [
         ],
         description: `Our hotel very harmoniously combines all the necessary requirements for living of a modern person. The rooms are apartment format, but with hotel service and security. 
         
-        Each room at Tiso ApartHotel includes bright décor,an air conditioner, a minibar, a flat-screen TV, and bathrooms come with a hairdryer. Among other amenities, all rooms have WiFi (free of charge). Non-smoking rooms are available. The elevator will take you to the upper floors.
-        A safe, 24-hour security, room service and laundry are not a complete list of amenities at this hotel. WiFi in public areas.
+        Each room at Tiso ApartHotel includes bright décor, an air conditioner, a minibar, a flat-screen TV, and bathrooms come with a hairdryer. Among other amenities, all rooms have WiFi (free of charge). Non-smoking rooms are available. The elevator will take you to the upper floors. A safe, 24-hour security, room service and laundry are not a complete list of amenities at this hotel. WiFi in public areas.
 
         Restaurants can be found on the ground and 1st floors of the residential estate and several dining options are also available within a 5-minute walk of the property.
 
@@ -88,9 +90,12 @@ export const allHotels: IHotelsInCity[] = [
           "Laundry service, luggage storage, coffee snack vending machines",
           "up to 20 people",
         ],
-        description: `Apart Hotel Code 10 located near the city center.  Free Wifi is featured throughout the property. Family rooms and non-smoking rooms are available upon request. Some rooms are allergy-free and soundproof, and certain ones have a terrace.
+        description: `Apart Hotel Code 10 located near the city center.  Free Wifi is featured throughout the property. 
+        Family rooms and non-smoking rooms are available upon request. 
+        Some rooms are allergy-free and soundproof, and certain ones have a terrace.
         
-        All rooms have a desk, a flat-screen TV, an air conditioner, a private bathroom and towels. The various facilities at this apartment hotel - such as luggage storage, concierge service, transfer and meeting facilities - will make your stay especially comfortable.
+        All rooms have a desk, a flat-screen TV, an air conditioner, a private bathroom and towels. 
+        The various facilities at this apartment hotel - such as luggage storage, concierge service, transfer and meeting facilities - will make your stay especially comfortable.
 
         Walking through the hotel park will improve the mood. You can park your car in the hotel's own car park. 
         

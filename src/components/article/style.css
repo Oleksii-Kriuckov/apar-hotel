@@ -1,9 +1,9 @@
-article>span{
+article>span {
   white-space: pre-line;
   text-align: left;
 }
 
-article>p{
+article>p {
   margin-top: 20px;
 }
 
@@ -14,32 +14,31 @@ article {
   grid-template-columns: 1fr 1fr
 }
 
-.describe_images {
-  /* display: grid;
-  grid-template-columns: repeat(2, 250px);
-  grid-template-rows: repeat(3, 150px); */
-  width: 80vw;
+.article_header {
+  background-color: aqua;
 }
 
 .describe_images :nth-child(1) {
   z-index: 10;
 }
+
 .describe_images :nth-child(2) {
   left: 47%;
   top: -10px;
   z-index: 5;
-  /* grid-column: 2;
-  grid-row: 2/3; */
 }
+
 .describe_images :nth-child(3) {
   left: 10%;
   top: -27px;
-  /* grid-column: 1/2;
-  grid-row: 3; */
 }
-  
+
+.describe_images {
+  height: fit-content;
+}
+
 .describe_img {
   width: 53%;
   position: relative;
-  /* height: 100%; */
+  aspect-ratio: 16/9;
 }
