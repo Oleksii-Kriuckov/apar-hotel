@@ -23,7 +23,7 @@ export const allHotels: IHotelsInCity[] = [
     hotelsInfo: [
       {
         hotelName: "Arena-Summit",
-        address: "bul. of Lesia Ukrayinka 3",
+        address: "бул. Лесі Українки 3",
         tel: "+380996619218",
         email: "arena-summit@apart-hotel.com",
         coordinates: { lat: 50.43293422168239, lng: 30.53353608991025 },
@@ -49,7 +49,7 @@ export const allHotels: IHotelsInCity[] = [
       },
       {
         hotelName: "Tiso",
-        address: "Zhylianska, street 59",
+        address: "вул. Жилянська 59",
         tel: "+380952805220",
         email: "tiso@apart-hotel.com",
         coordinates: { lat: 50.4545998769799, lng: 30.520113578857607 },
@@ -79,7 +79,7 @@ export const allHotels: IHotelsInCity[] = [
     hotelsInfo: [
       {
         hotelName: "Code-10",
-        address: "street of Bohdan Khmelnytskyi, 157",
+        address: "вул. Богдана Хмельницького, 157",
         tel: "+380682975027",
         email: "code-10@apart-hotel.com",
         coordinates: { lat: 49.85410453856136, lng: 24.043041132804692 },
