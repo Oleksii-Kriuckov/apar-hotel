@@ -12,10 +12,11 @@ import TisoBath from "../../public/rooms/TiSO/room32/room32-v5.png";
 import TisoRestaurant from "../../public/rooms/restaurant1.jpg";
 
 export const hotels = [
-  { city: "Kyiv", hotelName: '' },
-  { city: "Kyiv", hotelName: '' },
-  { city: "Lviv", hotelName: '' },
+  { city: "Kyiv", name: 'Arena-Summit' },
+  { city: "Kyiv", name: 'Tiso' },
+  { city: "Lviv", name: 'Code-10' },
 ]
+
 export const allHotels: IHotelsInCity[] = [
   {
     city: "Kyiv",

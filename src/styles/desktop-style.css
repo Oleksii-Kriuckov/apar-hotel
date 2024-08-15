@@ -76,15 +76,10 @@
   .article_header {
     width: 100%;
   }
-  .describe_images {
-    width: 50%;
-    float: left;
-    margin-right: 50px;
-  }
 
   .article_carousel {
     width: fit-content;
-    margin: 0 auto 50px;
+    /* margin: 0 auto 50px; */
   }
 }
 
@@ -138,14 +133,14 @@
   
   .article_carousel {
     width: fit-content;
-    margin: 0 auto 50px;
+    /* margin: 0 auto 50px; */
   }
 }
 
 @media (min-width: 1400px) {
   /* Article */
   .describe_images {
-    max-width: 500px;
+    max-width: 800px;
   }
   .article_header {
     width: fit-content;

@@ -6,11 +6,11 @@ import logo from "../images/logo.png";
 import bell from "../images/bell.png";
 import phone from "../images/Phone.png";
 import { HeaderLink } from "../UI/Links/HeaderLink";
+import { MyDropDown } from "../UI/DropDown/DropDown";
+import { reservationItems } from "../../assets/links";
 import "./style.css";
 
-type Props = {};
-
-export const Header = (props: Props) => {
+export const Header = () => {
   return (
     <div id="navbar">
       <Navbar id="navbar" expand="md">
@@ -39,10 +39,10 @@ export const Header = (props: Props) => {
                 ))}
               </div>
 
-              <HeaderLink alt="bell" src={bell}>
-                reservation
+              <HeaderLink isDropDown alt="bell" src={bell}>
+                <MyDropDown items={reservationItems} styles={{fontSize: 16}}>reservation</MyDropDown>  
               </HeaderLink>
-              <HeaderLink alt="phone" src={phone}>
+              <HeaderLink isDropDown={false} alt="phone" src={phone}>
                 +38 (097) 797 36 23
               </HeaderLink>
             </Nav>

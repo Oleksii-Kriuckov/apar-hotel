@@ -1,7 +1,8 @@
 #root {
   margin: 0 auto;
-  background-color: #5e5eae;
   min-height: 100vh;
+  /* background-color: #922ceb; */
+  background-color: #5e5eae;
   /* background-color: #efefef; */
   /* text-align: center; */
 }

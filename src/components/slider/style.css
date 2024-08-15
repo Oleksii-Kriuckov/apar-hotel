@@ -68,6 +68,7 @@
   }
   .carousel {
     width: 45vw;
+    max-width: 800px;
   }
 }
 

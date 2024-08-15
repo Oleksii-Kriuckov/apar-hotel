@@ -8,10 +8,9 @@ function LicenseLink() {
   const [modalShow, setModalShow] = useState(false);
   return (
     <>
-        <a className="show_license" onClick={() => setModalShow(true)}>
+      <a className="show_license" onClick={() => setModalShow(true)}>
         Documents
-        </a>
-      
+      </a>
 
       <Modal
         size="sm"

@@ -35,3 +35,13 @@
   width: 32px;
   height: 32px;
 } */
+
+.header-link {
+  font-family: "Gilroy", sans-serif;
+  font-weight: 400;
+  color: black;
+}
+
+.header-link:hover {
+  color: #393939;
+}
