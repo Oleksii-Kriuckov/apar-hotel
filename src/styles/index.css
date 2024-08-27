@@ -3,13 +3,15 @@
   min-height: 100vh;
   /* background-color: #922ceb; */
   background-color: #5e5eae;
-  /* background-color: #efefef; */
+  background-color: #88f9f1;
   /* text-align: center; */
 }
 
 body {
   --sizeClose: 30px;
   --main-color: #ffc000;
+  --hover-color: #1677ff;
+  --hover-link: #6da7a1;
   --f-z: "Century Gothic", sans-serif;
   --ff-g: "Gilroy", sans-serif;
   font-family: var(--ff-g);

@@ -40,3 +40,10 @@ button {
   border-color: white;
   color: white;
 }
+
+.modal_btn {
+  margin: auto;
+  background-color: rgb(255, 45, 45); 
+  width: 200px;
+  display: block;
+}

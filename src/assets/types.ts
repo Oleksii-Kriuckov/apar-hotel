@@ -14,6 +14,7 @@ export interface IHotelInfo {
 
 export interface IRoom {
   description: string;
+  description_ua: string;
   floor: number;
   hotel: HotelNames;
   id: string;
@@ -26,6 +27,7 @@ export interface IRoom {
 
 export interface IHotelsInCity {
   city: string;
+  city_ua: string;
   hotelsInfo: IHotelInfo[];
 }
 

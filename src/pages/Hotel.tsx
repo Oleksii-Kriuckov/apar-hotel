@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { db } from "../firebase/firebase";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { unoccupiedRooms$ } from "../recoil/atoms";
+import {useQuery} from '../hooks/useQuery'
 
 type Props = {};
 
@@ -27,7 +28,7 @@ const Hotel = (props: Props) => {
         className="header_h3"
         style={{ textAlign: "center", marginBottom: 0 }}
       >
-        Hotel  <span className="highlight">{findHotel!.hotelName.replace('-', ' ')}</span>  ({findCity!.city})
+        Готель <span className="highlight">{findHotel!.hotelName.replace('-', ' ')}</span>  ({findCity!.city_ua})
       </h3>
       <h4 style={{ textAlign: "center", fontSize: 24, fontWeight: 500 }}>
         {findHotel!.address}

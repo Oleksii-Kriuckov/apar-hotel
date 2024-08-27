@@ -2,49 +2,21 @@ import conveniences from "../images/conveniences.png";
 import { Button } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
 import { IRoom } from "../../assets/types";
-import { addDoc, collection } from "firebase/firestore";
-import { db } from "../../firebase/firebase";
-import { HotelNames } from "../../assets/types";
-import "./style.css";
 import { useSetRecoilState } from "recoil";
 import { showBookingForm$, bookingRoom$ } from "../../recoil/atoms";
 import { useAppNav } from "../../hooks/useAppNav";
+import "./style.css";
 
 type RoomBlockProps = {
   roomInfo: IRoom;
 };
 
 const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
   const { city, hotel } = useParams();
   const {navigateBooking, navigateAboutRoom} = useAppNav(roomInfo, city!)
-  // const setIdBookingRoom = useSetRecoilState(idBookingRoom$);
-  const setShowBookingForm = useSetRecoilState(showBookingForm$);
-  const setBookingRoom = useSetRecoilState(bookingRoom$);
-
-  // const navigateBooking = () => {
-  //   const newRoomInfo: {
-  //     occupied: { checkIn: number; checkOut: number }[],
-  //     [key: string]: string | number | { checkIn: number; checkOut: number }[]
-  //   } = { occupied: [] };
-  //   for (const key in roomInfo) {
-  //     if (Object.prototype.hasOwnProperty.call(roomInfo, key)) {
-  //       newRoomInfo[key] = roomInfo[key];
-  //     }
-  //   }
-    
-  //   newRoomInfo.occupied = newRoomInfo.occupied.filter((v, i, a) => v.checkOut > Date.now())
-  //   // newRoomInfo.occupied = roomInfo.occupied.filter((v, i, a) => v.checkOut > Date.now())
-
-  //   setBookingRoom(newRoomInfo);
-  //   setShowBookingForm(true);
-  //   navigate(`/${city}/${hotel}/${roomInfo.number}/booking`);
-  // };
-
-  // const navigateAboutRoom = () => {
-  //   setBookingRoom(roomInfo)
-  //   navigate(`/${city}/${hotel}/${roomInfo.number}/about-room`)
-  // }
+  // const setShowBookingForm = useSetRecoilState(showBookingForm$);
+  // const setBookingRoom = useSetRecoilState(bookingRoom$);
 
   return (
     <div className="room_block">
@@ -53,17 +25,17 @@ const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
 
         <div className="room_description d-flex flex-column flex-sm-row-reverse justify-content-sm-between mt-sm-4 mt-lg-0 flex-lg-column flex-xl-row-reverse">
           <div className="price_block d-flex flex-row flex-sm-column align-items-baseline mt-lg-0">
-            <span className="price">Price: </span>
+            <span className="price">Ціна: </span>
             <div>
-              <span>{roomInfo.price}</span> hrn
+              <span>{roomInfo.price}</span> грн
             </div>
           </div>
 
           <div className="room_info">
             <ul>
-              <li>Number: {roomInfo.number}</li>
-              <li>Floor: {roomInfo.floor}</li>
-              <li>Persons: {roomInfo.persons}</li>
+              <li>Номер: {roomInfo.number}</li>
+              <li>Поверх: {roomInfo.floor}</li>
+              <li>Кількість осіб: {roomInfo.persons}</li>
             </ul>
             <img
               src={conveniences}
@@ -81,7 +53,7 @@ const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
           onClick={navigateAboutRoom}
           size="large"
         >
-          Learn more
+          Детальніше
         </Button>
 
         <Button
@@ -92,7 +64,7 @@ const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
           onClick={navigateBooking}
           size="large"
         >
-          Book now
+          Забронювати
         </Button>
       </div>
     </div>

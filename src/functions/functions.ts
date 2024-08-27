@@ -1,5 +1,4 @@
 import { allHotels } from "../assets/Info";
-import { HotelNames, IRoom } from "../assets/types";
 import { Dayjs } from "dayjs";
 
 export function findData(city: string, hotel?: string) {

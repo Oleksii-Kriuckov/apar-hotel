@@ -18,7 +18,7 @@ export const useAppNav = (roomInfo: IRoom, city: string) => {
         newRoomInfo[key] = roomInfo[key];
       }
     }
-    
+
     newRoomInfo.occupied = newRoomInfo.occupied.filter((v, i, a) => v.checkOut > Date.now())
     // newRoomInfo.occupied = roomInfo.occupied.filter((v, i, a) => v.checkOut > Date.now())
 
@@ -32,5 +32,5 @@ export const useAppNav = (roomInfo: IRoom, city: string) => {
     navigate(`/${city}/${roomInfo.hotel}/${roomInfo.number}/about-room`)
   }
 
-  return {navigateBooking, navigateAboutRoom}
+  return { navigateBooking, navigateAboutRoom }
 }

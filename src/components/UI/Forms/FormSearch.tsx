@@ -48,12 +48,12 @@ const FormSearch = (props: Props) => {
       method="post"
     >
       <h4>
-        Check-in - 14.00, <br /> check-out - 11.00
+        Заїзд - 14.00, <br /> Виїзд - 11.00
       </h4>
 
       <div className="search d-flex">
         <div id="rangePicker" className="input_block">
-          <label htmlFor="rangePicker">Check-in and check-out date</label>
+          <label htmlFor="rangePicker">Дати заїзду та виїзду</label>
           <RangePicker
             size="large"
             disabledDate={disabledPastDate}
@@ -68,7 +68,7 @@ const FormSearch = (props: Props) => {
         </div>
 
         <div id="guests" className="input_block">
-          <label htmlFor="guests">Guests</label>
+          <label htmlFor="guests">Кількість гостей</label>
           <Select options={optionsForGuests} size="large" value={persons} onChange={(e)=> setPersons(e)}/>
         </div>
 
@@ -79,7 +79,7 @@ const FormSearch = (props: Props) => {
             size="large"
             onClick={() => searchRooms(datePickerValue)}
           >
-            Search
+            Пошук
           </Button>
         </div>
       </div>

@@ -43,5 +43,5 @@
 }
 
 .header-link:hover {
-  color: #393939;
+  color: var(--hover-link);
 }

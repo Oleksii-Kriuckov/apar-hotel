@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
-import { Article } from "../components/article/Article";
 import { AddressBlock } from "../components/addressBlock/AddressBlock";
 import Welcome from "../components/welcomeBlock/Welcome";
 import { findData } from "../functions/functions";
 import TitleBlock from "../components/TitleBlock/TitleBlock";
+import ModalWindow from "../components/ModalWindow/ModalWindow";
 
 type Props = {};
 
@@ -13,14 +13,13 @@ const MainPage = (props: Props) => {
 
   return (
     <main>
-      <TitleBlock>Your hotels in <span className="highlight">{city!}</span></TitleBlock>
-      {/*  */}
-
-      <h3 className="our_addresses">Our address</h3>
+      <ModalWindow/>
+      <TitleBlock>Для вас готелі у <span className="highlight">{(city! && city === 'kyiv') ? 'Києві' : 'Львові'}</span></TitleBlock>
+  
+      <h3 className="our_addresses">Наші адреси</h3>
       {findCity!.hotelsInfo.map((hotel) => (
         <AddressBlock key={hotel.address} hotelInfo={hotel} />
       ))}
-
       <Welcome />
     </main>
   );

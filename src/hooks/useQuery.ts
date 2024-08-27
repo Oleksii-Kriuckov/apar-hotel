@@ -11,14 +11,14 @@ export const useQuery = () => {
 
   function queryRooms(hotel: HotelNames, persons: number = 1, number?: number) {
     const q = query(collection(db, "rooms"));
-    let roomsArr: IRoom[] = [];
+    let allRooms: IRoom[] = [];
 
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       querySnapshot.forEach((doc: any) => {
-        roomsArr.push({ ...doc.data(), id: doc.id });
+        allRooms.push({ ...doc.data(), id: doc.id });
       });
 
-      const allHotelRooms = roomsArr.filter((room) => room.hotel === hotel);
+      const allHotelRooms = allRooms.filter((room) => room.hotel === hotel);
       
       if (number) {
         const searchedRoom = allHotelRooms.find(room => room.number === Number(number))
@@ -27,14 +27,15 @@ export const useQuery = () => {
           // console.log(searchedRoom);
         }
       } else {
-        // filter occupiied rooms
-        const freeRooms = allHotelRooms.filter((room, ind, arr) => {
+        // filter occupied rooms
+        const freeRooms = allHotelRooms.filter((room) => {
           return room.occupied.every(oc => {
-            return (oc.checkIn > dateRange[1] || oc.checkOut < dateRange[0]) //|| (oc.checkIn > dateRange[1] && oc.checkOut > dateRange[1])
+            return (oc.checkIn > dateRange[1] || oc.checkOut < dateRange[0]) 
           })
         });
         
         const res = freeRooms.filter(r => r.persons >= persons)
+        // res.sort((a, b) => a.number - b.number)
         setUnoccupiedRooms(res);
       }
 

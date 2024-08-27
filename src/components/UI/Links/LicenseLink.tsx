@@ -9,7 +9,7 @@ function LicenseLink() {
   return (
     <>
       <a className="show_license" onClick={() => setModalShow(true)}>
-        Documents
+        Ліцензія
       </a>
 
       <Modal
@@ -27,7 +27,7 @@ function LicenseLink() {
         />
         <CloseButton id="closeButton" onClick={() => setModalShow(false)} />
 
-        <img src={license} alt="" />
+        <img src={license} alt="license" />
       </Modal>
     </>
   );
