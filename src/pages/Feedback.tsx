@@ -6,7 +6,7 @@ type Props = {};
 const Feedback = (props: Props) => {
   return (
     <div>
-      <h3 id="feedback_header" className="header_h3">Send Feedback</h3>
+      <h3 id="feedback_header" className="header_h3">Надайте зворотній зв'язок</h3>
       <FormFeedback />
 
       {/* <div className="container text-center">

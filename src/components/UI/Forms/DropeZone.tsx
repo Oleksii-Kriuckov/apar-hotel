@@ -14,10 +14,11 @@ export function DropeZone(props) {
       <div {...getRootProps({ className: 'dropzone' })}>
         <input {...getInputProps()} />
         {files.length === 0
-          ? <p>Drag 'n' drop some files here, or click to select files</p>
+          ? <p>Перетягніть сюди файли або натисність, щоб вибрати їх</p>
+          // ? <p>Drag 'n' drop some files here, or click to select files</p>
           : (
             <aside>
-              <h4 className='files'>Files</h4>
+              <h4 className='files'>Файли</h4>
               <ul className='file_list'>{files}</ul>
             </aside>
           )}

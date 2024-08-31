@@ -35,7 +35,7 @@ export const useQuery = () => {
         });
         
         const res = freeRooms.filter(r => r.persons >= persons)
-        // res.sort((a, b) => a.number - b.number)
+        res.sort((a, b) => a.number - b.number)
         setUnoccupiedRooms(res);
       }
 

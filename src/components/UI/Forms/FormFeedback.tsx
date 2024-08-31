@@ -1,6 +1,6 @@
 import React from "react";
 import codes from "../../../assets/codes.json";
-import { Button, Input, Form, Select, Grid, Checkbox } from "antd";
+import { Button, Input, Form, Select, Grid, Checkbox, InputNumber } from "antd";
 import { DropeZone } from "./DropeZone";
 import "./styles/style.css";
 
@@ -30,9 +30,11 @@ export const FormFeedback: React.FC = () => {
   );
 
   const onSubmit = (event: React.FormEvent<HTMLButtonElement>) => {
-    event.preventDefault();
+    // event.preventDefault();
     console.log("Submit");
   };
+  
+  // Don't work feedback form
 
   return (
     <Form
@@ -49,49 +51,59 @@ export const FormFeedback: React.FC = () => {
       <div className="row row-cols-sm-1 row-cols-md-3">
         <Form.Item
           name="name"
-          label="Name"
-          rules={[{ required: true, message: "Please input your name!" }]}
+          label="Ім'я"
+          rules={[{ required: true, message: "Будь ласка, введіть ім'я!" }]}
         >
-          <Input size="large" placeholder="John Smith" />
+          <Input size="large" placeholder="Тарас Шевченко" />
         </Form.Item>
 
         <Form.Item
           name="phone"
-          label="Phone Number"
-          rules={[{ required: true, message: "Please input your phone number!" }]}
+          label="Номер телефону"
+          rules={[
+            { required: true, message: "Будь ласка, введіть номер телефону!" },
+            { type: "integer", message: "Номер має бути цілим числом" },
+          ]}
         >
-          <Input
+          <InputNumber
             size="large"
             minLength={7}
             addonBefore={prefixSelector}
+            placeholder="965123456"
           />
         </Form.Item>
 
         <Form.Item
           name="email"
-          label="E-mail"
+          label="Ел. пошта"
           rules={[
-            { type: "email", message: "The input is not valid E-mail!" },
-            { required: true, message: "Please input your E-mail!" },
+            { type: "email", message: "Ел. пошта не дійсна!" },
+            { required: true, message: "Будь ласка, введіть ел. пошту!" },
           ]}
         >
-          <Input size="large" />
+          <Input size="large" placeholder="shevchenko@ukr.net" />
         </Form.Item>
       </div>
 
       <div className="row row-cols-md-2"       >
-        <Form.Item className="col-md-6 padend" id="drop" label="Attach file:" valuePropName="fileList" getValueFromEvent={normFile}>
+        <Form.Item className="col-md-6 padend" id="drop" label="Додайте файл:" valuePropName="fileList" getValueFromEvent={normFile}>
           <DropeZone />
         </Form.Item>
 
-        <Form.Item className="col-md-6 padstart" id="texArea_1" label='Message:'>
-          <TextArea itemID="" size="large" name="message" rows={2} id="message" placeholder="Message" />
+        <Form.Item
+          className="col-md-6 padstart"
+          id="texArea_1"
+          label='Повідомлення:'
+          rules={[{ required: true, message: "Будь ласка, введіть повідомлення" }]}
+        >
+          <TextArea itemID="" size="large" name="message" rows={2} id="message" placeholder="Введіть повідомлення" />
         </Form.Item>
       </div>
 
       <Form.Item wrapperCol={{ offset: (screens.xs || screens.md) ? 0 : 6 }}>
         <Checkbox id="confirm">
-          By clicking on the "Submit" button, I consent to the processing of personal data
+          Натискаючи кнопку «Надіслати», я даю згоду на обробку персональних даних
+          {/* By clicking on the "Submit" button, I consent to the processing of personal data */}
         </Checkbox>
       </Form.Item>
 
@@ -104,7 +116,7 @@ export const FormFeedback: React.FC = () => {
           color="black"
           htmlType="submit"
         >
-          SEND
+          Надіслати
         </Button>
       </Form.Item>
     </Form>

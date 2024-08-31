@@ -20,6 +20,9 @@ const disabledPastDate: RangePickerProps["disabledDate"] = (current) => {
   return current && current < dayjs().startOf("day");
 };
 
+
+// fix: when change form params - clean fined rooms array
+
 const FormSearch = (props: Props) => {
   const { city, hotel } = useParams();
   const [dateRange, setDateRange ] = useRecoilState(dateRange$);

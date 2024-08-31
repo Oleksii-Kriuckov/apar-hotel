@@ -69,7 +69,7 @@ export const FormBooking: React.FC = () => {
   return (
     <div>
       <h4 style={{ textAlign: "center", paddingBottom: 10 }}>
-        Please fill in this form
+        Будь ласка, заповніть форму
       </h4>
 
       <Form
@@ -87,20 +87,22 @@ export const FormBooking: React.FC = () => {
         <div className="row row-cols-sm-1 row-cols-md-3">
           <Form.Item
             name="name"
-            label="Name"
+            label="Ім'я"
             // className="input_block input_block_booking"
-            rules={[{ required: true, message: "Please input your name!" }]}
+            rules={[{ required: true, message: "Будь ласка, введіть ім'я!" }]}
           >
-            <Input size="large" placeholder="John Smith" />
+            <Input size="large" placeholder="Тарас Шевченко" />
           </Form.Item>
 
           <Form.Item
             name="phone"
-            label="Phone Number"
+            label="Номер телефону"
             // className="input_block input_block_booking"
             rules={[
-              { required: true, message: "Please input your phone number!" },
-              { type: "integer", message: "The number should be integer" },
+              { required: true, message: "Будь ласка, введіть номер телефону!" },
+              { type: "integer", message: "Номер має бути цілим числом" },
+              // Don't work positive rule
+              // Don't work length of min number
             ]}
           >
             <InputNumber
@@ -114,14 +116,14 @@ export const FormBooking: React.FC = () => {
 
           <Form.Item
             name="email"
-            label="E-mail"
+            label="Ел. пошта"
             // className="input_block input_block_booking"
             rules={[
-              { type: "email", message: "The input is not valid E-mail!" },
-              { required: true, message: "Please input your E-mail!" },
+              { type: "email", message: "Ел. пошта не дійсна!" },
+              { required: true, message: "Будь ласка, введіть ел. пошту!" },
             ]}
           >
-            <Input size="large" placeholder="jsmith@gmail.com" />
+            <Input size="large" placeholder="shevchenko@ukr.net" />
           </Form.Item>
         </div>
 
@@ -133,7 +135,7 @@ export const FormBooking: React.FC = () => {
             className="booking_btn"
             htmlType="submit"
           >
-            Booking
+            Забронювати
           </Button>
         </Form.Item>
 

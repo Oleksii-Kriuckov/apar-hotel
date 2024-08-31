@@ -247,6 +247,5 @@ Also room has air conditioning and smart TV. Standard bathroom in the room.`
 There is also a wardrobe, a double bed with bedside tables, armchairs, a mirror, a hanger, air conditioning and smatr TV.
 The bathroom has a bath with shower, hairdryer, toilet and sink.`
 
-This double room has air conditioning, a smart TV, a table with chairs, a double bed with side tables. 
-The room has a standard bathroom with a sink, toilet and bathtub. The bathroom itself has a shower and a jacuzzi.
+A company of three people can stay in this two-room suite. Two can sleep in the bedroom, and the third in the living room on the sofa. The living room also has a kitchen, a table, chairs and a smart TV. All rooms have air conditioning. The bathroom has a sink, a towel dryer, a toilet, and a shower cabin.
 */

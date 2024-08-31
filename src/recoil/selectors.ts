@@ -16,7 +16,8 @@ export const daysRange$ = selector({
         const dateRange = get(dateRange$);
         // const dr = 
         return dateRange.map(v => {
-            const date = new Date(v).toDateString()
+            // const date = new Date(v).toDateString()
+            const date = new Date(v).toLocaleDateString()
             return date
         });
     },
