@@ -9,7 +9,7 @@
 
 body {
   --sizeClose: 30px;
-  --main-color: #ffc000;
+  --main-color: rgb(255, 192, 0);
   --hover-color: #1677ff;
   --hover-link: #6da7a1;
   --f-z: "Century Gothic", sans-serif;

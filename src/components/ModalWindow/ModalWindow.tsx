@@ -75,9 +75,9 @@ const ModalWindow: React.FC = () => {
           // afterClose={() => setIsModalOpen(false)}
           // onOk={}
           // onCancel={() => setIsModalOpen(false)}
-          // closable={true}
+          closable={false}
           centered
-          maskClosable={false}
+          // maskClosable={false}
           footer={[
             <Button
               type='primary'

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import codes from "../../../assets/codes.json";
 import { Button, Input, Form, Select, Grid, Checkbox, InputNumber } from "antd";
 import { DropeZone } from "./DropeZone";
@@ -15,8 +15,8 @@ const normFile = (e: any) => {
 const { useBreakpoint } = Grid;
 
 export const FormFeedback: React.FC = () => {
+  const [checked, setChecked] = useState(false);
   const screens = useBreakpoint();
-
   const [form] = Form.useForm();
 
   const prefixSelector = (
@@ -33,7 +33,7 @@ export const FormFeedback: React.FC = () => {
     // event.preventDefault();
     console.log("Submit");
   };
-  
+
   // Don't work feedback form
 
   return (
@@ -92,7 +92,7 @@ export const FormFeedback: React.FC = () => {
 
         <Form.Item
           className="col-md-6 padstart"
-          id="texArea_1"
+          name="texArea_1"
           label='Повідомлення:'
           rules={[{ required: true, message: "Будь ласка, введіть повідомлення" }]}
         >
@@ -100,8 +100,11 @@ export const FormFeedback: React.FC = () => {
         </Form.Item>
       </div>
 
-      <Form.Item wrapperCol={{ offset: (screens.xs || screens.md) ? 0 : 6 }}>
-        <Checkbox id="confirm">
+      <Form.Item
+        wrapperCol={{ offset: (screens.xs || screens.md) ? 0 : 6 }}
+        required
+      >
+        <Checkbox id="confirm" checked={checked} onChange={() => setChecked(!checked)}>
           Натискаючи кнопку «Надіслати», я даю згоду на обробку персональних даних
           {/* By clicking on the "Submit" button, I consent to the processing of personal data */}
         </Checkbox>
@@ -115,6 +118,7 @@ export const FormFeedback: React.FC = () => {
           className="booking_btn"
           color="black"
           htmlType="submit"
+          disabled={!checked}
         >
           Надіслати
         </Button>
