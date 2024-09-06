@@ -50,7 +50,8 @@ button {
 
 .modal_fdb {
   margin: auto;
-  background-color: rgb(45, 245, 45); 
+  background-color: rgb(0, 225, 0); 
   width: 200px;
   display: block;
+  color: black;
 }

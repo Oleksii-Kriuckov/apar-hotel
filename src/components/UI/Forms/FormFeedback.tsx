@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import codes from "../../../assets/codes.json";
 import { Button, Input, Form, Select, Grid, Checkbox, InputNumber } from "antd";
 import { DropeZone } from "./DropeZone";
+import { useSetRecoilState } from "recoil";
+import { isShowModalFeedback$ } from "../../../recoil/atoms";
 import "./styles/style.css";
 
 const { Option } = Select;
@@ -15,6 +17,7 @@ const normFile = (e: any) => {
 const { useBreakpoint } = Grid;
 
 export const FormFeedback: React.FC = () => {
+  const  setIsModalOpen = useSetRecoilState(isShowModalFeedback$);
   const [checked, setChecked] = useState(false);
   const screens = useBreakpoint();
   const [form] = Form.useForm();
@@ -29,12 +32,12 @@ export const FormFeedback: React.FC = () => {
     </Form.Item>
   );
 
-  const onSubmit = (event: React.FormEvent<HTMLButtonElement>) => {
-    // event.preventDefault();
-    console.log("Submit");
+  const onSubmit = () => {
+    setIsModalOpen(true)
+    form.resetFields()
+    setChecked(false)
+    setTimeout(() => setIsModalOpen(false), 3000)
   };
-
-  // Don't work feedback form
 
   return (
     <Form
@@ -85,8 +88,14 @@ export const FormFeedback: React.FC = () => {
         </Form.Item>
       </div>
 
-      <div className="row row-cols-md-2"       >
-        <Form.Item className="col-md-6 padend" id="drop" label="Додайте файл:" valuePropName="fileList" getValueFromEvent={normFile}>
+      <div className="row row-cols-md-2">
+        <Form.Item
+          className="col-md-6 padend"
+          id="drop"
+          label="Додайте файл:"
+          valuePropName="fileList"
+          getValueFromEvent={normFile}
+        >
           <DropeZone />
         </Form.Item>
 
@@ -96,7 +105,14 @@ export const FormFeedback: React.FC = () => {
           label='Повідомлення:'
           rules={[{ required: true, message: "Будь ласка, введіть повідомлення" }]}
         >
-          <TextArea itemID="" size="large" name="message" rows={2} id="message" placeholder="Введіть повідомлення" />
+          <TextArea
+            id="message"
+            size="large"
+            name="message"
+            // rows={2}
+            minLength={3}
+            placeholder="Введіть повідомлення"
+          />
         </Form.Item>
       </div>
 
@@ -106,7 +122,6 @@ export const FormFeedback: React.FC = () => {
       >
         <Checkbox id="confirm" checked={checked} onChange={() => setChecked(!checked)}>
           Натискаючи кнопку «Надіслати», я даю згоду на обробку персональних даних
-          {/* By clicking on the "Submit" button, I consent to the processing of personal data */}
         </Checkbox>
       </Form.Item>
 

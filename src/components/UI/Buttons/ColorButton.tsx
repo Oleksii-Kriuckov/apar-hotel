@@ -15,7 +15,7 @@ const ColorButton = ({ children, bgColor, onClick }: Props) => {
       onClick={onClick}
       className='blackBorder'
       style={{ width: "100%", backgroundColor: `${bgColor}` }}
-    >
+    > 
       {children}
     </button>
   );

@@ -33,7 +33,7 @@ export const isShowModal$ = atom<boolean>({
   default: true
 })
 
-// export const persons$ = atom({
-//   key: 'persons',
-//   default: 1
-// })
+export const isShowModalFeedback$ = atom({
+  key: 'modalFeedback',
+  default: false
+})

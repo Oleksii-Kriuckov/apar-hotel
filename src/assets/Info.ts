@@ -154,7 +154,9 @@ export const info_ua = {
     p: "Чекаємо на Вас у гості, готові Вас прийняти у будь-який час доби",
     btn: "Зв'язатись з нами",
   },
-  mainWarningMessage: `Цей сайт представлений як демонстрація власної роботи автора. НЕ МОЖНА реально забронювати номери в готелях через цей сайт. 
+  mainWarningMessage: `Цей сайт представлений як демонстрація власної роботи автора. 
+  НЕ МОЖНА реально забронювати номери в готелях через цей сайт. 
+  Натомість тут реалізована реальна бізнес-логіка бронювання.
   Будь-яка інформація, представлена ​​на цьому сайті може бути недостовірною.`
 };
 
@@ -164,88 +166,3 @@ export const optionsForGuests = [
   { value: 3, label: "3" },
   { value: 4, label: "4" },
 ];
-/*
-У цьому двокімнатному номері може розміститися компанія з трьох осіб. Двоє можуть спати в спальні, а третій у вітальні на дивані. 
-У вітальні також є кухня, стіл, стільці та смарт-телевізор. У всіх кімнатах є кондиціонер. 
-У ванній кімнаті є раковина, сушарка для рушників, унітаз, душова кабінка.
-
-`Кімната на 2х людей, розташована на 2му поверсі. Має двоспальне ліжко, шафу, дзеркало, стіл та стільці. 
-Також є кондиціонер та сматр телевізор. У ванній кімнаті є душова кабінка, унітаз та раковина. 
-Їжу та напої з ресторану можна замовити в номер.`
-
-`This double room is located on the fourth floor, which can be reached by stairs or elevator. 
-It is made in the original luxury style, has a large hallway with a closet and a hanger. There is also air conditioning, smart TV. 
-The bathroom has a bathtub with shower and jacuzzi, a towel dryer, a hair dryer, a toilet and a sink.
-An intranet landline telephone is provided for ordering food or other services.`
-
-
-`Це двомісний номер на червертому поверсі під дахом. Щоб дістатись до нього, є ліфт та сходи. У номері є балкон. 
-Також є їдальня з кухнею, телевізором та канапою. В номері є кондиціонер та ванна кімната з душем та туалетом.`
-
-`Ця кімната розрахована на 2х людей. Вона має двоспальне ліжко з тумбочками, шафу, крісла, комод, кондиціонер та телевізор.
-У ванній кімнаті є ванна з душем, фен,  унітаз та раковина. Обслуговування номерів включає замовлення їжі`
-
-The room is designed for 2 people, located on the third floor. 
-It has a double bed with bedside tables, a wardrobe, armchairs, a chest of drawers, air conditioning and a smart TV. 
-In the hallway there is a coat rack and a mirror. The bathroom has a bathtub with a shower, a hairdryer, a toilet and a sink. 
-Room service includes food ordering.
-
-Номер розрахований на 2 особи, розташований на третьому поверсі. 
-У ньому є двоспальне ліжко з тумбочками, шафа, крісла, комод, кондиціонер і смарт ТВ. В передпокої є вішалка для верхнього одягу та дзеркало.
-У ванній кімнаті є ванна з душем, фен, туалет і раковина. Обслуговування номерів включає замовлення їжі.
-
-`This room is on the second floor and designed for 3 or 4 people. 
-It has own kitchen with microwave and electric kettle, a double bed with bedside tables, a wardrobe, a table and chairs. 
-There is also air conditioning and smart TV. The bathroom has a bathtub with shower, a towel dryer, toilet and sink. 
-Food and drinks from the restaurant can be ordered to the room.`
-
-`The room is designed for 2 people and located on the second floor. This two-room suite consists of a bedroom and a dining room with kitchen.
-There is a separate room with a wardrobe and armchairs. 
-The kitchen has all necessary items for for comfortable cooking and eating, including refrigerator. There are also a sofa and a flat TV.
-Bathroom has a sink, a hair dryer, a toilet, a bathtub with shower.`
-
-`The room is located on the fourth floor and is designed for two people. 
-There are a double bed with bedside tables, a smart TV, air conditioning, a wardrobe, a table and chairs. 
-The bathroom has a bath with jacuzzi and shower, sink and toilet.
-This room does not have a kitchen, so food and drinks can be ordered to the room.`  // 44
-
-`This room is two-room suite and it is designed for 2 people. Upon entering the room you will find a hallway where there is a large wardrobe. 
-Directly is the entrance to the bathroom, to the right is the bedroom, to the left is the dining room with kitchen.
-The bedroom has a double bed, a mirror and a desk. In the dining room there are an air conditioner, a flat TV and armchair.
-Bathroom has a bathtub with shower and jacuzzi, toilet and sink.`
-
-`This two-bedroom luxury room is designed for three or four people. 
-There is a double bed, leather sofa and armchairs, wardrobe in hallway, ottoman, bar, smart TV, air conditioning. 
-The bathroom has a jacuzzi, shower, hairdryer, towel dryer, sink, toilet.
-For your attention, a large selection of food and drinks that can be ordered in the room or visit our restaurant`
-
-`This is three-room suit, designed for three people. 
-There are bedroom with double bed, living room with sofa, smart TV, table and chairs, hallway with wardrobe and armchairs. 
-This room does not have a kitchen, so food and drinks can be ordered in the room.
-Bathroom has a sink, a towel dryer, a hair dryer, a toilet, a bathtub with shower`
-
-`This room is designed for 2 people, located on the third floor. 
-It has a double bed with bedside tables, a wardrobe, armchairs, a commode, air conditioning and a smart TV. 
-The bathroom has a bath with shower, hairdryer, toilet and sink. Room service includes ordering food.`
-
-`A family of three people (2 adults and child) can stay in this room. 
-There are a double bed with bedside tables, a couch, an armchair, a smart TV, air conditioning.
-Things can be left in the wardrobe in hallway or in the commode. 
-The bathroom has a bath with shower, a hairdryer, a towel dryer, sink and toilet. 
-Food can be ordered in the room or use our restaurant.`
-
-`A company of three people can stay in this two-room suite. 
-Two people can sleep in the bedroom, and the third one can sleep in the living room on the sofa. 
-The living room also has a kitchen, table, chairs and a smart TV. All rooms have air conditioning.
-Bathroom has a sink, a towel dryer, a toilet, a shower`
-
-`By default, this room is designed for 2 people, but for an additional fee you can put a sofa that can accommodate another person. 
-There is a kitchen with everything you need, and there is a large closet in the hallway. 
-Also room has air conditioning and smart TV. Standard bathroom in the room.`
-
-`By default, this room is designed for 2 people, but for an additional fee you can put a sofa that can accommodate third person.
-There is also a wardrobe, a double bed with bedside tables, armchairs, a mirror, a hanger, air conditioning and smatr TV.
-The bathroom has a bath with shower, hairdryer, toilet and sink.`
-
-A company of three people can stay in this two-room suite. Two can sleep in the bedroom, and the third in the living room on the sofa. The living room also has a kitchen, a table, chairs and a smart TV. All rooms have air conditioning. The bathroom has a sink, a towel dryer, a toilet, and a shower cabin.
-*/

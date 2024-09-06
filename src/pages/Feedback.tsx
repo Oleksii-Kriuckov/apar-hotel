@@ -7,7 +7,7 @@ const Feedback = () => {
     <div>
       <h3 id="feedback_header" className="header_h3">Надайте зворотній зв'язок</h3>
       <FormFeedback />
-      <ModalFeedback/>
+      <ModalFeedback />
     </div>
   );
 };

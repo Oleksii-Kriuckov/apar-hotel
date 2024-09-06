@@ -105,14 +105,14 @@
 }
 
 .dropzone {
-  color: #bdbdbd;
+  color: #9d9d9d;
   border-radius: 8px;
   background-color: #fff;
-  padding: 7px 11px;
+  padding: 7px 14px 7px 24px;
   border: blue dashed 1px;
   width: 100%;
-  min-height: 60px;
-  height: 66px;
+  min-height: 66px;
+  /* height: 66px; */
 }
 
 .dropzone>p {

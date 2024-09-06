@@ -4,7 +4,9 @@ import { createStyles, useTheme } from 'antd-style';
 import { useRecoilState } from 'recoil';
 import { isShowModal$ } from '../../recoil/atoms';
 import { info_ua } from '../../assets/Info';
+import warnIcon from '../images/icons8-warning-48.png'
 import '../UI/Buttons/style.css'
+import './style.css'
 
 const useStyle = createStyles(({ token }) => ({
   'my-modal-body': {
@@ -40,22 +42,17 @@ const ModalWindow: React.FC = () => {
 
   const modalStyles = {
     header: {
-      // borderLeft: `5px solid ${token.colorPrimary}`,
       borderRadius: 0,
       paddingInlineStart: 5,
       marginTop: 10
     },
     body: {
-      // boxShadow: 'inset 0 0 5px #a91959',
       paddingTop: 20,
       borderRadius: 5,
     },
     mask: {
       backdropFilter: 'blur(10px)',
     },
-    // footer: {
-    //   borderTop: '1px solid #333',
-    // },
     content: {
       boxShadow: '0 0 30px #394959',
     },
@@ -70,14 +67,13 @@ const ModalWindow: React.FC = () => {
         }}
       >
         <Modal
-          title="Важливе повідомлення"
+          title={<div className='d-flex'>
+            <img src={warnIcon} alt="warning" className='warning_icon'/>
+            <span className='warning_message'>Важливе повідомлення</span> 
+          </div>}
           open={isModalOpen}
-          // afterClose={() => setIsModalOpen(false)}
-          // onOk={}
-          // onCancel={() => setIsModalOpen(false)}
           closable={false}
           centered
-          // maskClosable={false}
           footer={[
             <Button
               type='primary'
