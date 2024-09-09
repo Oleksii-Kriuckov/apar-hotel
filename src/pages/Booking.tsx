@@ -25,17 +25,16 @@ const Booking = () => {
   useEffect(() => {
     if (!bookingRoom.id) {
       navigate(`/${city}/${hotel}`)
-    } 
+    }
   }, []);
 
   return (
     <div className="booking_page">
-      {/* display start and end dates, total amount */}
       <h3 id="booking_header" className="header_h3">
         Бронювання: готель {findHotel!.hotelName} ({findCity!.city_ua}), номер {number}
         <span className="booking_room_info">
-          {' '} з <span className="days_range">{daysRange[0]} </span> до <span className="days_range"> {daysRange[1]}</span> ({numberOfDays} {numberOfDays === 1 ? 'ніч' : (numberOfDays > 1 && numberOfDays < 5 )? 'ночі' : 'ночей'}).
-          <span style={{textTransform: 'capitalize'}}> Загальна </span> сума {totalAmount}
+          {' '} з <span className="days_range">{daysRange[0]} </span> до <span className="days_range"> {daysRange[1]}</span> ({numberOfDays} {numberOfDays === 1 ? 'ніч' : (numberOfDays > 1 && numberOfDays < 5) ? 'ночі' : 'ночей'}).
+          <span style={{ textTransform: 'capitalize' }}> Загальна </span> сума {totalAmount}
         </span>
       </h3>
 
@@ -58,12 +57,15 @@ const Booking = () => {
       </div>
 
       <div>
-        <h3 style={{ marginBottom: 15 }} className="header_h3">
+        <h3 style={{ marginBottom: 15, textAlign: 'center' }} className="header_h3">
           Як дістатись:
         </h3>
-        <MyMapContainer hotelLocation={findHotel!.coordinates} zoom={16}>
-          <MapChild location={findHotel!.coordinates} />
-        </MyMapContainer>
+
+        <div className="booking_map_container">
+          <MyMapContainer style={{margin: 'auto'}} hotelLocation={findHotel!.coordinates} zoom={16}>
+            <MapChild location={findHotel!.coordinates} />
+          </MyMapContainer>
+        </div>
       </div>
     </div>
   );

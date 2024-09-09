@@ -45,6 +45,11 @@ export const Header = () => {
               <HeaderLink isDropDown={false} alt="phone" src={phone}>
                 +38 (097) 797 36 23
               </HeaderLink>
+
+              <div className="langs">
+               <Link to={''}>UA</Link> /
+               <Link to={''}>EN</Link> 
+              </div>
             </Nav>
           </Navbar.Collapse>
         </Container>

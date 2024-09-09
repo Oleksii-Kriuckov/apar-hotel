@@ -11,20 +11,11 @@
   margin-top: 80px;
 }
 
-#closeButton {
-  width: var(--sizeClose);
+.close_button {
   height: var(--sizeClose);
   cursor: pointer;
   position: absolute;
-}
 
-#closeButtonWhite {
-  width: var(--sizeClose);
-  height: var(--sizeClose);
-  cursor: pointer;
-  position: absolute;
-  right: -40px;
-  top: -40px;
 }
 
 .media_links {

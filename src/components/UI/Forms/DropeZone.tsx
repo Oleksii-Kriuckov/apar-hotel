@@ -15,7 +15,6 @@ export function DropeZone(props) {
         <input {...getInputProps()} />
         {files.length === 0
           ? <p>Перетягніть сюди файли або натисність, щоб вибрати їх</p>
-          // ? <p>Drag 'n' drop some files here, or click to select files</p>
           : (
             <aside>
               <h4 className='files'>Файли</h4>

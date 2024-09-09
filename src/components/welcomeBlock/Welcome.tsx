@@ -2,8 +2,8 @@ import { info_ua } from "../../assets/Info";
 import { Button } from "antd";
 import keyhole from "../images/keyhole2.png";
 import { useNavigate, useParams } from "react-router-dom";
-import "./style.css";
 import { Feedback_ROUTE } from "../../routers/paths";
+import "./style.css";
 
 const Welcome = () => {
   let navigate = useNavigate();

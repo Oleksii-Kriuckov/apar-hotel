@@ -1,9 +1,7 @@
 import conveniences from "../images/conveniences.png";
 import { Button } from "antd";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { IRoom } from "../../assets/types";
-import { useSetRecoilState } from "recoil";
-import { showBookingForm$, bookingRoom$ } from "../../recoil/atoms";
 import { useAppNav } from "../../hooks/useAppNav";
 import "./style.css";
 
@@ -12,11 +10,8 @@ type RoomBlockProps = {
 };
 
 const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
-  // let navigate = useNavigate();
   const { city, hotel } = useParams();
   const {navigateBooking, navigateAboutRoom} = useAppNav(roomInfo, city!)
-  // const setShowBookingForm = useSetRecoilState(showBookingForm$);
-  // const setBookingRoom = useSetRecoilState(bookingRoom$);
 
   return (
     <div className="room_block">

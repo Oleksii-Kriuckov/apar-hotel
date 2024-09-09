@@ -3,13 +3,13 @@ import { findData, formatDays } from "../../../functions/functions";
 import { DatePicker, Button, Select } from "antd";
 import dayjs, { Dayjs } from "dayjs";
 import type { RangePickerProps } from "antd/es/date-picker";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { optionsForGuests } from "../../../assets/Info";
-import { useRecoilState, useSetRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import { dateRange$ } from "../../../recoil/atoms";
-import { HotelNames, IRoom } from "../../../assets/types";
-import "./styles/style.css";
+import { HotelNames } from "../../../assets/types";
 import { useQuery } from "../../../hooks/useQuery";
+import "./styles/style.css";
 
 type Props = {};
 
@@ -20,12 +20,9 @@ const disabledPastDate: RangePickerProps["disabledDate"] = (current) => {
   return current && current < dayjs().startOf("day");
 };
 
-
-// fix: when change form params - clean fined rooms array
-
 const FormSearch = (props: Props) => {
   const { city, hotel } = useParams();
-  const [dateRange, setDateRange ] = useRecoilState(dateRange$);
+  const setDateRange = useSetRecoilState(dateRange$);
   const { queryRooms } = useQuery();
   const [persons, setPersons] = useState(1)
   const [datePickerValue, setDatePickerValue] = useState<[Dayjs, Dayjs]>([
@@ -34,15 +31,11 @@ const FormSearch = (props: Props) => {
   ]);
   const { findCity, findHotel } = findData(city!, hotel!);
 
-  const onChange = (value: [Dayjs, Dayjs]) => {
+  const changeDatePickerRange = (value: [Dayjs, Dayjs]) => {
     if (value) {
       setDatePickerValue(value)
       setDateRange(formatDays(value));
   }};
-
-  const searchRooms = () => {
-    queryRooms(hotel as HotelNames, persons);
-  };
 
   return (
     <Form
@@ -60,12 +53,10 @@ const FormSearch = (props: Props) => {
           <RangePicker
             size="large"
             disabledDate={disabledPastDate}
-            // className="norm_height"
             placeholder={["check-in", "check-out"]}
             popupClassName="popup_calendar"
             defaultValue={datePickerValue}
-            onChange={onChange}
-            // onChange={() => onChange()}
+            onChange={changeDatePickerRange}
             value={datePickerValue}
           />
         </div>
@@ -80,7 +71,7 @@ const FormSearch = (props: Props) => {
             className="norm_height"
             ghost
             size="large"
-            onClick={() => searchRooms(datePickerValue)}
+            onClick={() => queryRooms(hotel as HotelNames, persons)}
           >
             Пошук
           </Button>
@@ -91,60 +82,3 @@ const FormSearch = (props: Props) => {
 };
 export default FormSearch;
 
-// const deleteItem = async (id: string) => {
-//   await deleteDoc(doc(db, "items", id));
-// };
-
-// setDoc(base, {
-//   hotel: "luxury",
-//   floor: 1,
-//   image: '/public/rooms/Arena-Summit/room23/room23-view1.png',
-//   number: 11,
-//   persons: 2,
-//   price: 2100,
-//   occupied: []
-// })
-{
-  /* <DatePicker
-  className="norm_height"
-  placeholder="Sign in date"
-  format="YYYY-MM-DD"
-  disabledDate={disabledPastDate}
-  onChange={(date) => console.log(date?.set("hours", 14).unix())}
-/>
-<DatePicker
-className="norm_height"
-placeholder="Sign out date"
-format="YYYY-MM-DD"
-disabledDate={disabledPastAndNowDate}
-onChange={(date) => console.log(date?.set("hour", 12).unix())}
-/> */
-}
-
-{
-  /* <LocalizationProvider dateAdapter={AdapterDayjs}>
-<DateRangePicker disablePast calendars={2} localeText={{ start: "Check-in", end: "Check-out" }}/>
-</LocalizationProvider> */
-}
-
-{
-  /* <div className="input_block">
-  <label htmlFor="checkIn">Check-in</label>
-  <input
-    type="date"
-    className="form-control"
-    name="checkIn"
-    id="checkIn"
-  />
-</div>
-
-<div className="input_block">
-  <label htmlFor="checkOut">Check-out</label>
-  <input
-    className="form-control"
-    type="date"
-    name="checkOut"
-    id="checkOut"
-  />
-</div> */
-}

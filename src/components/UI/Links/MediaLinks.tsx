@@ -10,7 +10,7 @@ const MediaLinks = () => {
         href="http://www.facebook.com/"
         target="_blank"
         rel="noopener noreferrer"
-        style={{ marginRight: 45 }}
+        style={{ marginRight: 35 }}
       >
         <img src={facebook} alt="facebook" />
       </a>
@@ -18,7 +18,7 @@ const MediaLinks = () => {
         href="https://www.instagram.com"
         target="_blank"
         rel="noopener noreferrer"
-        style={{ marginRight: 45 }}
+        style={{ marginRight: 35 }}
       >
         <img src={instagram} alt="instagram" />
       </a>

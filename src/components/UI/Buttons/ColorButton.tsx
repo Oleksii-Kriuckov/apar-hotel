@@ -1,5 +1,4 @@
 import { PropsWithChildren } from "react";
-// import { BorderColor } from "../../../assets/types";
 import "./style.css";
 import { ReactJSXElement } from "@emotion/react/types/jsx-namespace";
 

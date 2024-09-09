@@ -3,6 +3,12 @@
     margin-top: 90px;
   }
 
+  /* Booking page */
+  #contacts_wrap {
+    justify-content: center;
+    gap: 40px;
+  }
+
   /* header */
   .navbar {
     margin-bottom: 100px;

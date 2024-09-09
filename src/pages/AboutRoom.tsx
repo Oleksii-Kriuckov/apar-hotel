@@ -7,7 +7,6 @@ import { bookingRoom$, unoccupiedRooms$ } from "../recoil/atoms";
 import { useRecoilValue, useRecoilState } from "recoil";
 import { useQuery } from "../hooks/useQuery";
 import { HotelNames } from "../assets/types";
-import RoomBlock from "../components/roomBlock/RoomBlock";
 
 type Props = {};
 

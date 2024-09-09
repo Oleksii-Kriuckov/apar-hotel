@@ -49,10 +49,6 @@
     margin: auto;
   }
 
-  #booking_btn {
-    margin-top: 20px;
-  }
-
   #form_booking, #form_feedback {
     width: 100%;
     max-width: 530px;
@@ -76,7 +72,7 @@
     margin-top: 20px;
   }
   
-  #booking_btn, #send_btn {
+  #send_btn {
     margin: auto;
   }
 
@@ -101,6 +97,7 @@
   
   #form_booking {
     margin: auto;
+    margin-top: 20px;
   } 
   
   #form_feedback {
@@ -118,8 +115,12 @@
     width: 200px;
   }
 
-  #search_btn,
-  #guests {
+  #booking_btn {
+    display: block;
+    margin: auto;
+  }
+
+  #search_btn, #guests {
     width: 170px;
     flex-shrink: 1;
   }
@@ -155,7 +156,7 @@
 @media (min-width: 992px) {
   #form_booking, #form_feedback {
     align-items: center;
-    margin-top: 30px;
+    margin-top: 20px;
     max-width: 900px;
   }
 
@@ -165,6 +166,11 @@
 
   #booking_btn, #send_btn {
     width: 200px;
+  }
+
+  #booking_btn {
+    display: block;
+    margin: auto;
   }
 
   .search {

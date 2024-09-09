@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { aboutHotelItems, links, reservationItems } from "../../assets/links";
-import "./style.css";
 import LicenseLink from "../UI/Links/LicenseLink";
 import { MyDropDown } from "../UI/DropDown/DropDown";
+import "./style.css";
 
 type Props = {};
 

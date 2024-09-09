@@ -5,14 +5,14 @@ type Props = {};
 
 const BookingMessage = (props: Props) => {
   return (
-    <div className="book_mes_wrap">
+    // <div className="book_mes_wrap">
       <div className="bookingMessage">
         <img src={clock} alt="clock" />
         <p>
           Бронювання номерів здійснюється <strong> цілодобово!</strong>{" "}
         </p>
       </div>
-    </div>
+    // </div>
   );
 };
 

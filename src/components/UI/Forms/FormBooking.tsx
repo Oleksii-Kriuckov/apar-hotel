@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ChangeEvent, ReactEventHandler, useState } from "react";
 import { Button, Form, Input, Select, InputNumber, Grid } from "antd";
 import codes from "../../../assets/codes.json";
 import { useRecoilValue, useSetRecoilState } from "recoil";
@@ -8,11 +8,11 @@ import {
   showBookingForm$,
   showSuccessMessage$,
 } from "../../../recoil/atoms";
-import { doc, setDoc, updateDoc } from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../../firebase/firebase";
-import { HotelNames } from "../../../assets/types";
 import "./styles/style.css";
 import "./styles/adaptive.css";
+import { ReactJSXElement } from "@emotion/react/types/jsx-namespace";
 
 const { Option } = Select;
 const { useBreakpoint } = Grid;
@@ -21,14 +21,12 @@ export const FormBooking: React.FC = () => {
   const screens = useBreakpoint();
   const [form] = Form.useForm();
 
+  const [phone, setPhone] = useState(null);
   const dateRange = useRecoilValue(dateRange$);
   const bookingRoom = useRecoilValue(bookingRoom$);
   const setShowBookingForm = useSetRecoilState(showBookingForm$);
   const showSuccessMessage = useSetRecoilState(showSuccessMessage$);
 
-  // const bookingRoom = useRecoilValue(bookingRoom$)
-
-  // send dataRange in data base to corresponding RoomObject
   const bookRoom = (values: any) => {
     const base = doc(db, "rooms", bookingRoom.id);
     const [items] = bookingRoom.occupied;
@@ -42,7 +40,6 @@ export const FormBooking: React.FC = () => {
         occupied: [{ checkIn: dateRange[0], checkOut: dateRange[1] }],
       });
     }
-    // console.log('id: ', bookingRoom.id);
 
     setShowBookingForm(false);
     showSuccessMessage(true);
@@ -76,7 +73,6 @@ export const FormBooking: React.FC = () => {
         id="form_booking"
         name="form_booking"
         className="form row row-cols-sm-1"
-        // className="form d-flex flex-column flex-lg-row align-items-lg-center"
         form={form}
         labelCol={{ span: 6, offset: 0 }}
         layout={screens.md ? "vertical" : "horizontal"}
@@ -88,7 +84,6 @@ export const FormBooking: React.FC = () => {
           <Form.Item
             name="name"
             label="Ім'я"
-            // className="input_block input_block_booking"
             rules={[{ required: true, message: "Будь ласка, введіть ім'я!" }]}
           >
             <Input size="large" placeholder="Тарас Шевченко" />
@@ -97,12 +92,10 @@ export const FormBooking: React.FC = () => {
           <Form.Item
             name="phone"
             label="Номер телефону"
-            // className="input_block input_block_booking"
             rules={[
               { required: true, message: "Будь ласка, введіть номер телефону!" },
               { type: "integer", message: "Номер має бути цілим числом" },
               // Don't work positive rule
-              // Don't work length of min number
             ]}
           >
             <InputNumber
@@ -111,13 +104,18 @@ export const FormBooking: React.FC = () => {
               addonBefore={prefixSelector}
               style={{ width: "100%" }}
               placeholder="965123456"
+              // value={phone}
+              // onChange={(value)=> { 
+              //   setPhone(value)
+              //   if(typeof phone === 'number' && phone<0) Math.abs(phone)
+              //   console.log(value)
+              // }}
             />
           </Form.Item>
 
           <Form.Item
             name="email"
             label="Ел. пошта"
-            // className="input_block input_block_booking"
             rules={[
               { type: "email", message: "Ел. пошта не дійсна!" },
               { required: true, message: "Будь ласка, введіть ел. пошту!" },

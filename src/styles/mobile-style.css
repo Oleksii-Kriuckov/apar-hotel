@@ -7,13 +7,9 @@
     margin: 40px;
   }
 
-  #closeButton {
+  .closeButton {
     right: 0;
     top: 0;
-  }
-
-  #closeButtonWhite {
-    display: none;
   }
 
   /* article */
@@ -203,6 +199,13 @@
   /* Form feedback */
 
 }
+
+@media (max-width: 650px) {
+  .close_button {
+    right: 0px;
+    top: 0px;
+  }
+} 
 
 .mobile {
   display: flex;
