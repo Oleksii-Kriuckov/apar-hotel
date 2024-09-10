@@ -12,7 +12,6 @@ import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../../firebase/firebase";
 import "./styles/style.css";
 import "./styles/adaptive.css";
-import { ReactJSXElement } from "@emotion/react/types/jsx-namespace";
 
 const { Option } = Select;
 const { useBreakpoint } = Grid;
@@ -21,7 +20,7 @@ export const FormBooking: React.FC = () => {
   const screens = useBreakpoint();
   const [form] = Form.useForm();
 
-  const [phone, setPhone] = useState(null);
+  // const [phone, setPhone] = useState(null);
   const dateRange = useRecoilValue(dateRange$);
   const bookingRoom = useRecoilValue(bookingRoom$);
   const setShowBookingForm = useSetRecoilState(showBookingForm$);
@@ -91,7 +90,7 @@ export const FormBooking: React.FC = () => {
 
           <Form.Item
             name="phone"
-            label="Номер телефону"
+            label="Номер телефону (не меньше 7 цифр)"
             rules={[
               { required: true, message: "Будь ласка, введіть номер телефону!" },
               { type: "integer", message: "Номер має бути цілим числом" },
@@ -105,10 +104,10 @@ export const FormBooking: React.FC = () => {
               style={{ width: "100%" }}
               placeholder="965123456"
               // value={phone}
-              // onChange={(value)=> { 
-              //   setPhone(value)
-              //   if(typeof phone === 'number' && phone<0) Math.abs(phone)
+              // onChange={(value) => {
+              //   if (value && Number(value) < 0) Math.abs(Number(value))
               //   console.log(value)
+              //   setPhone(Number(value))
               // }}
             />
           </Form.Item>
