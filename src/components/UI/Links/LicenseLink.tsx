@@ -10,7 +10,7 @@ function LicenseLink() {
   return (
     <>
       <a className="show_license" onClick={() => setModalShow(true)}>
-        Ліцензія
+        Documents
       </a>
 
       <Modal

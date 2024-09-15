@@ -10,7 +10,7 @@ const ModalFeedback: React.FC = () => {
   return (
     <>
       <Modal
-        title="Ви успішно відправили повідомлення"
+        title="You have successfully sent your message"
         open={isModalOpen}
         onCancel={() => setIsModalOpen(false)}
         closable={false}

@@ -31,10 +31,11 @@ const Booking = () => {
   return (
     <div className="booking_page">
       <h3 id="booking_header" className="header_h3">
-        Бронювання: готель {findHotel!.hotelName} ({findCity!.city_ua}), номер {number}
+        {/* Бронювання: готель {findHotel!.hotelName} ({findCity!.city_ua}), номер {number} */}
+        Booking: hotel {findHotel!.hotelName} ({findCity!.city}), room {number}
         <span className="booking_room_info">
-          {' '} з <span className="days_range">{daysRange[0]} </span> до <span className="days_range"> {daysRange[1]}</span> ({numberOfDays} {numberOfDays === 1 ? 'ніч' : (numberOfDays > 1 && numberOfDays < 5) ? 'ночі' : 'ночей'}).
-          <span style={{ textTransform: 'capitalize' }}> Загальна </span> сума {totalAmount}
+          {' '} from <span className="days_range">{daysRange[0]} </span> to <span className="days_range"> {daysRange[1]}</span> ({numberOfDays} night{numberOfDays > 1 ? 's' : ''}).
+          <span style={{ textTransform: 'capitalize' }}> Total </span> amount {totalAmount}
         </span>
       </h3>
 
@@ -58,11 +59,11 @@ const Booking = () => {
 
       <div>
         <h3 style={{ marginBottom: 15, textAlign: 'center' }} className="header_h3">
-          Як дістатись:
+          How can I get to:
         </h3>
 
         <div className="booking_map_container">
-          <MyMapContainer style={{margin: 'auto'}} hotelLocation={findHotel!.coordinates} zoom={16}>
+          <MyMapContainer style={{ margin: 'auto' }} hotelLocation={findHotel!.coordinates} zoom={16}>
             <MapChild location={findHotel!.coordinates} />
           </MyMapContainer>
         </div>

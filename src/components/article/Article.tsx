@@ -1,14 +1,12 @@
-import { PropsWithChildren, ReactNode, useEffect } from "react";
-import { BootCar } from "../Slider/BootCar";
+import { PropsWithChildren, ReactNode } from "react";
+import { BootCarousel } from "../Slider/BootCar";
 import "./style.css";
 
-type ArticleProps = PropsWithChildren<{ children: ReactNode, images: string[], isHotelPage: boolean, description: string }>;
+type ArticleProps = PropsWithChildren<{ 
+  children: ReactNode, images: string[], isHotelPage: boolean, description: string 
+}>;
 
 export const Article = ({ children, images, isHotelPage, description }: ArticleProps) => {
-  // useEffect(() => {
-  //   console.log('isHotelPage - ', isHotelPage);
-  // })
-  
   return (
     <>
       {isHotelPage ?
@@ -22,7 +20,7 @@ export const Article = ({ children, images, isHotelPage, description }: ArticleP
           </div>
 
           <div className="d-xl-none">
-            {Array.isArray(images) && <BootCar images={images} />}
+            {Array.isArray(images) && <BootCarousel images={images} />}
           </div>
 
           <div className="article_header">
@@ -33,7 +31,7 @@ export const Article = ({ children, images, isHotelPage, description }: ArticleP
         :
         <article className="d-flex flex-column flex-xl-row align-items-center align-items-xl-start">
           <div className="article_carousel">
-            {Array.isArray(images) && <BootCar images={images} />}
+            {Array.isArray(images) && <BootCarousel images={images} />}
           </div>
 
           <div className="article_header">

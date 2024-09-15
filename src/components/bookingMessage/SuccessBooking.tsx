@@ -6,7 +6,7 @@ const SuccessBooking = (props: Props) => {
     return (
         <div className="success_booking">
             <p className="m-0">
-                Ви успішно забронювали цю комнату
+                You have successfully booked this room
             </p>
         </div>
     );

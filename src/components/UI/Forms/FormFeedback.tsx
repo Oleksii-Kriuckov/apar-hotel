@@ -17,7 +17,7 @@ const normFile = (e: any) => {
 const { useBreakpoint } = Grid;
 
 export const FormFeedback: React.FC = () => {
-  const  setIsModalOpen = useSetRecoilState(isShowModalFeedback$);
+  const setIsModalOpen = useSetRecoilState(isShowModalFeedback$);
   const [checked, setChecked] = useState(false);
   const screens = useBreakpoint();
   const [form] = Form.useForm();
@@ -54,18 +54,19 @@ export const FormFeedback: React.FC = () => {
       <div className="row row-cols-sm-1 row-cols-md-3">
         <Form.Item
           name="name"
-          label="Ім'я"
-          rules={[{ required: true, message: "Будь ласка, введіть ім'я!" }]}
+          label="Name"
+          rules={[{ required: true, message: "Please input your name!" }]}
         >
-          <Input size="large" placeholder="Тарас Шевченко" />
+          <Input size="large" placeholder="John Smith" />
         </Form.Item>
 
         <Form.Item
           name="phone"
-          label="Номер телефону"
+          label="Phone number (at least 7 digits)"
           rules={[
-            { required: true, message: "Будь ласка, введіть номер телефону!" },
-            { type: "integer", message: "Номер має бути цілим числом" },
+            { required: true, message: "Please input your phone number!" },
+            { type: "integer", message: "The number should be integer" },
+            // {type: 'regexp'}
           ]}
         >
           <InputNumber
@@ -78,10 +79,10 @@ export const FormFeedback: React.FC = () => {
 
         <Form.Item
           name="email"
-          label="Ел. пошта"
+          label="E-mail"
           rules={[
-            { type: "email", message: "Ел. пошта не дійсна!" },
-            { required: true, message: "Будь ласка, введіть ел. пошту!" },
+            { type: "email", message: "The input is not valid E-mail!" },
+            { required: true, message: "Please input your E-mail!" },
           ]}
         >
           <Input size="large" placeholder="shevchenko@ukr.net" />
@@ -92,7 +93,7 @@ export const FormFeedback: React.FC = () => {
         <Form.Item
           className="col-md-6 padend"
           id="drop"
-          label="Додайте файл:"
+          label="Attach file:"
           valuePropName="fileList"
           getValueFromEvent={normFile}
         >
@@ -102,8 +103,8 @@ export const FormFeedback: React.FC = () => {
         <Form.Item
           className="col-md-6 padstart"
           name="texArea_1"
-          label='Повідомлення:'
-          rules={[{ required: true, message: "Будь ласка, введіть повідомлення" }]}
+          label='Message:'
+          rules={[{ required: true, message: "Please input your message!" }]}
         >
           <TextArea
             id="message"
@@ -111,7 +112,7 @@ export const FormFeedback: React.FC = () => {
             name="message"
             // rows={2}
             minLength={3}
-            placeholder="Введіть повідомлення"
+            placeholder="Input a message"
           />
         </Form.Item>
       </div>
@@ -121,7 +122,7 @@ export const FormFeedback: React.FC = () => {
         required
       >
         <Checkbox id="confirm" checked={checked} onChange={() => setChecked(!checked)}>
-          Натискаючи кнопку «Надіслати», я даю згоду на обробку персональних даних
+          By clicking on the "Submit" button, I consent to the processing of personal data
         </Checkbox>
       </Form.Item>
 
@@ -135,7 +136,7 @@ export const FormFeedback: React.FC = () => {
           htmlType="submit"
           disabled={!checked}
         >
-          Надіслати
+          SEND
         </Button>
       </Form.Item>
     </Form>

@@ -25,7 +25,8 @@ const AboutRoom = (props: Props) => {
   return (
     <div>
       <Article images={bookingRoom.images} isHotelPage={false} description={bookingRoom.description_ua}>
-        Про <span className="highlight">номер {number}</span> готеля <span className="highlight">{findHotel?.hotelName!.replace('-', ' ')!}</span>
+        About <span className="highlight">room #{number}</span> of <span className="highlight">{findHotel?.hotelName!.replace('-', ' ')!}</span> hotel
+        {/* Про <span className="highlight">номер {number}</span> готеля <span className="highlight">{findHotel?.hotelName!.replace('-', ' ')!}</span> */}
       </Article>
       <AddressBlock hotelInfo={findHotel!} />
     </div>

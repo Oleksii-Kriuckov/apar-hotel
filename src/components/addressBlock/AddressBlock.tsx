@@ -22,7 +22,7 @@ export const AddressBlock = ({ hotelInfo }: AddressBlockProps) => {
       </MyMapContainer>
       <div className="hotel_info">
         <p>
-          Готель <strong>{hotelInfo.hotelName.replace('-', ' ')}</strong> розташований за адресою
+        Hotel <strong>{hotelInfo.hotelName.replace('-', ' ')}</strong> by the address
         </p>
         <h3>{hotelInfo.address}</h3>
 
@@ -41,7 +41,7 @@ export const AddressBlock = ({ hotelInfo }: AddressBlockProps) => {
               navigate(`/${city}/${hotelInfo.hotelName.toLowerCase()}`)
             }
           >
-            Забронювати
+            Book now
           </Button>
 
           <Button
@@ -50,7 +50,7 @@ export const AddressBlock = ({ hotelInfo }: AddressBlockProps) => {
             className="address_block_btn ghost_button"
             onClick={() => {navigate(`/${city}/${hotelInfo.hotelName.toLowerCase()}/about-hotel`)}}
           >
-            Детальніше
+            Learn more
           </Button>
         </div>
       </div>

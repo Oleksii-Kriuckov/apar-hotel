@@ -20,17 +20,17 @@ const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
 
         <div className="room_description d-flex flex-column flex-sm-row-reverse justify-content-sm-between mt-sm-4 mt-lg-0 flex-lg-column flex-xl-row-reverse">
           <div className="price_block d-flex flex-row flex-sm-column align-items-baseline mt-lg-0">
-            <span className="price">Ціна: </span>
+            <span className="price">Price: </span>
             <div>
-              <span>{roomInfo.price}</span> грн
+              <span>{roomInfo.price}</span> hrn
             </div>
           </div>
 
           <div className="room_info">
             <ul>
-              <li>Номер: {roomInfo.number}</li>
-              <li>Поверх: {roomInfo.floor}</li>
-              <li>Кількість осіб: {roomInfo.persons}</li>
+              <li>Number: {roomInfo.number}</li>
+              <li>Floor: {roomInfo.floor}</li>
+              <li>Persons: {roomInfo.persons}</li>
             </ul>
             <img
               src={conveniences}
@@ -48,7 +48,7 @@ const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
           onClick={navigateAboutRoom}
           size="large"
         >
-          Детальніше
+          Learn more
         </Button>
 
         <Button
@@ -59,7 +59,7 @@ const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
           onClick={navigateBooking}
           size="large"
         >
-          Забронювати
+          Book now
         </Button>
       </div>
     </div>
@@ -67,19 +67,3 @@ const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
 };
 
 export default RoomBlock;
-
-
-// const addRoom = async () => {
-//   if (hotel) {
-//     const newRoom: IRoom = {
-//       hotel: hotel as HotelNames,
-//       floor: roomInfo.floor,
-//       image: roomInfo.image,
-//       number: roomInfo.number,
-//       persons: roomInfo.persons,
-//       price: roomInfo.price,
-//       occupied: [],
-//     };
-//     await addDoc(collection(db, "rooms"), newRoom);
-//   }
-// };

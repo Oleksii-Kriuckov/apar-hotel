@@ -3,7 +3,7 @@ import { Button, ConfigProvider, Modal, Space } from 'antd';
 import { createStyles, useTheme } from 'antd-style';
 import { useRecoilState } from 'recoil';
 import { isShowModal$ } from '../../recoil/atoms';
-import { info_ua } from '../../assets/Info';
+import { info_en } from '../../assets/Info';
 import warnIcon from '../images/icons8-warning-48.png'
 import '../UI/Buttons/style.css'
 import './style.css'
@@ -69,7 +69,7 @@ const ModalWindow: React.FC = () => {
         <Modal
           title={<div className='d-flex'>
             <img src={warnIcon} alt="warning" className='warning_icon'/>
-            <span className='warning_message'>Важливе повідомлення</span> 
+            <span className='warning_message'>Important message</span> 
           </div>}
           open={isModalOpen}
           closable={false}
@@ -85,7 +85,7 @@ const ModalWindow: React.FC = () => {
             </Button>
           ]}
         >
-          <p style={{ fontSize: 'large' }}>{info_ua.mainWarningMessage}</p>
+          <p style={{ fontSize: 'large' }}>{info_en.mainWarningMessage}</p>
         </Modal>
       </ConfigProvider>
     </>
