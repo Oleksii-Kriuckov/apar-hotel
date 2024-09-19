@@ -2,11 +2,12 @@ import { collection, onSnapshot, query } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import { HotelNames, IRoom } from "../assets/types";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { unoccupiedRooms$, dateRange$, bookingRoom$, } from "../recoil/atoms";
+import { unoccupiedRooms$, dateRange$, bookingRoom$, showNotFindMessage$} from "../recoil/atoms";
 
 export const useQuery = () => {
   const setUnoccupiedRooms = useSetRecoilState(unoccupiedRooms$);
   const setBookingRoom = useSetRecoilState(bookingRoom$);
+  const showNotFindMessage = useSetRecoilState(showNotFindMessage$)
   const dateRange = useRecoilValue(dateRange$);
 
   function queryRooms(hotel: HotelNames, persons: number = 1, number?: number) {
@@ -24,7 +25,6 @@ export const useQuery = () => {
         const searchedRoom = allHotelRooms.find(room => room.number === Number(number))
         if (searchedRoom) {
           setBookingRoom(searchedRoom)
-          // console.log(searchedRoom);
         }
       } else {
         // filter occupied rooms
@@ -36,6 +36,8 @@ export const useQuery = () => {
         
         const res = freeRooms.filter(r => r.persons >= persons)
         res.sort((a, b) => a.number - b.number)
+      
+        showNotFindMessage(true)
         setUnoccupiedRooms(res);
       }
 

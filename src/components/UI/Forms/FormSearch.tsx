@@ -11,8 +11,6 @@ import { HotelNames } from "../../../assets/types";
 import { useQuery } from "../../../hooks/useQuery";
 import "./styles/style.css";
 
-type Props = {};
-
 const { RangePicker } = DatePicker;
 
 // Can not select days before today
@@ -20,7 +18,7 @@ const disabledPastDate: RangePickerProps["disabledDate"] = (current) => {
   return current && current < dayjs().startOf("day");
 };
 
-const FormSearch = (props: Props) => {
+const FormSearch = () => {
   const { city, hotel } = useParams();
   const setDateRange = useSetRecoilState(dateRange$);
   const { queryRooms } = useQuery();
@@ -35,7 +33,8 @@ const FormSearch = (props: Props) => {
     if (value) {
       setDatePickerValue(value)
       setDateRange(formatDays(value));
-  }};
+    }
+  };
 
   return (
     <Form
@@ -44,7 +43,7 @@ const FormSearch = (props: Props) => {
       method="post"
     >
       <h4>
-        Check-in - 14.00, <br /> check-out - 12.00
+        Check-in - 14.00, <br /> check-out - 12.00 ({findHotel?.hotelName})
       </h4>
 
       <div className="search d-flex">
@@ -63,7 +62,12 @@ const FormSearch = (props: Props) => {
 
         <div id="guests" className="input_block">
           <label htmlFor="guests">Guests</label>
-          <Select options={optionsForGuests} size="large" value={persons} onChange={(e)=> setPersons(e)}/>
+          <Select
+            options={findHotel?.hotelName == 'Arena-Summit' ? optionsForGuests.slice(0, -1) : optionsForGuests}
+            // options={optionsForGuests}
+            size="large" value={persons}
+            onChange={(e) => setPersons(e)}
+          />
         </div>
 
         <div id="search_btn" className="input_block">

@@ -3,19 +3,24 @@ import FormSearch from "../components/UI/Forms/FormSearch";
 import RoomBlock from "../components/roomBlock/RoomBlock";
 import Welcome from "../components/welcomeBlock/Welcome";
 import { findData } from "../functions/functions";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { unoccupiedRooms$ } from "../recoil/atoms";
+import { unoccupiedRooms$, showNotFindMessage$ } from "../recoil/atoms";
+import { info_en } from "../assets/Info";
 
 const Hotel = () => {
   const { city, hotel } = useParams();
   const { findCity, findHotel } = findData(city!, hotel!);
   // const data = useActionData();
   const [freeRooms, setFreeRooms] = useRecoilState(unoccupiedRooms$);
-  
+  const [showNotFindMessage, setShowNotFindMessage] = useRecoilState(showNotFindMessage$)
+
   useEffect(() => {
-    return setFreeRooms([])
-  }, [])
+    // console.log(freeRooms)
+    return (
+      setFreeRooms([]),
+      setShowNotFindMessage(false)
+  )}, [])
 
   return (
     <>
@@ -31,9 +36,12 @@ const Hotel = () => {
       <div className="hotel_page">
         <FormSearch />
 
-        {freeRooms.map((room) => (
-          <RoomBlock key={room.id} roomInfo={room} />
-        ))}
+        {(!freeRooms.length && showNotFindMessage) ?
+          <p style={{fontSize: 24, color: 'red'}}>{info_en.notFindMessage}</p> :
+          freeRooms.map((room) => (
+            <RoomBlock key={room.id} roomInfo={room} />
+          ))
+        }
 
         <Welcome />
       </div>

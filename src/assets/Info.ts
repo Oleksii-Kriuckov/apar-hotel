@@ -139,7 +139,8 @@ export const info_en = {
   mainWarningMessage: `This site is presented as a demonstration of the author's own work. 
   You CANNOT actually book hotel rooms through this site. 
   Instead, the real business logic of booking is implemented here.
-  Any information presented on this site may be inaccurate. `
+  Any information presented on this site may be inaccurate. `,
+  notFindMessage: 'No rooms were found for your request'
 };
 
 export const info_ua = {
@@ -151,7 +152,8 @@ export const info_ua = {
   mainWarningMessage: `Цей сайт представлений як демонстрація власної роботи автора. 
   НЕ МОЖНА реально забронювати номери в готелях через цей сайт. 
   Натомість тут реалізована реальна бізнес-логіка бронювання.
-  Будь-яка інформація, представлена ​​на цьому сайті може бути недостовірною.`
+  Будь-яка інформація, представлена ​​на цьому сайті може бути недостовірною.`,
+  notFindMessage: 'За вашим запитом не було знайдено жодної кімнати'
 };
 
 export const optionsForGuests = [
