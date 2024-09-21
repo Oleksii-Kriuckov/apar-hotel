@@ -21,3 +21,7 @@
     color: #000;
     background-color: var(--main-color);
 }
+
+.langs > a:hover {
+  color: var(--hover-link);
+}

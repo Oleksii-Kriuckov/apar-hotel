@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { unoccupiedRooms$, showNotFindMessage$ } from "../recoil/atoms";
 import { info_en } from "../assets/Info";
+import ModalWindow from "../components/ModalWindow/ModalWindow";
 
 const Hotel = () => {
   const { city, hotel } = useParams();
@@ -24,6 +25,8 @@ const Hotel = () => {
 
   return (
     <>
+      <ModalWindow/>
+
       <h3
         className="header_h3"
         style={{ textAlign: "center", marginBottom: 0 }}

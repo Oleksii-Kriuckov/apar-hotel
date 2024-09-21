@@ -12,11 +12,11 @@ import TisoBath from "../../public/rooms/TiSO/room32/room32-v5.png";
 import TisoRestaurant from "../../public/rooms/restaurant1.jpg";
 
 export const hotels = [
-  { city: "Kyiv", city_ua: "Київ", name: 'Arena-Summit' },
-  { city: "Kyiv", city_ua: "Київ", name: 'Tiso' },
-  { city: "Lviv", city_ua: "Львів", name: 'Code-10' },
+  { city: "Kyiv", city_ua: "Київ", name: 'Arena-Summit', tel: "+380996619218" },
+  { city: "Kyiv", city_ua: "Київ", name: 'Tiso', tel: "+380952805220" },
+  { city: "Lviv", city_ua: "Львів", name: 'Code-10', tel: "+380682975027" },
 ]
-
+ 
 export const allHotels: IHotelsInCity[] = [
   {
     city: "Kyiv",

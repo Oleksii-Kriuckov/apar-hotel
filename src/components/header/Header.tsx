@@ -4,7 +4,6 @@ import { allHotels } from "../../assets/Info";
 import logo_mob from "../images/logo-mob.png";
 import logo from "../images/logo.png";
 import bell from "../images/bell.png";
-import phone from "../images/Phone.png";
 import { HeaderLink } from "../UI/Links/HeaderLink";
 import { MyDropDown } from "../UI/DropDown/DropDown";
 import { reservationItems } from "../../assets/links";
@@ -24,7 +23,7 @@ export const Header = () => {
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="d-flex gap-3 justify-content-lg-around align-items-md-baseline w-100">
+            <Nav className="d-flex gap-3 justify-content-md-around align-items-md-baseline w-100">
               <div className="d-flex flex-column flex-sm-row">
                 {allHotels.map((el) => (
                   <NavLink
@@ -39,11 +38,8 @@ export const Header = () => {
                 ))}
               </div>
 
-              <HeaderLink isDropDown alt="bell" src={bell}>
+              <HeaderLink alt="bell" src={bell} isDropDown={true}>
                 <MyDropDown items={reservationItems} styles={{fontSize: 16}}>Reservation</MyDropDown>  
-              </HeaderLink>
-              <HeaderLink isDropDown={false} alt="phone" src={phone}>
-                +38 (097) 797 36 23
               </HeaderLink>
 
               <div className="langs">
