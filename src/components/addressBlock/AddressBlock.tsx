@@ -51,7 +51,7 @@ export const AddressBlock = ({ hotelInfo }: AddressBlockProps) => {
 
           <Button
             size="large"
-            href="#navbar"
+            href="#"
             className="address_block_btn ghost_button"
             onClick={() => { navigate(`/${city}/${hotelInfo.hotelName.toLowerCase()}/about-hotel`) }}
           >

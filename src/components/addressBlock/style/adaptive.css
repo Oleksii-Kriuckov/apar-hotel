@@ -17,11 +17,6 @@
     margin-top: 25px;
     margin-left: 20px;
   }
-
-  h3 {
-    margin-top: 10px;
-    margin-bottom: 25px;
-  }
 }
 
 /* tablet style */
@@ -34,11 +29,6 @@
   .address_block_buttons {
     margin: auto;
     gap: 25px;
-  }
-
-  h3 {
-    margin-top: 10px;
-    margin-bottom: 25px;
   }
 
   ul {
@@ -67,7 +57,7 @@
   }
 
 
-  .hotel_info>p {
+  .hotel_info > p {
     margin-top: 35px;
   }
 }
@@ -86,6 +76,10 @@
 
   .hotel_info {
     width: 70%;
+  }
+
+  .hotel_info > h3 {
+    margin-top: 3px;
   }
 
   .address_block_buttons {
@@ -111,6 +105,10 @@
 
   .hotel_info {
     width: 70%;
+  }
+
+  .hotel_info > h3 {
+    margin-top: 3px;
   }
 
   .address_block_buttons {

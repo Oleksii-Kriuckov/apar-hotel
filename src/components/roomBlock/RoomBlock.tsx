@@ -43,7 +43,7 @@ const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
 
       <div className="room_block_buttons d-flex mt-lg-4">
         <Button
-          href="#navbar"
+          // href="#navbar"
           className="room_block_btn ghost_button"
           onClick={navigateAboutRoom}
           size="large"
@@ -52,7 +52,7 @@ const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
         </Button>
 
         <Button
-          href="#navbar"
+          // href="#navbar"
           type="primary"
           id={`book_now_${roomInfo.id}`}
           className="booking_btn room_block_btn"
