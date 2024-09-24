@@ -13,7 +13,7 @@ export const unoccupiedRooms$ = atom<IRoom[]>({
   default: []
 })
 
-export const bookingRoom$ = atom<IRoom>({
+export const bookingRoom$ = atom<IRoom | object>({
   key: 'bookingRoom',
   default: {}
 })

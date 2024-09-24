@@ -10,6 +10,7 @@ import { bookingRoom$, showBookingForm$, showSuccessMessage$, dateRange$ } from 
 import { numberOfDays$, totalAmount$, daysRange$ } from "../recoil/selectors";
 import { useRecoilValue } from "recoil";
 import SuccessBooking from "../components/bookingMessage/SuccessBooking";
+import { isObjectRoom } from "../functions/isObject";
 
 const Booking = () => {
   const { city, hotel, number } = useParams();
@@ -23,7 +24,7 @@ const Booking = () => {
   let navigate = useNavigate();
 
   useEffect(() => {
-    if (!bookingRoom.id) {
+    if (isObjectRoom(bookingRoom) && !bookingRoom.id) {
       navigate(`/${city}/${hotel}`)
     }
   }, []);

@@ -1,5 +1,7 @@
 import { selector } from "recoil";
 import { dateRange$, bookingRoom$ } from "./atoms"
+import { IRoom } from "../assets/types";
+import { isObjectRoom } from "../functions/isObject";
 
 export const numberOfDays$ = selector({
     key: 'numberOfDays', // unique ID (with respect to other atoms/selectors)
@@ -28,7 +30,9 @@ export const totalAmount$ = selector({
     get: ({ get }) => {
         const numberOfDays = get(numberOfDays$);
         const bookingRoom = get(bookingRoom$);
-
-        return bookingRoom.price * numberOfDays
+        if (isObjectRoom(bookingRoom) ) {
+          return bookingRoom.price * numberOfDays
+        }
+        
     },
 });

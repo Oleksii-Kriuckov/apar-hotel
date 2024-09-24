@@ -12,6 +12,7 @@ import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../../firebase/firebase";
 import "./styles/style.css";
 import "./styles/adaptive.css";
+import { isObjectRoom } from "../../../functions/isObject";
 
 const { Option } = Select;
 const { useBreakpoint } = Grid;
@@ -27,17 +28,19 @@ export const FormBooking: React.FC = () => {
   const showSuccessMessage = useSetRecoilState(showSuccessMessage$);
 
   const bookRoom = (values: any) => {
-    const base = doc(db, "rooms", bookingRoom.id);
-    const [items] = bookingRoom.occupied;
+    if (isObjectRoom(bookingRoom)) {
+      const base = doc(db, "rooms", bookingRoom.id);
+      const [items] = bookingRoom.occupied;
 
-    if (items) {
-      updateDoc(base, {
-        occupied: [items, { checkIn: dateRange[0], checkOut: dateRange[1] }],
-      });
-    } else {
-      updateDoc(base, {
-        occupied: [{ checkIn: dateRange[0], checkOut: dateRange[1] }],
-      });
+      if (items) {
+        updateDoc(base, {
+          occupied: [items, { checkIn: dateRange[0], checkOut: dateRange[1] }],
+        });
+      } else {
+        updateDoc(base, {
+          occupied: [{ checkIn: dateRange[0], checkOut: dateRange[1] }],
+        });
+      }
     }
 
     setShowBookingForm(false);
@@ -94,7 +97,6 @@ export const FormBooking: React.FC = () => {
             rules={[
               { required: true, message: "Please input your phone number!" },
               { type: "integer", message: "The number should be integer" },
-              // Don't work positive rule
             ]}
           >
             <InputNumber
@@ -103,12 +105,12 @@ export const FormBooking: React.FC = () => {
               addonBefore={prefixSelector}
               style={{ width: "100%" }}
               placeholder="965123456"
-              // value={phone}
-              // onChange={(value) => {
-              //   if (value && Number(value) < 0) Math.abs(Number(value))
-              //   console.log(value)
-              //   setPhone(Number(value))
-              // }}
+            // value={phone}
+            // onChange={(value) => {
+            //   if (value && Number(value) < 0) Math.abs(Number(value))
+            //   console.log(value)
+            //   setPhone(Number(value))
+            // }}
             />
           </Form.Item>
 

@@ -9,7 +9,7 @@ import room3 from "../../../public/rooms/Code10/room21/room21-view1.jpg";
 import { BootCarousel } from "../Slider/BootCar";
 import "./style.css";
 
-type TitleBlockProps = PropsWithChildren<{ children: string | ReactJSXElement }>;
+type TitleBlockProps = PropsWithChildren<{ children: (string | ReactJSXElement)[] }>;
 const TitleBlock = ({ children }: TitleBlockProps) => {
   let navigate = useNavigate();
   const images = [room1, room2, room3];
