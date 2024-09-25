@@ -43,8 +43,8 @@ export const Header = () => {
               </HeaderLink>
 
               <div className="langs">
-               <Link to={''}>UA</Link> /
-               <Link to={''}>EN</Link> 
+               <Link to={'https://ua-apart-hotels.netlify.app'}>UA</Link> /
+               <span className="active_lang">EN</span> 
               </div>
             </Nav>
           </Navbar.Collapse>

@@ -25,3 +25,6 @@
 .langs > a:hover {
   color: var(--hover-link);
 }
+.active_lang {
+  color: var(--hover-link);
+}
