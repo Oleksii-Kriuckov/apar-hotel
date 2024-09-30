@@ -7,10 +7,9 @@ import { bookingRoom$, unoccupiedRooms$ } from "../recoil/atoms";
 import { useRecoilValue, useRecoilState } from "recoil";
 import { useQuery } from "../hooks/useQuery";
 import { HotelNames } from "../assets/types";
+import ModalWindow from "../components/ModalWindow/ModalWindow";
 
-type Props = {};
-
-const AboutRoom = (props: Props) => {
+const AboutRoom = () => {
   const { city, hotel, number } = useParams();
   const { findCity, findHotel } = findData(city!, hotel);
   const [bookingRoom, setBookingRoom] = useRecoilState(bookingRoom$)
@@ -24,6 +23,8 @@ const AboutRoom = (props: Props) => {
 
   return (
     <div>
+      <ModalWindow/>
+      
       <Article images={bookingRoom.images} isHotelPage={false} description={bookingRoom.description_ua}>
         Про <span className="highlight">номер {number}</span> готеля <span className="highlight">{findHotel?.hotelName!.replace('-', ' ')!}</span>
       </Article>

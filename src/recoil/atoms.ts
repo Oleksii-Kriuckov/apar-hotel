@@ -37,3 +37,8 @@ export const isShowModalFeedback$ = atom({
   key: 'modalFeedback',
   default: false
 })
+
+export const showNotFindMessage$ = atom({
+  key: 'showSearchMessage',
+  default: false
+})

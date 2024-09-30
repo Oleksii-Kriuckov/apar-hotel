@@ -1,6 +1,6 @@
 import { Feedback_ROUTE } from "./paths";
 import MainPage from "../pages/MainPage";
-import { Hotel, findRoomsAction } from "../pages/Hotel";
+import { Hotel } from "../pages/Hotel";
 import Booking from "../pages/Booking";
 import Feedback from "../pages/Feedback";
 import {

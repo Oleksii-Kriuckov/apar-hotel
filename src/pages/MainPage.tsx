@@ -5,9 +5,7 @@ import { findData } from "../functions/functions";
 import TitleBlock from "../components/TitleBlock/TitleBlock";
 import ModalWindow from "../components/ModalWindow/ModalWindow";
 
-type Props = {};
-
-const MainPage = (props: Props) => {
+const MainPage = () => {
   const { city } = useParams();
   const { findCity } = findData(city!);
 

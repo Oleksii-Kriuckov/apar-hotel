@@ -67,19 +67,3 @@ const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
 };
 
 export default RoomBlock;
-
-
-// const addRoom = async () => {
-//   if (hotel) {
-//     const newRoom: IRoom = {
-//       hotel: hotel as HotelNames,
-//       floor: roomInfo.floor,
-//       image: roomInfo.image,
-//       number: roomInfo.number,
-//       persons: roomInfo.persons,
-//       price: roomInfo.price,
-//       occupied: [],
-//     };
-//     await addDoc(collection(db, "rooms"), newRoom);
-//   }
-// };

@@ -15,6 +15,15 @@ export const links = [
   { link: "Зворотній зв'язок", to: Feedback_ROUTE },
 ];
 
+export const telLinks = hotels.map((hotel, ind) => {
+  return {
+    key: hotel.name,
+    label: <a href={`tel:${hotel.tel}`}>
+      {`${hotel.tel} ${hotel.name}`}
+    </a>
+  }
+})
+
 export const reservationItems = hotels.map((hotel, ind) => {
   return {
     key: `${ind}`,

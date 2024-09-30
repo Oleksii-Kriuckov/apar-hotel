@@ -12,9 +12,9 @@ import TisoBath from "../../public/rooms/TiSO/room32/room32-v5.png";
 import TisoRestaurant from "../../public/rooms/restaurant1.jpg";
 
 export const hotels = [
-  { city: "Kyiv", city_ua: "Київ", name: 'Arena-Summit' },
-  { city: "Kyiv", city_ua: "Київ", name: 'Tiso' },
-  { city: "Lviv", city_ua: "Львів", name: 'Code-10' },
+  { city: "Kyiv", city_ua: "Київ", name: 'Arena-Summit', tel: "+380996619218" },
+  { city: "Kyiv", city_ua: "Київ", name: 'Tiso', tel: "+380952805220" },
+  { city: "Lviv", city_ua: "Львів", name: 'Code-10', tel: "+380682975027" },
 ]
 
 export const allHotels: IHotelsInCity[] = [
@@ -144,8 +144,11 @@ export const info_en = {
     p: "We are waiting for you to visit, we are ready to receive you at anytime of the day.",
     btn: "CONNECT WITH US",
   },
-  mainWarningMessage: `This site is presented as a demonstration of the author's own work. You CANNOT actually book hotel rooms through this site.
- Any information presented on this site may be inaccurate. `
+  mainWarningMessage: `This site is presented as a demonstration of the author's own work. 
+  You CANNOT actually book hotel rooms through this site. 
+  Instead, the real business logic of booking is implemented here.
+  Any information presented on this site may be inaccurate. `,
+  notFindMessage: 'No rooms were found for your request'
 };
 
 export const info_ua = {
@@ -157,7 +160,8 @@ export const info_ua = {
   mainWarningMessage: `Цей сайт представлений як демонстрація власної роботи автора. 
   НЕ МОЖНА реально забронювати номери в готелях через цей сайт. 
   Натомість тут реалізована реальна бізнес-логіка бронювання.
-  Будь-яка інформація, представлена ​​на цьому сайті може бути недостовірною.`
+  Будь-яка інформація, представлена ​​на цьому сайті може бути недостовірною.`,
+  notFindMessage: 'За вашим запитом не було знайдено жодної кімнати'
 };
 
 export const optionsForGuests = [
