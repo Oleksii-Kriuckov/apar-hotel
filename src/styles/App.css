@@ -8,6 +8,10 @@
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 .our_addresses {
   font-weight: 400;
   font-size: 36px;
