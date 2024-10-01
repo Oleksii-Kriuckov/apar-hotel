@@ -12,6 +12,7 @@ import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../../firebase/firebase";
 import "./styles/style.css";
 import "./styles/adaptive.css";
+import { isObjectRoom } from "../../../functions/isObject";
 
 const { Option } = Select;
 const { useBreakpoint } = Grid;
@@ -27,19 +28,20 @@ export const FormBooking: React.FC = () => {
   const showSuccessMessage = useSetRecoilState(showSuccessMessage$);
 
   const bookRoom = (values: any) => {
-    const base = doc(db, "rooms", bookingRoom.id);
-    const [items] = bookingRoom.occupied;
+    if (isObjectRoom(bookingRoom)) {
+      const base = doc(db, "rooms", bookingRoom.id);
+      const [items] = bookingRoom.occupied;
 
-    if (items) {
-      updateDoc(base, {
-        occupied: [items, { checkIn: dateRange[0], checkOut: dateRange[1] }],
-      });
-    } else {
-      updateDoc(base, {
-        occupied: [{ checkIn: dateRange[0], checkOut: dateRange[1] }],
-      });
+      if (items) {
+        updateDoc(base, {
+          occupied: [items, { checkIn: dateRange[0], checkOut: dateRange[1] }],
+        });
+      } else {
+        updateDoc(base, {
+          occupied: [{ checkIn: dateRange[0], checkOut: dateRange[1] }],
+        });
+      }
     }
-
     setShowBookingForm(false);
     showSuccessMessage(true);
 

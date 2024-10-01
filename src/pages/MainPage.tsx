@@ -12,7 +12,9 @@ const MainPage = () => {
   return (
     <main>
       <ModalWindow/>
-      <TitleBlock>Для вас готелі у <span className="highlight">{(city! && city === 'kyiv') ? 'Києві' : 'Львові'}</span></TitleBlock>
+      <TitleBlock>
+        Для вас готелі у <span className="highlight">{(city! && city === 'kyiv') ? 'Києві' : 'Львові'}</span>
+      </TitleBlock>
   
       <h3 className="our_addresses">Наші адреси</h3>
       {findCity!.hotelsInfo.map((hotel) => (

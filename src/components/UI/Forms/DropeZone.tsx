@@ -3,8 +3,8 @@ import { useDropzone } from 'react-dropzone';
 export function DropeZone() {
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
 
-  const files = acceptedFiles.map(file => (
-    <li key={file.name} className='file_item'>
+  const files = acceptedFiles.map((file, ind) => (
+    <li key={ind} className='file_item'>
       {file.name} - {file.size} bytes
     </li>
   ));

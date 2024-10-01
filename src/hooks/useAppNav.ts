@@ -15,6 +15,7 @@ export const useAppNav = (roomInfo: IRoom, city: string) => {
     } = { occupied: [] };
     for (const key in roomInfo) {
       if (Object.prototype.hasOwnProperty.call(roomInfo, key)) {
+        // @ts-ignore
         newRoomInfo[key] = roomInfo[key];
       }
     }

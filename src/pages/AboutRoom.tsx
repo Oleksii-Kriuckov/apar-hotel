@@ -8,6 +8,7 @@ import { useRecoilValue, useRecoilState } from "recoil";
 import { useQuery } from "../hooks/useQuery";
 import { HotelNames } from "../assets/types";
 import ModalWindow from "../components/ModalWindow/ModalWindow";
+import { isObjectRoom } from "../functions/isObject";
 
 const AboutRoom = () => {
   const { city, hotel, number } = useParams();
@@ -16,16 +17,20 @@ const AboutRoom = () => {
   const { queryRooms } = useQuery()
 
   useEffect(() => {
-    if (!bookingRoom.images) {
+    if (isObjectRoom(bookingRoom) && !bookingRoom.images) {
       queryRooms(hotel as HotelNames, 1, Number(number))
-    } 
+    }
   }, []);
 
   return (
     <div>
-      <ModalWindow/>
-      
-      <Article images={bookingRoom.images} isHotelPage={false} description={bookingRoom.description_ua}>
+      <ModalWindow />
+
+      <Article
+        images={isObjectRoom(bookingRoom) ? bookingRoom.images : []}
+        isHotelPage={false}
+        description={isObjectRoom(bookingRoom) ? bookingRoom.description : ''}
+      >
         Про <span className="highlight">номер {number}</span> готеля <span className="highlight">{findHotel?.hotelName!.replace('-', ' ')!}</span>
       </Article>
       <AddressBlock hotelInfo={findHotel!} />

@@ -55,6 +55,7 @@ const FormSearch = () => {
             placeholder={["check-in", "check-out"]}
             popupClassName="popup_calendar"
             defaultValue={datePickerValue}
+            // @ts-ignore
             onChange={changeDatePickerRange}
             value={datePickerValue}
           />
