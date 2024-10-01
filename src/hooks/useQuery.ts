@@ -11,7 +11,8 @@ export const useQuery = () => {
   const dateRange = useRecoilValue(dateRange$);
 
   function queryRooms(hotel: HotelNames, persons: number = 1, number?: number) {
-    const q = query(collection(db, "rooms"));
+    const q = query(collection(db, "rooms"));     // dev
+    // const q = query(collection(db, "room_ua"));   // prod
     let allRooms: IRoom[] = [];
 
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
