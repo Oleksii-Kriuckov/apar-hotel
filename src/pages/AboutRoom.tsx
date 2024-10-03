@@ -3,8 +3,8 @@ import { AddressBlock } from "../components/addressBlock/AddressBlock";
 import { Article } from "../components/article/Article";
 import { findData } from "../functions/functions";
 import { useEffect } from "react";
-import { bookingRoom$, unoccupiedRooms$ } from "../recoil/atoms";
-import { useRecoilValue, useRecoilState } from "recoil";
+import { bookingRoom$ } from "../recoil/atoms";
+import { useRecoilState } from "recoil";
 import { useQuery } from "../hooks/useQuery";
 import { HotelNames } from "../assets/types";
 import ModalWindow from "../components/ModalWindow/ModalWindow";
@@ -29,7 +29,7 @@ const AboutRoom = () => {
       <Article
         images={isObjectRoom(bookingRoom) ? bookingRoom.images : []}
         isHotelPage={false}
-        description={isObjectRoom(bookingRoom) ? bookingRoom.description : ''}
+        description={isObjectRoom(bookingRoom) ? bookingRoom.description_ua : ''}
       >
         Про <span className="highlight">номер {number}</span> готеля <span className="highlight">{findHotel?.hotelName!.replace('-', ' ')!}</span>
       </Article>

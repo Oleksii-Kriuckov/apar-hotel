@@ -13,6 +13,7 @@ import { db } from "../../../firebase/firebase";
 import "./styles/style.css";
 import "./styles/adaptive.css";
 import { isObjectRoom } from "../../../functions/isObject";
+import { dataBaseName } from "../../../assets/env";
 
 const { Option } = Select;
 const { useBreakpoint } = Grid;
@@ -21,15 +22,14 @@ export const FormBooking: React.FC = () => {
   const screens = useBreakpoint();
   const [form] = Form.useForm();
 
-  // const [phone, setPhone] = useState(null);
   const dateRange = useRecoilValue(dateRange$);
   const bookingRoom = useRecoilValue(bookingRoom$);
   const setShowBookingForm = useSetRecoilState(showBookingForm$);
   const showSuccessMessage = useSetRecoilState(showSuccessMessage$);
 
-  const bookRoom = (values: any) => {
+  const bookRoom = () => {
     if (isObjectRoom(bookingRoom)) {
-      const base = doc(db, "rooms", bookingRoom.id);
+      const base = doc(db, dataBaseName, bookingRoom.id);
       const [items] = bookingRoom.occupied;
 
       if (items) {

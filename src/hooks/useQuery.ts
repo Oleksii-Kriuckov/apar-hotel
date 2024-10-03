@@ -3,6 +3,7 @@ import { db } from "../firebase/firebase";
 import { HotelNames, IRoom } from "../assets/types";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { unoccupiedRooms$, dateRange$, bookingRoom$, showNotFindMessage$} from "../recoil/atoms";
+import { dataBaseName } from "../assets/env";
 
 export const useQuery = () => {
   const setUnoccupiedRooms = useSetRecoilState(unoccupiedRooms$);
@@ -11,8 +12,8 @@ export const useQuery = () => {
   const dateRange = useRecoilValue(dateRange$);
 
   function queryRooms(hotel: HotelNames, persons: number = 1, number?: number) {
-    const q = query(collection(db, "rooms"));     // dev
-    // const q = query(collection(db, "room_ua"));   // prod
+    const q = query(collection(db, dataBaseName));
+
     let allRooms: IRoom[] = [];
 
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
