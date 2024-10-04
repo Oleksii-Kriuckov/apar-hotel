@@ -1,19 +1,11 @@
-import React, { ChangeEvent, ReactEventHandler, useState } from "react";
+import React from "react";
 import { Button, Form, Input, Select, InputNumber, Grid } from "antd";
 import codes from "../../../assets/codes.json";
-import { useRecoilValue, useSetRecoilState } from "recoil";
-import {
-  dateRange$,
-  bookingRoom$,
-  showBookingForm$,
-  showSuccessMessage$,
-} from "../../../recoil/atoms";
-import { doc, updateDoc } from "firebase/firestore";
-import { db } from "../../../firebase/firebase";
+import { useSetRecoilState } from "recoil";
+import {  showSuccessMessage$} from "../../../recoil/atoms";
 import "./styles/style.css";
 import "./styles/adaptive.css";
-import { isObjectRoom } from "../../../functions/isObject";
-import { dataBaseName } from "../../../assets/env";
+import { useQuery } from "../../../hooks/useQuery";
 
 const { Option } = Select;
 const { useBreakpoint } = Grid;
@@ -21,29 +13,12 @@ const { useBreakpoint } = Grid;
 export const FormBooking: React.FC = () => {
   const screens = useBreakpoint();
   const [form] = Form.useForm();
+  const { bookRoom } = useQuery()
 
-  const dateRange = useRecoilValue(dateRange$);
-  const bookingRoom = useRecoilValue(bookingRoom$);
-  const setShowBookingForm = useSetRecoilState(showBookingForm$);
   const showSuccessMessage = useSetRecoilState(showSuccessMessage$);
 
-  const bookRoom = () => {
-    if (isObjectRoom(bookingRoom)) {
-      const base = doc(db, dataBaseName, bookingRoom.id);
-      const [items] = bookingRoom.occupied;
-
-      if (items) {
-        updateDoc(base, {
-          occupied: [items, { checkIn: dateRange[0], checkOut: dateRange[1] }],
-        });
-      } else {
-        updateDoc(base, {
-          occupied: [{ checkIn: dateRange[0], checkOut: dateRange[1] }],
-        });
-      }
-    }
-    setShowBookingForm(false);
-    showSuccessMessage(true);
+  const submit = () => {
+    bookRoom()
 
     form.resetFields();
 
@@ -77,7 +52,7 @@ export const FormBooking: React.FC = () => {
         form={form}
         labelCol={{ span: 6, offset: 0 }}
         layout={screens.md ? "vertical" : "horizontal"}
-        onFinish={bookRoom}
+        onFinish={submit}
         initialValues={{ prefix: "+380" }}
         scrollToFirstError
       >

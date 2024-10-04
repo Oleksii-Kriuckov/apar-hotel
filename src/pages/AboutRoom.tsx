@@ -4,7 +4,7 @@ import { Article } from "../components/article/Article";
 import { findData } from "../functions/functions";
 import { useEffect } from "react";
 import { bookingRoom$ } from "../recoil/atoms";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import { useQuery } from "../hooks/useQuery";
 import { HotelNames } from "../assets/types";
 import ModalWindow from "../components/ModalWindow/ModalWindow";
@@ -13,7 +13,7 @@ import { isObjectRoom } from "../functions/isObject";
 const AboutRoom = () => {
   const { city, hotel, number } = useParams();
   const { findCity, findHotel } = findData(city!, hotel);
-  const [bookingRoom, setBookingRoom] = useRecoilState(bookingRoom$)
+  const bookingRoom = useRecoilValue(bookingRoom$)
   const { queryRooms } = useQuery()
 
   useEffect(() => {
