@@ -4,18 +4,16 @@ import { AddressBlock } from "../components/addressBlock/AddressBlock";
 import { Article } from "../components/article/Article";
 import { findData } from "../functions/functions";
 import { bookingRoom$, unoccupiedRooms$ } from "../recoil/atoms";
-import { useRecoilValue, useRecoilState } from "recoil";
+import { useRecoilValue  } from "recoil";
 import { useQuery } from "../hooks/useQuery";
 import { HotelNames } from "../assets/types";
 import ModalWindow from "../components/ModalWindow/ModalWindow";
 import { isObjectRoom } from "../functions/isObject";
 
-type Props = {};
-
-const AboutRoom = (props: Props) => {
+const AboutRoom = () => {
   const { city, hotel, number } = useParams();
   const { findCity, findHotel } = findData(city!, hotel);
-  const [bookingRoom, setBookingRoom] = useRecoilState(bookingRoom$)
+  const bookingRoom = useRecoilValue(bookingRoom$)
   const { queryRooms } = useQuery()
 
   useEffect(() => {
