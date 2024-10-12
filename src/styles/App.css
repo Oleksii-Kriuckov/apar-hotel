@@ -57,6 +57,8 @@ hr {
 .show_place {
   height: fit-content;
   min-height: 70px;
+}
+#contacts_wrap {
   margin-top: 25px;
 }
 
