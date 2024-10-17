@@ -8,6 +8,8 @@ import { HeaderLink } from "../UI/Links/HeaderLink";
 import phone from "../images/Phone.png";
 import "./style/style.css";
 import "./style/adaptive.css";
+// import useUserGeoLocation from "../../hooks/useGeoLocation";
+// import useLocation from "../../hooks/useLocation";
 
 type AddressBlockProps = {
   hotelInfo: IHotelInfo;
@@ -16,6 +18,9 @@ type AddressBlockProps = {
 export const AddressBlock = ({ hotelInfo }: AddressBlockProps) => {
   let navigate = useNavigate();
   const { city } = useParams();
+
+  // const { position } = useUserGeoLocation();
+  // const { userLocation } = useLocation(position);
 
   return (
     <section className="address_block d-flex flex-column flex-md-row-reverse gap-md-4">
