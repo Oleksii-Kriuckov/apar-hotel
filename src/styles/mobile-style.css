@@ -17,11 +17,11 @@
     margin: 50px auto;
   }
 
-  article>h3 {
+  article > h3 {
     margin-bottom: 20px;
   }
 
-  article>a {
+  article > a {
     margin-top: 20px;
     font-weight: 400;
     font-size: 16px;
@@ -159,7 +159,6 @@
     height: 300px;
   }
 
-
   .room1 {
     margin-left: auto;
     margin-right: 0;
@@ -195,9 +194,6 @@
   .lows_extract {
     margin: 25px 0;
   }
-
-  /* Form feedback */
-
 }
 
 @media (max-width: 650px) {

@@ -43,7 +43,6 @@ const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
 
       <div className="room_block_buttons d-flex mt-lg-4">
         <Button
-          href="#navbar"
           className="room_block_btn ghost_button"
           onClick={navigateAboutRoom}
           size="large"
@@ -52,7 +51,6 @@ const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
         </Button>
 
         <Button
-          href="#navbar"
           type="primary"
           id={`book_now_${roomInfo.id}`}
           className="booking_btn room_block_btn"
@@ -67,19 +65,3 @@ const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
 };
 
 export default RoomBlock;
-
-
-// const addRoom = async () => {
-//   if (hotel) {
-//     const newRoom: IRoom = {
-//       hotel: hotel as HotelNames,
-//       floor: roomInfo.floor,
-//       image: roomInfo.image,
-//       number: roomInfo.number,
-//       persons: roomInfo.persons,
-//       price: roomInfo.price,
-//       occupied: [],
-//     };
-//     await addDoc(collection(db, "rooms"), newRoom);
-//   }
-// };

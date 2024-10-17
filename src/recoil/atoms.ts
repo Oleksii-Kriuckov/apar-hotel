@@ -13,7 +13,7 @@ export const unoccupiedRooms$ = atom<IRoom[]>({
   default: []
 })
 
-export const bookingRoom$ = atom<IRoom>({
+export const bookingRoom$ = atom<IRoom | object>({
   key: 'bookingRoom',
   default: {}
 })
@@ -35,5 +35,10 @@ export const isShowModal$ = atom<boolean>({
 
 export const isShowModalFeedback$ = atom({
   key: 'modalFeedback',
+  default: false
+})
+
+export const showNotFindMessage$ = atom({
+  key: 'showSearchMessage',
   default: false
 })

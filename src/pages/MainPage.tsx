@@ -5,16 +5,16 @@ import { findData } from "../functions/functions";
 import TitleBlock from "../components/TitleBlock/TitleBlock";
 import ModalWindow from "../components/ModalWindow/ModalWindow";
 
-type Props = {};
-
-const MainPage = (props: Props) => {
+const MainPage = () => {
   const { city } = useParams();
   const { findCity } = findData(city!);
 
   return (
     <main>
       <ModalWindow/>
-      <TitleBlock>Для вас готелі у <span className="highlight">{(city! && city === 'kyiv') ? 'Києві' : 'Львові'}</span></TitleBlock>
+      <TitleBlock>
+        Для вас готелі у <span className="highlight">{(city! && city === 'kyiv') ? 'Києві' : 'Львові'}</span>
+      </TitleBlock>
   
       <h3 className="our_addresses">Наші адреси</h3>
       {findCity!.hotelsInfo.map((hotel) => (

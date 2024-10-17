@@ -5,7 +5,7 @@ type Props = {
   images: string[];
 };
 
-export const BootCar = ({ images }: Props) => {
+export const BootCarousel = ({ images }: Props) => {
   return (
     <Carousel>
       {images.map((img, ind) => (

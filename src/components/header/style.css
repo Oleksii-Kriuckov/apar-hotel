@@ -10,14 +10,22 @@
 }
 
 .nav_link:hover {
-  /* color: var(--main-color); */
-  background-color: rgba(0, 0, 0, 0.2);
   color: #000;
+  background-color: rgba(0, 0, 0, 0.2);
 }
+
 .active_link {
   background-color: var(--main-color);
 }
+
 .active_link:hover {
-    color: #000;
-    background-color: var(--main-color);
+  background-color: var(--main-color);
+}
+
+.langs > a:hover {
+  color: var(--hover-link);
+}
+
+.active_lang {
+  color: var(--hover-link);
 }
