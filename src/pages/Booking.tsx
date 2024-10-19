@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import MediaLinks from "../components/UI/Links/MediaLinks";
 import BookingMessage from "../components/bookingMessage/BookingMessage";
 import { useParams, useNavigate } from "react-router-dom";
@@ -5,12 +6,13 @@ import { findData } from "../functions/functions";
 import { MyMapContainer } from "../map/MyMapContainer";
 import { MapChild } from "../map/MapChild";
 import { FormBooking } from "../components/UI/Forms/FormBooking";
-import { useEffect } from "react";
-import { bookingRoom$, showBookingForm$, showSuccessMessage$, dateRange$ } from "../recoil/atoms";
+import { bookingRoom$, showBookingForm$, showSuccessMessage$ } from "../recoil/atoms";
 import { numberOfDays$, totalAmount$, daysRange$ } from "../recoil/selectors";
 import { useRecoilValue } from "recoil";
+import { CSSTransition } from 'react-transition-group';
 import SuccessBooking from "../components/bookingMessage/SuccessBooking";
 import { isObjectRoom } from "../functions/isObject";
+import '../components/bookingMessage/style.css'
 
 const Booking = () => {
   const { city, hotel, number } = useParams();
@@ -30,7 +32,7 @@ const Booking = () => {
   }, []);
 
   return (
-    <div className="booking_page">
+    <>
       <h3 id="booking_header" className="header_h3">
         Бронювання: готель {findHotel!.hotelName} ({findCity!.city_ua}), номер {number}
         <span className="booking_room_info">
@@ -39,22 +41,13 @@ const Booking = () => {
         </span>
       </h3>
 
-      <div id="contacts_wrap" className="d-flex flex-column flex-md-row">
-        <div>
-          <ul className="contacts">
-            <li>{findHotel!.address}</li>
-            <li>{findHotel!.tel}</li>
-            <li>{findHotel!.email}</li>
-          </ul>
-          <MediaLinks />
-        </div>
-
-        <BookingMessage />
-      </div>
-
+    <div className="booking_page">
       <div className="show_place">
         {showBooking && <FormBooking />}
-        {showSuccessMessage && <SuccessBooking />}
+        
+        <CSSTransition in={showSuccessMessage} timeout={1700} classNames={'success'} unmountOnExit>
+          <SuccessBooking />
+        </CSSTransition>
       </div>
 
       <div>
@@ -68,7 +61,21 @@ const Booking = () => {
           </MyMapContainer>
         </div>
       </div>
+      
+      <div id="contacts_wrap" className="d-flex flex-column flex-md-row">
+        <div>
+          <ul className="contacts">
+            <li>{findHotel!.address}</li>
+            <li>{findHotel!.tel}</li>
+            <li>{findHotel!.email}</li>
+          </ul>
+          <MediaLinks />
+        </div>
+
+        <BookingMessage />
+      </div>
     </div>
+    </>
   );
 };
 

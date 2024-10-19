@@ -24,3 +24,18 @@
   font-size: large;
   text-align: center;
 }
+
+.success-enter {
+  opacity: 0;
+}
+.success-enter-active {
+  opacity: 1;
+  transition: all 100ms;
+}
+.success-exit {
+  opacity: 1;
+}
+.success-exit-active {
+  opacity: 0;
+  transition: all 1700ms;
+}
