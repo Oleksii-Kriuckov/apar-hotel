@@ -89,8 +89,3 @@ hr {
 .highlight {
   color: var(--main-color);
 }
-
-/* Title block */
-.title_block {
-  margin-bottom: 40px;
-}
