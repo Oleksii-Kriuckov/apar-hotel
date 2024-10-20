@@ -1,12 +1,12 @@
-import { collection, onSnapshot, query, doc, updateDoc} from "firebase/firestore";
+import { collection, onSnapshot, query, doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import { HotelNames, IRoom } from "../assets/types";
 import { useRecoilValue, useSetRecoilState, useRecoilState } from "recoil";
-import { 
-  unoccupiedRooms$, 
-  dateRange$, 
-  bookingRoom$, 
-  showNotFindMessage$, 
+import {
+  unoccupiedRooms$,
+  dateRange$,
+  bookingRoom$,
+  showNotFindMessage$,
   showBookingForm$,
   showSuccessMessage$
 } from "../recoil/atoms";

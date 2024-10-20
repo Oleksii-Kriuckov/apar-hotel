@@ -1,9 +1,9 @@
 import { Form, useParams } from "react-router-dom";
-import { findData, formatDays } from "../../../functions/functions";
+import { formatDays } from "../../../functions/functions";
 import { DatePicker, Button, Select } from "antd";
 import dayjs, { Dayjs } from "dayjs";
 import type { RangePickerProps } from "antd/es/date-picker";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { optionsForGuests } from "../../../assets/Info";
 import { useSetRecoilState } from "recoil";
 import { dateRange$ } from "../../../recoil/atoms";
@@ -27,7 +27,12 @@ const FormSearch = () => {
     dayjs(),
     dayjs().add(1, "day"),
   ]);
-  const { findCity, findHotel } = findData(city!, hotel!);
+
+  useEffect(() => {
+    setDatePickerValue([dayjs(), dayjs().add(1, "day"),])
+    setPersons(1)
+  }, [hotel])
+
 
   const changeDatePickerRange = (value: [Dayjs, Dayjs]) => {
     if (value) {
@@ -37,13 +42,9 @@ const FormSearch = () => {
   };
 
   return (
-    <Form
-      id="form_search"
-      action={`/${findCity!.city.toLowerCase()}/${findHotel!.hotelName.toLowerCase()}`}
-      method="post"
-    >
+    <Form id="form_search">
       <h4>
-        Заїзд - 14.00, <br /> Виїзд - 12.00 ({findHotel?.hotelName})
+        Заїзд - 14.00, <br /> Виїзд - 12.00
       </h4>
 
       <div className="search d-flex">
@@ -63,9 +64,8 @@ const FormSearch = () => {
 
         <div id="guests" className="input_block">
           <label htmlFor="guests">Кількість гостей</label>
-          <Select 
-            options={findHotel?.hotelName == 'Arena-Summit' ? optionsForGuests.slice(0, -1) : optionsForGuests}
-            // options={optionsForGuests}
+          <Select
+            options={hotel == 'arena-summit' ? optionsForGuests.slice(0, -1) : optionsForGuests}
             size="large" value={persons}
             onChange={(e) => setPersons(e)}
           />

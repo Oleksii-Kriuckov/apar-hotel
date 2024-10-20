@@ -12,9 +12,6 @@ type Props = PropsWithChildren<{
 }>;
 
 export const HeaderLink = (props: Props) => {
-  // useEffect(() => {
-  //   if (!props.isDropDown) console.log(props.src);
-  // })   
   return (
     <div>
       {props.isDropDown ? 

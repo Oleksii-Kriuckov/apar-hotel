@@ -22,7 +22,5 @@ export function DropeZone() {
             </aside>
           )}
       </div>
-
-    
   );
 }
