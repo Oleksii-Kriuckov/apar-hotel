@@ -36,6 +36,11 @@
     width: 360px;
     gap: 25px;
   }
+
+   /* Title block */
+   .title_block {
+    gap: 40px;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -76,11 +81,6 @@
   /* Article */
   .article_header {
     width: 100%;
-  }
-
-  .article_carousel {
-    width: fit-content;
-    /* margin: 0 auto 50px; */
   }
 }
 
@@ -130,11 +130,6 @@
     width: 50%;
     float: left;
     margin-right: 50px;
-  }
-  
-  .article_carousel {
-    width: fit-content;
-    /* margin: 0 auto 50px; */
   }
 }
 

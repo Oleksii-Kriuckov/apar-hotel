@@ -1,6 +1,7 @@
 import { PropsWithChildren, ReactNode } from "react";
 import { BootCarousel } from "../Slider/BootCar";
 import "./style.css";
+import '../Slider/style.css'
 
 type ArticleProps = PropsWithChildren<{
   children: ReactNode, images: string[], isHotelPage: boolean, description: string
@@ -20,7 +21,9 @@ export const Article = ({ children, images, isHotelPage, description }: ArticleP
           </div>
 
           <div className="d-xl-none">
-            {Array.isArray(images) && <BootCarousel images={images} />}
+            <div className="article_carousel">
+              {Array.isArray(images) && <BootCarousel images={images} />}
+            </div>
           </div>
 
           <div className="article_header">
