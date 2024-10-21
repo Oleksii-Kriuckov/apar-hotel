@@ -10,19 +10,16 @@ export function DropeZone() {
   ));
 
   return (
-    // <section className="drop_container"></section>
-      <div {...getRootProps({ className: 'dropzone' })}>
-        <input {...getInputProps()} />
-        {files.length === 0
-          ? <p>Drag 'n' drop some files here, or click to select files</p>
-          : (
-            <aside>
-              <h4 className='files'>Files</h4>
-              <ul className='file_list'>{files}</ul>
-            </aside>
-          )}
-      </div>
-
-    
+    <div {...getRootProps({ className: 'dropzone' })}>
+      <input {...getInputProps()} />
+      {files.length === 0
+        ? <p>Drag 'n' drop some files here, or click to select files</p>
+        : (
+          <aside>
+            <h4 className='files'>Files</h4>
+            <ul className='file_list'>{files}</ul>
+          </aside>
+        )}
+    </div>
   );
 }

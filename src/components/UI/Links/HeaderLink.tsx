@@ -1,4 +1,4 @@
-import { PropsWithChildren, ReactComponentElement, useEffect } from "react";
+import { PropsWithChildren } from "react";
 import { ReactJSXElement } from "@emotion/react/types/jsx-namespace";
 import { Link } from "react-router-dom";
 import { Hotel_ROUTE } from "../../../routers/paths";
@@ -12,9 +12,6 @@ type Props = PropsWithChildren<{
 }>;
 
 export const HeaderLink = (props: Props) => {
-  // useEffect(() => {
-  //   if (!props.isDropDown) console.log(props.src);
-  // })   
   return (
     <div>
       {props.isDropDown ? 
