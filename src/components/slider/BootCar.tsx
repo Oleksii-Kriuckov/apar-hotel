@@ -7,7 +7,7 @@ type Props = {
 
 export const BootCarousel = ({ images }: Props) => {
   return (
-    <Carousel>
+    <Carousel variant="dark">
       {images.map((img, ind) => (
         <Carousel.Item key={img} style={{}}>
           <img src={img} alt={`view${ind}`} className='carousel_img' 

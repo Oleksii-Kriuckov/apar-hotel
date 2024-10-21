@@ -3,9 +3,14 @@
   width: 40px;
 }
 
-/* .carousel {
-  width: 100%;
-} */
+.carousel-indicators {
+  bottom: -40px;
+}
+.carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
 
 .carousel_img {
   display: block;
@@ -14,9 +19,9 @@
   width: initial;
 }
 
-.carousel-item {
+/* .carousel-item {
   width: 100%;
-}
+} */
 
 /* mobile style */
 @media (max-width: 428px) {

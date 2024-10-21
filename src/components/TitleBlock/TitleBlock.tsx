@@ -19,8 +19,9 @@ const TitleBlock = ({ children }: TitleBlockProps) => {
       <img src={keyhole_color} alt="keyhole_color" className="keyhole_color" />
       <img src={keyhole} alt="keyhole" className="keyhole" />
 
-      {/* <div className="title_carousel"></div> */}
-      <BootCarousel images={images} />
+      <div className="title_carousel">
+        <BootCarousel images={images} />
+      </div>
 
       <div><h1 className="h1"> {children} </h1></div>
     </div>
