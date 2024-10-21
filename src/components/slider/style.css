@@ -3,10 +3,14 @@
   width: 40px;
 }
 
-/* .carousel {
-  width: 100%;
-} */
-
+.carousel-indicators {
+  bottom: -40px;
+}
+.carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
 .carousel_img {
   display: block;
   height: 100%;
