@@ -19,9 +19,9 @@
   width: initial;
 }
 
-/* .carousel-item {
+.carousel {
   width: 100%;
-} */
+}
 
 /* mobile style */
 @media (max-width: 428px) {
@@ -61,8 +61,11 @@
   .carousel-item {
     height: 30vw;
   }
-  .carousel {
+  .article_carousel {
     width: 55vw;
+  }
+  .title_carousel {
+    width: 45vw;
   }
 }
 
@@ -70,10 +73,11 @@
 @media (min-width: 1200px) {
   .carousel-item {
     height: 30vw;
+    max-height: 600px;
   }
   .carousel {
     width: 45vw;
-    max-width: 800px;
+    max-width: 900px;
   }
 }
 

@@ -209,8 +209,12 @@
     text-align: center;
   }
 
+  .title_block {
+    gap: 60px;
+  }
+
   .keyhole_color {
-    left: 90%;
+    left: 92%;
     top: 78%;
   }
 
