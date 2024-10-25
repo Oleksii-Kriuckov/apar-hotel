@@ -28,7 +28,7 @@ function LicenseLink() {
           onClick={() => setModalShow(false)}
         />
 
-        <img src={license} alt="license" />
+        <img style={{borderRadius: 8}} src={license} alt="license" />
       </Modal>
     </>
   );

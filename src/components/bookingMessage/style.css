@@ -4,6 +4,7 @@
   border: 1px solid var(--main-color);
   padding: 25px 45px;
   position: relative;
+  border-radius: 8px;
 }
 
 .book_mes_wrap{

@@ -4,7 +4,7 @@ import { allHotels } from "../../assets/Info";
 import logo_mob from "../images/logo-mob.png";
 import logo from "../images/logo.png";
 import bell from "../images/bell.png";
-import { HeaderLink } from "../UI/Links/HeaderLink";
+import { LinkWithIcon } from "../UI/Links/LinkWithIcon";
 import { MyDropDown } from "../UI/DropDown/DropDown";
 import { reservationItems } from "../../assets/links";
 import "./style.css";
@@ -38,9 +38,9 @@ export const Header = () => {
                 ))}
               </div>
 
-              <HeaderLink isDropDown alt="bell" src={bell}>
+              <LinkWithIcon isDropDown alt="bell" src={bell}>
                 <MyDropDown items={reservationItems} styles={{ fontSize: 16 }}>Зарезервувати</MyDropDown>
-              </HeaderLink>
+              </LinkWithIcon>
 
               <div className="langs">
                 <span className="active_lang">UA</span> /

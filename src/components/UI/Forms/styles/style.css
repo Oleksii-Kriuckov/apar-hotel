@@ -2,6 +2,7 @@
   background-color: var(--main-color);
   margin: auto;
   margin-top: 40px;
+  border-radius: 8px;
 }
 
 #form_search>h4 {

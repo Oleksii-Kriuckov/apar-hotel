@@ -121,7 +121,7 @@ export const FormFeedback: React.FC = () => {
         required
       >
         <Checkbox id="confirm" checked={checked} onChange={() => setChecked(!checked)}>
-          Натискаючи кнопку «Надіслати», я даю згоду на обробку персональних даних
+          Я даю згоду на обробку персональних даних
         </Checkbox>
       </Form.Item>
 
