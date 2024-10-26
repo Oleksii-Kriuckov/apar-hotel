@@ -6,6 +6,7 @@ import {  showSuccessMessage$} from "../../../recoil/atoms";
 import "./styles/style.css";
 import "./styles/adaptive.css";
 import { useQuery } from "../../../hooks/useQuery";
+import { enterTel } from "../../../functions/functions";
 
 const { Option } = Select;
 const { useBreakpoint } = Grid;
@@ -80,12 +81,8 @@ export const FormBooking: React.FC = () => {
               addonBefore={prefixSelector}
               style={{ width: "100%" }}
               placeholder="965123456"
-              // value={phone}
-              // onChange={(value) => {
-              //   if (value && Number(value) < 0) Math.abs(Number(value))
-              //   console.log(value)
-              //   setPhone(Number(value))
-              // }}
+              controls={false}
+              onKeyDown={enterTel}
             />
           </Form.Item>
 
