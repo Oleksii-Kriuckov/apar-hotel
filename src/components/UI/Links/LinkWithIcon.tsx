@@ -11,7 +11,7 @@ type Props = PropsWithChildren<{
   isDropDown: boolean; 
 }>;
 
-export const HeaderLink = (props: Props) => {
+export const LinkWithIcon = (props: Props) => {
   return (
     <div>
       {props.isDropDown ? 
@@ -25,7 +25,7 @@ export const HeaderLink = (props: Props) => {
         {props.children}
       </Link>
       :
-      <a href={`tel:${props.children}`} className="header-link d-flex align-items-md-baseline">
+      <a href={`tel:${props.children}`} className="icon_link d-flex align-items-md-baseline">
         {props.src && <img src={props.src} alt={props.alt} className="linkImg me-1" />}
         {props.children}
       </a> } 

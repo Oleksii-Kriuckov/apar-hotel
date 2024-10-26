@@ -21,18 +21,13 @@
 .media_links {
   display: flex;
 }
-/* 
-.linkImg {
-  width: 32px;
-  height: 32px;
-} */
 
-.header-link {
+.icon_link {
   font-family: "Gilroy", sans-serif;
   font-weight: 400;
   color: black;
 }
 
-.header-link:hover {
+.icon_link:hover {
   color: var(--hover-link);
 }

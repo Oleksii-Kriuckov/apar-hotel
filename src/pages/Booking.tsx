@@ -13,6 +13,7 @@ import SuccessBooking from "../components/bookingMessage/SuccessBooking";
 import { CSSTransition } from 'react-transition-group';
 import { isObjectRoom } from "../functions/isObject";
 import '../components/bookingMessage/style.css'
+import '../components/UI/Links/style.css'
 
 const Booking = () => {
   const { city, hotel, number } = useParams();
@@ -67,8 +68,8 @@ const Booking = () => {
         <div>
           <ul className="contacts">
             <li>{findHotel!.address}</li>
-            <li>{findHotel!.tel}</li>
-            <li>{findHotel!.email}</li>
+            <li><a className="icon_link" href={`tel:+${findHotel!.tel}`}>{findHotel!.tel}</a></li>
+            <li><a className="icon_link" href={`mailto:${findHotel!.email}`}>{findHotel!.email}</a></li>
           </ul>
           <MediaLinks />
         </div>
