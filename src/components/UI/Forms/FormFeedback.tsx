@@ -5,6 +5,7 @@ import { DropeZone } from "./DropeZone";
 import { useSetRecoilState } from "recoil";
 import { isShowModalFeedback$ } from "../../../recoil/atoms";
 import "./styles/style.css";
+import { enterTel } from "../../../functions/functions";
 
 const { Option } = Select;
 const { TextArea } = Input;
@@ -74,6 +75,8 @@ export const FormFeedback: React.FC = () => {
             minLength={7}
             addonBefore={prefixSelector}
             placeholder="965123456"
+            controls={false}
+            onKeyDown={enterTel}
           />
         </Form.Item>
 

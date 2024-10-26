@@ -21,3 +21,10 @@ export const formatDays = (value: [Dayjs, Dayjs]): [number, number] => {
   value[1] = value[1].set("hour", 12).set("minute", 0).set("second", 0)
   return [value[0].valueOf(), value[1].valueOf()]
 }
+
+export const enterTel = (e: React.KeyboardEvent) => {
+  if (e.key.search(/[0-9]/) === -1 && e.key !== 'Backspace' && e.key !== 'Tab' && e.key !== 'Delete') {
+      e.preventDefault()
+      // console.log("Not a number")
+  }
+}
