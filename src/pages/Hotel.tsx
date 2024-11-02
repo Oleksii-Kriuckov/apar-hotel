@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import FormSearch from "../components/UI/Forms/FormSearch";
 import RoomBlock from "../components/roomBlock/RoomBlock";
 import Welcome from "../components/welcomeBlock/Welcome";
@@ -8,6 +8,7 @@ import { useRecoilState } from "recoil";
 import { unoccupiedRooms$, showNotFindMessage$ } from "../recoil/atoms";
 import { info_ua } from "../assets/Info";
 import ModalWindow from "../components/ModalWindow/ModalWindow";
+import { Booking_ROUTES } from "../routers/paths";
 
 const Hotel = () => {
   const { city, hotel } = useParams();
@@ -16,17 +17,18 @@ const Hotel = () => {
   const [showNotFindMessage, setShowNotFindMessage] = useRecoilState(showNotFindMessage$)
 
   useEffect(() => {
-    // console.log(freeRooms)
-    return (
-      setFreeRooms([]),
-      setShowNotFindMessage(false)
-    )
+    return () => {
+      if (!location.pathname.includes('about-room') && !Booking_ROUTES.includes(location.pathname)) {
+        setFreeRooms([]),
+        setShowNotFindMessage(false)
+      }
+    }
   }, [])
 
   return (
     <>
-      <ModalWindow/>
-      
+      <ModalWindow />
+
       <h3
         className="header_h3"
         style={{ textAlign: "center", marginBottom: 0 }}

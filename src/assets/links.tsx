@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 export const links = [
   { link: "Готелі", to: MainPage_ROUTE },
   { link: "Про готелі", to: Booking_ROUTE },
-  { link: "Бронювання", to: '/kyiv/'},
+  { link: "Бронювання", to: '/kyiv'},
   { link: "Зворотній зв'язок", to: Feedback_ROUTE },
 ];
 
@@ -27,7 +27,7 @@ export const telLinks = hotels.map((hotel, ind) => {
 export const reservationItems = hotels.map((hotel, ind) => {
   return {
     key: `${ind}`,
-    label: <MyHookLink to={`/${hotel.city.toLocaleLowerCase()}/${hotel.name.toLocaleLowerCase()}/`}>
+    label: <MyHookLink to={`/${hotel.city.toLocaleLowerCase()}/${hotel.name.toLocaleLowerCase()}`}>
       {`${hotel.name} (${hotel.city_ua})`}
     </MyHookLink>,
   }

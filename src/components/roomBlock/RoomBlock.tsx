@@ -1,9 +1,9 @@
-import conveniences from "../images/conveniences.png";
 import { Button } from "antd";
 import { useParams } from "react-router-dom";
 import { IRoom } from "../../assets/types";
 import { useAppNav } from "../../hooks/useAppNav";
 import "./style.css";
+import { RoomInfo } from "./RoomInfo";
 
 type RoomBlockProps = {
   roomInfo: IRoom;
@@ -26,18 +26,7 @@ const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
             </div>
           </div>
 
-          <div className="room_info">
-            <ul>
-              <li>Номер: {roomInfo.number}</li>
-              <li>Поверх: {roomInfo.floor}</li>
-              <li>Кількість осіб: {roomInfo.persons}</li>
-            </ul>
-            <img
-              src={conveniences}
-              alt="conveniences"
-              className="conveniences"
-            />
-          </div>
+          <RoomInfo roomInfo={roomInfo}/>
         </div>
       </div>
 

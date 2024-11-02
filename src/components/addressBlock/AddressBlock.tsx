@@ -5,17 +5,25 @@ import { MyMapContainer } from "../../map/MyMapContainer";
 import { MapChild } from "../../map/MapChild";
 import { IHotelInfo } from "../../assets/types";
 import { LinkWithIcon } from "../UI/Links/LinkWithIcon";
+import { RoomInfo } from "../roomBlock/RoomInfo";
 import phone from "../images/Phone.png";
 import "./style/style.css";
 import "./style/adaptive.css";
+import { useRecoilState } from "recoil";
+import { bookingRoom$ } from "../../recoil/atoms";
+import { useAppNav } from "../../hooks/useAppNav";
 
 type AddressBlockProps = {
   hotelInfo: IHotelInfo;
+  descriptionRoomPage?: boolean
 };
 
-export const AddressBlock = ({ hotelInfo }: AddressBlockProps) => {
+export const AddressBlock = ({ hotelInfo, descriptionRoomPage }: AddressBlockProps) => {
   let navigate = useNavigate();
   const { city } = useParams();
+  const [bookingRoom, setBookingRoom] = useRecoilState(bookingRoom$)
+  // @ts-ignore
+  const { navigateBooking, navigateAboutRoom } = useAppNav(bookingRoom, city!)
 
   return (
     <section className="address_block d-flex flex-column flex-md-row-reverse gap-md-4">
@@ -32,19 +40,23 @@ export const AddressBlock = ({ hotelInfo }: AddressBlockProps) => {
           <LinkWithIcon alt="phone" src={phone} isDropDown={false}>{`${hotelInfo.tel}`}</LinkWithIcon>
         </div>
 
-        <ul>
-          {hotelInfo.conveniences.map((element, ind) => (
-            <li key={ind}>{element}</li>
-          ))}
-        </ul>
-        
+        {descriptionRoomPage ?
+          <RoomInfo roomInfo={bookingRoom} descriptionRoomPage /> :
+          <ul>
+            {hotelInfo.conveniences.map((element, ind) => (
+              <li key={ind}>{element}</li>
+            ))}
+          </ul>
+        }
+
         <div className="address_block_buttons">
           <Button
             size="large"
             type="primary"
             className="address_block_btn booking_btn"
-            onClick={() =>
-              navigate(`/${city}/${hotelInfo.hotelName.toLowerCase()}`)
+            onClick={descriptionRoomPage ?
+              navigateBooking :
+              () => navigate(`/${city}/${hotelInfo.hotelName.toLowerCase()}`)
             }
           >
             Забронювати
@@ -52,9 +64,14 @@ export const AddressBlock = ({ hotelInfo }: AddressBlockProps) => {
 
           <Button
             size="large"
-            href="#"
             className="address_block_btn ghost_button"
-            onClick={() => {navigate(`/${city}/${hotelInfo.hotelName.toLowerCase()}/about-hotel`)}}
+            onClick={descriptionRoomPage ?
+              () => { window.scrollTo(0, 0) } :
+              () => {
+                navigate(`/${city}/${hotelInfo.hotelName.toLowerCase()}/about-hotel`)
+                window.scrollTo(0, 0)
+              }
+            }
           >
             Детальніше
           </Button>
