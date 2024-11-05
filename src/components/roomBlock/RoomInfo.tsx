@@ -14,7 +14,7 @@ export const RoomInfo = ({roomInfo, descriptionRoomPage}: Props) => {
         <li>Номер: {roomInfo.number}</li>
         <li>Поверх: {roomInfo.floor}</li>
         <li>Кількість осіб: {roomInfo.persons}</li>
-        {descriptionRoomPage && <li>Ціна: {roomInfo.price}</li>}
+        {descriptionRoomPage && <li>Ціна: {roomInfo.price} грн</li>}
       </ul>
       <img
         src={conveniences}

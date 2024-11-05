@@ -72,7 +72,6 @@ export const FormBooking: React.FC = () => {
             rules={[
               { required: true, message: "Будь ласка, введіть номер телефону!" },
               { type: "integer", message: "Номер має бути цілим числом" },
-              // Don't work positive rule
             ]}
           >
             <InputNumber

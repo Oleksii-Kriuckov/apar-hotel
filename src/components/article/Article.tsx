@@ -1,5 +1,8 @@
 import { PropsWithChildren, ReactNode } from "react";
+import { useNavigate } from "react-router-dom";
+import { Button } from 'antd'
 import { BootCarousel } from "../Slider/BootCar";
+import { LeftOutlined } from "@ant-design/icons";
 import "./style.css";
 import '../Slider/style.css'
 
@@ -8,6 +11,8 @@ type ArticleProps = PropsWithChildren<{
 }>;
 
 export const Article = ({ children, images, isHotelPage, description }: ArticleProps) => {
+  let navigate = useNavigate();
+
   return (
     <>
       {isHotelPage ?
@@ -40,6 +45,15 @@ export const Article = ({ children, images, isHotelPage, description }: ArticleP
           <div className="article_header">
             <h3 className="header_h3" id="about_hotel">{children}</h3>
             <span style={{ whiteSpace: "pre-line" }}>{description}</span>
+            <Button
+              className="booking_btn back_btn d-flex align-items-center mx-auto"
+              type="primary"
+              size="large"
+              onClick={() => navigate(-1)}
+            >
+              <LeftOutlined />
+              Назад до списку кімнат
+            </Button>
           </div>
         </article>
       }

@@ -53,9 +53,12 @@ hr {
   background-color: var(--main-color);
   color: black;
 }
-
 .booking_btn:disabled {
   background-color: rgba(255, 192, 0, 0.4);
+}
+
+.back_btn {
+  margin-top: 25px;
 }
 
 .show_place {

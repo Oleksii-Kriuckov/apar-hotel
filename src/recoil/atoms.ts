@@ -1,11 +1,15 @@
 import { atom } from "recoil";
 import { IRoom } from "../assets/types";
-import dayjs from "dayjs";
-import { formatDays } from "../functions/functions";
+import dayjs, { Dayjs } from "dayjs";
 
-export const dateRange$ = atom<[number, number]>({
-  key: 'dateRange',
-  default: formatDays([dayjs(), dayjs().add(1, "day")])
+export const datePickerRange$ = atom<[Dayjs, Dayjs]>({
+  key: 'datePickerRange',
+  default: [dayjs(), dayjs().add(1, "day")]
+})
+
+export const persons$ = atom<number>({
+  key: 'persons',
+  default: 1
 })
 
 export const unoccupiedRooms$ = atom<IRoom[]>({

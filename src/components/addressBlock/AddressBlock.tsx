@@ -1,4 +1,3 @@
-// import ColorButton from "../UI/Buttons/ColorButton";
 import { Button } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
 import { MyMapContainer } from "../../map/MyMapContainer";
@@ -7,11 +6,11 @@ import { IHotelInfo } from "../../assets/types";
 import { LinkWithIcon } from "../UI/Links/LinkWithIcon";
 import { RoomInfo } from "../roomBlock/RoomInfo";
 import phone from "../images/Phone.png";
-import "./style/style.css";
-import "./style/adaptive.css";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import { bookingRoom$ } from "../../recoil/atoms";
 import { useAppNav } from "../../hooks/useAppNav";
+import "./style/adaptive.css";
+import "./style/style.css";
 
 type AddressBlockProps = {
   hotelInfo: IHotelInfo;
@@ -21,9 +20,8 @@ type AddressBlockProps = {
 export const AddressBlock = ({ hotelInfo, descriptionRoomPage }: AddressBlockProps) => {
   let navigate = useNavigate();
   const { city } = useParams();
-  const [bookingRoom, setBookingRoom] = useRecoilState(bookingRoom$)
-  // @ts-ignore
-  const { navigateBooking, navigateAboutRoom } = useAppNav(bookingRoom, city!)
+  const bookingRoom = useRecoilValue(bookingRoom$)
+  const { navigateBooking } = useAppNav(bookingRoom, city!)
 
   return (
     <section className="address_block d-flex flex-column flex-md-row-reverse gap-md-4">
@@ -41,6 +39,7 @@ export const AddressBlock = ({ hotelInfo, descriptionRoomPage }: AddressBlockPro
         </div>
 
         {descriptionRoomPage ?
+          // @ts-ignore
           <RoomInfo roomInfo={bookingRoom} descriptionRoomPage /> :
           <ul>
             {hotelInfo.conveniences.map((element, ind) => (

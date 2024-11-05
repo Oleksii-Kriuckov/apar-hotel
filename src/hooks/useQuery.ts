@@ -4,14 +4,18 @@ import { HotelNames, IRoom } from "../assets/types";
 import { useRecoilValue, useSetRecoilState, useRecoilState } from "recoil";
 import {
   unoccupiedRooms$,
-  dateRange$,
   bookingRoom$,
   showNotFindMessage$,
   showBookingForm$,
-  showSuccessMessage$
+  showSuccessMessage$,
+  // datePickerRange$,
+  // persons$
 } from "../recoil/atoms";
 import { dataBaseName } from "../assets/env";
 import { isObjectRoom } from "../functions/isObject";
+import { stampDateFrom$, stampDateTo$ } from "../recoil/selectors";
+// import dayjs from "dayjs";
+
 
 export const useQuery = () => {
   const setUnoccupiedRooms = useSetRecoilState(unoccupiedRooms$);
@@ -19,7 +23,10 @@ export const useQuery = () => {
   const showNotFindMessage = useSetRecoilState(showNotFindMessage$)
   const setShowBookingForm = useSetRecoilState(showBookingForm$);
   const showSuccessMessage = useSetRecoilState(showSuccessMessage$);
-  const dateRange = useRecoilValue(dateRange$);
+  // const setDatePickerRange = useSetRecoilState(datePickerRange$);
+  // const setPersons = useSetRecoilState(persons$);
+  const stampDateFrom = useRecoilValue(stampDateFrom$);
+  const stampDateTo = useRecoilValue(stampDateTo$);
 
   function queryRooms(hotel: HotelNames, persons: number = 1, number?: number) {
     const q = query(collection(db, dataBaseName));
@@ -42,7 +49,7 @@ export const useQuery = () => {
         // filter occupied rooms
         const freeRooms = allHotelRooms.filter((room) => {
           return room.occupied.every(oc => {
-            return (oc.checkIn > dateRange[1] || oc.checkOut < dateRange[0])
+            return (oc.checkIn > stampDateTo || oc.checkOut < stampDateFrom)
           })
         });
 
@@ -64,16 +71,18 @@ export const useQuery = () => {
 
       if (items) {
         updateDoc(base, {
-          occupied: [items, { checkIn: dateRange[0], checkOut: dateRange[1] }],
+          occupied: [items, { checkIn: stampDateFrom, checkOut: stampDateTo }],
         });
       } else {
         updateDoc(base, {
-          occupied: [{ checkIn: dateRange[0], checkOut: dateRange[1] }],
+          occupied: [{ checkIn: stampDateFrom, checkOut: stampDateTo }],
         });
       }
     }
     setShowBookingForm(false);
     showSuccessMessage(true);
+    // setDatePickerRange([dayjs(), dayjs().add(1, "day"),])
+    // setPersons(1)
   }
   return { queryRooms, bookRoom };
 };
