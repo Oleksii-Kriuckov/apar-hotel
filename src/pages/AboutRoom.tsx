@@ -34,7 +34,7 @@ const AboutRoom = () => {
         About <span className="highlight">room #{number}</span> of <span className="highlight">{findHotel?.hotelName!.replace('-', ' ')!}</span> hotel
         {/* Про <span className="highlight">номер {number}</span> готеля <span className="highlight">{findHotel?.hotelName!.replace('-', ' ')!}</span> */}
       </Article>
-      <AddressBlock hotelInfo={findHotel!} />
+      <AddressBlock hotelInfo={findHotel!} descriptionRoomPage />
     </div>
   );
 };

@@ -8,6 +8,7 @@ import { useRecoilState } from "recoil";
 import { unoccupiedRooms$, showNotFindMessage$ } from "../recoil/atoms";
 import { info_en } from "../assets/Info";
 import ModalWindow from "../components/ModalWindow/ModalWindow";
+import { Booking_ROUTES } from "../routers/paths";
 
 const Hotel = () => {
   const { city, hotel } = useParams();
@@ -16,11 +17,13 @@ const Hotel = () => {
   const [showNotFindMessage, setShowNotFindMessage] = useRecoilState(showNotFindMessage$)
 
   useEffect(() => {
-    // console.log(freeRooms)
-    return (
-      setFreeRooms([]),
-      setShowNotFindMessage(false)
-  )}, [])
+    return () => {
+      if (!location.pathname.includes('about-room') && !Booking_ROUTES.includes(location.pathname)) {
+        setFreeRooms([]),
+        setShowNotFindMessage(false)
+      }
+    }
+  }, [])
 
   return (
     <>

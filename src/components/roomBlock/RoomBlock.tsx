@@ -3,6 +3,7 @@ import { Button } from "antd";
 import { useParams } from "react-router-dom";
 import { IRoom } from "../../assets/types";
 import { useAppNav } from "../../hooks/useAppNav";
+import { RoomInfo } from "./RoomInfo";
 import "./style.css";
 
 type RoomBlockProps = {
@@ -26,18 +27,7 @@ const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
             </div>
           </div>
 
-          <div className="room_info">
-            <ul>
-              <li>Number: {roomInfo.number}</li>
-              <li>Floor: {roomInfo.floor}</li>
-              <li>Persons: {roomInfo.persons}</li>
-            </ul>
-            <img
-              src={conveniences}
-              alt="conveniences"
-              className="conveniences"
-            />
-          </div>
+          <RoomInfo roomInfo={roomInfo}/>
         </div>
       </div>
 
