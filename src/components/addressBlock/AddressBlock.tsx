@@ -5,12 +5,12 @@ import { MapChild } from "../../map/MapChild";
 import { IHotelInfo } from "../../assets/types";
 import { LinkWithIcon } from "../UI/Links/LinkWithIcon";
 import phone from "../images/Phone.png";
-import "./style/style.css";
-import "./style/adaptive.css";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import { bookingRoom$ } from "../../recoil/atoms";
 import { RoomInfo } from "../roomBlock/RoomInfo";
 import { useAppNav } from "../../hooks/useAppNav";
+import "./style/style.css";
+import "./style/adaptive.css";
 // import useUserGeoLocation from "../../hooks/useGeoLocation";
 // import useLocation from "../../hooks/useLocation";
 
@@ -22,9 +22,8 @@ type AddressBlockProps = {
 export const AddressBlock = ({ hotelInfo, descriptionRoomPage }: AddressBlockProps) => {
   let navigate = useNavigate();
   const { city } = useParams();
-  const [bookingRoom, setBookingRoom] = useRecoilState(bookingRoom$)
-  // @ts-ignore
-  const { navigateBooking, navigateAboutRoom } = useAppNav(bookingRoom, city!)
+  const bookingRoom = useRecoilValue(bookingRoom$)
+  const { navigateBooking } = useAppNav(bookingRoom, city!)
 
   // const { position } = useUserGeoLocation();
   // const { userLocation } = useLocation(position);

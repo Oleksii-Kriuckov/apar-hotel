@@ -62,6 +62,10 @@ hr {
   margin-top: 25px;
 }
 
+.back_btn {
+  margin-top: 25px;
+}
+
 .days_range {
   color: var(--main-color);
   text-transform: capitalize;

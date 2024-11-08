@@ -4,9 +4,9 @@ import codes from "../../../assets/codes.json";
 import { useSetRecoilState } from "recoil";
 import {  showSuccessMessage$} from "../../../recoil/atoms";
 import { useQuery } from "../../../hooks/useQuery";
+import { enterTel } from "../../../functions/functions";
 import "./styles/style.css";
 import "./styles/adaptive.css";
-import { enterTel } from "../../../functions/functions";
 
 const { Option } = Select;
 const { useBreakpoint } = Grid;
@@ -15,7 +15,6 @@ export const FormBooking: React.FC = () => {
   const screens = useBreakpoint();
   const [form] = Form.useForm();
   const { bookRoom } = useQuery()
-  // const [phone, setPhone] = useState(null);
 
   const showSuccessMessage = useSetRecoilState(showSuccessMessage$);
 

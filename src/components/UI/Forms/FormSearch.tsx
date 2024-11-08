@@ -5,11 +5,12 @@ import dayjs, { Dayjs } from "dayjs";
 import type { RangePickerProps } from "antd/es/date-picker";
 import { useEffect, useState } from "react";
 import { optionsForGuests } from "../../../assets/Info";
-import { useSetRecoilState } from "recoil";
-import { dateRange$ } from "../../../recoil/atoms";
+import { useRecoilState, useSetRecoilState } from "recoil";
+import { datePickerRange$, persons$ } from "../../../recoil/atoms";
 import { HotelNames } from "../../../assets/types";
 import { useQuery } from "../../../hooks/useQuery";
 import "./styles/style.css";
+import { Booking_ROUTES } from "../../../routers/paths";
 
 const { RangePicker } = DatePicker;
 
@@ -20,23 +21,22 @@ const disabledPastDate: RangePickerProps["disabledDate"] = (current) => {
 
 const FormSearch = () => {
   const { city, hotel } = useParams();
-  const setDateRange = useSetRecoilState(dateRange$);
   const { queryRooms } = useQuery();
-  const [persons, setPersons] = useState(1)
-  const [datePickerValue, setDatePickerValue] = useState<[Dayjs, Dayjs]>([
-    dayjs(),
-    dayjs().add(1, "day"),
-  ]);
+  const [persons, setPersons] = useRecoilState(persons$)
+  const [datePickerValue, setDatePickerValue] = useRecoilState<[Dayjs, Dayjs]>(datePickerRange$);
 
   useEffect(() => {
-    setDatePickerValue([dayjs(), dayjs().add(1, "day"),])
-    setPersons(1)
-  }, [hotel])
+    return () => {
+      if (!location.pathname.includes('about-room') && !Booking_ROUTES.includes(location.pathname)) {
+        setDatePickerValue([dayjs(), dayjs().add(1, "day"),])
+        setPersons(1)
+      }
+    }
+  }, [])
 
   const changeDatePickerRange = (value: [Dayjs, Dayjs]) => {
     if (value) {
       setDatePickerValue(value)
-      setDateRange(formatDays(value));
     }
   };
 
