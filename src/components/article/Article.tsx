@@ -49,8 +49,8 @@ export const Article = ({ children, images, isHotelPage, description }: ArticleP
               size="large"
               onClick={() => navigate(-1)}
             >
-              <LeftOutlined />
-              Назад до списку кімнат
+              <LeftOutlined style={{marginTop: 1}}/>
+              Back to the rooms list
             </Button>
           </div>
         </article>
