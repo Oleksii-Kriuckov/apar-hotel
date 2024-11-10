@@ -1,125 +1,139 @@
 import { IHotelsInCity } from "./types";
-import LuxuryRoom11 from "../components/images/rooms/LuxuryRoom11.jpg";
-import LuxuryRoom12 from "../components/images/rooms/LuxuryRoom12.jpg";
-import LuxuryRoom13 from "../components/images/rooms/LuxuryRoom13.jpg";
-import LuxuryRoom14 from "../components/images/rooms/LuxuryRoom14.jpg";
-import LuxuryRoom21 from "../components/images/rooms/LuxuryRoom21.jpg";
-import LuxuryRoom22 from "../components/images/rooms/LuxuryRoom22.jpg";
-import LuxuryRoom23 from "../components/images/rooms/LuxuryRoom23.jpg";
-import IndependenceRoom11 from "../components/images/rooms/IndependenceRoom11.jpg";
-import IndependenceRoom12 from "../components/images/rooms/IndependenceRoom12.jpg";
-import IndependenceRoom13 from "../components/images/rooms/IndependenceRoom13.jpg";
-import IndependenceRoom14 from "../components/images/rooms/IndependenceRoom14.jpg";
-import Code10Room11 from "../components/images/rooms/Code10Room11.jpg";
-import Code10Room12 from "../components/images/rooms/Code10Room12.jpg";
-import Code10Room21 from "../components/images/rooms/Code10Room21.jpg";
-import Code10Room22 from "../components/images/rooms/Code10Room22.jpg";
-import Code10Room31 from "../components/images/rooms/Code10Room31.jpg";
-import Code10Room32 from "../components/images/rooms/Code10Room32.jpg";
-import Code10Bath from "../components/images/rooms/Code10Bath.jpg";
-import IndependenceBathroom from "../components/images/rooms/IndependenceBathroom.jpg";
-import LuxuryBath from "../components/images/rooms/LuxuryBath.jpg";
-import restaurant from "../components/images/rooms/restaurant.jpg";
-import restaurant2 from "../components/images/rooms/restaurant2.jpg";
-import pool from "../components/images/rooms/pool.jpg";
+import ArenaSummitRoom22V2 from "../../public/rooms/Arena-Summit/room22/room22-view2.png";
+import ArenaSummitBathroom24 from "../../public/rooms/Arena-Summit/room24/bathroom24-view1.png";
+import ArenaSummitRoom32V3 from "../../public/rooms/Arena-Summit/room33/room33-view1.png";
+
+import Code10Room21 from "../../public/rooms/Code10/room21/room21-view1.jpg";
+import Code10Room31 from "../../public/rooms/Code10/room23/room23-view1.png";
+import Code10Bath from "../../public/rooms/Code10/room21/room21-bathroom.jpg";
+
+import TiSORoom43 from "../../public/rooms/TiSO/room43/room43-view1.png";
+import TisoBath from "../../public/rooms/TiSO/room32/room32-v5.png";
+import TisoRestaurant from "../../public/rooms/restaurant1.jpg";
+
+export const hotels = [
+  { city: "Kyiv", city_ua: "Київ", name: 'Arena-Summit', tel: "+380996619218" },
+  { city: "Kyiv", city_ua: "Київ", name: 'Tiso', tel: "+380952805220" },
+  { city: "Lviv", city_ua: "Львів", name: 'Code-10', tel: "+380682975027" },
+]
 
 export const allHotels: IHotelsInCity[] = [
   {
     city: "Kyiv",
+    city_ua: 'Київ',
     hotelsInfo: [
       {
-        hotelName: "Luxury",
-        address: "bul. of Lesia Ukrayinka 7",
-        tel: "+380675386767",
-        email: "luxury@apart-hotel.com",
+        hotelName: "Arena-Summit",
+        // address: "bul. of Lesia Ukrayinka 3",
+        address: "бул. Лесі Українки, 3",
+        tel: "+380996619218",
+        email: "arena-summit@apart-hotel.com",
         coordinates: { lat: 50.43293422168239, lng: 30.53353608991025 },
         conveniences: [
-          "Convenient location",
-          "Car parking",
-          "Near iconic sights",
-          "Green area",
-          "Laundry service, luggage storage, coffee snack vending machines",
-          "up to 40 people",
+          "Зручне розташування",
+          "Парковка авто",
+          "Комфортні ліжка та подушки з білосніжною білизною",
+          "Зелена зона",
+          "Пральня, кімната зберігання багажу, автомати з продажу кави та снеків",
+          "Можемо прийняти до 26 осіб",
         ],
-        // rooms: [
-        //   {hotel: 'Luxury', id: 1, floor: 1, number: 11, image: LuxuryRoom11, persons: 4, price: 2400, occupied: [{checkIn: 0, checkOut: 0}] },
-        //   {hotel: 'Luxury', id: 2, floor: 1, number: 12, image: LuxuryRoom12, persons: 3, price: 2000, occupied: [{checkIn: 0, checkOut: 0}] },
-        //   {hotel: 'Luxury', id: 3, floor: 1, number: 13, image: LuxuryRoom13, persons: 2, price: 2200, occupied: [{checkIn: 0, checkOut: 0}] },
-        //   {hotel: 'Luxury', id: 4, floor: 1, number: 14, image: LuxuryRoom14, persons: 2, price: 2200, occupied: [{checkIn: 0, checkOut: 0}] },
-        //   {hotel: 'Luxury', id: 5, floor: 2, number: 21, image: LuxuryRoom21, persons: 2, price: 2000, occupied: [{checkIn: 0, checkOut: 0}] },
-        //   {hotel: 'Luxury', id: 6, floor: 2, number: 22, image: LuxuryRoom22, persons: 2, price: 2000, occupied: [{checkIn: 0, checkOut: 0}] },
-        //   {hotel: 'Luxury', id: 7, floor: 2, number: 23, image: LuxuryRoom23, persons: 2, price: 2500, occupied: [{checkIn: 0, checkOut: 0}] },
-        // ],
+        // description: `Arena Summit Apart Hotel is suitable for both families and business trips. 
+        // Upon request, accommodation in family rooms and non-smoking rooms. The location in the city center. 
+
+        //   The hotel is very comfortable and cozy, the interior is made in a modern style. 
+        //   Absolutely all furniture was designed with maximum convenience for guests. All rooms equipped with mini-kitchenettes for a comfortable long stay. 
+        //   24/7 reception and excellent service, including free Wi-Fi (in rooms and public areas), luggage storage, safe, laundry room, room service and fire alarm system are created for a comfortable stay of our guests.
+          
+        //   The upper floors can be easily reached by elevator or stairs. Those arriving with their own car can use the garage or parking lot. Shuttle bus services are available for a fee.`,
+        description: `Готель Arena Summit підійде як для сімейного відпочинку, так і для бізнес подорожей. Розташований в центі міста.
+        За запитом розміщення в сімейних номерах та номерах для некурців.
+        
+        Готель дуже комфортний та затишний, інтер'єр зроблений в сучасному стилі.
+        Абсолютно всі меблі розроблені з максимальною зручністю для гостей. Більшість кімнат оснащені власними міні-кухнями для довгого комфортного перебування.
+        Цілодобовий ресепшн та бездоганий сервіс, включаючи безкоштовний Wi-Fi (в кімнатах та публічних місцях), кімната зберігання багажу, сейф, пральня, обслуговування номерів та протипожежна сигналізація зроблять комфортним перебування для наших гостей.
+        
+        На верхні поверхи можна легко піднятися на ліфті або сходами. Ті, хто приїжджає на власному автомобілі, можуть скористатися гаражем або автостоянкою. За окрему плату надаються послуги трансферу до аеропорту.`,
         images: {
-          forSlider: [LuxuryRoom12, restaurant2, pool, LuxuryBath],
+          forSlider: [ArenaSummitRoom22V2, ArenaSummitRoom32V3, ArenaSummitBathroom24],
         },
       },
       {
-        hotelName: "Independence",
-        address: "Mala Zhytomyrska street, 20D",
-        tel: "+380672466777",
-        email: "independence@apart-hotel.com",
+        hotelName: "Tiso",
+        address: "вул. Жилянська, 59",
+        // address: "Zhylianska, street 59",
+        tel: "+380952805220",
+        email: "tiso@apart-hotel.com",
         coordinates: { lat: 50.4545998769799, lng: 30.520113578857607 },
         conveniences: [
-          "Location - city center",
-          "Car parking",
-          "Comfortable beds and pillows",
-          "Everything is very clean, including snow-white linen",
-          "In the common area there is a full kitchen, a washing machine, an iron, in general, everything is like at home",
-          "up to 40 people",
+          "Розташування - центр міста",
+          "Підземна парковка",
+          "Поруч знакові пам'ятки",
+          "Затишні номери",
+          "2 ресторани та замовлення їжі в номер",
+          "В зоні загального користування повна кухня, пральна машина, праска, загалом все як вдома",
+          "Готові прийняти до 24 осіб",
         ],
-        // rooms: [
-        //   {hotel: 'Independence', id: 8, floor: 1, number: 11, image: IndependenceRoom11, persons: 3, price: 1900, occupied: [{checkIn: 0, checkOut: 0}] },
-        //   {hotel: 'Independence', id: 9, floor: 1, number: 12, image: IndependenceRoom12, persons: 3, price: 1900, occupied: [{checkIn: 0, checkOut: 0}] },
-        //   {hotel: 'Independence', id: 10, floor: 1, number: 13, image: IndependenceRoom13, persons: 2, price: 1600, occupied: [{checkIn: 0, checkOut: 0}] },
-        //   {hotel: 'Independence', id: 11, floor: 1, number: 14, image: IndependenceRoom14, persons: 2, price: 1700, occupied: [{checkIn: 0, checkOut: 0}] },
-        // ],
+        // description: `Our hotel very harmoniously combines all the necessary requirements for living of a modern person. The rooms are apartment format, but with hotel service and security. 
+        
+        // Each room at Tiso ApartHotel includes bright décor, an air conditioner, a minibar, a flat-screen TV, and bathrooms come with a hairdryer. Among other amenities, all rooms have WiFi (free of charge). Non-smoking rooms are available. The elevator will take you to the upper floors. A safe, 24-hour security, room service and laundry are not a complete list of amenities at this hotel. WiFi in public areas.
+
+        // Restaurants can be found on the ground and 1st floors of the residential estate and several dining options are also available within a 5-minute walk of the property.
+
+        // Our hotel has its own parking lot. Shuttle bus services to Boryspil Airport are available for a fee.`,
+        description: `Наш готель дуже гармонійно поєднує в собі всі необхідні вимоги для проживання сучасної людини. Номери квартирного формату, але з готельним сервісом та охороною.
+        
+        Усі номери апарт-готелю Tiso оформлені в яскравих тонах і оснащені кондиціонером, міні-баром, телевізором із плоским екраном і ванною кімнатою з феном. Серед інших зручностей у всіх номерах є Wi-Fi (безкоштовно). Є номери для некурців. На верхні поверхи вас підніме ліфт. Сейф, цілодобова охорона, обслуговування номерів і пральня - далеко не повний перелік зручностей цього готелю. WiFi в громадських місцях.
+        
+        На першому та другому поверхах готельного комплексу працюють ресторани, а в межах 5 хвилин ходьби від закладу працюють кілька закладів харчування.
+        Наш готель має власну автостоянку. Трансфер до аеропорту Бориспіль надається за додаткову плату.`,
         images: {
-          forSlider: [IndependenceRoom11, restaurant, IndependenceBathroom],
+          forSlider: [TiSORoom43, TisoBath, TisoRestaurant],
         },
       },
     ],
-    description: `In our hotels, all the necessary requirements for living a modern person are very harmoniously combined. The rooms are apartment format, but with hotel service and security. Fully comply with the requirements of the new law on hotels.
-    
-    All apartments are equipped with a kitchen and everything you need for self-catering, a private bathroom with a shower. They are small but have everything you need. A special highlight is a sleeping place on the mezzanine floor. It will be convenient for you to live with us, both for one day and for a long period. 
-    
-    In the apartments for the use of guests - bed linen, towels, toiletries, hair dryer, dishes, tea and coffee - free of charge.`,
   },
   {
     city: "Lviv",
+    city_ua: "Львів",
     hotelsInfo: [
       {
-        hotelName: "Code",
-        address: "street of Bohdan Khmelnytskyi, 157",
+        hotelName: "Code-10",
+        address: "вул. Богдана Хмельницького, 157",
+        // address: "street of Bohdan Khmelnytskyi, 157",
         tel: "+380682975027",
-        email: "code@apart-hotel.com",
+        email: "code-10@apart-hotel.com",
         coordinates: { lat: 49.85410453856136, lng: 24.043041132804692 },
         conveniences: [
-          "Convenient location",
-          "Car parking",
-          "Close to malls, grocery stores",
-          "Quiet place",
-          "Laundry service, luggage storage, coffee snack vending machines",
-          "up to 20 people",
+          "Зручне розташування",
+          "Парковка авто",
+          "Близько торгрвельні центри, продуктові магазини",
+          "Затишне, тихе місце",
+          "Пральня, кімната зберігання багажу, автомати з продажу кави та снеків",
+          "Можемо прийняти до 30 людей",
         ],
-        // rooms: [
-        //   {hotel: 'Code', id: 12, floor: 1, number: 11, image: Code10Room11, persons: 4, price: 2400, occupied: [{checkIn: 0, checkOut: 0}] },
-        //   {hotel: 'Code', id: 13, floor: 1, number: 12, image: Code10Room12, persons: 2, price: 2000, occupied: [{checkIn: 0, checkOut: 0}] },
-        //   {hotel: 'Code', id: 14, floor: 2, number: 21, image: Code10Room21, persons: 3, price: 2100, occupied: [{checkIn: 0, checkOut: 0}] },
-        //   {hotel: 'Code', id: 15, floor: 2, number: 22, image: Code10Room22, persons: 2, price: 2000, occupied: [{checkIn: 0, checkOut: 0}] },
-        //   {hotel: 'Code', id: 16, floor: 3, number: 31, image: Code10Room31, persons: 2, price: 2000, occupied: [{checkIn: 0, checkOut: 0}] },
-        //   {hotel: 'Code', id: 17, floor: 3, number: 32, image: Code10Room32, persons: 2, price: 2000, occupied: [{checkIn: 0, checkOut: 0}] },
-        // ],
+        // description: `Apart Hotel Code 10 located near the city center. Free Wifi is featured throughout the property. 
+        // Family rooms and non-smoking rooms are available upon request. 
+        // Some rooms are allergy-free and soundproof, and certain ones have a terrace.
+        
+        // All rooms have a desk, a flat-screen TV, an air conditioner, a private bathroom and towels. 
+        // The various facilities at this apartment hotel - such as luggage storage, concierge service, transfer and meeting facilities - will make your stay especially comfortable.
+
+        // Walking through the hotel park will improve the mood. You can park your car in the hotel's own car park. 
+        
+        // The staff of the tourist office will be happy to help you with the organization of tours and excursions.`,
+        description: `Готель Code 10 розташований біля центру міста. На всій території закладу надається безкоштовний Wi-Fi.
+        За вимогою надаються сімейні номери та номери для некурців. Деякі номери гіпоалергенні та звуконепроникні, а деякі мають терасу або балкон.
+        
+        У всіх номерах є стіл та стільці, смарт телевізор, кондиціонер, окрема ванна кімната з феном та рушниками.
+        Різноманітні зручності в цьому апарт-готелі, такі як камера зберігання багажу, послуги консьєржа, трансфер і приміщення для проведення засідань, зроблять ваше перебування особливо комфортним.
+        
+        Прогулянка парком готелю покращить настрій. Ви можете залишити свій автомобіль на власній автостоянці готелю.
+        Працівники туристичного бюро з радістю допоможуть Вам з організацією турів та екскурсій.`,
         images: {
-          forSlider: [Code10Room21, Code10Bath, Code10Room31],
+          forSlider: [Code10Room21, Code10Room31, Code10Bath],
         },
       },
     ],
-    description: `Mini hotel URoom is located in the heart of Lviv on the street. Peace, in a historic home. It has a separate entrance from the side of the Lviv city center, 7 separate rooms for 2-4 people and a large common area. 
-      
-      For convenience, we have organized independent and safe access to the hotel. Each guest is given an individual access code to the hotel and to their room. Guests can check in and out of the hotel at a convenient time without wasting time on calls and meetings with the Hotel Administration. 
-      
-      Each room has luxurious Box Spring beds. Available in twin or double beds, some rooms have a sofa bed or armchair bed. We have made every effort to ensure that you sleep comfortably and that it is clean.`,
   },
 ];
 
@@ -130,14 +144,24 @@ export const info_en = {
     p: "We are waiting for you to visit, we are ready to receive you at anytime of the day.",
     btn: "CONNECT WITH US",
   },
+  mainWarningMessage: `This site is presented as a demonstration of the author's own work. 
+  You CANNOT actually book hotel rooms through this site. 
+  Instead, the real business logic of booking is implemented here.
+  Any information presented on this site may be inaccurate. `,
+  notFindMessage: 'No rooms were found for your request'
 };
 
 export const info_ua = {
   booking: "Забронювати",
   wellcome: {
-    p: "Чекаємо на Вас в гості, готові Вас прийняти у будь-який час доби..",
+    p: "Чекаємо на Вас у гості, готові Вас прийняти у будь-який час доби",
     btn: "Зв'язатись з нами",
   },
+  mainWarningMessage: `Цей сайт представлений як демонстрація власної роботи автора. 
+  НЕ МОЖНА реально забронювати номери в готелях через цей сайт. 
+  Натомість тут реалізована реальна бізнес-логіка бронювання.
+  Будь-яка інформація, представлена ​​на цьому сайті може бути недостовірною.`,
+  notFindMessage: 'За вашим запитом не було знайдено жодної кімнати'
 };
 
 export const optionsForGuests = [

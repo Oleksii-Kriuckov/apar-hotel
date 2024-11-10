@@ -6,17 +6,19 @@ interface LeafletContainerProps {
   children: React.ReactNode;
   hotelLocation: Coordinates;
   zoom: number;
+  style?: object
 }
 
 export const MyMapContainer: React.FC<LeafletContainerProps> = ({
   children,
   hotelLocation,
   zoom,
+  style
 }) => {
   return (
     <MapContainer
       className="map_container"
-      // style={{ height: 300 }}
+      style={style}
       zoom={zoom}
       center={hotelLocation}
     >

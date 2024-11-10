@@ -1,5 +1,4 @@
 import { PropsWithChildren } from "react";
-// import { BorderColor } from "../../../assets/types";
 import "./style.css";
 import { ReactJSXElement } from "@emotion/react/types/jsx-namespace";
 
@@ -15,7 +14,7 @@ const ColorButton = ({ children, bgColor, onClick }: Props) => {
       onClick={onClick}
       className='blackBorder'
       style={{ width: "100%", backgroundColor: `${bgColor}` }}
-    >
+    > 
       {children}
     </button>
   );

@@ -6,29 +6,33 @@ export interface IHotelInfo {
   coordinates: Coordinates;
   conveniences: string[];
   // rooms: IRoom[],
+  description: string;
   images: {
     forSlider: string[]
   }
 }
 
 export interface IRoom {
-  id: string;
-  hotel: HotelNames
-  image: string;
-  price: number;
-  number: number;
+  description: string;
+  description_ua: string;
   floor: number;
+  hotel: HotelNames;
+  id: string;
+  images: string[];
+  ['img-mini']: string;
+  number: number;
+  occupied: {checkIn: number, checkOut: number}[];
   persons: number;
-  occupied: {checkIn: number, checkOut: number}[]
+  price: number;
 }
 
 export interface IHotelsInCity {
   city: string;
-  description: string;
+  city_ua: string;
   hotelsInfo: IHotelInfo[];
 }
 
-export type HotelNames = "luxury" | "independence" | "code"
+export type HotelNames = "arena-summit" | "tiso" | "code-10"
 
 export type Color = "white" | "black";
 

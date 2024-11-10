@@ -1,22 +1,43 @@
 import { selector } from "recoil";
-import { dateRange$, bookingRoom$ } from "./atoms"
+import { datePickerRange$, bookingRoom$ } from "./atoms"
+import { isObjectRoom } from "../functions/isObject";
+import { formatDays } from "../functions/functions";
+
+export const stampDateFrom$ = selector({
+    key: 'stampDateFrom',
+    get: ({ get }) => {
+        const datePickerRange = get(datePickerRange$)
+        const stampDateFrom = formatDays(datePickerRange)[0]
+        return stampDateFrom
+    }
+})
+export const stampDateTo$ = selector({
+    key: 'stampDateTo',
+    get: ({ get }) => {
+        const datePickerRange = get(datePickerRange$)
+        const stampDateTo = formatDays(datePickerRange)[1]
+        return stampDateTo
+    }
+})
 
 export const numberOfDays$ = selector({
-    key: 'numberOfDays', // unique ID (with respect to other atoms/selectors)
+    key: 'numberOfDays',
     get: ({ get }) => {
-        const dateRange = get(dateRange$);
+        const datePickerRange = get(datePickerRange$)
+        const dateRange = formatDays(datePickerRange)
 
         return Math.ceil((dateRange[1] - dateRange[0]) / (1000 * 60 * 60 * 24));
     },
 });
 
 export const daysRange$ = selector({
-    key: 'daysRange', // unique ID (with respect to other atoms/selectors)
+    key: 'daysRange',
     get: ({ get }) => {
-        const dateRange = get(dateRange$);
-        // const dr = 
+        const datePickerRange = get(datePickerRange$);
+        const dateRange = formatDays(datePickerRange)
         return dateRange.map(v => {
-            const date = new Date(v).toDateString()
+            // const date = new Date(v).toDateString()
+            const date = new Date(v).toLocaleDateString()
             return date
         });
     },
@@ -28,6 +49,8 @@ export const totalAmount$ = selector({
         const numberOfDays = get(numberOfDays$);
         const bookingRoom = get(bookingRoom$);
 
-        return bookingRoom.price * numberOfDays
+        if (isObjectRoom(bookingRoom)) {
+            return bookingRoom.price * numberOfDays
+        }
     },
 });

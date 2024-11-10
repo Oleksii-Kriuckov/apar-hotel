@@ -1,9 +1,9 @@
-import { info_en } from "../../assets/Info";
+import { info_ua } from "../../assets/Info";
 import { Button } from "antd";
 import keyhole from "../images/keyhole2.png";
 import { useNavigate, useParams } from "react-router-dom";
-import "./style.css";
 import { Feedback_ROUTE } from "../../routers/paths";
+import "./style.css";
 
 const Welcome = () => {
   let navigate = useNavigate();
@@ -12,13 +12,13 @@ const Welcome = () => {
   return (
     <div className="welcome_block text-center">
       <div className="welcome">
-        <p>{info_en.wellcome.p}</p>
+        <p>{info_ua.wellcome.p}</p>
         <Button
           onClick={() => navigate(Feedback_ROUTE)}
           className="ghost_button"
           id="welcome_block_btn"
         >
-          {info_en.wellcome.btn}
+          {info_ua.wellcome.btn}
         </Button>
       </div>
 

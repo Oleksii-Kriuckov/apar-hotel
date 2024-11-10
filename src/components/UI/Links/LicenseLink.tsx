@@ -1,34 +1,34 @@
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import license from "../../images/license.png";
-import CloseButton from "react-bootstrap/esm/CloseButton";
+import { FloatButton } from "antd";
+import { CloseOutlined } from "@ant-design/icons";
 import './style.css'
 
 function LicenseLink() {
   const [modalShow, setModalShow] = useState(false);
   return (
     <>
-        <a className="show_license" onClick={() => setModalShow(true)}>
-        Documents
-        </a>
-      
+      <a className="show_license" onClick={() => setModalShow(true)}>
+        Ліцензія
+      </a>
 
       <Modal
-        size="sm"
+        size="lg"
         show={modalShow}
         onHide={() => setModalShow(false)}
         aria-labelledby="example-modal-sizes-title-lg"
         centered
         id="modal"
       >
-        <CloseButton
-          variant="white"
-          id="closeButtonWhite"
+        <FloatButton
+          className="close_button"
+          shape='square'
+          icon={<CloseOutlined />}
           onClick={() => setModalShow(false)}
         />
-        <CloseButton id="closeButton" onClick={() => setModalShow(false)} />
 
-        <img src={license} alt="" />
+        <img style={{borderRadius: 8}} src={license} alt="license" />
       </Modal>
     </>
   );

@@ -1,10 +1,6 @@
 .title_block {
   position: relative;
-  gap: 40px;
-}
-
-.highlight {
-  color: var(--main-color);
+  margin-bottom: 40px;
 }
 
 .h1 {

@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import codes from "../../../assets/codes.json";
-import { Button, Input, Upload, Form, Select, Grid} from "antd";
-import "./styles/style.css";
-import { DropeZonePreviews } from "./DropeZonePreviews";
+import { Button, Input, Form, Select, Grid, Checkbox, InputNumber } from "antd";
 import { DropeZone } from "./DropeZone";
+import { useSetRecoilState } from "recoil";
+import { isShowModalFeedback$ } from "../../../recoil/atoms";
+import "./styles/style.css";
+import { enterTel } from "../../../functions/functions";
 
 const { Option } = Select;
 const { TextArea } = Input;
@@ -16,9 +18,9 @@ const normFile = (e: any) => {
 const { useBreakpoint } = Grid;
 
 export const FormFeedback: React.FC = () => {
+  const  setIsModalOpen = useSetRecoilState(isShowModalFeedback$);
+  const [checked, setChecked] = useState(false);
   const screens = useBreakpoint();
-  // console.log(screens)
-
   const [form] = Form.useForm();
 
   const prefixSelector = (
@@ -31,78 +33,102 @@ export const FormFeedback: React.FC = () => {
     </Form.Item>
   );
 
-  const onSubmit = (event: React.FormEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    console.log("Submit");
+  const onSubmit = () => {
+    setIsModalOpen(true)
+    form.resetFields()
+    setChecked(false)
+    setTimeout(() => setIsModalOpen(false), 3000)
   };
 
   return (
     <Form
       id="form_feedback"
       name="form_feedback"
+      className="form row row-cols-sm-1"
       form={form}
+      labelCol={{ span: 6, offset: 0 }}
       onFinish={onSubmit}
-      layout="horizontal"
+      layout={screens.md ? "vertical" : "horizontal"}
       initialValues={{ prefix: "+380" }}
-      className="form d-flex flex-column flex-md-row flex-md-wrap align-items-lg-center"
-      style={{ gap: 20 }}
       scrollToFirstError
     >
-      {/* <div className="inputs_wrap"></div> */}
+      <div className="row row-cols-sm-1 row-cols-md-3">
         <Form.Item
           name="name"
-          label="Name"
-          // className="input_block input_block_booking"
-          rules={[{ required: true, message: "Please input your name!" }]}
+          label="Ім'я"
+          rules={[{ required: true, message: "Будь ласка, введіть ім'я!" }]}
         >
-          <Input size="large" placeholder="John Smith" />
+          <Input size="large" placeholder="Тарас Шевченко" />
         </Form.Item>
 
         <Form.Item
           name="phone"
-          label="Phone Number"
-          rules={[{ required: true, message: "Please input your phone number!" }]}
+          label="Номер телефону"
+          rules={[
+            { required: true, message: "Будь ласка, введіть номер телефону!" },
+            { type: "integer", message: "Номер має бути цілим числом" },
+          ]}
         >
-          <Input
+          <InputNumber
             size="large"
             minLength={7}
             addonBefore={prefixSelector}
-            style={{ width: "100%" }}
+            placeholder="965123456"
+            controls={false}
+            onKeyDown={enterTel}
           />
         </Form.Item>
 
         <Form.Item
           name="email"
-          label="E-mail"
+          label="Ел. пошта"
           rules={[
-            { type: "email", message: "The input is not valid E-mail!" },
-            { required: true, message: "Please input your E-mail!" },
+            { type: "email", message: "Ел. пошта не дійсна!" },
+            { required: true, message: "Будь ласка, введіть ел. пошту!" },
           ]}
         >
-          <Input size="large" />
+          <Input size="large" placeholder="shevchenko@ukr.net" />
+        </Form.Item>
+      </div>
+
+      <div className="row row-cols-md-2">
+        <Form.Item
+          className="col-md-6 padend"
+          id="drop"
+          label="Додайте файл:"
+          valuePropName="fileList"
+          getValueFromEvent={normFile}
+        >
+          <DropeZone />
         </Form.Item>
 
-        <Form.Item id="drop" label="Attach file:" valuePropName="fileList" getValueFromEvent={normFile}>
-          {/* <Upload action="/upload.do" style={{ display: 'block', width: 300 }} id="upload_field" listType="picture-card">
-            <button style={{ border: 0, background: 'none' }} type="button">
-              <div style={{ marginTop: 8 }}>Upload</div>
-            </button>
-          </Upload> */}
-            <DropeZone />
+        <Form.Item
+          className="col-md-6 padstart"
+          name="texArea_1"
+          label='Повідомлення:'
+          rules={[{ required: true, message: "Будь ласка, введіть повідомлення" }]}
+        >
+          <TextArea
+            id="message"
+            size="large"
+            name="message"
+            // rows={2}
+            minLength={3}
+            placeholder="Введіть повідомлення"
+          />
         </Form.Item>
+      </div>
 
-        <Form.Item id="texArea_1" label='Message:'>
-          <TextArea itemID="" size="large" name="message" rows={2} id="message" placeholder="Message" />
-        </Form.Item>
+      <Form.Item
+        wrapperCol={{ offset: (screens.xs || screens.md) ? 0 : 6 }}
+        required
+      >
+        <Checkbox id="confirm" checked={checked} onChange={() => setChecked(!checked)}>
+          Я даю згоду на обробку персональних даних
+        </Checkbox>
+      </Form.Item>
 
-        <div className="d-flex align-items-baseline gap-3">
-          <input type="checkbox" name="confirm" id="confirm" />
-          <label htmlFor="confirm">
-            By clicking on the "Submit" button, I consent to the processing of
-            personal data
-          </label>
-        </div>
-
+      <Form.Item wrapperCol={{ offset: (screens.xs || screens.md) ? 0 : 6 }}>
         <Button
           size="large"
           id="send_btn"
@@ -110,9 +136,11 @@ export const FormFeedback: React.FC = () => {
           className="booking_btn"
           color="black"
           htmlType="submit"
+          disabled={!checked}
         >
-          SEND
+          Надіслати
         </Button>
+      </Form.Item>
     </Form>
   );
 };

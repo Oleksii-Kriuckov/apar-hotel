@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import MediaLinks from "../components/UI/Links/MediaLinks";
 import BookingMessage from "../components/bookingMessage/BookingMessage";
 import { useParams, useNavigate } from "react-router-dom";
@@ -5,11 +6,14 @@ import { findData } from "../functions/functions";
 import { MyMapContainer } from "../map/MyMapContainer";
 import { MapChild } from "../map/MapChild";
 import { FormBooking } from "../components/UI/Forms/FormBooking";
-import { useEffect } from "react";
-import { bookingRoom$, showBookingForm$, showSuccessMessage$, dateRange$ } from "../recoil/atoms";
+import { bookingRoom$, showBookingForm$, showSuccessMessage$ } from "../recoil/atoms";
 import { numberOfDays$, totalAmount$, daysRange$ } from "../recoil/selectors";
 import { useRecoilValue } from "recoil";
+import { CSSTransition } from 'react-transition-group';
 import SuccessBooking from "../components/bookingMessage/SuccessBooking";
+import { isObjectRoom } from "../functions/isObject";
+import '../components/bookingMessage/style.css'
+import '../components/UI/Links/style.css'
 
 const Booking = () => {
   const { city, hotel, number } = useParams();
@@ -23,52 +27,56 @@ const Booking = () => {
   let navigate = useNavigate();
 
   useEffect(() => {
-    if (!bookingRoom.id) {
+    if (isObjectRoom(bookingRoom) && !bookingRoom.id) {
       navigate(`/${city}/${hotel}`)
-    } else {
-      console.log(daysRange[0])
-      console.log(daysRange[1])
     }
   }, []);
 
   return (
-    <div className="booking_page">
-      {/* display start and end dates, total amount */}
-      <h3 className="header_h3">
-        Booking: hotel {findHotel!.hotelName} ({findCity!.city}), room {number}
+    <>
+      <h3 id="booking_header" className="header_h3">
+        Бронювання: готель {findHotel!.hotelName} ({findCity!.city_ua}), номер {number}
         <span className="booking_room_info">
-          {' '} from <span className="days_range">{daysRange[0]} </span> to <span className="days_range"> {daysRange[1]}</span> ({numberOfDays} night{numberOfDays > 1 ? 's' : ''}).
-          <span style={{textTransform: 'capitalize'}}> Total </span> amount {totalAmount}
+          {' '} з <span className="days_range">{daysRange[0]} </span> до <span className="days_range"> {daysRange[1]}</span> ({numberOfDays} {numberOfDays === 1 ? 'ніч' : (numberOfDays > 1 && numberOfDays < 5) ? 'ночі' : 'ночей'}).
+          <span style={{ textTransform: 'capitalize' }}> Загальна </span> сума {totalAmount}
         </span>
       </h3>
 
+    <div className="booking_page">
+      <div className="show_place">
+        {showBooking && <FormBooking />}
+        
+        <CSSTransition in={showSuccessMessage} timeout={1700} classNames={'success'} unmountOnExit>
+          <SuccessBooking />
+        </CSSTransition>
+      </div>
+
+      <div>
+        <h3 style={{ marginBottom: 15, textAlign: 'center' }} className="header_h3">
+          Як дістатись:
+        </h3>
+
+        <div className="booking_map_container">
+          <MyMapContainer style={{margin: 'auto'}} hotelLocation={findHotel!.coordinates} zoom={16}>
+            <MapChild location={findHotel!.coordinates} />
+          </MyMapContainer>
+        </div>
+      </div>
+      
       <div id="contacts_wrap" className="d-flex flex-column flex-md-row">
         <div>
           <ul className="contacts">
             <li>{findHotel!.address}</li>
-            <li>{findHotel!.tel}</li>
-            <li>{findHotel!.email}</li>
+            <li><a className="icon_link" href={`tel:+${findHotel!.tel}`}>{findHotel!.tel}</a></li>
+            <li><a className="icon_link" href={`mailto:${findHotel!.email}`}>{findHotel!.email}</a></li>
           </ul>
           <MediaLinks />
         </div>
 
         <BookingMessage />
       </div>
-
-      <div className="show_place">
-        {showBooking && <FormBooking />}
-        {showSuccessMessage && <SuccessBooking />}
-      </div>
-
-      <div>
-        <h3 style={{ marginBottom: 15 }} className="header_h3">
-          How can I get to:
-        </h3>
-        <MyMapContainer hotelLocation={findHotel!.coordinates} zoom={16}>
-          <MapChild location={findHotel!.coordinates} />
-        </MyMapContainer>
-      </div>
     </div>
+    </>
   );
 };
 

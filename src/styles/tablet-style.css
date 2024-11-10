@@ -17,11 +17,13 @@
   }
 
   /* article */
-  .about_hotel {
+  article {
     margin: 40px auto;
   }
-  .about_hotel > h3 {
+
+  article > h3 {
     margin-bottom: 20px;
+    grid-template-rows: 1fr 1fr;
   }
 
   /* footer */
@@ -33,6 +35,7 @@
   .navbar {
     margin-bottom: 60px;
   }
+
   .logo {
     display: none;
   }
@@ -43,12 +46,15 @@
     justify-content: space-between;
     margin-top: 20px;
   }
+
   .room_block_btn {
     width: 50%;
   }
-  .room_block_main > img {
+
+  .room_block_main>img {
     width: 100%;
   }
+
   .conveniences {
     margin: 15px auto 0 0;
   }
@@ -58,45 +64,62 @@
     width: 100%;
     border: none;
   }
+
   .h1 {
     text-align: center;
   }
+
   .keyhole_color {
-    left: 80%;
+    left: 88%;
     top: 103%;
   }
+
   .keyhole {
-    left: 5%;
-    top: 98%;
+    left: 1%;
+    top: 100%;
   }
 
   /*Booking page*/
+  #booking_header {
+    text-align: center;
+  }
+
   .booking_page {
     display: flex;
     flex-direction: column;
     gap: 30px;
   }
+
   .map_container {
     height: 300px;
   }
+
   #contacts_wrap {
     gap: 30px;
+    align-items: center;
+  }
+
+  .contacts {
+    margin-top: 0px;
+  }
+
+  .media_links {
+    justify-content: center;
   }
 
   /* welcome block */
   #welcome_block_btn {
     width: 200px;
   }
-    
+
   /* Form feedback */
-  #feedback_header {
-    text-align: center;
-  }
+
 }
 
-@media (min-width: 576px) {
-  #closeButton {
-    display: none;
+@media (min-width: 651px) {
+  .close_button {
+    right: -40px;
+    top: -40px;
   }
 
   /* welcome block */
@@ -106,29 +129,37 @@
 }
 
 @media (min-width: 768px) {
+
   /*Booking page*/
   .booking_page {
     display: flex;
     flex-direction: column;
     gap: 30px;
   }
+
   .map_container {
     height: 400px;
   }
-  .book_mes_wrap{
+
+  .book_mes_wrap {
     justify-content: center;
+  }
+
+  .contacts {
+    margin-top: 25px;
   }
 
   /* Room block  */
   .room_block_btn {
     width: 150px;
   }
+
   .conveniences {
     margin: 15px auto 0 0;
   }
 
   /* article */
-  .about_hotel > h3 {
+  article > h3 {
     margin-bottom: 20px;
   }
 }
@@ -140,6 +171,7 @@
 
   .header_h3 {
     font-size: 30px;
+    margin-bottom: 16px;
   }
 
   /* footer */
@@ -151,13 +183,15 @@
   .navbar {
     margin-bottom: 80px;
   }
+
   .logo {
     display: none;
   }
 
   /* article */
-  .about_hotel {
+  article {
     margin: 40px auto;
+    grid-template-columns: 1fr 1fr;
   }
 
   /* Room block  */
@@ -166,7 +200,8 @@
     margin-top: 20px;
     justify-content: center;
   }
-  .room_block_main > img {
+
+  .room_block_main>img {
     width: 600px;
   }
 
@@ -174,16 +209,23 @@
   .h1 {
     text-align: center;
   }
-  .keyhole_color {
-    left: 80%;
-    top: 103%;
+
+  .title_block {
+    gap: 60px;
   }
+  
+  .keyhole_color {
+    left: 92%;
+    top: 78%;
+  }
+
   .keyhole {
-    left: 5%;
-    top: 98%;
+    left: 1%;
+    top: 75%;
   }
 
   #contacts_wrap {
-    justify-content: space-between;
+    justify-content: center;
+    gap: 40px;
   }
 }

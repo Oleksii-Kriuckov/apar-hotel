@@ -1,11 +1,14 @@
 .header_h3 {
   text-transform: uppercase;
   font-weight: 400;
-  line-height: 44px;
   letter-spacing: 0em;
   text-align: left;
   padding: 0px;
-  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
 }
 
 .our_addresses {
@@ -14,21 +17,20 @@
   line-height: 43px;
 }
 
-.contacts {
-  margin-top: 25px;
-  margin-left: 20px;
-}
-.contacts > li {
+.contacts>li {
   margin-bottom: 20px;
-  margin-left: 5px;
+  /* margin-left: 5px; */
 }
-.contacts > li:first-child {
+
+.contacts>li:first-child {
   list-style-image: url("../components/images/location.png");
 }
-.contacts > li:nth-child(2) {
+
+.contacts>li:nth-child(2) {
   list-style-image: url("../components/images/phone2.png");
 }
-.contacts > li:last-child {
+
+.contacts>li:last-child {
   list-style-image: url("../components/images/at_sing.png");
 }
 
@@ -49,10 +51,21 @@ hr {
   background-color: var(--main-color);
   color: black;
 }
+.booking_btn:disabled {
+  background-color: rgba(255, 192, 0, 0.4);
+}
+
+.back_btn {
+  margin-top: 25px;
+}
 
 .show_place {
   height: fit-content;
   min-height: 70px;
+}
+
+#contacts_wrap {
+  margin-top: 25px;
 }
 
 .days_range {
@@ -68,4 +81,12 @@ hr {
   background-color: transparent;
   border: 1px solid black;
   color: black;
+}
+
+#feedback_header {
+  text-align: center;
+}
+
+.highlight {
+  color: var(--main-color);
 }

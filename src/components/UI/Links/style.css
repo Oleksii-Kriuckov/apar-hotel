@@ -11,27 +11,23 @@
   margin-top: 80px;
 }
 
-#closeButton {
-  width: var(--sizeClose);
+.close_button {
   height: var(--sizeClose);
   cursor: pointer;
   position: absolute;
-}
 
-#closeButtonWhite {
-  width: var(--sizeClose);
-  height: var(--sizeClose);
-  cursor: pointer;
-  position: absolute;
-  right: -40px;
-  top: -40px;
 }
 
 .media_links {
   display: flex;
 }
-/* 
-.linkImg {
-  width: 32px;
-  height: 32px;
-} */
+
+.icon_link {
+  font-family: "Gilroy", sans-serif;
+  font-weight: 400;
+  color: black;
+}
+
+.icon_link:hover {
+  color: var(--hover-link);
+}
