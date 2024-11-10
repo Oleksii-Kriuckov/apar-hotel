@@ -19,6 +19,7 @@ export interface IRoom {
   hotel: HotelNames;
   id: string;
   images: string[];
+  ['img-mini']: string;
   number: number;
   occupied: {checkIn: number, checkOut: number}[];
   persons: number;

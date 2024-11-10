@@ -17,8 +17,7 @@ const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
   return (
     <div className="room_block">
       <div className="room_block_main d-flex flex-column flex-lg-row justify-content-lg-between">
-        <img className="room_photo" src={roomInfo.images[0]} alt="room" />
-
+        <img className="room_photo" src={roomInfo["img-mini"]} alt="room" />
         <div className="room_description d-flex flex-column flex-sm-row-reverse justify-content-sm-between mt-sm-4 mt-lg-0 flex-lg-column flex-xl-row-reverse">
           <div className="price_block d-flex flex-row flex-sm-column align-items-baseline mt-lg-0">
             <span className="price">Price: </span>
