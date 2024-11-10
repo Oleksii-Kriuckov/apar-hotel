@@ -2,8 +2,8 @@ import { Button } from "antd";
 import { useParams } from "react-router-dom";
 import { IRoom } from "../../assets/types";
 import { useAppNav } from "../../hooks/useAppNav";
-import "./style.css";
 import { RoomInfo } from "./RoomInfo";
+import "./style.css";
 
 type RoomBlockProps = {
   roomInfo: IRoom;
@@ -16,7 +16,7 @@ const RoomBlock = ({ roomInfo }: RoomBlockProps) => {
   return (
     <div className="room_block">
       <div className="room_block_main d-flex flex-column flex-lg-row justify-content-lg-between">
-        <img className="room_photo" src={roomInfo.images[0]} alt="room" />
+        <img className="room_photo" src={roomInfo["img-mini"]} alt="room" />
 
         <div className="room_description d-flex flex-column flex-sm-row-reverse justify-content-sm-between mt-sm-4 mt-lg-0 flex-lg-column flex-xl-row-reverse">
           <div className="price_block d-flex flex-row flex-sm-column align-items-baseline mt-lg-0">
