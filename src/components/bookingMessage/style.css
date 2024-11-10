@@ -1,16 +1,46 @@
 .bookingMessage {
   max-width: 385px;
+  height: 100%;
   border: 1px solid var(--main-color);
   padding: 25px 45px;
-}
-
-.bookingMessage {
   position: relative;
+  border-radius: 8px;
 }
 
+.book_mes_wrap{
+  display: flex;
+  flex-grow: 1;
+}
 .bookingMessage > p {
   font-weight: 400;
   font-size: 17px;
   line-height: 26px;
   margin-top: 20px;
+}
+
+.success_booking {
+  padding: 20px;
+  background-color: var(--main-color);
+  border-radius: 8px;
+  font-size: large;
+  text-align: center;
+}
+
+
+.success-enter {
+  opacity: 0;
+}
+
+.success-enter-active {
+  opacity: 1;
+  transition: all 100ms;
+}
+
+.success-exit {
+  opacity: 1;
+}
+
+.success-exit-active {
+  opacity: 0;
+  transition: all 1700ms;
 }

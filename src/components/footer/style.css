@@ -1,0 +1,29 @@
+.footer_nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+  gap: 20px 50px;
+}
+
+.footer_nav > a {
+  text-decoration: none;
+  color: #000000;
+  width: max-content;
+  font-family: "Gilroy", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.footer_nav > a:hover {
+  color: var(--hover-link);
+}
+
+.license_info {
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: #ff0000;
+  /* opacity: 0.5; */
+  font-weight: 700;
+}

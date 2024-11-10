@@ -1,14 +1,60 @@
-import { PropsWithChildren } from "react";
-import "./style/style.css";
-import "./style/adaptive.css";
+import { PropsWithChildren, ReactNode } from "react";
+import { useNavigate } from "react-router-dom";
+import { Button } from 'antd'
+import { BootCarousel } from "../Slider/BootCar";
+import { LeftOutlined } from "@ant-design/icons";
+import "./style.css";
+import '../Slider/style.css';
 
-type ArticleProps = PropsWithChildren<{ children: string }>;
+type ArticleProps = PropsWithChildren<{
+  children: ReactNode, images: string[], isHotelPage: boolean, description: string
+}>;
 
-export const Article = ({ children }: ArticleProps) => {
+export const Article = ({ children, images, isHotelPage, description }: ArticleProps) => {
+  const navigate = useNavigate();
+
   return (
-    <article className="about_hotel">
-      <h3 className="header_h3" id="about_hotel">About hotel</h3>
-      <span>{children}</span>
-    </article>
+    <>
+      {isHotelPage ?
+        <article className="d-flex flex-column d-xl-block d-xxl-flex flex-xxl-row align-items-center align-items-xxl-start">
+          <div className="describe_images d-none d-sm-none d-xl-inline-block">
+            {Array.isArray(images) && images.map((v, i) => {
+              if (i < 3) {
+                return <img key={v} src={v} alt={`Room ${i}`} className="describe_img" />
+              }
+            })}
+          </div>
+
+          <div className="article_carousel d-xl-none">
+            {Array.isArray(images) && <BootCarousel images={images} />}
+          </div>
+
+          <div className="article_header">
+            <h3 className="header_h3" id="about_hotel">{children}</h3>
+            <span style={{ whiteSpace: "pre-line" }}>{description}</span>
+          </div>
+        </article>
+        :
+        <article className="d-flex flex-column flex-xl-row align-items-center align-items-xl-start">
+          <div className="article_carousel">
+            {Array.isArray(images) && <BootCarousel images={images} />}
+          </div>
+
+          <div className="article_header">
+            <h3 className="header_h3" id="about_hotel">{children}</h3>
+            <span style={{ whiteSpace: "pre-line" }}>{description}</span>
+            <Button
+              className="booking_btn back_btn d-flex align-items-center mx-auto"
+              type="primary"
+              size="large"
+              onClick={() => navigate(-1)}
+            >
+              <LeftOutlined style={{marginTop: 1}}/>
+              Back to the rooms list
+            </Button>
+          </div>
+        </article>
+      }
+    </>
   );
 };

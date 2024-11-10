@@ -2,13 +2,13 @@
   background-color: var(--main-color);
   margin: auto;
   margin-top: 40px;
-  margin-bottom: 70px;
+  border-radius: 8px;
 }
 
-#form_search > h4 {
+#form_search>h4 {
   font-family: "Century Gothic";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 20px;
   line-height: 32px;
   text-align: center;
@@ -16,16 +16,9 @@
   margin-bottom: 20px;
 }
 
-.input_block {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  gap: 10px;
-}
-.input_block > input {
-  border: #000000 1px solid;
-  padding: 14px 20px;
-  border-radius: 0%;
+#form_booking, #form_feedback {
+  justify-content: space-between;
+  margin: auto;
 }
 
 #select {
@@ -34,9 +27,122 @@
   border-radius: 0%;
 }
 
+#booking {
+  margin-top: 10px;
+}
+
+#upload_field {
+  background-color: aqua;
+}
+
+#send_btn {
+  margin: auto;
+}
+
+.col {
+  background-color: aquamarine;
+}
+
+.row>* {
+  padding-right: 0;
+}
+
+.ant-col-6 {
+  max-width: 100%;
+}
+
+.input_block {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 10px;
+}
+
+.input_block>label {
+  padding-left: 3px;
+}
+
 .option {
   padding: 0 20px;
 }
+
 .option:hover {
   cursor: pointer;
 }
+
+.norm_height {
+  height: 50px;
+}
+
+.thumbsContainer {
+  display: flex;
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.thumb {
+  display: inline-flex;
+  border-radius: 2px;
+  border: '1px solid #eaeaea';
+  margin-bottom: 8px;
+  margin-right: 8px;
+  width: 100px;
+  height: 100px;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.thumbInner {
+  display: 'flex';
+  min-width: 0;
+  overflow: 'hidden';
+}
+
+.dropImg {
+  display: block;
+  width: auto;
+  height: 100%;
+}
+
+.dropzone {
+  color: #9d9d9d;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 7px 14px 7px 24px;
+  border: blue dashed 1px;
+  width: 100%;
+  min-height: 66px;
+  /* height: 66px; */
+}
+
+.dropzone>p {
+  text-align: center;
+}
+
+.drop_container {
+  border: var(--main-color) solid 1px;
+}
+
+.file_list>li:last-child {
+  font-weight: 400;
+}
+
+.file_item {
+  list-style-image: url('/src/components/images/Ellipse-32.png');
+  /* list-style: disc; */
+}
+
+.files {
+  text-align: center;
+  margin-top: 8px;
+  color: #1f1f1f;
+}
+
+/* display: inline-block;
+margin-inline-end: 4px;
+color: #ff4d4f;
+font-size: 14px;
+font-family: SimSun, sans-serif;
+line-height: 1;
+content: "*"; */

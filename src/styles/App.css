@@ -1,18 +1,14 @@
 .header_h3 {
-  font-family: Century Gothic;
   text-transform: uppercase;
   font-weight: 400;
-  line-height: 44px;
   letter-spacing: 0em;
   text-align: left;
   padding: 0px;
-  margin: 0;
 }
 
-.lows_extract {
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 18px;
+a {
+  text-decoration: none;
+  color: #000;
 }
 
 .our_addresses {
@@ -23,7 +19,7 @@
 
 .contacts > li {
   margin-bottom: 20px;
-  margin-left: 5px;
+  /* margin-left: 5px; */
 }
 .contacts > li:first-child {
   list-style-image: url("../components/images/location.png");
@@ -46,4 +42,47 @@ hr {
   flex-direction: column;
   align-items: center;
   gap: 70px;
+}
+
+.booking_btn {
+  background-color: var(--main-color);
+  color: black;
+}
+.booking_btn:disabled {
+  background-color: rgba(255, 192, 0, 0.4);
+}
+
+.show_place {
+  height: fit-content;
+  min-height: 70px;
+}
+#contacts_wrap {
+  margin-top: 25px;
+}
+
+.back_btn {
+  margin-top: 25px;
+}
+
+.days_range {
+  color: var(--main-color);
+  text-transform: capitalize;
+}
+
+.booking_room_info {
+  text-transform: lowercase;
+}
+
+.ghost_button {
+  background-color: transparent;
+  border: 1px solid black;
+  color: black;
+}
+
+#feedback_header {
+  text-align: center;
+}
+
+.highlight {
+  color: var(--main-color);
 }

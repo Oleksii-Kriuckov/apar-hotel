@@ -1,0 +1,10 @@
+.ant-space-item {
+  font-family: "Gilroy", sans-serif;
+  font-weight: 500;
+  color: black;
+}
+
+.ant-space-item:hover {
+  color: var(--hover-link);
+  cursor: pointer;
+}

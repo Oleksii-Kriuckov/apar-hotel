@@ -1,0 +1,16 @@
+.title_block {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.h1 {
+  font-size: 48px;
+  text-transform: uppercase;
+  text-transform: uppercase;
+}
+
+.keyhole_color,
+.keyhole {
+  z-index: 0;
+  position: absolute;
+}

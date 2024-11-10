@@ -1,15 +1,14 @@
 /* mobile style */
 @media (max-width: 428px) {
   .address_block {
-    padding: 30px 20px 40px;
     margin-bottom: 75px;
   }
 
   .address_block_buttons {
-    margin: auto;
-    position: relative;
+    flex-direction: column;
     gap: 15px;
   }
+
   .address_block_btn {
     width: 50%;
   }
@@ -17,11 +16,6 @@
   ul {
     margin-top: 25px;
     margin-left: 20px;
-  }
-
-  h3 {
-    margin-top: 10px;
-    margin-bottom: 25px;
   }
 }
 
@@ -31,15 +25,10 @@
     padding: 30px 30px 40px;
     margin-bottom: 75px;
   }
+
   .address_block_buttons {
-    position: absolute;
     margin: auto;
     gap: 25px;
-  }
-
-  h3 {
-    margin-top: 10px;
-    margin-bottom: 25px;
   }
 
   ul {
@@ -53,17 +42,20 @@
     margin-bottom: 30px;
   }
 
+  .address_block {
+    padding: 30px 20px;
+  }
+
   .address_block_buttons {
-    position: absolute;
     width: 100%;
     justify-content: space-between;
+    margin-top: 30px;
   }
-  .address_block_buttons > button:first-child {
+
+  .address_block_btn {
     width: inherit;
   }
-  .address_block_buttons > button:last-child {
-    width: inherit;
-  }
+
 
   .hotel_info > p {
     margin-top: 35px;
@@ -86,10 +78,18 @@
     width: 70%;
   }
 
+  .hotel_info > h3 {
+    margin-top: 3px;
+  }
+
   .address_block_buttons {
     gap: 25px;
-    position: absolute;
+    margin-top: 40px;
     justify-content: space-between;
+  }
+
+  .address_block_btn {
+    flex-grow: 1;
   }
 }
 
@@ -100,15 +100,25 @@
   }
 
   .leaflet-container {
-    width: 400px;
+    width: 50%;
   }
 
   .hotel_info {
     width: 70%;
   }
 
+  .hotel_info > h3 {
+    margin-top: 3px;
+  }
+
   .address_block_buttons {
-    position: absolute;
+    margin-top: 40px;
     gap: 25px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .leaflet-container {
+    width: 60%;
   }
 }

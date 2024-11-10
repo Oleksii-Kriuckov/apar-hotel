@@ -1,14 +1,30 @@
-export function dateToNumber(dateString: string): number {
-  // Extracting year, month, and day from the string
-  const year = Number(dateString.substr(0, 4));
-  const month = Number(dateString.substr(5, 2));
-  const day = Number(dateString.substr(8, 2));
+import { allHotels } from "../assets/Info";
+import { Dayjs } from "dayjs";
 
-  // Creating a new Date object with the extracted values
-  const date = new Date(year, month - 1, day);
+export function findData(city: string, hotel?: string) {
+  let findHotel, findCity;
 
-  // Converting the Date object to a timestamp (number)
-  const timestamp = date.getTime();
+  if (city) {
+    findCity = allHotels.find((el) => el.city.toLowerCase() === city);
+  }
+   
+  if (findCity) {
+    findHotel = findCity.hotelsInfo.find(
+      (el) => el.hotelName.toLowerCase() === hotel
+    );
+  }
+  return { findCity, findHotel };
+}
 
-  return timestamp;
+export const formatDays = (value: [Dayjs, Dayjs]): [number, number] => {
+  const dateFrom = value[0].set("hour", 14).set("minute", 0).set("second", 0)
+  const dateTo = value[1].set("hour", 12).set("minute", 0).set("second", 0)
+  return [dateFrom.valueOf(), dateTo.valueOf()]
+}
+
+export const enterTel = (e: React.KeyboardEvent) => {
+  if (e.key.search(/[0-9]/) === -1 && e.key !== 'Backspace' && e.key !== 'Tab' && e.key !== 'Delete') {
+      e.preventDefault()
+      // console.log("Not a number")
+  }
 }

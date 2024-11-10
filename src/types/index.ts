@@ -1,4 +1,4 @@
-type HotelNames = "Luxury" | "Independence" | "Code"
+import { HotelNames } from "../assets/types"
 
 type RoomType = {
   // id: number,

@@ -1,12 +1,18 @@
 #root {
   margin: 0 auto;
-  background-color: #fefefe;
+  min-height: 100vh;
+  /* background-color: #922ceb; */
+  background-color: #5e5eae;
+  background-color: #88f9f1;
   /* text-align: center; */
 }
 
 body {
   --sizeClose: 30px;
-  --main-color: #ffc000;
+  --main-color: rgb(255, 192, 0);
+  --hover-color: #1677ff;
+  --hover-link: #6da7a1;
   --f-z: "Century Gothic", sans-serif;
-  font-family: var(--f-z);
+  --ff-g: "Gilroy", sans-serif;
+  font-family: var(--ff-g);
 }

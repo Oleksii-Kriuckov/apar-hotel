@@ -1,0 +1,31 @@
+.nav_link {
+  width: 110px;
+  height: 40px;
+  border-radius: 25px;
+  padding: 12px 15px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.nav_link:hover {
+  color: #000;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.active_link {
+  background-color: var(--main-color);
+}
+
+.active_link:hover {
+  background-color: var(--main-color);
+}
+
+.langs > a:hover {
+  color: var(--hover-link);
+}
+
+.active_lang {
+  color: var(--hover-link);
+}

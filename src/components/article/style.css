@@ -1,0 +1,44 @@
+article>span {
+  white-space: pre-line;
+  text-align: left;
+}
+
+article>p {
+  margin-top: 20px;
+}
+
+article {
+  justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 50px;
+  grid-template-columns: 1fr 1fr
+}
+
+.article_header {
+  /* background-color: aqua; */
+}
+
+.describe_images :nth-child(1) {
+  z-index: 10;
+}
+
+.describe_images :nth-child(2) {
+  left: 47%;
+  top: -10px;
+  z-index: 5;
+}
+
+.describe_images :nth-child(3) {
+  left: 10%;
+  top: -27px;
+}
+
+.describe_images {
+  height: fit-content;
+}
+
+.describe_img {
+  width: 53%;
+  position: relative;
+  aspect-ratio: 16/9;
+}

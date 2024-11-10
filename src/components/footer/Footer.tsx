@@ -1,20 +1,17 @@
 import { FooterBar } from "./FooterBar";
-import "./style/style.css";
-import "./style/adaptive.css";
+import "./style.css";
 
-type Props = {};
-
-export const Footer = (props: Props) => {
+export const Footer = () => {
   return (
     <footer>
       <FooterBar />
 
       <hr />
 
-      <div className="license_info">
-        <p>
-          ИП Трухменева С.В. ОГРИП 307345905700016 свидетельство от 26.02.2007
-          года серия 34 № 003020722
+      <div>
+        <p className="license_info">
+          {/* Цей сайт представлений як демонстрація власних робіт автора. Не можна реально забронювати номери в готелях через цей сайт. */}
+          This site is presented as a demonstration of the author's own works. It is not possible to actually book hotel rooms through it.
         </p>
       </div>
     </footer>

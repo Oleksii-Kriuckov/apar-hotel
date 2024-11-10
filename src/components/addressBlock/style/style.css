@@ -1,23 +1,17 @@
 .address_block {
-  border: 1px solid #3312f0;
-  /* border: 1px solid #dbdbdb; */
+  border: 1px solid #b7b4b4;
   margin-bottom: 75px;
-  position: relative;
+  border-radius: 8px;
 }
 
 .address_block_buttons {
   max-width: 330px;
-  bottom: -27px;
   display: flex;
 }
 
-.address_block_buttons > button:first-child {
+.address_block_btn {
   min-width: 120px;
-}
-.address_block_buttons > button:last-child {
-  min-width: 120px;
-  background: #ffffff;
-  border: 1px solid #000000;
+  height: 50px;
 }
 
 .hotel_info > p {
@@ -26,21 +20,27 @@
   line-height: 22px;
 }
 
-h3 {
+.hotel_info > h3 {
   font-weight: 600;
   font-size: 24px;
   line-height: 29px;
-  margin-bottom: 25px;
 }
 
-ul > li {
+.tel {
+  margin-top: 7px;
+  margin-bottom: 25px;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.tel>div>a:hover {
+  color: var(--hover-link);
+}
+
+ul>li {
   list-style-image: url("../../images/list-style.png");
 }
 
-ul > li:last-child {
+ul>li:last-child {
   font-weight: 700;
-}
-
-a:hover {
-  color: #000000;
 }

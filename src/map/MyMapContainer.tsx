@@ -1,22 +1,25 @@
 import { MapContainer, TileLayer } from "react-leaflet";
-// import useLocation from "../hooks/useLocation";
 import { Coordinates } from "../assets/types";
+// import useLocation from "../hooks/useLocation";
+// import useUserGeoLocation from "../hooks/useGeoLocation";
 
 interface LeafletContainerProps {
   children: React.ReactNode;
   hotelLocation: Coordinates;
   zoom: number;
+  style?: object
 }
 
 export const MyMapContainer: React.FC<LeafletContainerProps> = ({
-  children,
-  hotelLocation,
-  zoom,
+  children, hotelLocation, zoom, style
 }) => {
+  // const { position } = useUserGeoLocation();
+  // const { userLocation } = useLocation(position);
+  
   return (
     <MapContainer
       className="map_container"
-      // style={{ height: 300 }}
+      style={style}
       zoom={zoom}
       center={hotelLocation}
     >
