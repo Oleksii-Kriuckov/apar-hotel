@@ -39,7 +39,7 @@ const Booking = () => {
         Booking: hotel {findHotel!.hotelName} ({findCity!.city}), room {number}
         <span className="booking_room_info">
           {' '} from <span className="days_range">{daysRange[0]} </span> to <span className="days_range"> {daysRange[1]}</span> ({numberOfDays} night{numberOfDays > 1 ? 's' : ''}).
-          <span style={{ textTransform: 'capitalize' }}> Total </span> amount {totalAmount}
+          <span style={{ textTransform: 'capitalize' }}> Total </span> amount {totalAmount} hrn
         </span>
       </h3>
 
