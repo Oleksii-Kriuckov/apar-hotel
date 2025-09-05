@@ -38,7 +38,7 @@ const Booking = () => {
         Бронювання: готель {findHotel!.hotelName} ({findCity!.city_ua}), номер {number}
         <span className="booking_room_info">
           {' '} з <span className="days_range">{daysRange[0]} </span> до <span className="days_range"> {daysRange[1]}</span> ({numberOfDays} {numberOfDays === 1 ? 'ніч' : (numberOfDays > 1 && numberOfDays < 5) ? 'ночі' : 'ночей'}).
-          <span style={{ textTransform: 'capitalize' }}> Загальна </span> сума {totalAmount}
+          <span style={{ textTransform: 'capitalize' }}> Загальна </span> сума {totalAmount} грн
         </span>
       </h3>
 
